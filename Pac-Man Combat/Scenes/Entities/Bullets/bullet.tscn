@@ -1,0 +1,121 @@
+[gd_scene load_steps=15 format=3 uid="uid://bcs4wgl2fi7qo"]
+
+[ext_resource type="Script" path="res://Scenes/Bullet.gd" id="1_vwa8f"]
+[ext_resource type="Texture2D" uid="uid://buavupsgjxcun" path="res://Sprites/Entities/Bullets/DefaultBullet.png" id="2_iobta"]
+[ext_resource type="Texture2D" uid="uid://cf2c3qdanq78q" path="res://Sprites/Misc/RoundParticles.png" id="3_s12ig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fch3"]
+size = Vector2(8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2rnx"]
+atlas = ExtResource("2_iobta")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7r0n"]
+atlas = ExtResource("2_iobta")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uav5"]
+atlas = ExtResource("2_iobta")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p88r4"]
+atlas = ExtResource("2_iobta")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23ux6"]
+atlas = ExtResource("2_iobta")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5iu5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2rnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7r0n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uav5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p88r4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23ux6")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q2akj"]
+particles_animation = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_hn0eh"]
+_data = [Vector2(0, 0), 0.0, 13.1948, 0, 0, Vector2(0.0905512, 1), 0.0, 0.0, 0, 0, Vector2(0.590551, 1), -0.041234, -0.041234, 0, 0, Vector2(1, 0), -6.15757, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_nhdbf"]
+curve = SubResource("Curve_hn0eh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s6rdf"]
+lifetime_randomness = 0.6
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_max = 8.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_nhdbf")
+color = Color(0.839216, 0.839216, 0.839216, 1)
+anim_offset_max = 1.0
+
+[node name="Bullet" type="Area2D"]
+process_priority = 1
+position = Vector2(-104, 0)
+collision_layer = 0
+collision_mask = 7
+input_pickable = false
+priority = 1
+script = ExtResource("1_vwa8f")
+metadata/unique_id = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5fch3")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5iu5j")
+autoplay = "default"
+
+[node name="Lifetime" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+z_index = -5
+material = SubResource("CanvasItemMaterial_q2akj")
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_s6rdf")
+texture = ExtResource("3_s12ig")
+lifetime = 0.2
+preprocess = 0.2
+fixed_fps = 260
+visibility_rect = Rect2(-1000, -1000, 2000, 2000)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

@@ -1,0 +1,164 @@
+[gd_scene load_steps=20 format=3 uid="uid://lcfguc8d8x3x"]
+
+[ext_resource type="Script" path="res://Scripts/SuperPowerup.gd" id="1_isntr"]
+[ext_resource type="PackedScene" uid="uid://dhep68bj3q2qd" path="res://Scenes/Misc/off_screen_marker.tscn" id="2_1yqdd"]
+[ext_resource type="PackedScene" uid="uid://b7lq6gjy6c3df" path="res://Scenes/Tools/hurtbox.tscn" id="2_ni0cl"]
+[ext_resource type="Texture2D" uid="uid://b3xwu4w2xmxsx" path="res://Sprites/Misc/SuperOffScreenMarker.png" id="3_jiabc"]
+[ext_resource type="PackedScene" uid="uid://cfoemwbbnhoxt" path="res://Scenes/Tools/health_manager.tscn" id="3_jrrcw"]
+[ext_resource type="Texture2D" uid="uid://bhvsl6nmklcps" path="res://Sprites/Misc/SuperPowerup.png" id="4_cjarh"]
+[ext_resource type="Script" path="res://Scenes/Entities/Enemies/Targets/EnemySprite.gd" id="5_sfjj5"]
+[ext_resource type="PackedScene" uid="uid://0orid71kqqme" path="res://Scenes/Tools/status_effects_manager.tscn" id="8_pftpk"]
+[ext_resource type="Texture2D" uid="uid://bj8gvkgsbldw" path="res://Sprites/Misc/128pxCircle.png" id="9_shq7k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pm57r"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nap8k"]
+radius = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sia3i"]
+atlas = ExtResource("4_cjarh")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tujsg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sia3i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_q7i2j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iiqv2"]
+resource_name = "default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ldac5"]
+_data = {
+"RESET": SubResource("Animation_q7i2j"),
+"default": SubResource("Animation_iiqv2")
+}
+
+[sub_resource type="Curve" id="Curve_d4abe"]
+_data = [Vector2(0, 1), 0.0, 0.0501748, 0, 0, Vector2(0.585366, 1), 3.71881e-07, 3.71881e-07, 0, 0, Vector2(1, 0), -4.42096, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0e01l"]
+curve = SubResource("Curve_d4abe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q1fs4"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_0e01l")
+
+[node name="SuperPowerup" type="StaticBody2D"]
+position = Vector2(0, -128)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_isntr")
+
+[node name="OffScreenMarker" parent="." instance=ExtResource("2_1yqdd")]
+
+[node name="Sprite" parent="OffScreenMarker" index="0"]
+material = null
+texture = ExtResource("3_jiabc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pm57r")
+
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health_manager", "status_effects_manager") instance=ExtResource("2_ni0cl")]
+collision_layer = 2
+collision_mask = 0
+health_manager = NodePath("../HealthManager")
+status_effects_manager = NodePath("../StatusEffectsManager")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_nap8k")
+
+[node name="HealthManager" parent="." instance=ExtResource("3_jrrcw")]
+max_health = 5.0
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_tujsg")
+script = ExtResource("5_sfjj5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_ldac5")
+}
+
+[node name="StatusEffectsManager" parent="." instance=ExtResource("8_pftpk")]
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_q1fs4")
+texture = ExtResource("9_shq7k")
+lifetime = 0.08
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="entity_killed" from="HealthManager" to="." method="_on_health_manager_entity_killed"]
+
+[editable path="OffScreenMarker"]
+[editable path="Hurtbox"]

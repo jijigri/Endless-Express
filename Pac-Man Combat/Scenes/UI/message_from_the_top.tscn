@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://cktkjg2p44bsr"]
+
+[ext_resource type="Script" path="res://Scripts/UI/MessageFromTheTop.gd" id="1_7a7s4"]
+[ext_resource type="PackedScene" uid="uid://vspn7m7psh1b" path="res://Scenes/UI/tv_screen.tscn" id="2_4rj6x"]
+[ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="3_bot17"]
+[ext_resource type="Theme" uid="uid://dgi4mcucy7t8i" path="res://Themes/MenuTheme.tres" id="4_qd668"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tsjqx"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_detail = 1
+shadow_offset = Vector2(0, 2)
+
+[node name="MessageFromTheTop" type="Control"]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = 56.0
+offset_right = -40.0
+offset_bottom = -216.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_7a7s4")
+
+[node name="TVScreen" parent="." instance=ExtResource("2_4rj6x")]
+visible = false
+layout_mode = 1
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_qd668")
+theme_override_fonts/font = ExtResource("3_bot17")
+theme_override_font_sizes/font_size = 16
+text = "THE TOP SAYS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tsjqx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_bot17")
+text = "Message from the top!"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="DisplayNameLabel" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("4_qd668")
+text = "-Display name"
+horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 3

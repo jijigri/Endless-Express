@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2kqgyivh6ypi"]
+
+[ext_resource type="Script" path="res://Scripts/UI/LeaderboardDisplayCase.gd" id="1_8s7e2"]
+[ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="2_qh0sg"]
+
+[node name="LeaderboardDisplayCase" type="HSplitContainer"]
+dragger_visibility = 1
+script = ExtResource("1_8s7e2")
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qh0sg")
+text = "#"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 1000
+dragger_visibility = 1
+
+[node name="Name" type="Label" parent="HSplitContainer"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qh0sg")
+text = "NAME"
+text_overrun_behavior = 3
+
+[node name="Score" type="Label" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_qh0sg")
+text = "SCORE"

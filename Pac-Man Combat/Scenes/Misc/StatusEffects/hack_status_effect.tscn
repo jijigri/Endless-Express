@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5bsi0t8p0q6g"]
+
+[ext_resource type="PackedScene" uid="uid://c3rf3vks4k5ji" path="res://Scenes/Misc/StatusEffects/status_effect_base.tscn" id="1_cf4ea"]
+[ext_resource type="Script" path="res://Scripts/Misc/StatusEffects/HackStatusEffect.gd" id="2_s8ir3"]
+[ext_resource type="Texture2D" uid="uid://chmuavfeu158s" path="res://Sprites/Effects/HackParticles.png" id="3_bmt8r"]
+[ext_resource type="AudioStream" uid="uid://dth5gawkmd7g7" path="res://Audio/SoundEffects/StatusEffects/HackSound.wav" id="3_tpmxc"]
+[ext_resource type="PackedScene" uid="uid://dhep68bj3q2qd" path="res://Scenes/Misc/off_screen_marker.tscn" id="4_cmld0"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="5_an882"]
+[ext_resource type="Texture2D" uid="uid://cvrs0s7guw57x" path="res://Sprites/Misc/HackEffectMarker.png" id="6_koyfn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p5j3a"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b03rq"]
+resource_local_to_scene = true
+shader = ExtResource("5_an882")
+shader_parameter/STRENGTH = 1.0
+shader_parameter/OLD_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/OLD_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/OLD_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/NEW_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/NEW_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/NEW_COLOR4 = null
+
+[node name="HackStatusEffect" instance=ExtResource("1_cf4ea")]
+script = ExtResource("2_s8ir3")
+sound_effect = ExtResource("3_tpmxc")
+
+[node name="Effect" type="Sprite2D" parent="." index="1"]
+z_index = 1
+material = SubResource("CanvasItemMaterial_p5j3a")
+texture = ExtResource("3_bmt8r")
+
+[node name="OffScreenMarker" parent="." index="2" instance=ExtResource("4_cmld0")]
+
+[node name="Sprite" parent="OffScreenMarker" index="0"]
+material = SubResource("ShaderMaterial_b03rq")
+texture = ExtResource("6_koyfn")
+
+[editable path="OffScreenMarker"]

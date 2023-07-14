@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://baknvup6omew5"]
+
+[ext_resource type="PackedScene" uid="uid://c3rf3vks4k5ji" path="res://Scenes/Misc/StatusEffects/status_effect_base.tscn" id="1_eftti"]
+[ext_resource type="Script" path="res://Scripts/Misc/StatusEffects/FreezeStatusEffect.gd" id="2_84bpx"]
+[ext_resource type="Texture2D" uid="uid://cyb70v7ix6k27" path="res://Sprites/Effects/IceParticles.png" id="3_jjxmj"]
+[ext_resource type="Texture2D" uid="uid://bj8gvkgsbldw" path="res://Sprites/Misc/128pxCircle.png" id="4_otrae"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vco5m"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_qpgyw"]
+offsets = PackedFloat32Array(0, 0.87234, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fkoex"]
+gradient = SubResource("Gradient_qpgyw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qgbvo"]
+emission_shape = 3
+emission_box_extents = Vector3(16, 16, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_fkoex")
+anim_offset_max = 1.0
+
+[sub_resource type="Gradient" id="Gradient_ysoie"]
+offsets = PackedFloat32Array(0, 0.753191, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1juxf"]
+gradient = SubResource("Gradient_ysoie")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a5hbv"]
+lifetime_randomness = 0.4
+emission_shape = 3
+emission_box_extents = Vector3(16, 16, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 105, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.03
+scale_max = 0.03
+color_ramp = SubResource("GradientTexture1D_1juxf")
+
+[node name="FreezeStatusEffect" instance=ExtResource("1_eftti")]
+script = ExtResource("2_84bpx")
+
+[node name="Particles" type="GPUParticles2D" parent="." index="1"]
+material = SubResource("CanvasItemMaterial_vco5m")
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_qgbvo")
+texture = ExtResource("3_jjxmj")
+lifetime = 0.1
+explosiveness = 1.0
+fixed_fps = 64
+local_coords = true
+
+[node name="DropParticles" type="GPUParticles2D" parent="." index="2"]
+modulate = Color(0.317647, 0.396078, 0.870588, 1)
+z_index = -1
+amount = 24
+process_material = SubResource("ParticleProcessMaterial_a5hbv")
+texture = ExtResource("4_otrae")
+lifetime = 0.5
+fixed_fps = 64
+visibility_rect = Rect2(-100, -100, 500, 500)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://brhog7rk3d50y"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/Movement/PlayerTrackingMovement.gd" id="1_658nv"]
+
+[sub_resource type="Curve" id="Curve_3hw87"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[node name="PlayerTrackingMovement" type="Node2D"]
+script = ExtResource("1_658nv")
+speed_increase_over_distance = SubResource("Curve_3hw87")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+
+[node name="Timer" type="Timer" parent="NavigationAgent2D"]
+wait_time = 0.1
+autostart = true

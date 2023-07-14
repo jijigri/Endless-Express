@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7oyaqxvwjvn7"]
+
+[ext_resource type="Shader" path="res://Shaders/ObjectShockwave.gdshader" id="1_op24o"]
+[ext_resource type="Texture2D" uid="uid://bgn334x3mulwc" path="res://Sprites/Misc/16pxSquare.png" id="2_dvfgt"]
+[ext_resource type="Script" path="res://Scripts/Shockwave.gd" id="3_gikt4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pa1qu"]
+shader = ExtResource("1_op24o")
+shader_parameter/size = 0.616
+shader_parameter/force = 0.01
+shader_parameter/thickness = 0.1
+
+[node name="Shockwave" type="Sprite2D"]
+material = SubResource("ShaderMaterial_pa1qu")
+position = Vector2(-216, -136)
+scale = Vector2(16, 16)
+texture = ExtResource("2_dvfgt")
+script = ExtResource("3_gikt4")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+scale = Vector2(1.164, 1)
+copy_mode = 2

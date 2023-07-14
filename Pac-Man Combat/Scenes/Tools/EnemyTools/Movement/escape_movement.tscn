@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7xcbddyitqet"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/Movement/EscapeMovement.gd" id="1_j31ed"]
+
+[node name="EscapeMovement" type="Node2D"]
+script = ExtResource("1_j31ed")
+
+[node name="DebugLine" type="Line2D" parent="."]
+z_index = 1
+points = PackedVector2Array(0, 0, 0, 0)
+width = 1.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="RushTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="RushTimer" to="." method="_on_rush_timer_timeout"]

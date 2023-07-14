@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bui80x1ox2psd"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/Movement/PlayerPredictionMovement.gd" id="1_ilaii"]
+
+[node name="PlayerPredictionMovement" type="Node2D"]
+script = ExtResource("1_ilaii")
+min_predict_distance_in_tiles = 20
+rush_update_time = 0.2
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+
+[node name="Timer" type="Timer" parent="NavigationAgent2D"]
+wait_time = 4.0
+autostart = true
+
+[node name="DebugLine" type="Line2D" parent="."]
+visible = false
+z_index = 1
+width = 1.0
+default_color = Color(1, 0, 0, 1)
+
+[node name="RushTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
+[connection signal="timeout" from="RushTimer" to="." method="_on_rush_timer_timeout"]

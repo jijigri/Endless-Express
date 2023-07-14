@@ -1,0 +1,119 @@
+[gd_scene load_steps=18 format=3 uid="uid://bq6vuswt0aavb"]
+
+[ext_resource type="Texture2D" uid="uid://cqs56d47sn0xq" path="res://Sprites/Effects/Danger_Spawn_Indicator.png" id="1_khveq"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_sj5kc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vi1h"]
+atlas = ExtResource("1_khveq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqwmd"]
+atlas = ExtResource("1_khveq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiox6"]
+atlas = ExtResource("1_khveq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo88v"]
+atlas = ExtResource("1_khveq")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1qnw"]
+atlas = ExtResource("1_khveq")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft24u"]
+atlas = ExtResource("1_khveq")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi2nl"]
+atlas = ExtResource("1_khveq")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xytgd"]
+atlas = ExtResource("1_khveq")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0afgu"]
+atlas = ExtResource("1_khveq")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24mfj"]
+atlas = ExtResource("1_khveq")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d8xw"]
+atlas = ExtResource("1_khveq")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57l7i"]
+atlas = ExtResource("1_khveq")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv7qr"]
+atlas = ExtResource("1_khveq")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thfs8"]
+atlas = ExtResource("1_khveq")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2pb3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vi1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqwmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiox6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wo88v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1qnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft24u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pi2nl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xytgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0afgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24mfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d8xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57l7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv7qr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thfs8")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="DangerSpawnIndicator" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_c2pb3")
+autoplay = "default"
+frame_progress = 0.0162132
+script = ExtResource("2_sj5kc")

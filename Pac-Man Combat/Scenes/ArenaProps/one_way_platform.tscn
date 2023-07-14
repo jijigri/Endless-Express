@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://digbyp3l8ibht"]
+
+[ext_resource type="Script" path="res://Scripts/OneWayPlatform.gd" id="1_myuuf"]
+[ext_resource type="Texture2D" uid="uid://ciku36nrdwe76" path="res://Sprites/Misc/OneWayPlatform.png" id="2_yyp41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqsnr"]
+resource_local_to_scene = true
+size = Vector2(64, 4)
+
+[node name="OneWayPlatform" type="StaticBody2D" groups=["Platform", "Solid"]]
+z_index = -5
+position = Vector2(0, -56)
+collision_layer = 8
+collision_priority = 2.0
+script = ExtResource("1_myuuf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_yqsnr")
+one_way_collision = true
+one_way_collision_margin = 8.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = -2
+texture_repeat = 2
+texture = ExtResource("2_yyp41")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 16)

@@ -1,0 +1,179 @@
+[gd_scene load_steps=33 format=3 uid="uid://bktsiox8ili0c"]
+
+[ext_resource type="PackedScene" uid="uid://xvuee84dulmc" path="res://Scenes/Entities/Enemies/Targets/enemy_target_base.tscn" id="1_ggvp8"]
+[ext_resource type="Script" path="res://Scripts/Resources/TargetDropPool.gd" id="2_8xsd4"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/StateMachines/BubbleStateMachine.gd" id="2_okp1x"]
+[ext_resource type="Shader" path="res://Shaders/bubble_target.gdshader" id="3_060wn"]
+[ext_resource type="PackedScene" uid="uid://dikaag12v0yrj" path="res://Scenes/Entities/ResourcePacks/health_resource_pack.tscn" id="3_vrkp4"]
+[ext_resource type="PackedScene" uid="uid://dwq7gd71x1s8b" path="res://Scenes/Tools/EnemyTools/Movement/wander_movement.tscn" id="4_76pyi"]
+[ext_resource type="Texture2D" uid="uid://b6djbbs2xgqqe" path="res://Sprites/Entities/Enemies/Targets/Bubble_of_Energy_TestSprite.png" id="4_bk2mb"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropData.gd" id="5_uwuop"]
+[ext_resource type="PackedScene" uid="uid://timcni11hara" path="res://Scenes/Entities/ResourcePacks/energy_resource_pack.tscn" id="6_6vy8f"]
+[ext_resource type="PackedScene" uid="uid://b1w8emwm3yqyo" path="res://Scenes/Effects/bubble_death_effect.tscn" id="6_rypb5"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropPool.gd" id="6_y2vbk"]
+[ext_resource type="Script" path="res://Scripts/Resources/ColorSwap.gd" id="11_y3b6p"]
+
+[sub_resource type="Resource" id="Resource_iej7l"]
+script = ExtResource("5_uwuop")
+scene = ExtResource("3_vrkp4")
+amount = 4
+
+[sub_resource type="Resource" id="Resource_7aj3e"]
+script = ExtResource("6_y2vbk")
+pool = Array[ExtResource("5_uwuop")]([SubResource("Resource_iej7l")])
+
+[sub_resource type="Resource" id="Resource_suds7"]
+script = ExtResource("5_uwuop")
+scene = ExtResource("6_6vy8f")
+amount = 6
+
+[sub_resource type="Resource" id="Resource_tp15i"]
+script = ExtResource("6_y2vbk")
+pool = Array[ExtResource("5_uwuop")]([SubResource("Resource_suds7")])
+
+[sub_resource type="Resource" id="Resource_2n5vs"]
+script = ExtResource("2_8xsd4")
+drops_in_enum_order = Array[ExtResource("6_y2vbk")]([SubResource("Resource_7aj3e"), SubResource("Resource_tp15i")])
+
+[sub_resource type="Resource" id="Resource_xx2t3"]
+script = ExtResource("11_y3b6p")
+default_colors = Array[Color]([Color(0.807843, 0.176471, 0.45098, 1), Color(0.980392, 0.74902, 0.47451, 1), Color(0.968627, 0.917647, 0.745098, 1)])
+replace_colors = {
+0: [Color(0.317647, 0.396078, 0.870588, 1), Color(0.301961, 0.945098, 0.352941, 1), Color(0.960784, 0.964706, 0.811765, 1)],
+1: [Color(0.807843, 0.176471, 0.45098, 1), Color(0.980392, 0.74902, 0.47451, 1), Color(0.968627, 0.917647, 0.745098, 1)]
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flrfh"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23ivx"]
+resource_local_to_scene = true
+size = Vector2(24, 24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kuarj"]
+resource_local_to_scene = true
+shader = ExtResource("3_060wn")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+shader_parameter/OLD_COLOR1 = Color(0, 0, 0, 1)
+shader_parameter/OLD_COLOR2 = null
+shader_parameter/OLD_COLOR3 = null
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = null
+shader_parameter/NEW_COLOR2 = null
+shader_parameter/NEW_COLOR3 = null
+shader_parameter/NEW_COLOR4 = null
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23jo2"]
+atlas = ExtResource("4_bk2mb")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6erx"]
+atlas = ExtResource("4_bk2mb")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7uhd"]
+atlas = ExtResource("4_bk2mb")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov6sg"]
+atlas = ExtResource("4_bk2mb")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnck7"]
+atlas = ExtResource("4_bk2mb")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa3mg"]
+atlas = ExtResource("4_bk2mb")
+region = Rect2(200, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m55yg"]
+atlas = ExtResource("4_bk2mb")
+region = Rect2(240, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bumc"]
+atlas = ExtResource("4_bk2mb")
+region = Rect2(280, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvtfe"]
+atlas = ExtResource("4_bk2mb")
+region = Rect2(320, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1c5n"]
+atlas = ExtResource("4_bk2mb")
+region = Rect2(360, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2keoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23jo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6erx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7uhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov6sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnck7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa3mg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m55yg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bumc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvtfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1c5n")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 12.0
+}]
+
+[node name="BubbleTargetBase" node_paths=PackedStringArray("escape_movement", "default_movement") groups=["ResourceBubbles"] instance=ExtResource("1_ggvp8")]
+script = ExtResource("2_okp1x")
+escape_movement = NodePath("WanderMovement")
+drop_pool = SubResource("Resource_2n5vs")
+color_swap = SubResource("Resource_xx2t3")
+default_movement = NodePath("WanderMovement")
+death_effect = ExtResource("6_rypb5")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_flrfh")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_23ivx")
+
+[node name="HealthManager" parent="." index="3"]
+max_health = 30.0
+
+[node name="Sprite" parent="." index="4"]
+material = SubResource("ShaderMaterial_kuarj")
+sprite_frames = SubResource("SpriteFrames_2keoq")
+autoplay = "spawn"
+
+[node name="WanderMovement" parent="." index="5" instance=ExtResource("4_76pyi")]
+move_speed = 20.0
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+
+[editable path="Hurtbox"]
+[editable path="OverheadHealthBar"]

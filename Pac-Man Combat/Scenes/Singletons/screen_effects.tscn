@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cod1nfvh7ri4g"]
+
+[ext_resource type="Script" path="res://Scripts/ScreenEffects.gd" id="1_3mp28"]
+
+[node name="ScreenEffects" type="Node2D"]
+script = ExtResource("1_3mp28")
+damage_color = Color(0.8, 0.360784, 0.380392, 1)
+heal_color = Color(0.788235, 0.94902, 0.8, 1)
+energy_color = Color(0.968627, 0.929412, 0.796078, 1)
+danger_color_start = Color(0.6, 0.6, 0.6, 1)
+danger_color_end = Color(0.470588, 0.341176, 0.341176, 1)

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://du67ionc4r786"]
+
+[ext_resource type="Script" path="res://Bomb.gd" id="1_bjw0u"]
+[ext_resource type="PackedScene" uid="uid://by75m07u6y3gr" path="res://Scenes/Entities/Misc/ice_explosion.tscn" id="2_ro13e"]
+[ext_resource type="Texture2D" uid="uid://de08g8usoxyty" path="res://Sprites/Abilities/DefaultPlayerIceGrenadeSprite.png" id="3_emyeg"]
+[ext_resource type="Script" path="res://Scenes/Entities/Misc/Trail.gd" id="4_staod"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2u5g4"]
+radius = 8.0
+
+[sub_resource type="Curve" id="Curve_7r1md"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.89221, 0.0, 0, 0]
+point_count = 2
+
+[node name="IceBomb" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 14
+continuous_cd = 1
+max_contacts_reported = 5
+contact_monitor = true
+can_sleep = false
+script = ExtResource("1_bjw0u")
+explosion_scene = ExtResource("2_ro13e")
+explosion_radius = 75.0
+explosion_damage = 5.0
+armor_break_time = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2u5g4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_emyeg")
+
+[node name="Trail" type="Line2D" parent="." node_paths=PackedStringArray("target")]
+width_curve = SubResource("Curve_7r1md")
+script = ExtResource("4_staod")
+target = NodePath("..")
+length = 10

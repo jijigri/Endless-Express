@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://vspn7m7psh1b"]
+
+[ext_resource type="Texture2D" uid="uid://bnxfoxaguqr5t" path="res://Sprites/UI/BlackScreen.png" id="1_wl3xi"]
+
+[sub_resource type="Animation" id="Animation_qt8ob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 100, 45)]
+}
+
+[sub_resource type="Animation" id="Animation_mpgr3"]
+resource_name = "default"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 100, 45), Rect2(100, 0, 100, 45), Rect2(200, 0, 100, 45), Rect2(300, 0, 100, 45), Rect2(400, 0, 100, 45), Rect2(500, 0, 100, 45)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7wau1"]
+_data = {
+"RESET": SubResource("Animation_qt8ob"),
+"default": SubResource("Animation_mpgr3")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gro3s"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="TVScreen" type="NinePatchRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 201.0
+offset_top = 115.0
+offset_right = -202.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wl3xi")
+region_rect = Rect2(0, 0, 100, 45)
+patch_margin_left = 92
+patch_margin_top = 21
+patch_margin_right = 92
+patch_margin_bottom = 36
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+speed_scale = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_7wau1")
+}
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = -9.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gro3s")

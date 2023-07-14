@@ -1,0 +1,16 @@
+res://Scenes/Entities/Players/default_player.tscn
+res://Fonts/LabelSettings/BigTextSettings.tres
+res://Themes/MenuTheme.tres
+res://Resources/Tilesets/arena_level_tileset.tres
+res://Resources/DropPools/HealthBubbleDropPool.tres
+res://Shaders/bubble_target.gdshader
+res://Resources/ColorSwaps/BubbleColorSwap.tres
+res://Resources/EnemyPools/TargetPool.tres
+res://Shaders/OutlineShader.gdshader
+res://Resources/EnemyPools/ChaserPool.tres
+res://Resources/Entities/Player/DefaultPlayerMovementData.tres
+res://Resources/Guns/Shotgun.tres
+res://Resources/Guns/SMG.tres
+res://Scenes/game.tscn
+res://Scenes/UI/player_hud.tscn
+res://Scenes/UI/small_bullet_icon.tscn

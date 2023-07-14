@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b20jbe8ql43oh"]
+
+[ext_resource type="Texture2D" uid="uid://bj8gvkgsbldw" path="res://Sprites/Misc/128pxCircle.png" id="1_bqy33"]
+[ext_resource type="Script" path="res://Scenes/Effects/ParticlesEffect.gd" id="2_i7e1c"]
+
+[sub_resource type="Curve" id="Curve_oqdtv"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.694158, 0), 0.0, 0.0, 0, 0, Vector2(1, 77.8947), 525.113, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_euqes"]
+curve = SubResource("Curve_oqdtv")
+
+[sub_resource type="Curve" id="Curve_kjkhx"]
+_data = [Vector2(0, 0), 0.0, 15.5072, 0, 0, Vector2(0.134021, 1), 0.0, 0.0, 0, 0, Vector2(0.591065, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.2329, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_o75q2"]
+curve = SubResource("Curve_kjkhx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0dydg"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 50.0
+damping_max = 50.0
+damping_curve = SubResource("CurveTexture_euqes")
+scale_min = 0.02
+scale_max = 0.04
+scale_curve = SubResource("CurveTexture_o75q2")
+
+[node name="HealthPackObtainedEffect" type="GPUParticles2D"]
+modulate = Color(0.301961, 0.945098, 0.352941, 1)
+emitting = false
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_0dydg")
+texture = ExtResource("1_bqy33")
+lifetime = 0.35
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+script = ExtResource("2_i7e1c")
+time = 0.5

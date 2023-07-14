@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://bvdbnoyrq55or"]
+
+[ext_resource type="PackedScene" uid="uid://bcs4wgl2fi7qo" path="res://Scenes/Entities/Bullets/bullet.tscn" id="1_2js8w"]
+[ext_resource type="Texture2D" uid="uid://b7aik02elt34l" path="res://Sprites/Entities/Bullets/SniperBullet.png" id="2_f1sgl"]
+[ext_resource type="Script" path="res://Scenes/Entities/Misc/Trail.gd" id="3_5yh65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb11n"]
+size = Vector2(10, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdytl"]
+atlas = ExtResource("2_f1sgl")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeblv"]
+atlas = ExtResource("2_f1sgl")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd0w2"]
+atlas = ExtResource("2_f1sgl")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4x8u"]
+atlas = ExtResource("2_f1sgl")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp7v7"]
+atlas = ExtResource("2_f1sgl")
+region = Rect2(144, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijxuu"]
+atlas = ExtResource("2_f1sgl")
+region = Rect2(180, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxr7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdytl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeblv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd0w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4x8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp7v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijxuu")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
+}]
+
+[sub_resource type="Curve" id="Curve_6tpm4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.30585, 0.0, 0, 0]
+point_count = 2
+
+[node name="PiercingBullet" instance=ExtResource("1_2js8w")]
+has_piercing = true
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_cb11n")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_gxr7j")
+frame = 1
+frame_progress = 0.600768
+
+[node name="Trail" type="Line2D" parent="." index="4" node_paths=PackedStringArray("target")]
+width = 6.0
+width_curve = SubResource("Curve_6tpm4")
+script = ExtResource("3_5yh65")
+target = NodePath("..")
+length = 5

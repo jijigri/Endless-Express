@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://br7813oqatnq1"]
+
+[ext_resource type="AudioStream" uid="uid://beo0o1h8ogfpl" path="res://Audio/Music/Cyberfunk.wav" id="1_sdv1k"]
+[ext_resource type="Script" path="res://Scenes/MusicHandler.gd" id="2_ir766"]
+
+[node name="MusicManager" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_sdv1k")
+attenuation = 1e-05
+panning_strength = 0.0
+bus = &"Music"
+script = ExtResource("2_ir766")
+gameplay_tracks = Array[AudioStream]([ExtResource("1_sdv1k")])
+
+[connection signal="finished" from="." to="." method="_on_finished"]

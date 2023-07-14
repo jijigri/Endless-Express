@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcekneyyyiolx"]
+
+[ext_resource type="Texture2D" uid="uid://ecl8fqnku1ie" path="res://Sprites/Effects/Shotgun_MuzzleFlash.png" id="1_h0evc"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_atkse"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sok31"]
+atlas = ExtResource("1_h0evc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mag7j"]
+atlas = ExtResource("1_h0evc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tj38"]
+atlas = ExtResource("1_h0evc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txq7k"]
+atlas = ExtResource("1_h0evc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1c4r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sok31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mag7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tj38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txq7k")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 18.0
+}]
+
+[node name="EnemyHitEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_n1c4r")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+offset = Vector2(32, 0)
+script = ExtResource("2_atkse")

@@ -1,0 +1,328 @@
+[gd_scene load_steps=53 format=3 uid="uid://4tecwc5i5bc"]
+
+[ext_resource type="PackedScene" uid="uid://xvuee84dulmc" path="res://Scenes/Entities/Enemies/Targets/enemy_target_base.tscn" id="1_gs0by"]
+[ext_resource type="Shader" path="res://Shaders/bubble_target.gdshader" id="2_s45rb"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/StateMachines/SirenStateMachine.gd" id="2_vrw2b"]
+[ext_resource type="PackedScene" uid="uid://dikaag12v0yrj" path="res://Scenes/Entities/ResourcePacks/health_resource_pack.tscn" id="3_g7i8x"]
+[ext_resource type="Script" path="res://Scripts/Resources/TargetDropPool.gd" id="4_5pmwt"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropData.gd" id="5_wrk87"]
+[ext_resource type="Script" path="res://Scripts/Resources/ColorSwap.gd" id="5_yg08s"]
+[ext_resource type="PackedScene" uid="uid://b1w8emwm3yqyo" path="res://Scenes/Effects/bubble_death_effect.tscn" id="6_6fi65"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropPool.gd" id="6_o7i77"]
+[ext_resource type="PackedScene" uid="uid://timcni11hara" path="res://Scenes/Entities/ResourcePacks/energy_resource_pack.tscn" id="6_sfo1n"]
+[ext_resource type="AudioStream" uid="uid://cu4rsyi6vuu3p" path="res://Audio/SoundEffects/Enemies/ChaserDeathSound.wav" id="8_bg82i"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/Movement/TeleportMovement.gd" id="9_okh1b"]
+[ext_resource type="Texture2D" uid="uid://6d6f544xsxcw" path="res://Sprites/Entities/Enemies/Targets/SirenSprite.png" id="10_q2r4w"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="11_nq850"]
+[ext_resource type="Texture2D" uid="uid://da5vhirdh1gp6" path="res://Sprites/Misc/SirenMarker.png" id="12_slh5p"]
+[ext_resource type="AudioStream" uid="uid://cso2utl1pomks" path="res://Audio/SoundEffects/Enemies/TargetSiren/SirenSpawnSound.wav" id="14_j1f7c"]
+[ext_resource type="Texture2D" uid="uid://dhcwwv5hxtw3q" path="res://Sprites/Misc/StarParticles.png" id="14_o6st4"]
+[ext_resource type="AudioStream" uid="uid://d1gl30wussc35" path="res://Audio/SoundEffects/Enemies/TargetSiren/SirenSummoningSound.wav" id="21_ub1iw"]
+
+[sub_resource type="Resource" id="Resource_1dfsd"]
+script = ExtResource("5_wrk87")
+scene = ExtResource("3_g7i8x")
+amount = 12
+
+[sub_resource type="Resource" id="Resource_npf14"]
+script = ExtResource("6_o7i77")
+pool = Array[ExtResource("5_wrk87")]([SubResource("Resource_1dfsd")])
+
+[sub_resource type="Resource" id="Resource_dbffh"]
+script = ExtResource("5_wrk87")
+scene = ExtResource("6_sfo1n")
+amount = 16
+
+[sub_resource type="Resource" id="Resource_lmimc"]
+script = ExtResource("6_o7i77")
+pool = Array[ExtResource("5_wrk87")]([SubResource("Resource_dbffh")])
+
+[sub_resource type="Resource" id="Resource_2k6ah"]
+script = ExtResource("4_5pmwt")
+drops_in_enum_order = Array[ExtResource("6_o7i77")]([SubResource("Resource_npf14"), SubResource("Resource_lmimc")])
+
+[sub_resource type="Resource" id="Resource_go4fa"]
+script = ExtResource("5_yg08s")
+default_colors = Array[Color]([Color(0.807843, 0.176471, 0.45098, 1), Color(0.980392, 0.74902, 0.47451, 1), Color(0.968627, 0.917647, 0.745098, 1)])
+replace_colors = {
+0: [Color(0.317647, 0.396078, 0.870588, 1), Color(0.301961, 0.945098, 0.352941, 1), Color(0.960784, 0.964706, 0.811765, 1)],
+1: [Color(0.807843, 0.176471, 0.45098, 1), Color(0.980392, 0.74902, 0.47451, 1), Color(0.968627, 0.917647, 0.745098, 1)]
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omlp0"]
+resource_local_to_scene = true
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7npdk"]
+resource_local_to_scene = true
+size = Vector2(24, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00w70"]
+resource_local_to_scene = true
+shader = ExtResource("2_s45rb")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+shader_parameter/OLD_COLOR1 = null
+shader_parameter/OLD_COLOR2 = null
+shader_parameter/OLD_COLOR3 = null
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = null
+shader_parameter/NEW_COLOR2 = null
+shader_parameter/NEW_COLOR3 = null
+shader_parameter/NEW_COLOR4 = null
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o52dl"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41xds"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuby5"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drcje"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5fjg"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmndd"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugobd"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8xiv"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg23o"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r64v3"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hupc"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sv8w"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3puh"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(1536, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fslri"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(1664, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6d85"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(1792, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu358"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(1920, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wjgu"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(2048, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yj77"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(2176, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkmg0"]
+atlas = ExtResource("10_q2r4w")
+region = Rect2(2304, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j80s6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o52dl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41xds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuby5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drcje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5fjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmndd")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugobd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8xiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg23o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r64v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hupc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sv8w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3puh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fslri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6d85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu358")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wjgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yj77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkmg0")
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxmon"]
+resource_local_to_scene = true
+shader = ExtResource("11_nq850")
+shader_parameter/STRENGTH = 1.0
+shader_parameter/OLD_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/OLD_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/OLD_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/NEW_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/NEW_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/NEW_COLOR4 = null
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qa7ho"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_ghtgh"]
+_data = [Vector2(0, 0), 0.0, 10.8378, 0, 0, Vector2(0.139373, 1), 0.0, 0.0, 0, 0, Vector2(0.641115, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.51224, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_f32h6"]
+curve = SubResource("Curve_ghtgh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sgits"]
+lifetime_randomness = 0.8
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_f32h6")
+anim_offset_max = 1.0
+
+[node name="TargetSiren" node_paths=PackedStringArray("default_movement") instance=ExtResource("1_gs0by")]
+collision_mask = 4
+script = ExtResource("2_vrw2b")
+damage_to_cancel_summoning = 50.0
+time_to_summon = 6.0
+drop_pool = SubResource("Resource_2k6ah")
+color_swap = SubResource("Resource_go4fa")
+default_movement = NodePath("TeleportMovement")
+death_effect = ExtResource("6_6fi65")
+death_sound = ExtResource("8_bg82i")
+spawn_sound = ExtResource("14_j1f7c")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_omlp0")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_7npdk")
+
+[node name="HealthManager" parent="." index="3"]
+max_health = 250.0
+health_to_kill = 10
+
+[node name="Sprite" parent="." index="4"]
+material = SubResource("ShaderMaterial_00w70")
+sprite_frames = SubResource("SpriteFrames_j80s6")
+animation = &"disappear"
+
+[node name="OverheadHealthBar" parent="." index="5"]
+offset_top = -41.0
+offset_bottom = -35.0
+
+[node name="Sprite" parent="OffScreenMarker" index="0"]
+material = SubResource("ShaderMaterial_hxmon")
+texture = ExtResource("12_slh5p")
+
+[node name="StatusEffectsManager" parent="." index="7"]
+time_multiplier = 0.5
+
+[node name="TeleportMovement" type="Node2D" parent="." index="8"]
+script = ExtResource("9_okh1b")
+teleport_duration = 1.0
+
+[node name="TeleportEffect" type="GPUParticles2D" parent="TeleportMovement" index="0"]
+material = SubResource("CanvasItemMaterial_qa7ho")
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_sgits")
+texture = ExtResource("14_o6st4")
+preprocess = 5.0
+randomness = 0.2
+fixed_fps = 120
+visibility_rect = Rect2(-500, -500, 1000, 1000)
+
+[node name="SummoningSound" type="AudioStreamPlayer2D" parent="." index="9"]
+stream = ExtResource("21_ub1iw")
+volume_db = -4.0
+max_distance = 720.0
+attenuation = 1.5
+bus = &"FX"
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="effect_applied" from="StatusEffectsManager" to="." method="_on_status_effects_manager_effect_applied"]
+[connection signal="effect_removed" from="StatusEffectsManager" to="." method="_on_status_effects_manager_effect_removed"]
+
+[editable path="Hurtbox"]
+[editable path="OverheadHealthBar"]
+[editable path="OffScreenMarker"]

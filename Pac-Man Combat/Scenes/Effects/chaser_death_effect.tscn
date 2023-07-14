@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://ce0huhn8sem5b"]
+
+[ext_resource type="Texture2D" uid="uid://c2ki0p7qrg150" path="res://Sprites/Effects/ChaserDeathEffect.png" id="1_6l8js"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_tdti5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djnhb"]
+atlas = ExtResource("1_6l8js")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq8qe"]
+atlas = ExtResource("1_6l8js")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w34v"]
+atlas = ExtResource("1_6l8js")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhn47"]
+atlas = ExtResource("1_6l8js")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f882l"]
+atlas = ExtResource("1_6l8js")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joqjt"]
+atlas = ExtResource("1_6l8js")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vv3a"]
+atlas = ExtResource("1_6l8js")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc8om"]
+atlas = ExtResource("1_6l8js")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aogee"]
+atlas = ExtResource("1_6l8js")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wy6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djnhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq8qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w34v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhn47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f882l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joqjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vv3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc8om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aogee")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="DangerSpawnIndicator" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_4wy6p")
+autoplay = "default"
+script = ExtResource("2_tdti5")

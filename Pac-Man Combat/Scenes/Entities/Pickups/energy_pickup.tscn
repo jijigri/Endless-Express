@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3 uid="uid://b87rryrm1wdm8"]
+
+[ext_resource type="PackedScene" uid="uid://cduaek24i8wxp" path="res://Scenes/Entities/Pickups/pickup_base.tscn" id="1_32g1m"]
+[ext_resource type="AudioStream" uid="uid://paaeks7jqj5i" path="res://Audio/SoundEffects/Pickups/EnergyPickupObtained.wav" id="2_d1200"]
+[ext_resource type="Texture2D" uid="uid://uqi3px73e3fm" path="res://Sprites/Pickups/Energy_Pickup.png" id="3_8bjyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vko5w"]
+resource_local_to_scene = true
+size = Vector2(24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg4ni"]
+atlas = ExtResource("3_8bjyd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyumu"]
+atlas = ExtResource("3_8bjyd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypck2"]
+atlas = ExtResource("3_8bjyd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5604"]
+atlas = ExtResource("3_8bjyd")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f7i3"]
+atlas = ExtResource("3_8bjyd")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r88h"]
+atlas = ExtResource("3_8bjyd")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo10s"]
+atlas = ExtResource("3_8bjyd")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pene"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vg4ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyumu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypck2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5604")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f7i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r88h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo10s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="EnergyPickup" instance=ExtResource("1_32g1m")]
+collision_layer = 256
+type = 1
+value = 5.0
+sound = ExtResource("2_d1200")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_vko5w")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_4pene")
+frame_progress = 0.0

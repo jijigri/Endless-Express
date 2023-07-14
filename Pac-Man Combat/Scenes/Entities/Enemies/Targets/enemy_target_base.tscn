@@ -1,0 +1,83 @@
+[gd_scene load_steps=14 format=3 uid="uid://xvuee84dulmc"]
+
+[ext_resource type="PackedScene" uid="uid://dujcruv7mv4c2" path="res://Scenes/Entities/Enemies/enemy_base.tscn" id="1_2jht7"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/StateMachines/TargetStateMachine.gd" id="2_drx3j"]
+[ext_resource type="Resource" uid="uid://ck7cw86nl7wl1" path="res://Resources/DropPools/HealthBubbleDropPool.tres" id="3_3mtid"]
+[ext_resource type="Shader" path="res://Shaders/bubble_target.gdshader" id="4_it6im"]
+[ext_resource type="AudioStream" uid="uid://f288ugm5wypq" path="res://Audio/SoundEffects/Enemies/TargetDeathSound.wav" id="4_uurxe"]
+[ext_resource type="Texture2D" uid="uid://b6djbbs2xgqqe" path="res://Sprites/Entities/Enemies/Targets/Bubble_of_Energy_TestSprite.png" id="5_0ajpx"]
+[ext_resource type="PackedScene" uid="uid://dlseb4whqrry5" path="res://Scenes/Tools/overhead_health_bar.tscn" id="6_cifq8"]
+[ext_resource type="PackedScene" uid="uid://dhep68bj3q2qd" path="res://Scenes/Misc/off_screen_marker.tscn" id="7_uw2yh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8f55w"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jwrj"]
+resource_local_to_scene = true
+size = Vector2(24, 24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_epse6"]
+resource_local_to_scene = true
+shader = ExtResource("4_it6im")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+shader_parameter/OLD_COLOR1 = null
+shader_parameter/OLD_COLOR2 = null
+shader_parameter/OLD_COLOR3 = null
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = null
+shader_parameter/NEW_COLOR2 = null
+shader_parameter/NEW_COLOR3 = null
+shader_parameter/NEW_COLOR4 = null
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk7xj"]
+atlas = ExtResource("5_0ajpx")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7rat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk7xj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TargetEnemy" groups=["Targets"] instance=ExtResource("1_2jht7")]
+script = ExtResource("2_drx3j")
+type = 0
+escape_dist_squared = 1200.0
+drop_pool = ExtResource("3_3mtid")
+color_swap = null
+death_sound = ExtResource("4_uurxe")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_8f55w")
+
+[node name="CollisionAvoidance" parent="." index="1"]
+push_force = 100.0
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_0jwrj")
+
+[node name="Sprite" parent="." index="4"]
+modulate = Color(1, 1, 1, 1)
+material = SubResource("ShaderMaterial_epse6")
+sprite_frames = SubResource("SpriteFrames_t7rat")
+
+[node name="OverheadHealthBar" parent="." index="5" node_paths=PackedStringArray("health_manager") instance=ExtResource("6_cifq8")]
+offset_left = -17.0
+offset_right = 17.0
+health_manager = NodePath("../HealthManager")
+
+[node name="BackHealthBar" parent="OverheadHealthBar" index="0"]
+offset_right = 34.0
+
+[node name="OffScreenMarker" parent="." index="6" instance=ExtResource("7_uw2yh")]
+visible = false
+
+[editable path="Hurtbox"]
+[editable path="OverheadHealthBar"]

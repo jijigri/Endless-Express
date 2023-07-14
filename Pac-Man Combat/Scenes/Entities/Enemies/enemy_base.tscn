@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://dujcruv7mv4c2"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/Misc/Enemy.gd" id="1_f3wq3"]
+[ext_resource type="Texture2D" uid="uid://bgn334x3mulwc" path="res://Sprites/Misc/16pxSquare.png" id="2_4wit7"]
+[ext_resource type="PackedScene" uid="uid://nud1vll6yhhh" path="res://Scenes/Tools/collision_avoidance.tscn" id="3_a56ua"]
+[ext_resource type="PackedScene" uid="uid://b7lq6gjy6c3df" path="res://Scenes/Tools/hurtbox.tscn" id="4_uym2t"]
+[ext_resource type="Script" path="res://Scripts/Tools/HealthManager.gd" id="5_ciwpj"]
+[ext_resource type="Script" path="res://Scenes/Entities/Enemies/Targets/EnemySprite.gd" id="6_ystb3"]
+[ext_resource type="PackedScene" uid="uid://0orid71kqqme" path="res://Scenes/Tools/status_effects_manager.tscn" id="7_qkhwf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg8cv"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hlm3"]
+atlas = ExtResource("2_4wit7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exwyp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hlm3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="RigidBody2D" groups=["Enemies"]]
+collision_layer = 2
+collision_mask = 0
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 16.0
+script = ExtResource("1_f3wq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hg8cv")
+
+[node name="CollisionAvoidance" parent="." instance=ExtResource("3_a56ua")]
+
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health_manager", "status_effects_manager") instance=ExtResource("4_uym2t")]
+collision_layer = 2
+collision_mask = 0
+health_manager = NodePath("../HealthManager")
+status_effects_manager = NodePath("../StatusEffectsManager")
+
+[node name="HealthManager" type="Node2D" parent="."]
+script = ExtResource("5_ciwpj")
+health_to_kill = 5
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.85098, 0.219608, 0.431373, 1)
+sprite_frames = SubResource("SpriteFrames_exwyp")
+autoplay = "default"
+script = ExtResource("6_ystb3")
+
+[node name="StatusEffectsManager" parent="." instance=ExtResource("7_qkhwf")]
+
+[connection signal="entity_killed" from="HealthManager" to="." method="_on_health_manager_entity_killed"]
+[connection signal="health_updated" from="HealthManager" to="." method="_on_health_manager_health_updated"]
+[connection signal="health_updated" from="HealthManager" to="Sprite" method="_on_health_manager_health_updated"]

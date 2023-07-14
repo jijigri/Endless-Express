@@ -1,0 +1,204 @@
+[gd_scene load_steps=6 format=3 uid="uid://dswd4tj8ik4q4"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Settings.gd" id="1_qvon4"]
+[ext_resource type="Theme" uid="uid://dgi4mcucy7t8i" path="res://Themes/MenuTheme.tres" id="2_cn7uc"]
+
+[sub_resource type="Animation" id="Animation_vj4sx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme:TabContainer/styles/panel:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 100, 45)]
+}
+
+[sub_resource type="Animation" id="Animation_0namr"]
+resource_name = "default"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme:TabContainer/styles/panel:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 100, 45), Rect2(100, 0, 100, 45), Rect2(200, 0, 100, 45), Rect2(300, 0, 100, 45), Rect2(400, 0, 100, 45), Rect2(500, 0, 100, 45)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8eadl"]
+_data = {
+"RESET": SubResource("Animation_vj4sx"),
+"default": SubResource("Animation_0namr")
+}
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qvon4")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_cn7uc")
+
+[node name="GENERAL" type="Control" parent="TabContainer"]
+layout_mode = 2
+
+[node name="Container" type="VBoxContainer" parent="TabContainer/GENERAL"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 23.0
+offset_right = -291.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Display" type="HSplitContainer" parent="TabContainer/GENERAL/Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+collapsed = true
+
+[node name="Label" type="Label" parent="TabContainer/GENERAL/Container/Display"]
+layout_mode = 2
+theme = ExtResource("2_cn7uc")
+text = "DISPLAY"
+
+[node name="DisplayType" type="OptionButton" parent="TabContainer/GENERAL/Container/Display"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_cn7uc")
+item_count = 3
+selected = 0
+popup/item_0/text = "FULLSCREEN"
+popup/item_0/id = 0
+popup/item_1/text = "WINDOWED"
+popup/item_1/id = 1
+popup/item_2/text = "MAXIMIZED"
+popup/item_2/id = 2
+
+[node name="MasterVolume" type="HSplitContainer" parent="TabContainer/GENERAL/Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+collapsed = true
+
+[node name="Label" type="Label" parent="TabContainer/GENERAL/Container/MasterVolume"]
+layout_mode = 2
+theme = ExtResource("2_cn7uc")
+text = "MASTER VOLUME"
+
+[node name="MasterVolume" type="HSlider" parent="TabContainer/GENERAL/Container/MasterVolume"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_cn7uc")
+min_value = -80.0
+max_value = 0.0
+
+[node name="FXVolume" type="HSplitContainer" parent="TabContainer/GENERAL/Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+dragger_visibility = 1
+
+[node name="Label" type="Label" parent="TabContainer/GENERAL/Container/FXVolume"]
+layout_mode = 2
+theme = ExtResource("2_cn7uc")
+text = "FX VOLUME"
+
+[node name="FXVolume" type="HSlider" parent="TabContainer/GENERAL/Container/FXVolume"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_cn7uc")
+min_value = -80.0
+max_value = 0.0
+
+[node name="MusicVolume" type="HSplitContainer" parent="TabContainer/GENERAL/Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+collapsed = true
+
+[node name="Label" type="Label" parent="TabContainer/GENERAL/Container/MusicVolume"]
+layout_mode = 2
+theme = ExtResource("2_cn7uc")
+text = "MUSIC VOLUME"
+
+[node name="MusicVolume" type="HSlider" parent="TabContainer/GENERAL/Container/MusicVolume"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_cn7uc")
+min_value = -80.0
+max_value = 0.0
+
+[node name="AmbienceVolume" type="HSplitContainer" parent="TabContainer/GENERAL/Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+collapsed = true
+
+[node name="Label" type="Label" parent="TabContainer/GENERAL/Container/AmbienceVolume"]
+layout_mode = 2
+theme = ExtResource("2_cn7uc")
+text = "AMBIENCE VOLUME"
+
+[node name="AmbienceVolume" type="HSlider" parent="TabContainer/GENERAL/Container/AmbienceVolume"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_cn7uc")
+min_value = -80.0
+max_value = 0.0
+
+[node name="BackButton" type="Button" parent="TabContainer/GENERAL"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 24.0
+offset_top = 199.0
+offset_right = 128.0
+offset_bottom = 240.0
+theme = ExtResource("2_cn7uc")
+text = "BACK"
+
+[node name="ScreenAnimator" type="AnimationPlayer" parent="TabContainer"]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_8eadl")
+}
+
+[connection signal="item_selected" from="TabContainer/GENERAL/Container/Display/DisplayType" to="." method="_on_display_type_item_selected"]
+[connection signal="value_changed" from="TabContainer/GENERAL/Container/MasterVolume/MasterVolume" to="." method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="TabContainer/GENERAL/Container/FXVolume/FXVolume" to="." method="_on_fx_volume_value_changed"]
+[connection signal="value_changed" from="TabContainer/GENERAL/Container/MusicVolume/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="TabContainer/GENERAL/Container/AmbienceVolume/AmbienceVolume" to="." method="_on_ambience_volume_value_changed"]
+[connection signal="pressed" from="TabContainer/GENERAL/BackButton" to="." method="_on_back_button_pressed"]

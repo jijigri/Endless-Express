@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://nud1vll6yhhh"]
+
+[ext_resource type="Script" path="res://Scripts/Tools/CollisionAvoidance.gd" id="1_dhjhr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gn0ne"]
+resource_local_to_scene = true
+radius = 20.0
+
+[node name="CollisionAvoidance" type="Area2D" node_paths=PackedStringArray("rigidbody")]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_dhjhr")
+rigidbody = NodePath("..")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gn0ne")

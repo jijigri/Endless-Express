@@ -1,0 +1,317 @@
+[gd_scene load_steps=30 format=3 uid="uid://cojbk6x81ge2g"]
+
+[ext_resource type="Script" path="res://Scripts/Singletons/PlayerHUD.gd" id="1_3hb1h"]
+[ext_resource type="Texture2D" uid="uid://cka7m7pym744y" path="res://Sprites/UI/HUDBars.png" id="2_kyhxa"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="3_3ibqc"]
+[ext_resource type="Script" path="res://Scenes/Singletons/FpsCounter.gd" id="4_0xndq"]
+[ext_resource type="Texture2D" uid="uid://btkw2d188yg5r" path="res://Sprites/UI/HUDAtlas.png" id="5_8o7ba"]
+[ext_resource type="Script" path="res://Scenes/Singletons/MovementAbilitySlot.gd" id="6_ud82w"]
+[ext_resource type="Texture2D" uid="uid://cdg5pjvsn3wxb" path="res://Sprites/UI/DefaultPlayerRollIcon.png" id="7_2opj5"]
+[ext_resource type="Texture2D" uid="uid://bpytacx2vbouq" path="res://Sprites/UI/MovementAbilitySlot.png" id="8_doxvk"]
+[ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="9_am7ky"]
+[ext_resource type="PackedScene" uid="uid://du4tg656nchrm" path="res://Scenes/UI/ability_slot.tscn" id="9_nxxq3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gsll"]
+atlas = ExtResource("2_kyhxa")
+region = Rect2(0, 16, 148, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw8o2"]
+atlas = ExtResource("2_kyhxa")
+region = Rect2(0, 32, 148, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dt57"]
+atlas = ExtResource("2_kyhxa")
+region = Rect2(0, 48, 148, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dy6s1"]
+shader = ExtResource("3_3ibqc")
+shader_parameter/STRENGTH = 0.0
+shader_parameter/OLD_COLOR1 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/OLD_COLOR2 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/OLD_COLOR3 = Color(1, 0.435294, 0, 1)
+shader_parameter/OLD_COLOR4 = Color(1, 0.533333, 0, 1)
+shader_parameter/NEW_COLOR1 = Color(0.898039, 0.141176, 0.141176, 1)
+shader_parameter/NEW_COLOR2 = Color(0.156863, 0.156863, 0.27451, 1)
+shader_parameter/NEW_COLOR3 = null
+shader_parameter/NEW_COLOR4 = null
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlcia"]
+resource_local_to_scene = true
+atlas = ExtResource("2_kyhxa")
+region = Rect2(0, 0, 148, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkjmh"]
+atlas = ExtResource("2_kyhxa")
+region = Rect2(0, 98, 132, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu1nr"]
+atlas = ExtResource("2_kyhxa")
+region = Rect2(0, 114, 132, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqywc"]
+resource_local_to_scene = true
+atlas = ExtResource("2_kyhxa")
+region = Rect2(0, 130, 132, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vkll"]
+resource_local_to_scene = true
+atlas = ExtResource("2_kyhxa")
+region = Rect2(0, 82, 132, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi8kp"]
+atlas = ExtResource("5_8o7ba")
+region = Rect2(0, 32, 48, 48)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp2b1"]
+content_margin_left = 0.0
+content_margin_top = 2.0
+content_margin_right = 0.0
+bg_color = Color(0, 0, 0, 0)
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdc6r"]
+atlas = ExtResource("8_doxvk")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytjhk"]
+atlas = ExtResource("8_doxvk")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6vtq"]
+atlas = ExtResource("8_doxvk")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oarjl"]
+atlas = ExtResource("8_doxvk")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgu5k"]
+atlas = ExtResource("8_doxvk")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n70g0"]
+atlas = ExtResource("8_doxvk")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ndnd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytjhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6vtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oarjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgu5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n70g0")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4qfe"]
+atlas = ExtResource("8_doxvk")
+region = Rect2(0, 0, 48, 48)
+
+[node name="PlayerHUD" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_right = -8.0
+offset_bottom = 64.0
+grow_horizontal = 2
+script = ExtResource("1_3hb1h")
+
+[node name="HealthBarBack" type="TextureProgressBar" parent="."]
+texture_repeat = 2
+layout_mode = 1
+offset_left = 46.0
+offset_top = 19.0
+offset_right = 194.0
+offset_bottom = 35.0
+value = 80.0
+stretch_margin_left = 5
+stretch_margin_top = 5
+stretch_margin_right = 5
+stretch_margin_bottom = 5
+texture_under = SubResource("AtlasTexture_4gsll")
+texture_over = SubResource("AtlasTexture_hw8o2")
+texture_progress = SubResource("AtlasTexture_6dt57")
+tint_over = Color(1, 1, 1, 0)
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_dy6s1")
+layout_mode = 1
+offset_left = 46.0
+offset_top = 19.0
+offset_right = 194.0
+offset_bottom = 35.0
+value = 50.0
+stretch_margin_left = 5
+stretch_margin_top = 5
+stretch_margin_right = 5
+stretch_margin_bottom = 5
+texture_under = SubResource("AtlasTexture_4gsll")
+texture_over = SubResource("AtlasTexture_hw8o2")
+texture_progress = SubResource("AtlasTexture_hlcia")
+tint_under = Color(0.0980392, 0.0941176, 0.160784, 0)
+
+[node name="EnergyBarBack" type="TextureProgressBar" parent="."]
+texture_repeat = 2
+layout_mode = 1
+offset_left = 46.0
+offset_top = 33.0
+offset_right = 178.0
+offset_bottom = 45.0
+value = 80.0
+stretch_margin_left = 5
+stretch_margin_top = 5
+stretch_margin_right = 5
+stretch_margin_bottom = 5
+texture_under = SubResource("AtlasTexture_wkjmh")
+texture_over = SubResource("AtlasTexture_eu1nr")
+texture_progress = SubResource("AtlasTexture_aqywc")
+
+[node name="EnergyBar" type="TextureProgressBar" parent="."]
+texture_repeat = 2
+layout_mode = 1
+offset_left = 46.0
+offset_top = 33.0
+offset_right = 178.0
+offset_bottom = 45.0
+value = 50.0
+stretch_margin_left = 5
+stretch_margin_top = 5
+stretch_margin_right = 5
+stretch_margin_bottom = 5
+texture_under = SubResource("AtlasTexture_wkjmh")
+texture_over = SubResource("AtlasTexture_eu1nr")
+texture_progress = SubResource("AtlasTexture_7vkll")
+tint_under = Color(0.0980392, 0.0941176, 0.160784, 0)
+
+[node name="FPSCounter" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 42.0
+grow_horizontal = 0
+text = "144"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_0xndq")
+
+[node name="MovementAbility" type="Sprite2D" parent="."]
+position = Vector2(24, 32)
+texture = SubResource("AtlasTexture_pi8kp")
+script = ExtResource("6_ud82w")
+
+[node name="Keybind" type="Label" parent="MovementAbility"]
+modulate = Color(0.156863, 0.156863, 0.27451, 1)
+z_index = 4
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -69.0
+offset_top = -43.0
+offset_right = -26.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("9_am7ky")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kp2b1")
+text = "SHIFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+max_lines_visible = 1
+
+[node name="Icon" type="Sprite2D" parent="MovementAbility"]
+modulate = Color(1, 1, 1, 0.407843)
+texture = ExtResource("7_2opj5")
+region_rect = Rect2(0, 0, 48, 10)
+
+[node name="Progress" type="TextureProgressBar" parent="MovementAbility"]
+modulate = Color(0, 0, 0, 0.470588)
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+max_value = 1.5
+step = 0.05
+value = 1.5
+fill_mode = 3
+texture_progress = SubResource("AtlasTexture_xdc6r")
+
+[node name="Shine" type="AnimatedSprite2D" parent="MovementAbility"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_2ndnd")
+frame_progress = 0.952509
+
+[node name="Blink" type="Sprite2D" parent="MovementAbility"]
+visible = false
+z_index = 2
+texture = SubResource("AtlasTexture_e4qfe")
+
+[node name="Abilities" type="Node2D" parent="."]
+
+[node name="AbilitySlot" parent="Abilities" instance=ExtResource("9_nxxq3")]
+
+[node name="AbilitySlot2" parent="Abilities" instance=ExtResource("9_nxxq3")]
+position = Vector2(86, 64)
+
+[node name="AbilitySlot3" parent="Abilities" instance=ExtResource("9_nxxq3")]
+visible = false
+position = Vector2(126, 64)

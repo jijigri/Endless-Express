@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dikaag12v0yrj"]
+
+[ext_resource type="Script" path="res://Scripts/ResourcePack.gd" id="1_rjsyd"]
+[ext_resource type="Texture2D" uid="uid://dofgmc1ec7ofe" path="res://Sprites/Pickups/HealthPack.png" id="1_x37ox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl7cc"]
+size = Vector2(12, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gix6r"]
+radius = 50.0
+
+[node name="HealthResourcePack" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 4
+gravity_scale = 0.0
+linear_damp = 5.0
+script = ExtResource("1_rjsyd")
+value = 8.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cl7cc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x37ox")
+
+[node name="MagnetRange" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagnetRange"]
+shape = SubResource("CircleShape2D_gix6r")

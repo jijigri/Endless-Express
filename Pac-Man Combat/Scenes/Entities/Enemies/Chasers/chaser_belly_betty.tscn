@@ -1,0 +1,199 @@
+[gd_scene load_steps=28 format=3 uid="uid://sllx11otflm3"]
+
+[ext_resource type="PackedScene" uid="uid://byf88knlr3kiy" path="res://Scenes/Entities/Enemies/Chasers/enemy_chaser_base.tscn" id="1_yxpog"]
+[ext_resource type="Shader" path="res://Shaders/Blink.gdshader" id="2_0jbr5"]
+[ext_resource type="PackedScene" uid="uid://brhog7rk3d50y" path="res://Scenes/Tools/EnemyTools/Movement/player_tracking_movement.tscn" id="2_aoxb2"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/StateMachines/BellyBettyStateMachine.gd" id="2_ugysk"]
+[ext_resource type="PackedScene" uid="uid://dtvm0idaw1wbp" path="res://Scenes/Entities/Misc/enemy_explosion.tscn" id="3_5nm3i"]
+[ext_resource type="PackedScene" uid="uid://c7xcbddyitqet" path="res://Scenes/Tools/EnemyTools/Movement/escape_movement.tscn" id="3_qrnvc"]
+[ext_resource type="PackedScene" uid="uid://bui80x1ox2psd" path="res://Scenes/Tools/EnemyTools/Movement/player_prediction_movement.tscn" id="6_b547v"]
+[ext_resource type="Texture2D" uid="uid://b1nukb2mg6ha3" path="res://Sprites/Entities/Enemies/Chasers/BellyBettySprite.png" id="7_5dguw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yhyk"]
+resource_local_to_scene = true
+size = Vector2(8, 8)
+
+[sub_resource type="Curve" id="Curve_f036g"]
+max_value = 4.5
+_data = [Vector2(0, 1), 0.0, 1.51493, 0, 0, Vector2(1, 4.5), 7.12281, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_v0lx8"]
+max_value = 5.0
+_data = [Vector2(0, 1), 0.0, 1.95192, 0, 0, Vector2(1, 5), 7.12281, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulmpc"]
+resource_local_to_scene = true
+size = Vector2(28, 46)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y0syh"]
+resource_local_to_scene = true
+shader = ExtResource("2_0jbr5")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5jtg"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi3wv"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45s4d"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frmbe"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw4ti"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnd06"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccvt7"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dxvq"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqu53"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlaf8"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hynv"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h4h1"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvlwd"]
+atlas = ExtResource("7_5dguw")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mtnpm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5jtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi3wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45s4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frmbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw4ti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnd06")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccvt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dxvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqu53")
+}],
+"loop": false,
+"name": &"warmup",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlaf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hynv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h4h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvlwd")
+}],
+"loop": true,
+"name": &"warmup_loop",
+"speed": 12.0
+}]
+
+[node name="BellyBetty" node_paths=PackedStringArray("retreat_movement", "default_movement") instance=ExtResource("1_yxpog")]
+script = ExtResource("2_ugysk")
+time_to_explode = 0.75
+explosion_size = 58.0
+explosion_damage = 70.0
+explosion_scene = ExtResource("3_5nm3i")
+player_explosion_size = 72.0
+player_explosion_damage = 50.0
+retreat_movement = NodePath("Movement/EscapeMovement")
+default_movement = NodePath("Movement/PlayerPredictionMovement")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_8yhyk")
+
+[node name="PlayerTrackingMovement" parent="Movement" index="0" instance=ExtResource("2_aoxb2")]
+process_mode = 4
+move_speed = 100.0
+speed_over_time = SubResource("Curve_f036g")
+max_time = 100.0
+
+[node name="EscapeMovement" parent="Movement" index="1" instance=ExtResource("3_qrnvc")]
+
+[node name="PlayerPredictionMovement" parent="Movement" index="2" instance=ExtResource("6_b547v")]
+min_predict_distance_in_tiles = 4
+max_predict_distance_in_tiles = 30
+max_rush_distance = 30.0
+distance_from_player_to_rush_in_tiles = 20
+dumb_prediction = true
+dumb_player_velocity_damp = 4.1
+speed_over_time = SubResource("Curve_v0lx8")
+
+[node name="Timer" parent="Movement/PlayerPredictionMovement/NavigationAgent2D" index="0"]
+wait_time = 0.1
+
+[node name="RushTimer" parent="Movement/PlayerPredictionMovement" index="2"]
+wait_time = 4.0
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_ulmpc")
+
+[node name="Sprite" parent="." index="5"]
+material = SubResource("ShaderMaterial_y0syh")
+sprite_frames = SubResource("SpriteFrames_mtnpm")
+flip_h = true
+
+[node name="ArmoredHealthBar" parent="." index="6"]
+offset_top = -32.0
+offset_bottom = -26.0
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="frame_changed" from="Sprite" to="." method="_on_sprite_frame_changed"]
+[connection signal="effect_applied" from="StatusEffectsManager" to="." method="_on_status_effects_manager_effect_applied"]
+
+[editable path="Movement/PlayerPredictionMovement"]
+[editable path="Hurtbox"]

@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=3 uid="uid://lfkpx4xn5nau"]
+
+[ext_resource type="Texture2D" uid="uid://bj8gvkgsbldw" path="res://Sprites/Misc/128pxCircle.png" id="1_x732f"]
+[ext_resource type="Script" path="res://Scenes/Effects/ParticlesEffect.gd" id="2_hix3k"]
+
+[sub_resource type="Curve" id="Curve_2ldmv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.686411, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.11382, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ds1hq"]
+curve = SubResource("Curve_2ldmv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r7fbr"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_ds1hq")
+
+[sub_resource type="Curve" id="Curve_e5s2w"]
+_data = [Vector2(0, 1), 0.0, -1.68141, 0, 0, Vector2(0.383275, 0.327273), -1.01465, -1.01465, 0, 0, Vector2(1, 0), 0.35258, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_nmwvm"]
+curve = SubResource("Curve_e5s2w")
+
+[sub_resource type="Curve" id="Curve_biuku"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.369338, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vxcdd"]
+curve = SubResource("Curve_biuku")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n2kqa"]
+lifetime_randomness = 0.8
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 400.0
+orbit_velocity_min = -0.1
+orbit_velocity_max = 0.1
+tangential_accel_max = 20.0
+damping_min = 50.0
+damping_max = 50.0
+scale_min = 0.02
+scale_max = 0.05
+scale_curve = SubResource("CurveTexture_nmwvm")
+turbulence_enabled = true
+turbulence_noise_strength = 2.0
+turbulence_noise_scale = 1.0
+turbulence_noise_speed = Vector3(0, 0, 0)
+turbulence_noise_speed_random = 0.2
+turbulence_influence_over_life = SubResource("CurveTexture_vxcdd")
+
+[node name="SuperPowerupDestroyEffect" type="GPUParticles2D"]
+position = Vector2(0, -128)
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_r7fbr")
+texture = ExtResource("1_x732f")
+lifetime = 0.05
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("2_hix3k")
+time = 5.0
+
+[node name="FlashLines" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_n2kqa")
+texture = ExtResource("1_x732f")
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.9
+trail_enabled = true
+trail_lifetime = 1.0
+trail_sections = 2
+trail_section_subdivisions = 1
+
+[node name="Trails" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_n2kqa")
+texture = ExtResource("1_x732f")
+one_shot = true
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.5
+trail_sections = 16
+trail_section_subdivisions = 2

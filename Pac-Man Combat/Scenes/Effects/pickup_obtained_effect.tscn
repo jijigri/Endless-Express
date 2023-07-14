@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://cj5o6faywtddf"]
+
+[ext_resource type="Texture2D" uid="uid://k4ysng67n31n" path="res://Sprites/Effects/PickupObtainedEffect.png" id="1_igm8e"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_fk3cx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kn2e"]
+atlas = ExtResource("1_igm8e")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uqp7"]
+atlas = ExtResource("1_igm8e")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylk46"]
+atlas = ExtResource("1_igm8e")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o44b4"]
+atlas = ExtResource("1_igm8e")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teudt"]
+atlas = ExtResource("1_igm8e")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ei8uk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kn2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uqp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylk46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o44b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teudt")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="PicupObtainedEffect" type="AnimatedSprite2D"]
+z_index = -2
+sprite_frames = SubResource("SpriteFrames_ei8uk")
+autoplay = "default"
+script = ExtResource("2_fk3cx")

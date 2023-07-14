@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://byf88knlr3kiy"]
+
+[ext_resource type="PackedScene" uid="uid://dujcruv7mv4c2" path="res://Scenes/Entities/Enemies/enemy_base.tscn" id="1_u4xmi"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/StateMachines/ChaserStateMachine.gd" id="2_8nnmx"]
+[ext_resource type="PackedScene" uid="uid://ce0huhn8sem5b" path="res://Scenes/Effects/chaser_death_effect.tscn" id="3_qaudg"]
+[ext_resource type="Shader" path="res://Shaders/Blink.gdshader" id="3_ugcr7"]
+[ext_resource type="Script" path="res://Scripts/ArmoredHealthManager.gd" id="3_xwgbp"]
+[ext_resource type="AudioStream" uid="uid://cu4rsyi6vuu3p" path="res://Audio/SoundEffects/Enemies/ChaserDeathSound.wav" id="4_icrq8"]
+[ext_resource type="PackedScene" uid="uid://dksmuc0t8vq41" path="res://Scenes/Tools/armored_health_bar.tscn" id="5_j0nqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_443mj"]
+resource_local_to_scene = true
+size = Vector2(8, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ens8g"]
+resource_local_to_scene = true
+shader = ExtResource("3_ugcr7")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[node name="ChaserEnemy" groups=["Chasers"] instance=ExtResource("1_u4xmi")]
+collision_mask = 4
+script = ExtResource("2_8nnmx")
+death_effect = ExtResource("3_qaudg")
+death_sound = ExtResource("4_icrq8")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_443mj")
+
+[node name="Movement" type="Node2D" parent="." index="2"]
+
+[node name="HealthManager" parent="." index="4" groups=["ArmoredHealthManagers"]]
+script = ExtResource("3_xwgbp")
+armor_recharge_time = 5.0
+armor_damage_reduction = 85.0
+
+[node name="Sprite" parent="." index="5"]
+modulate = Color(0.792157, 0.298039, 0.478431, 1)
+material = SubResource("ShaderMaterial_ens8g")
+
+[node name="ArmoredHealthBar" parent="." index="6" node_paths=PackedStringArray("health_manager") instance=ExtResource("5_j0nqy")]
+health_manager = NodePath("../HealthManager")
+
+[node name="ChaserAttacksHolder" type="Node2D" parent="." index="8"]
+
+[connection signal="armor_broken" from="HealthManager" to="." method="_on_health_manager_armor_broken"]
+[connection signal="armor_repaired" from="HealthManager" to="." method="_on_health_manager_armor_repaired"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DropPool" load_steps=5 format=3 uid="uid://ck7cw86nl7wl1"]
+
+[ext_resource type="PackedScene" uid="uid://dikaag12v0yrj" path="res://Scenes/Entities/ResourcePacks/health_resource_pack.tscn" id="1_lox40"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropData.gd" id="2_c48ji"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropPool.gd" id="3_equ38"]
+
+[sub_resource type="Resource" id="Resource_omigs"]
+script = ExtResource("2_c48ji")
+scene = ExtResource("1_lox40")
+amount = 4
+
+[resource]
+script = ExtResource("3_equ38")
+pool = Array[ExtResource("2_c48ji")]([SubResource("Resource_omigs")])

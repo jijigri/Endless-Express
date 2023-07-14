@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EnemyPool" load_steps=9 format=3 uid="uid://b7ebm0qwnb6f1"]
+
+[ext_resource type="PackedScene" uid="uid://bktsiox8ili0c" path="res://Scenes/Entities/Enemies/Targets/bubble_target.tscn" id="1_edcmq"]
+[ext_resource type="Script" path="res://Scripts/Resources/EnemyData.gd" id="2_l60vb"]
+[ext_resource type="PackedScene" uid="uid://4tecwc5i5bc" path="res://Scenes/Entities/Enemies/Targets/target_siren.tscn" id="3_ytyut"]
+[ext_resource type="Script" path="res://Scripts/Resources/EnemyPool.gd" id="4_kwwlu"]
+[ext_resource type="PackedScene" uid="uid://dvokt0slrsp83" path="res://Scenes/Entities/Enemies/Targets/target_hacker.tscn" id="4_xog68"]
+
+[sub_resource type="Resource" id="Resource_cnt2m"]
+script = ExtResource("2_l60vb")
+name = "Bubble"
+scene = ExtResource("1_edcmq")
+
+[sub_resource type="Resource" id="Resource_fhi4t"]
+script = ExtResource("2_l60vb")
+name = "Siren"
+scene = ExtResource("3_ytyut")
+
+[sub_resource type="Resource" id="Resource_21pqd"]
+script = ExtResource("2_l60vb")
+name = "Hacker"
+scene = ExtResource("4_xog68")
+
+[resource]
+script = ExtResource("4_kwwlu")
+enemy_pool = Array[ExtResource("2_l60vb")]([SubResource("Resource_cnt2m"), SubResource("Resource_fhi4t"), SubResource("Resource_21pqd")])

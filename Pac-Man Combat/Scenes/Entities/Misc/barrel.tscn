@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://cx1ar2jtbxxiw"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Misc/Barrel.gd" id="1_a7agf"]
+[ext_resource type="Texture2D" uid="uid://6mlfb1askjxk" path="res://Sprites/Entities/Misc/BarrelSprite.png" id="2_m3o02"]
+[ext_resource type="PackedScene" uid="uid://460412mt4ky1" path="res://Scenes/Tools/EnemyTools/collision_damage.tscn" id="3_8c337"]
+[ext_resource type="PackedScene" uid="uid://cfoemwbbnhoxt" path="res://Scenes/Tools/health_manager.tscn" id="4_ve8u7"]
+[ext_resource type="PackedScene" uid="uid://b7lq6gjy6c3df" path="res://Scenes/Tools/hurtbox.tscn" id="5_p7oj6"]
+[ext_resource type="AudioStream" uid="uid://dg1rqkrkos6wm" path="res://Audio/SoundEffects/Misc/BarrelRollSound.wav" id="6_bilad"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4lc5l"]
+friction = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vyvh"]
+atlas = ExtResource("2_m3o02")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6rf18"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vyvh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_on4h7"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghkqk"]
+size = Vector2(24, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6rc2l"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pp4qq"]
+radius = 18.0
+
+[node name="Barrel" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 12
+physics_material_override = SubResource("PhysicsMaterial_4lc5l")
+gravity_scale = 0.8
+lock_rotation = true
+linear_damp_mode = 1
+script = ExtResource("1_a7agf")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6rf18")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_on4h7")
+
+[node name="GroundDetection" type="Area2D" parent="."]
+position = Vector2(0, 8)
+collision_layer = 0
+collision_mask = 12
+priority = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetection"]
+shape = SubResource("RectangleShape2D_ghkqk")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(16, 0)
+collision_mask = 12
+
+[node name="CollisionDamage" parent="." instance=ExtResource("3_8c337")]
+damage = 38.0
+
+[node name="CollisionShape2D" parent="CollisionDamage/Area2D" index="0"]
+shape = SubResource("CircleShape2D_6rc2l")
+
+[node name="HealthManager" parent="." instance=ExtResource("4_ve8u7")]
+max_health = 15.0
+
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health_manager") instance=ExtResource("5_p7oj6")]
+collision_layer = 2
+collision_mask = 0
+health_manager = NodePath("../HealthManager")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_pp4qq")
+
+[node name="RollingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_bilad")
+volume_db = 2.0
+max_distance = 1500.0
+panning_strength = 2.0
+bus = &"FX"
+
+[connection signal="body_entered" from="GroundDetection" to="." method="_on_ground_detection_body_entered"]
+[connection signal="damage_dealt" from="CollisionDamage" to="." method="_on_collision_damage_damage_dealt"]
+[connection signal="entity_killed" from="HealthManager" to="." method="_on_health_manager_entity_killed"]
+
+[editable path="CollisionDamage"]
+[editable path="Hurtbox"]

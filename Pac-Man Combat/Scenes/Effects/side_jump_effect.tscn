@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs7o76hnrmk34"]
+
+[ext_resource type="Texture2D" uid="uid://byj5ko2fpbr1l" path="res://Sprites/Effects/PlayerParticles.png" id="1_1ssrs"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_g52qk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72dmx"]
+atlas = ExtResource("1_1ssrs")
+region = Rect2(1152, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kmrg"]
+atlas = ExtResource("1_1ssrs")
+region = Rect2(1216, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05ncb"]
+atlas = ExtResource("1_1ssrs")
+region = Rect2(1280, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84xhr"]
+atlas = ExtResource("1_1ssrs")
+region = Rect2(1344, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hydt"]
+atlas = ExtResource("1_1ssrs")
+region = Rect2(1408, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0mth"]
+atlas = ExtResource("1_1ssrs")
+region = Rect2(1472, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xw1e6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72dmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kmrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05ncb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84xhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hydt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0mth")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="PlayerSideJumpEffect" type="AnimatedSprite2D"]
+z_index = 4
+sprite_frames = SubResource("SpriteFrames_xw1e6")
+autoplay = "default"
+offset = Vector2(0, 8)
+script = ExtResource("2_g52qk")

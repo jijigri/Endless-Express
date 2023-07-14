@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkyd4u44vqkdt"]
+
+[ext_resource type="Texture2D" uid="uid://dltworcmti20e" path="res://Sprites/Effects/BarrelShatterPieces.png" id="1_v4iid"]
+[ext_resource type="Script" path="res://Scenes/Effects/ParticlesEffect.gd" id="2_sm6th"]
+[ext_resource type="Texture2D" uid="uid://bj8gvkgsbldw" path="res://Sprites/Misc/128pxCircle.png" id="3_shuch"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cqmdh"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 3
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_67oov"]
+_data = [Vector2(0, 0), 0.0, 24.9429, 0, 0, Vector2(0.116838, 1), 0.0, 0.0, 0, 0, Vector2(0.357388, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.52728, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_pulki"]
+curve = SubResource("Curve_67oov")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yl3kv"]
+lifetime_randomness = 0.5
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 16.0
+emission_ring_inner_radius = 8.0
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+flatness = 0.1
+gravity = Vector3(0, 200, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 120.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 10.0
+damping_max = 20.0
+scale_curve = SubResource("CurveTexture_pulki")
+anim_offset_max = 1.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_boa72"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_max = 0.5
+
+[node name="BarrelDestroyEffect" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_cqmdh")
+position = Vector2(-57, -12)
+emitting = false
+amount = 102
+process_material = SubResource("ParticleProcessMaterial_yl3kv")
+texture = ExtResource("1_v4iid")
+lifetime = 0.5
+one_shot = true
+speed_scale = 1.4
+explosiveness = 0.9
+randomness = 0.5
+fixed_fps = 60
+script = ExtResource("2_sm6th")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_boa72")
+texture = ExtResource("3_shuch")
+lifetime = 0.05
+one_shot = true
+explosiveness = 1.0

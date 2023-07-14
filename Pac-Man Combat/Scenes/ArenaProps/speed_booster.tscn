@@ -1,0 +1,99 @@
+[gd_scene load_steps=14 format=3 uid="uid://c0uw81i2nyde4"]
+
+[ext_resource type="Script" path="res://Scripts/World/ArenaProps/SpeedModifier.gd" id="1_jbo64"]
+[ext_resource type="Texture2D" uid="uid://dlfx71q5ca14s" path="res://Sprites/Misc/SpeedModifier.png" id="2_twa4m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbkwa"]
+resource_local_to_scene = true
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pce7a"]
+atlas = ExtResource("2_twa4m")
+region = Rect2(0, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l0yt"]
+atlas = ExtResource("2_twa4m")
+region = Rect2(46, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0uey"]
+atlas = ExtResource("2_twa4m")
+region = Rect2(92, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxdm8"]
+atlas = ExtResource("2_twa4m")
+region = Rect2(138, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3l0c"]
+atlas = ExtResource("2_twa4m")
+region = Rect2(184, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ws6b"]
+atlas = ExtResource("2_twa4m")
+region = Rect2(230, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64l3t"]
+atlas = ExtResource("2_twa4m")
+region = Rect2(276, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cn4b"]
+atlas = ExtResource("2_twa4m")
+region = Rect2(322, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b006b"]
+atlas = ExtResource("2_twa4m")
+region = Rect2(368, 0, 46, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ynvl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pce7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l0yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0uey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxdm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3l0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ws6b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64l3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cn4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b006b")
+}],
+"loop": false,
+"name": &"use",
+"speed": 12.0
+}]
+
+[node name="SpeedBooster" type="Area2D"]
+z_index = -2
+position = Vector2(128, -8)
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_jbo64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xbkwa")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_0ynvl")
+autoplay = "default"

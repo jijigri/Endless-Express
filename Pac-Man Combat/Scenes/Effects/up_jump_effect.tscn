@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://bixcyjhlj7oix"]
+
+[ext_resource type="Texture2D" uid="uid://byj5ko2fpbr1l" path="res://Sprites/Effects/PlayerParticles.png" id="1_d1i7f"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_s8jqk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ribeh"]
+atlas = ExtResource("1_d1i7f")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abolc"]
+atlas = ExtResource("1_d1i7f")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qojh"]
+atlas = ExtResource("1_d1i7f")
+region = Rect2(896, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcjwr"]
+atlas = ExtResource("1_d1i7f")
+region = Rect2(960, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y4x0"]
+atlas = ExtResource("1_d1i7f")
+region = Rect2(1024, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeero"]
+atlas = ExtResource("1_d1i7f")
+region = Rect2(1088, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6uh47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ribeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abolc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qojh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcjwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y4x0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeero")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="PlayerUpJumpEffect" type="AnimatedSprite2D"]
+z_index = 4
+sprite_frames = SubResource("SpriteFrames_6uh47")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+offset = Vector2(0, 8)
+script = ExtResource("2_s8jqk")

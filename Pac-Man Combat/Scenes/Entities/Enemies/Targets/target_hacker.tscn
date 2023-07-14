@@ -1,0 +1,295 @@
+[gd_scene load_steps=47 format=3 uid="uid://dvokt0slrsp83"]
+
+[ext_resource type="PackedScene" uid="uid://xvuee84dulmc" path="res://Scenes/Entities/Enemies/Targets/enemy_target_base.tscn" id="1_3cqgu"]
+[ext_resource type="Script" path="res://Scenes/Entities/Enemies/Targets/HackerStateMachine.gd" id="2_qo6vn"]
+[ext_resource type="PackedScene" uid="uid://b1w8emwm3yqyo" path="res://Scenes/Effects/bubble_death_effect.tscn" id="3_2rkj8"]
+[ext_resource type="PackedScene" uid="uid://dikaag12v0yrj" path="res://Scenes/Entities/ResourcePacks/health_resource_pack.tscn" id="3_o08lp"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropData.gd" id="4_ehfu6"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropPool.gd" id="5_e1a68"]
+[ext_resource type="Resource" uid="uid://bncohlwnn2dx1" path="res://Resources/ColorSwaps/BubbleColorSwap.tres" id="6_hrxxi"]
+[ext_resource type="PackedScene" uid="uid://timcni11hara" path="res://Scenes/Entities/ResourcePacks/energy_resource_pack.tscn" id="6_yluf1"]
+[ext_resource type="AudioStream" uid="uid://cc0i77a7ffoug" path="res://Audio/SoundEffects/Enemies/TargetHacker/HackerSpawnSound.wav" id="8_0n1xr"]
+[ext_resource type="Texture2D" uid="uid://d15xgnbsdoymw" path="res://Sprites/Entities/Enemies/Targets/HackerSprite.png" id="9_w4dlm"]
+[ext_resource type="Script" path="res://Scripts/Resources/TargetDropPool.gd" id="9_wuxv3"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="11_e6f6h"]
+[ext_resource type="Texture2D" uid="uid://cf2c3qdanq78q" path="res://Sprites/Misc/RoundParticles.png" id="11_f4tkh"]
+[ext_resource type="PackedScene" uid="uid://dwq7gd71x1s8b" path="res://Scenes/Tools/EnemyTools/Movement/wander_movement.tscn" id="11_p6w3b"]
+[ext_resource type="Shader" path="res://Shaders/bubble_target.gdshader" id="11_pmpof"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/Movement/PathfindingMovement.gd" id="12_j4037"]
+[ext_resource type="Texture2D" uid="uid://bfmsitgcnouya" path="res://Sprites/Misc/HackerMarker.png" id="12_usc6r"]
+[ext_resource type="AudioStream" uid="uid://br7hpl3bu32fy" path="res://Audio/SoundEffects/Enemies/TargetHacker/HackerHoverSound.wav" id="13_twayv"]
+
+[sub_resource type="Resource" id="Resource_1dfsd"]
+script = ExtResource("4_ehfu6")
+scene = ExtResource("3_o08lp")
+amount = 12
+
+[sub_resource type="Resource" id="Resource_npf14"]
+script = ExtResource("5_e1a68")
+pool = Array[ExtResource("4_ehfu6")]([SubResource("Resource_1dfsd")])
+
+[sub_resource type="Resource" id="Resource_dbffh"]
+script = ExtResource("4_ehfu6")
+scene = ExtResource("6_yluf1")
+amount = 16
+
+[sub_resource type="Resource" id="Resource_lmimc"]
+script = ExtResource("5_e1a68")
+pool = Array[ExtResource("4_ehfu6")]([SubResource("Resource_dbffh")])
+
+[sub_resource type="Resource" id="Resource_ydj4l"]
+script = ExtResource("9_wuxv3")
+drops_in_enum_order = Array[ExtResource("5_e1a68")]([SubResource("Resource_npf14"), SubResource("Resource_lmimc")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4st5p"]
+resource_local_to_scene = true
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kpr3"]
+resource_local_to_scene = true
+size = Vector2(26, 40)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahxos"]
+resource_local_to_scene = true
+shader = ExtResource("11_pmpof")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+shader_parameter/OLD_COLOR1 = null
+shader_parameter/OLD_COLOR2 = null
+shader_parameter/OLD_COLOR3 = null
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = null
+shader_parameter/NEW_COLOR2 = null
+shader_parameter/NEW_COLOR3 = null
+shader_parameter/NEW_COLOR4 = null
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_363bg"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0gmx"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g6om"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5je1"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s5dp"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tjnt"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slthf"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_815t0"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rlck"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3wcx"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abfgm"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o42f6"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqs3r"]
+atlas = ExtResource("9_w4dlm")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_77rrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_363bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0gmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g6om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5je1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s5dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tjnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slthf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_815t0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rlck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3wcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abfgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o42f6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqs3r")
+}],
+"loop": true,
+"name": &"hacking",
+"speed": 12.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_akutg"]
+particles_animation = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_e185b"]
+_data = [Vector2(0, 0), 0.0, 8.60661, 0, 0, Vector2(0.169291, 1), 0.0, 0.0, 0, 0, Vector2(0.629921, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.50629, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_maafd"]
+curve = SubResource("Curve_e185b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l5i27"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+direction = Vector3(0, -2, 0)
+spread = 10.0
+flatness = 1.0
+gravity = Vector3(0, 120, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_maafd")
+color = Color(0.839216, 0.839216, 0.839216, 1)
+anim_offset_min = 0.3
+anim_offset_max = 0.6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ng7c"]
+atlas = ExtResource("11_f4tkh")
+region = Rect2(0, 0, 128, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_im52f"]
+resource_local_to_scene = true
+shader = ExtResource("11_e6f6h")
+shader_parameter/STRENGTH = 1.0
+shader_parameter/OLD_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/OLD_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/OLD_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/NEW_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/NEW_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/NEW_COLOR4 = null
+
+[node name="TargetHacker" node_paths=PackedStringArray("bored_movement", "default_movement") instance=ExtResource("1_3cqgu")]
+collision_mask = 4
+script = ExtResource("2_qo6vn")
+distance_from_target_to_hack = 64.0
+time_to_hack = 2.0
+bored_movement = NodePath("Movement/WanderMovement")
+drop_pool = SubResource("Resource_ydj4l")
+color_swap = ExtResource("6_hrxxi")
+default_movement = NodePath("Movement/PathfindingMovement")
+death_effect = ExtResource("3_2rkj8")
+spawn_sound = ExtResource("8_0n1xr")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_4st5p")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_8kpr3")
+
+[node name="HealthManager" parent="." index="3"]
+max_health = 150.0
+health_to_kill = 10
+
+[node name="Sprite" parent="." index="4"]
+material = SubResource("ShaderMaterial_ahxos")
+sprite_frames = SubResource("SpriteFrames_77rrt")
+animation = &"hacking"
+
+[node name="Particles" type="GPUParticles2D" parent="Sprite" index="0"]
+z_index = -5
+material = SubResource("CanvasItemMaterial_akutg")
+position = Vector2(0, 20)
+process_material = SubResource("ParticleProcessMaterial_l5i27")
+texture = SubResource("AtlasTexture_0ng7c")
+lifetime = 0.8
+preprocess = 1.0
+speed_scale = 2.0
+explosiveness = 0.5
+randomness = 0.5
+local_coords = true
+
+[node name="OverheadHealthBar" parent="." index="5"]
+offset_top = -25.0
+offset_bottom = -19.0
+
+[node name="Sprite" parent="OffScreenMarker" index="0"]
+material = SubResource("ShaderMaterial_im52f")
+texture = ExtResource("12_usc6r")
+
+[node name="Movement" type="Node2D" parent="." index="8"]
+
+[node name="PathfindingMovement" type="Node2D" parent="Movement" index="0"]
+script = ExtResource("12_j4037")
+move_speed = 80.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Movement/PathfindingMovement" index="0"]
+path_postprocessing = 1
+
+[node name="Timer" type="Timer" parent="Movement/PathfindingMovement/NavigationAgent2D" index="0"]
+wait_time = 10.0
+autostart = true
+
+[node name="WanderMovement" parent="Movement" index="1" instance=ExtResource("11_p6w3b")]
+move_speed = 20.0
+
+[node name="HoverAudio" type="AudioStreamPlayer2D" parent="." index="9"]
+stream = ExtResource("13_twayv")
+volume_db = -6.0
+autoplay = true
+max_distance = 600.0
+attenuation = 0.8
+bus = &"FX"
+
+[connection signal="frame_changed" from="Sprite" to="." method="_on_sprite_frame_changed"]
+[connection signal="effect_applied" from="StatusEffectsManager" to="." method="_on_status_effects_manager_effect_applied"]
+[connection signal="effect_removed" from="StatusEffectsManager" to="." method="_on_status_effects_manager_effect_removed"]
+
+[editable path="Hurtbox"]
+[editable path="OverheadHealthBar"]
+[editable path="OffScreenMarker"]
+[editable path="Movement/WanderMovement"]

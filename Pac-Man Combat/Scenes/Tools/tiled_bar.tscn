@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmyaaetv1mkwp"]
+
+[ext_resource type="Texture2D" uid="uid://cka7m7pym744y" path="res://Sprites/UI/HUDBars.png" id="1_5cc7l"]
+[ext_resource type="Shader" path="res://Shaders/Blink.gdshader" id="1_w3i4o"]
+[ext_resource type="Script" path="res://Scenes/TiledBar.gd" id="2_825xo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f4gr4"]
+resource_local_to_scene = true
+shader = ExtResource("1_w3i4o")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[node name="TiledBar" type="NinePatchRect"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_f4gr4")
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 18.0
+offset_bottom = 16.0
+texture = ExtResource("1_5cc7l")
+region_rect = Rect2(9, 167, 10, 10)
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+axis_stretch_horizontal = 1
+script = ExtResource("2_825xo")
+value = 0.0
+max_value = 0.0
+
+[node name="Background" type="NinePatchRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 2.0
+offset_bottom = 8.0
+texture = ExtResource("1_5cc7l")
+region_rect = Rect2(24, 168, 10, 10)
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+axis_stretch_horizontal = 1

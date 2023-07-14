@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwq7gd71x1s8b"]
+
+[ext_resource type="Script" path="res://Scripts/WanderMovement.gd" id="1_w85ih"]
+
+[node name="WanderMovement" type="Node2D"]
+script = ExtResource("1_w85ih")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+
+[node name="Timer" type="Timer" parent="NavigationAgent2D"]
+wait_time = 10.0
+autostart = true
+
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

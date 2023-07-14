@@ -1,0 +1,166 @@
+[gd_scene load_steps=18 format=3 uid="uid://du4tg656nchrm"]
+
+[ext_resource type="Texture2D" uid="uid://btkw2d188yg5r" path="res://Sprites/UI/HUDAtlas.png" id="1_econ2"]
+[ext_resource type="Script" path="res://Scripts/Tools/UIAbilitySlot.gd" id="2_tdese"]
+[ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="3_cl04v"]
+[ext_resource type="PackedScene" uid="uid://cmyaaetv1mkwp" path="res://Scenes/Tools/tiled_bar.tscn" id="3_e5xlb"]
+[ext_resource type="Shader" path="res://Shaders/Blink.gdshader" id="4_78aul"]
+[ext_resource type="Texture2D" uid="uid://x1oso5286mkl" path="res://Sprites/UI/AbilitySlotShine.png" id="6_r200m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g1d3"]
+atlas = ExtResource("1_econ2")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0m1b"]
+content_margin_left = 0.0
+content_margin_top = 2.0
+content_margin_right = 0.0
+bg_color = Color(0, 0, 0, 0)
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hwd4u"]
+shader = ExtResource("4_78aul")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ra2w"]
+atlas = ExtResource("6_r200m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m14hx"]
+atlas = ExtResource("6_r200m")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfy1x"]
+atlas = ExtResource("6_r200m")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b8ww"]
+atlas = ExtResource("6_r200m")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqmrc"]
+atlas = ExtResource("6_r200m")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajir7"]
+atlas = ExtResource("6_r200m")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dakdu"]
+atlas = ExtResource("6_r200m")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uqmtu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m14hx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfy1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1b8ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqmrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajir7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dakdu")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="AbilitySlot" type="Sprite2D"]
+position = Vector2(46, 64)
+texture = SubResource("AtlasTexture_4g1d3")
+script = ExtResource("2_tdese")
+
+[node name="Keybind" type="Label" parent="."]
+modulate = Color(0.156863, 0.156863, 0.27451, 1)
+z_index = 4
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -34.0
+offset_right = -9.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_cl04v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n0m1b")
+text = "R"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+max_lines_visible = 1
+
+[node name="TiledBar" parent="." instance=ExtResource("3_e5xlb")]
+z_index = 2
+material = SubResource("ShaderMaterial_hwd4u")
+offset_left = -10.0
+offset_top = 13.0
+offset_right = 0.0
+offset_bottom = 21.0
+region_rect = Rect2(-1, 167, 10, 10)
+value = 10.0
+max_value = 20.0
+
+[node name="Icon" type="Sprite2D" parent="."]
+
+[node name="Blink" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+texture = SubResource("AtlasTexture_6ra2w")
+
+[node name="Shine" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_uqmtu")
+frame = 11
+frame_progress = 0.674218

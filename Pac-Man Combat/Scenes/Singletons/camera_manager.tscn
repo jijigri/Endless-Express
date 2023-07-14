@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://djuu7kvegvuoo"]
+
+[ext_resource type="Script" path="res://Scripts/Singletons/CameraManager.gd" id="1_nh7be"]
+
+[node name="CameraManager" type="Camera2D"]
+enabled = false
+script = ExtResource("1_nh7be")

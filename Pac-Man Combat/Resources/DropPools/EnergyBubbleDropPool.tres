@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DropPool" load_steps=5 format=3 uid="uid://dxnukf3f33nxk"]
+
+[ext_resource type="PackedScene" uid="uid://timcni11hara" path="res://Scenes/Entities/ResourcePacks/energy_resource_pack.tscn" id="1_xmwej"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropData.gd" id="2_rqa6b"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropPool.gd" id="3_s8j0t"]
+
+[sub_resource type="Resource" id="Resource_omigs"]
+script = ExtResource("2_rqa6b")
+scene = ExtResource("1_xmwej")
+amount = 6
+
+[resource]
+script = ExtResource("3_s8j0t")
+pool = Array[ExtResource("2_rqa6b")]([SubResource("Resource_omigs")])

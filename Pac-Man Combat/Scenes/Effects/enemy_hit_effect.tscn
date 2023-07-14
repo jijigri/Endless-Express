@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://co6r2rqvc0ajk"]
+
+[ext_resource type="Texture2D" uid="uid://dbfl3yeuenafc" path="res://Sprites/Effects/Enemy_Hit_Effect.png" id="1_ejoro"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_1xh0y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32mk4"]
+atlas = ExtResource("1_ejoro")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qnxi"]
+atlas = ExtResource("1_ejoro")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak4uv"]
+atlas = ExtResource("1_ejoro")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_285au"]
+atlas = ExtResource("1_ejoro")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7p7on"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32mk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qnxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak4uv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_285au")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="EnemyHitEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7p7on")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("2_1xh0y")

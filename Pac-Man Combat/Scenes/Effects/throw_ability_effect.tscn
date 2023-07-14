@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6l3il4shta4a"]
+
+[ext_resource type="Texture2D" uid="uid://bpjvs0gf6bud8" path="res://Sprites/Effects/ThrowAbilityEffect.png" id="1_jiaae"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_r72r5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr7s6"]
+atlas = ExtResource("1_jiaae")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4hik"]
+atlas = ExtResource("1_jiaae")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbye8"]
+atlas = ExtResource("1_jiaae")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cgxpi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr7s6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4hik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbye8")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 14.0
+}]
+
+[node name="ThrowAbilityEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_cgxpi")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+script = ExtResource("2_r72r5")

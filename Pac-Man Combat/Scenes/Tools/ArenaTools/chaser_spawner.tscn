@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6l26iv80biyo"]
+
+[ext_resource type="Script" path="res://Scripts/ChaserSpawner.gd" id="1_jatiq"]
+[ext_resource type="Resource" uid="uid://cbuurvbgo67we" path="res://Resources/EnemyPools/ChaserPool.tres" id="2_cwwnw"]
+
+[sub_resource type="Curve" id="Curve_kbrua"]
+max_value = 10.0
+_data = [Vector2(0, 0), 0.0, 2.63364, 0, 0, Vector2(0.7, 6), 8.56905, 0.0, 0, 0, Vector2(0.8, 6), 0.0, 0.0, 0, 0, Vector2(0.9, 5.4), 15.3295, 0.0, 0, 0, Vector2(1, 10), 77.8422, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_u3dkb"]
+max_value = 10.0
+_data = [Vector2(0, 2), 0.0, 19.5226, 0, 0, Vector2(0.7, 8), 0.0, 0.0, 0, 0, Vector2(0.8, 8.5), -2.26414, 0.0, 0, 0, Vector2(0.9, 7), 15.3295, 0.0, 0, 0, Vector2(1, 10), 77.8422, 0.0, 0, 0]
+point_count = 5
+
+[node name="ChaserSpawner" type="Node2D"]
+script = ExtResource("1_jatiq")
+chasers = ExtResource("2_cwwnw")
+intensity_curve_min = SubResource("Curve_kbrua")
+intensity_curve_max = SubResource("Curve_u3dkb")
+curve_sample_size = 10

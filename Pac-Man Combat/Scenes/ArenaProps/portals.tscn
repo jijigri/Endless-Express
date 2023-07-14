@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5s2afxn66hsi"]
+
+[ext_resource type="Script" path="res://Scenes/ArenaProps/Portals.gd" id="1_2e3uh"]
+[ext_resource type="PackedScene" uid="uid://cxr0n8adhh3i2" path="res://Scenes/Tools/single_portal.tscn" id="1_lbpwp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pno1w"]
+load_path = "res://.godot/imported/IdentifiersIconsAtlas.png-dd43336651b913271ce804adabbf39ef.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubxg7"]
+resource_local_to_scene = true
+atlas = SubResource("CompressedTexture2D_pno1w")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3au4r"]
+resource_local_to_scene = true
+size = Vector2(32, 80)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cejiu"]
+load_path = "res://.godot/imported/IdentifiersIconsAtlas.png-dd43336651b913271ce804adabbf39ef.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31g8r"]
+resource_local_to_scene = true
+atlas = SubResource("CompressedTexture2D_cejiu")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18ra5"]
+resource_local_to_scene = true
+size = Vector2(32, 80)
+
+[node name="Portals" type="Node2D"]
+script = ExtResource("1_2e3uh")
+
+[node name="PortalA" parent="." node_paths=PackedStringArray("linked_portal") instance=ExtResource("1_lbpwp")]
+position = Vector2(-16, 0)
+linked_portal = NodePath("../PortalB")
+
+[node name="IdentifierIcon" parent="PortalA" index="2"]
+texture = SubResource("AtlasTexture_ubxg7")
+
+[node name="CollisionShape2D" parent="PortalA/SolidBody" index="0"]
+shape = SubResource("RectangleShape2D_3au4r")
+
+[node name="PortalB" parent="." node_paths=PackedStringArray("linked_portal") instance=ExtResource("1_lbpwp")]
+position = Vector2(16, 0)
+rotation = 0.0
+linked_portal = NodePath("../PortalA")
+
+[node name="IdentifierIcon" parent="PortalB" index="2"]
+texture = SubResource("AtlasTexture_31g8r")
+
+[node name="CollisionShape2D" parent="PortalB/SolidBody" index="0"]
+shape = SubResource("RectangleShape2D_18ra5")
+
+[editable path="PortalA"]
+[editable path="PortalB"]

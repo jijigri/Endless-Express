@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://cduaek24i8wxp"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Pickups/Pickup.gd" id="1_fvnxf"]
+[ext_resource type="Texture2D" uid="uid://cv84gq5ejq5gu" path="res://Sprites/Pickups/Health_Pickup.png" id="2_8h7qi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tbwt"]
+resource_local_to_scene = true
+size = Vector2(24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afgck"]
+atlas = ExtResource("2_8h7qi")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa16g"]
+atlas = ExtResource("2_8h7qi")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55isx"]
+atlas = ExtResource("2_8h7qi")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlgk6"]
+atlas = ExtResource("2_8h7qi")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1btat"]
+atlas = ExtResource("2_8h7qi")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0krp"]
+atlas = ExtResource("2_8h7qi")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm7ig"]
+atlas = ExtResource("2_8h7qi")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsaw3"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afgck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa16g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55isx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlgk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1btat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0krp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm7ig")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Pickup" type="Area2D"]
+collision_layer = 257
+script = ExtResource("1_fvnxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5tbwt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -4
+sprite_frames = SubResource("SpriteFrames_hsaw3")
+autoplay = "default"
+frame_progress = 0.0950224

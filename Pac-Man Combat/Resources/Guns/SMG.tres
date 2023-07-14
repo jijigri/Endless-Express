@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ProjectileGun" load_steps=7 format=3 uid="uid://cqd2tcwsc6ars"]
+
+[ext_resource type="AudioStream" uid="uid://dsompp08aal1r" path="res://Audio/SoundEffects/Guns/SniperShot.wav" id="1_7ylxh"]
+[ext_resource type="Texture2D" uid="uid://cd4kfr0t6t1fi" path="res://Sprites/Misc/Ammos.png" id="1_qofsp"]
+[ext_resource type="PackedScene" uid="uid://np2hcfwha6lu" path="res://Scenes/Effects/sniper_muzzleflash.tscn" id="1_s23jv"]
+[ext_resource type="Script" path="res://Scripts/Resources/ProjectileGun.gd" id="2_doh8q"]
+[ext_resource type="PackedScene" uid="uid://bvdbnoyrq55or" path="res://Scenes/Entities/Bullets/piercing_bullet.tscn" id="3_tkmh7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba16t"]
+atlas = ExtResource("1_qofsp")
+region = Rect2(8, 0, 8, 8)
+
+[resource]
+script = ExtResource("2_doh8q")
+projectile = ExtResource("3_tkmh7")
+projectile_speed = 2200.0
+projectiles_per_shot = 1
+spread = 10.0
+bullet_lifetime = 0.5
+ignore_iframes = true
+damage = 80.0
+cooldown = 1.0
+on_switch_cooldown = 0.4
+type = 1
+knockback_force = 2400.0
+shake_force = 8.5
+shake_time = 0.165
+recoil_strength_degrees = 120.0
+recoil_strength_pixels = 5.0
+muzzle_flash = ExtResource("1_s23jv")
+player_push_force = 500.0
+push_in_all_directions = true
+drop_ammo = SubResource("AtlasTexture_ba16t")
+audio = ExtResource("1_7ylxh")

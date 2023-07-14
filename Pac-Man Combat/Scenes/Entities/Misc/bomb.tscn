@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5xpyx4lug1ft"]
+
+[ext_resource type="Script" path="res://Bomb.gd" id="1_hgxbi"]
+[ext_resource type="PackedScene" uid="uid://dbko7513rc01x" path="res://Scenes/Entities/Misc/explosion.tscn" id="2_aw1jo"]
+[ext_resource type="Texture2D" uid="uid://c378q8gnl3k4a" path="res://Sprites/Abilities/DefaultPlayerBombSprite.png" id="3_b0dfl"]
+[ext_resource type="Script" path="res://Scenes/Entities/Misc/Trail.gd" id="4_0iors"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2u5g4"]
+radius = 8.0
+
+[sub_resource type="Curve" id="Curve_7r1md"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.89221, 0.0, 0, 0]
+point_count = 2
+
+[node name="Bomb" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 14
+continuous_cd = 1
+max_contacts_reported = 5
+contact_monitor = true
+can_sleep = false
+script = ExtResource("1_hgxbi")
+explosion_scene = ExtResource("2_aw1jo")
+explosion_radius = 125.0
+explosion_damage = 80.0
+armor_break_time = 7.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2u5g4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_b0dfl")
+
+[node name="Trail" type="Line2D" parent="." node_paths=PackedStringArray("target")]
+width_curve = SubResource("Curve_7r1md")
+script = ExtResource("4_0iors")
+target = NodePath("..")
+length = 10

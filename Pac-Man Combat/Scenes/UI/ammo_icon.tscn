@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://p25s64dxjv61"]
+
+[ext_resource type="Texture2D" uid="uid://bmkoxpjll67gc" path="res://Sprites/UI/AmmoIndicator.png" id="1_gcdrm"]
+
+[node name="AmmoIcon" type="TextureRect"]
+texture = ExtResource("1_gcdrm")
+stretch_mode = 2

@@ -1,0 +1,174 @@
+[gd_scene load_steps=25 format=3 uid="uid://chw0ydc058ox0"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_lg5uc"]
+[ext_resource type="PackedScene" uid="uid://cgo148uilrd2s" path="res://Scenes/Arenas/arena_test_1.tscn" id="2_1lhxp"]
+[ext_resource type="Script" path="res://Scripts/ArenaManager.gd" id="2_ii7w5"]
+[ext_resource type="PackedScene" uid="uid://dc8ngtaahwest" path="res://Scenes/Arenas/arena_test_3.tscn" id="3_2lpal"]
+[ext_resource type="PackedScene" uid="uid://kanbh3luanee" path="res://Scenes/Arenas/arena_test_4.tscn" id="3_ria7w"]
+[ext_resource type="PackedScene" uid="uid://b26pryaeluhog" path="res://Scenes/Arenas/arena_test_2.tscn" id="4_4d446"]
+[ext_resource type="PackedScene" uid="uid://dv5gegjgkxtb6" path="res://Scenes/Entities/Players/default_player.tscn" id="4_hdyj7"]
+[ext_resource type="Script" path="res://Scripts/Resources/PlayerMovementData.gd" id="5_y3ork"]
+[ext_resource type="AudioStream" uid="uid://bxj2gr5djf7uj" path="res://Audio/Ambience/TrainAmbience.wav" id="8_cm2bt"]
+[ext_resource type="Script" path="res://Scripts/Misc/AutomaticParallaxBackground.gd" id="12_v2wr0"]
+[ext_resource type="Texture2D" uid="uid://dvpmw8lvylxt" path="res://Sprites/Background/ParallaxBackground.png" id="13_818sd"]
+
+[sub_resource type="Resource" id="Resource_0cn0r"]
+resource_local_to_scene = true
+script = ExtResource("5_y3ork")
+speed = 240.0
+initial_gravity = 1200.0
+jump_force = 370.0
+ground_acceleration = 0.18
+ground_deceleration = 0.25
+air_acceleration = 0.15
+air_deceleration = 0.0
+jump_apex_treshold = 50.0
+jump_apex_gravity_multiplier = 0.5
+fall_gravity_multiplier = 1.5
+max_gravity = 1600.0
+coyote_time = 0.125
+buffered_jump_time = 0.15
+initial_number_of_jumps = 1
+dash_force = 600.0
+dash_time = 0.1
+initial_number_of_dashes = 0
+max_wall_slide_gravity = 220.0
+wall_jump_force = Vector2(300, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnt76"]
+atlas = ExtResource("13_818sd")
+region = Rect2(0, 0, 640, 628)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_heq1f"]
+load_path = "res://.godot/imported/ParallaxBackground.png-99a5886617181d510ab52db78bb80d33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s65us"]
+atlas = SubResource("CompressedTexture2D_heq1f")
+region = Rect2(640, 0, 640, 628)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w4yq7"]
+load_path = "res://.godot/imported/ParallaxBackground.png-99a5886617181d510ab52db78bb80d33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cwu3"]
+atlas = SubResource("CompressedTexture2D_w4yq7")
+region = Rect2(1280, 0, 640, 628)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_68737"]
+load_path = "res://.godot/imported/ParallaxBackground.png-99a5886617181d510ab52db78bb80d33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcfda"]
+atlas = SubResource("CompressedTexture2D_68737")
+region = Rect2(1920, 0, 640, 628)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kemq3"]
+load_path = "res://.godot/imported/ParallaxBackground.png-99a5886617181d510ab52db78bb80d33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh66n"]
+atlas = SubResource("CompressedTexture2D_kemq3")
+region = Rect2(2560, 0, 640, 628)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i0t4n"]
+load_path = "res://.godot/imported/ParallaxBackground.png-99a5886617181d510ab52db78bb80d33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjil3"]
+atlas = SubResource("CompressedTexture2D_i0t4n")
+region = Rect2(3200, 0, 640, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26cwd"]
+atlas = SubResource("CompressedTexture2D_i0t4n")
+region = Rect2(3840, 0, 640, 628)
+
+[node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node2D" parent="." groups=["GameManager"]]
+z_index = 50
+script = ExtResource("1_lg5uc")
+
+[node name="ArenaManager" type="Node2D" parent="." groups=["ArenaManager"]]
+script = ExtResource("2_ii7w5")
+solo_arena = ExtResource("3_ria7w")
+arena_pool = Array[PackedScene]([ExtResource("2_1lhxp"), ExtResource("4_4d446"), ExtResource("3_2lpal"), ExtResource("3_ria7w")])
+
+[node name="Player" parent="." instance=ExtResource("4_hdyj7")]
+position = Vector2(0, 0)
+movement_data = SubResource("Resource_0cn0r")
+
+[node name="Ambience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_cm2bt")
+autoplay = true
+attenuation = 1e-05
+panning_strength = 0.0
+bus = &"Ambience"
+
+[node name="NOTES" type="Node" parent="."]
+
+[node name="MAYBE ENEMY DON\'T RETREAT WHEN IN DANGER STATE (FEELS A BIT UNFAIR)" type="Node" parent="NOTES"]
+
+[node name="SAVE HIGHSCORE IN FILES AS ONLY WORK FOR FEW PLAYERS" type="Node" parent="NOTES"]
+
+[node name="ADD WEIGHT PER SCORE MULTIPLIER" type="Node" parent="NOTES"]
+
+[node name="MAYBE ADD SHORT IFRAMES ON DIVE" type="Node" parent="NOTES"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(320, 0)
+transform = Transform2D(1, 0, 0, 1, 320, 0)
+scroll_ignore_camera_zoom = true
+script = ExtResource("12_v2wr0")
+
+[node name="ParallaxLayer01" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(640, 628)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer01"]
+scale = Vector2(1, 3.49045)
+texture = SubResource("AtlasTexture_dnt76")
+
+[node name="ParallaxLayer02" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+motion_scale = Vector2(0.05, 0.4)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer02"]
+texture = SubResource("AtlasTexture_s65us")
+
+[node name="ParallaxLayer03" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+motion_scale = Vector2(0.1, 0.5)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer03"]
+texture = SubResource("AtlasTexture_4cwu3")
+
+[node name="ParallaxLayer04" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+motion_scale = Vector2(0.2, 0.75)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer04"]
+texture = SubResource("AtlasTexture_lcfda")
+
+[node name="ParallaxLayer05" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+motion_scale = Vector2(0.25, 0.8)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer05"]
+texture = SubResource("AtlasTexture_qh66n")
+
+[node name="ParallaxLayer06" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+motion_scale = Vector2(0.4, 0.9)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer06"]
+texture = SubResource("AtlasTexture_pjil3")
+
+[node name="ParallaxLayer07" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer07"]
+texture = SubResource("AtlasTexture_26cwd")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://timcni11hara"]
+
+[ext_resource type="Script" path="res://Scripts/ResourcePack.gd" id="1_u8inw"]
+[ext_resource type="Texture2D" uid="uid://bgs6aatjvuxas" path="res://Sprites/Pickups/EnergyPack.png" id="2_8t0f6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl7cc"]
+size = Vector2(12, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gx6fr"]
+radius = 50.0
+
+[node name="EnergyResourcePack" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 4
+gravity_scale = 0.0
+linear_damp = 5.0
+script = ExtResource("1_u8inw")
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cl7cc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8t0f6")
+
+[node name="MagnetRange" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagnetRange"]
+shape = SubResource("CircleShape2D_gx6fr")

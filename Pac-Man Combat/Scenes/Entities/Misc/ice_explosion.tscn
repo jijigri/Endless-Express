@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://by75m07u6y3gr"]
+
+[ext_resource type="Script" path="res://Scenes/Entities/Misc/IceExplosion.gd" id="1_1sdp6"]
+[ext_resource type="AudioStream" uid="uid://cnhlocgpduw2p" path="res://Audio/SoundEffects/Misc/IceExplosionSound.wav" id="2_5800s"]
+[ext_resource type="Texture2D" uid="uid://fytt1blc0hvn" path="res://Sprites/Effects/Icicles.png" id="3_m3vvf"]
+[ext_resource type="Texture2D" uid="uid://bj8gvkgsbldw" path="res://Sprites/Misc/128pxCircle.png" id="3_xevrk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4bpp7"]
+resource_local_to_scene = true
+radius = 32.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yjjje"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_7ihsf"]
+offsets = PackedFloat32Array(0, 0.740426, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5ubm5"]
+gradient = SubResource("Gradient_7ihsf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jwkv2"]
+lifetime_randomness = 0.4
+emission_shape = 2
+emission_sphere_radius = 64.0
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -360.0
+angle_max = 360.0
+scale_min = 0.05
+scale_max = 0.2
+color_ramp = SubResource("GradientTexture1D_5ubm5")
+anim_offset_max = 1.0
+
+[sub_resource type="Curve" id="Curve_y6xco"]
+_data = [Vector2(0, 0), 0.0, 16.9333, 0, 0, Vector2(0.0866142, 1), 0.0, 0.0, 0, 0, Vector2(0.88189, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -14.0854, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_xnbak"]
+curve = SubResource("Curve_y6xco")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3wsti"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_xnbak")
+sub_emitter_keep_velocity = true
+
+[node name="IceExplosion" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+monitorable = false
+priority = 1
+script = ExtResource("1_1sdp6")
+freeze_time = 2.0
+sound = ExtResource("2_5800s")
+enemy_push_multiplier = 0.0
+player_push_force = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4bpp7")
+
+[node name="DustParticles" type="GPUParticles2D" parent="."]
+z_index = -5
+material = SubResource("CanvasItemMaterial_yjjje")
+emitting = false
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_jwkv2")
+texture = ExtResource("3_m3vvf")
+lifetime = 0.35
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 80
+draw_order = 0
+
+[node name="FlashParticles" type="GPUParticles2D" parent="."]
+z_index = -4
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_3wsti")
+texture = ExtResource("3_xevrk")
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0

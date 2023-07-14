@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3rf3vks4k5ji"]
+
+[ext_resource type="Script" path="res://Scripts/Misc/StatusEffects/StatusEffect.gd" id="1_033x5"]
+
+[node name="StatusEffectBase" type="Node2D"]
+script = ExtResource("1_033x5")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

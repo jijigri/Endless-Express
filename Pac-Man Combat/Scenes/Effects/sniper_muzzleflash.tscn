@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://np2hcfwha6lu"]
+
+[ext_resource type="Texture2D" uid="uid://cv5fl3qr2drp4" path="res://Sprites/Effects/Sniper_MuzzleFlash.png" id="1_ta4pg"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_my8cm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vs16"]
+atlas = ExtResource("1_ta4pg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbgc0"]
+atlas = ExtResource("1_ta4pg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w4vf"]
+atlas = ExtResource("1_ta4pg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gp10"]
+atlas = ExtResource("1_ta4pg")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0v2s1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vs16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbgc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w4vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gp10")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 18.0
+}]
+
+[node name="EnemyHitEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_0v2s1")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0498239
+offset = Vector2(32, 0)
+script = ExtResource("2_my8cm")
