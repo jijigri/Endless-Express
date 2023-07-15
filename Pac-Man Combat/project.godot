@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Endless Express"
-run/main_scene="res://Scenes/game.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 run/max_fps=144
 boot_splash/bg_color=Color(0, 0, 0, 0)
@@ -35,6 +35,7 @@ MusicHandler="*res://Scenes/Singletons/music_handler.tscn"
 PlayerDataQueue="*res://Scripts/Singletons/PlayerDataQueue.gd"
 ScoreManager="*res://Scripts/Singletons/ScoreManager.gd"
 DrawUtils="*res://Scripts/Singletons/DrawUtils.gd"
+PlayableCharactersPool="*res://Scenes/Singletons/playable_characters_pool.tscn"
 
 [display]
 

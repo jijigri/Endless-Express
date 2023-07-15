@@ -1,4 +1,4 @@
-PickupEffect
+PlayableCharacterData
 ColorSwap
 ProjectileGun
 DropPool

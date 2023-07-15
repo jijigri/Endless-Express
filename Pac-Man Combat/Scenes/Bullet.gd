@@ -10,12 +10,17 @@ var knockback_force: float = 10
 var damage: float
 var speed: float
 var velocity: Vector2
+var lifetime: float
 
 var entities_damaged = []
 
 var gun_origin
 
 var active: bool = true
+
+func _ready() -> void:
+	$Lifetime.wait_time = lifetime
+	$Lifetime.start(lifetime)
 
 func _physics_process(delta):
 	if not active:
@@ -29,7 +34,7 @@ func initialize(_damage: float, _speed: float, _knockback_force: float = 0, _lif
 	damage = _damage
 	speed = _speed
 	knockback_force = _knockback_force
-	$Lifetime.wait_time = _lifetime
+	lifetime = _lifetime
 
 func set_team(team_player: bool):
 	if team_player:

@@ -102,8 +102,8 @@ sprite_frames = SubResource("SpriteFrames_5iu5j")
 autoplay = "default"
 
 [node name="Lifetime" type="Timer" parent="."]
+process_callback = 0
 one_shot = true
-autostart = true
 
 [node name="Particles" type="GPUParticles2D" parent="."]
 z_index = -5

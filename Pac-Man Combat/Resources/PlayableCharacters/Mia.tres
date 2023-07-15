@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="PlayableCharacterData" load_steps=10 format=3 uid="uid://c2yn64210q3id"]
+
+[ext_resource type="Script" path="res://Scripts/Misc/PlayableCharacterData.gd" id="1_mh3tx"]
+[ext_resource type="Script" path="res://Scripts/Misc/AbilityData.gd" id="1_tbto2"]
+[ext_resource type="Texture2D" uid="uid://de08g8usoxyty" path="res://Sprites/Abilities/DefaultPlayerIceGrenadeSprite.png" id="1_x7b51"]
+[ext_resource type="Texture2D" uid="uid://c378q8gnl3k4a" path="res://Sprites/Abilities/DefaultPlayerBombSprite.png" id="3_3g26s"]
+[ext_resource type="Texture2D" uid="uid://c4d5jfi8ohmdu" path="res://Sprites/UI/CharacterPortraits/PlaceholderPortrait.png" id="4_j2nj7"]
+[ext_resource type="PackedScene" uid="uid://dv5gegjgkxtb6" path="res://Scenes/Entities/Players/default_player.tscn" id="5_5rrtn"]
+
+[sub_resource type="Resource" id="Resource_j6sld"]
+script = ExtResource("1_tbto2")
+display_name = "Ice grenade"
+description = "Throws an ice grenade that freezes and breaks the armor of enemies hit."
+icon = ExtResource("1_x7b51")
+
+[sub_resource type="Resource" id="Resource_cstr3"]
+script = ExtResource("1_tbto2")
+display_name = "Bomb"
+description = "Throws a damaging bomb that repels and break the armor of enemies hit."
+icon = ExtResource("3_3g26s")
+
+[sub_resource type="Resource" id="Resource_5ahd3"]
+script = ExtResource("1_tbto2")
+display_name = "Something"
+description = "It's not there yet, move along"
+icon = ExtResource("3_3g26s")
+
+[resource]
+script = ExtResource("1_mh3tx")
+scene = ExtResource("5_5rrtn")
+display_name = "Mia"
+description = "Aggressive passenger who uses bombs to control the field."
+abilities = Array[ExtResource("1_tbto2")]([SubResource("Resource_j6sld"), SubResource("Resource_cstr3"), SubResource("Resource_5ahd3")])
+portrait = ExtResource("4_j2nj7")

@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6rbuevxn5dhb"]
+
+[ext_resource type="PackedScene" uid="uid://vspn7m7psh1b" path="res://Scenes/UI/tv_screen.tscn" id="1_qwmdl"]
+[ext_resource type="Script" path="res://Scripts/UI/CharacterSelectionScreen.gd" id="1_uwhv7"]
+[ext_resource type="Theme" uid="uid://dgi4mcucy7t8i" path="res://Themes/MenuTheme.tres" id="2_5vpjp"]
+[ext_resource type="Script" path="res://Scripts/UI/CharacterPanel.gd" id="2_x8w5n"]
+[ext_resource type="Texture2D" uid="uid://c4d5jfi8ohmdu" path="res://Sprites/UI/CharacterPortraits/PlaceholderPortrait.png" id="3_4l7df"]
+[ext_resource type="FontFile" uid="uid://bfpah0dardg0y" path="res://Fonts/m5x7.ttf" id="4_75t8c"]
+[ext_resource type="PackedScene" uid="uid://cao1s75gvug8n" path="res://Scenes/UI/menu_ability_slot.tscn" id="5_q47bh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87my3"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="CharacterSelectionScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uwhv7")
+
+[node name="TVScreen" parent="." instance=ExtResource("1_qwmdl")]
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -40.0
+offset_right = 48.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_5vpjp")
+text = "START!"
+
+[node name="CharacterPanel" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 260
+dragger_visibility = 2
+script = ExtResource("2_x8w5n")
+
+[node name="Portrait" type="TextureRect" parent="CharacterPanel"]
+layout_mode = 2
+texture = ExtResource("3_4l7df")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="CharacterPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5vpjp")
+text = "CHARACTER NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="CharacterPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_75t8c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_87my3")
+text = "Character description"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MenuAbilitySlot1" parent="CharacterPanel/VBoxContainer" instance=ExtResource("5_q47bh")]
+layout_mode = 2
+
+[node name="MenuAbilitySlot2" parent="CharacterPanel/VBoxContainer" instance=ExtResource("5_q47bh")]
+layout_mode = 2
+
+[node name="MenuAbilitySlot3" parent="CharacterPanel/VBoxContainer" instance=ExtResource("5_q47bh")]
+layout_mode = 2
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

@@ -2,6 +2,7 @@ extends Control
 
 @onready var menu_screen = $CanvasLayer/Menu
 @onready var settings_screen = $CanvasLayer/Settings
+@onready var character_screen = $CanvasLayer/CharacterSelectionScreen
 
 @onready var button_pressed_player: AudioStreamPlayer2D = $ButtonPressedPlayer
 
@@ -11,7 +12,7 @@ func _ready() -> void:
 	set_screen(0)
 
 func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	set_screen(2)
 	button_pressed_player.stream = preload("res://Audio/SoundEffects/UI/PlayButtonPressedSound.wav")
 	button_pressed_player.play()
 
@@ -32,10 +33,13 @@ func _on_back_pressed() -> void:
 
 func set_screen(index):
 	if index == 0:
-		set_screen_visibility(true, false)
+		set_screen_visibility(true, false, false)
 	elif index == 1:
-		set_screen_visibility(false, true)
+		set_screen_visibility(false, true, false)
+	elif index == 2:
+		set_screen_visibility(false, false, true)
 
-func set_screen_visibility(menu: bool, settings: bool):
+func set_screen_visibility(menu: bool, settings: bool, characters: bool):
 	menu_screen.visible = menu
 	settings_screen.visible = settings
+	character_screen.visible = characters

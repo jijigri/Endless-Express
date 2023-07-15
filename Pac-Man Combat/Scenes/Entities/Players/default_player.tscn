@@ -433,7 +433,7 @@ secondary_gun = ExtResource("8_y7nir")
 ammo_bar = NodePath("../AmmoBar")
 
 [node name="SpawnPoint" type="Node2D" parent="PlayerGun"]
-position = Vector2(16, 0)
+position = Vector2(11, 0)
 
 [node name="Sprite" type="Sprite2D" parent="PlayerGun"]
 position = Vector2(0, 2)

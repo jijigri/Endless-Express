@@ -1,7 +1,11 @@
 res://Scripts/UI
+res://Resources/PlayableCharacters
+res://Scenes/Singletons
+res://Scripts/Misc
+res://Scripts/Resources
 res://Scenes/UI
-D:/Godot Games/Pac-Man Combat/Builds/v0.3a
 res://Scenes
+D:/Godot Games/Pac-Man Combat/Builds/v0.3a
 res://Themes
 res://Scenes/Effects
 res://Shaders
@@ -15,8 +19,4 @@ res://Scripts/Entities/Enemies/Movement
 res://Scripts/Tools
 D:/Godot Games/Pac-Man Combat/Builds/v0.2a
 res://Scenes/Entities/Enemies/Chasers
-res://Scripts/Misc
 res://Sprites/Entities/Bullets
-res://Scenes/Entities/Bullets
-res://Sprites/Entities/Enemies/Targets
-res://Scripts/Entities/Enemies/StateMachines

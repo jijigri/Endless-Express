@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/Misc/AutomaticParallaxBackground.gd" id="12_v2wr0"]
 [ext_resource type="Texture2D" uid="uid://dvpmw8lvylxt" path="res://Sprites/Background/ParallaxBackground.png" id="13_818sd"]
 
-[sub_resource type="Resource" id="Resource_0cn0r"]
+[sub_resource type="Resource" id="Resource_2aui0"]
 resource_local_to_scene = true
 script = ExtResource("5_y3ork")
 speed = 240.0
@@ -91,7 +91,7 @@ arena_pool = Array[PackedScene]([ExtResource("2_1lhxp"), ExtResource("4_4d446"),
 
 [node name="Player" parent="." instance=ExtResource("4_hdyj7")]
 position = Vector2(0, 0)
-movement_data = SubResource("Resource_0cn0r")
+movement_data = SubResource("Resource_2aui0")
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_cm2bt")
