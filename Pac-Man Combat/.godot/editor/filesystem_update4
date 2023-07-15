@@ -32,3 +32,5 @@ res://Scripts/UI/CharacterPanel.gd
 res://Scenes/UI/menu_leaderboard.tscn
 res://Scripts/UI/CharacterSelectionScreen.gd
 res://Scripts/UI/MainMenu.gd
+res://Scenes/Tools/ArenaTools/target_spawner.tscn
+res://Scripts/TargetSpawner.gd

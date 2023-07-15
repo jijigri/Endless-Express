@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1689365243
+::res://::1689438394
 Bomb.gd::GDScript::-1::1688765903::0::1::::<>RigidBody2D<>::
 default_bus_layout.tres::AudioBusLayout::1995808036201110885::1689257486::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1689201784::0::1::::<><>::
@@ -205,14 +205,14 @@ DefaultPlayerMovementData.tres::Resource/PlayerMovementData::3348283491234019337
 ::res://Resources/Guns/::1689354338
 Shotgun.tres::Resource/ProjectileGun::2633951301870154890::1689354338::0::1::::<><>::uid://cd4kfr0t6t1fi::::res://Sprites/Misc/Ammos.png<>uid://dochood73yqpe::::res://Audio/SoundEffects/Guns/ShotgunShot.wav<>uid://bcs4wgl2fi7qo::::res://Scenes/Entities/Bullets/bullet.tscn<>uid://dcekneyyyiolx::::res://Scenes/Effects/shotgun_muzzleflash.tscn<>res://Scripts/Resources/ProjectileGun.gd
 SMG.tres::Resource/ProjectileGun::5903729427599913900::1689352697::0::1::::<><>::uid://dsompp08aal1r::::res://Audio/SoundEffects/Guns/SniperShot.wav<>uid://cd4kfr0t6t1fi::::res://Sprites/Misc/Ammos.png<>uid://np2hcfwha6lu::::res://Scenes/Effects/sniper_muzzleflash.tscn<>res://Scripts/Resources/ProjectileGun.gd<>uid://bvdbnoyrq55or::::res://Scenes/Entities/Bullets/piercing_bullet.tscn
-::res://Resources/PlayableCharacters/::1689365764
-Mia.tres::Resource/PlayableCharacterData::6718331458329791251::1689365764::0::1::::<><>::res://Scripts/Misc/PlayableCharacterData.gd<>res://Scripts/Misc/AbilityData.gd<>uid://de08g8usoxyty::::res://Sprites/Abilities/DefaultPlayerIceGrenadeSprite.png<>uid://c378q8gnl3k4a::::res://Sprites/Abilities/DefaultPlayerBombSprite.png<>uid://c4d5jfi8ohmdu::::res://Sprites/UI/CharacterPortraits/PlaceholderPortrait.png<>uid://dv5gegjgkxtb6::::res://Scenes/Entities/Players/default_player.tscn
+::res://Resources/PlayableCharacters/::1689445931
+Mia.tres::Resource/PlayableCharacterData::6718331458329791251::1689445931::0::1::::<><>::res://Scripts/Misc/PlayableCharacterData.gd<>res://Scripts/Misc/AbilityData.gd<>uid://de08g8usoxyty::::res://Sprites/Abilities/DefaultPlayerIceGrenadeSprite.png<>uid://c378q8gnl3k4a::::res://Sprites/Abilities/DefaultPlayerBombSprite.png<>uid://dec7dvpyc7hr7::::res://Sprites/UI/CharacterPortraits/MiaPortrait.png<>uid://dv5gegjgkxtb6::::res://Scenes/Entities/Players/default_player.tscn
 ::res://Resources/Tilesets/::1689352697
 arena_level_tileset.tres::TileSet::2641627619673665032::1689352697::0::1::::<><>::uid://dv6fu6pl3sht0::::res://Sprites/Tilesets/Tileset1.png<>uid://b5wbvyu0u83ry::::res://Sprites/Tilesets/Background_Tileset.png<>uid://8pohm5t85k3x::::res://Sprites/Tilesets/Props.png
-::res://Scenes/::1689367511
+::res://Scenes/::1689451083
 Bullet.gd::GDScript::-1::1689354454::0::1::::Bullet<>Area2D<>::
-game.tscn::PackedScene::5311140529151571943::1689367506::0::1::::<><>::res://Scripts/GameManager.gd<>uid://cgo148uilrd2s::::res://Scenes/Arenas/arena_test_1.tscn<>res://Scripts/ArenaManager.gd<>uid://dc8ngtaahwest::::res://Scenes/Arenas/arena_test_3.tscn<>uid://kanbh3luanee::::res://Scenes/Arenas/arena_test_4.tscn<>uid://b26pryaeluhog::::res://Scenes/Arenas/arena_test_2.tscn<>uid://dv5gegjgkxtb6::::res://Scenes/Entities/Players/default_player.tscn<>res://Scripts/Resources/PlayerMovementData.gd<>uid://bxj2gr5djf7uj::::res://Audio/Ambience/TrainAmbience.wav<>res://Scripts/Misc/AutomaticParallaxBackground.gd<>uid://dvpmw8lvylxt::::res://Sprites/Background/ParallaxBackground.png
-main_menu.tscn::PackedScene::6327993902357891697::1689367511::0::1::::<><>::uid://c3haj7dw63v6p::::res://Sprites/UI/MainMenuArtNonAnimated.png<>res://Scripts/UI/MainMenu.gd<>uid://8m065evukno3::::res://Fonts/NbPixelFontBundle/KarenFat.ttf<>uid://cwg54bchnjd4f::::res://Sprites/UI/NameEditIcon.png<>res://Scripts/UI/DisplayNameEdit.gd<>uid://dclkhoiaauuch::::res://Scenes/UI/menu_leaderboard.tscn<>res://Scripts/Misc/AutomaticParallaxBackground.gd<>uid://b6rbuevxn5dhb::::res://Scenes/UI/character_selection_screen.tscn<>uid://dvpmw8lvylxt::::res://Sprites/Background/ParallaxBackground.png<>uid://dswd4tj8ik4q4::::res://Scenes/UI/settings.tscn<>uid://hgf0hi4j7fji::::res://Sprites/UI/MenuButton.png<>uid://cdorx2bes8siq::::res://Sprites/UI/TitleLogo.png<>uid://h53cqmgngi1o::::res://Audio/Music/Endless Train - Title Theme.wav<>uid://brf5x7nv0jsif::::res://Audio/SoundEffects/UI/ButtonPressedSound.wav
+game.tscn::PackedScene::5311140529151571943::1689451078::0::1::::<><>::res://Scripts/GameManager.gd<>uid://cgo148uilrd2s::::res://Scenes/Arenas/arena_test_1.tscn<>res://Scripts/ArenaManager.gd<>uid://dc8ngtaahwest::::res://Scenes/Arenas/arena_test_3.tscn<>uid://kanbh3luanee::::res://Scenes/Arenas/arena_test_4.tscn<>uid://b26pryaeluhog::::res://Scenes/Arenas/arena_test_2.tscn<>uid://dv5gegjgkxtb6::::res://Scenes/Entities/Players/default_player.tscn<>res://Scripts/Resources/PlayerMovementData.gd<>uid://bxj2gr5djf7uj::::res://Audio/Ambience/TrainAmbience.wav<>res://Scripts/Misc/AutomaticParallaxBackground.gd<>uid://dvpmw8lvylxt::::res://Sprites/Background/ParallaxBackground.png
+main_menu.tscn::PackedScene::6327993902357891697::1689451082::0::1::::<><>::uid://c3haj7dw63v6p::::res://Sprites/UI/MainMenuArtNonAnimated.png<>res://Scripts/UI/MainMenu.gd<>uid://8m065evukno3::::res://Fonts/NbPixelFontBundle/KarenFat.ttf<>uid://cwg54bchnjd4f::::res://Sprites/UI/NameEditIcon.png<>res://Scripts/UI/DisplayNameEdit.gd<>uid://dclkhoiaauuch::::res://Scenes/UI/menu_leaderboard.tscn<>res://Scripts/Misc/AutomaticParallaxBackground.gd<>uid://b6rbuevxn5dhb::::res://Scenes/UI/character_selection_screen.tscn<>uid://dvpmw8lvylxt::::res://Sprites/Background/ParallaxBackground.png<>uid://dswd4tj8ik4q4::::res://Scenes/UI/settings.tscn<>uid://hgf0hi4j7fji::::res://Sprites/UI/MenuButton.png<>uid://cdorx2bes8siq::::res://Sprites/UI/TitleLogo.png<>uid://h53cqmgngi1o::::res://Audio/Music/Endless Train - Title Theme.wav<>uid://brf5x7nv0jsif::::res://Audio/SoundEffects/UI/ButtonPressedSound.wav
 MouseCursor.gd::GDScript::-1::1687910960::0::1::::MouseCursor<>CanvasLayer<>::
 MusicHandler.gd::GDScript::-1::1687202680::0::1::::<>AudioStreamPlayer2D<>::
 TiledBar.gd::GDScript::-1::1686914652::0::1::::TiledBar<>NinePatchRect<>::
@@ -287,9 +287,9 @@ Trail.gd::GDScript::-1::1688763992::0::1::::<>Line2D<>::
 energy_pickup.tscn::PackedScene::4769776446654412629::1688746947::0::1::::<><>::uid://cduaek24i8wxp
 health_pickup.tscn::PackedScene::120907354807615482::1688744612::0::1::::<><>::uid://cduaek24i8wxp
 pickup_base.tscn::PackedScene::5024703164829976285::1688750438::0::1::::<><>::res://Scripts/Entities/Pickups/Pickup.gd<>uid://cv84gq5ejq5gu
-::res://Scenes/Entities/Players/::1689367506
+::res://Scenes/Entities/Players/::1689451078
 DefaultPlayerAnimations.gd::GDScript::-1::1686924282::0::1::::<>PlayerAnimations<>::
-default_player.tscn::PackedScene::8695530874562237413::1689367506::0::1::::<><>::res://Scripts/Entities/Player/Player.gd<>uid://bnx60flo0qggv::::res://Resources/Entities/Player/DefaultPlayerMovementData.tres<>res://Shaders/OutlineShader.gdshader<>uid://bha1tvdc8x88v::::res://Sprites/Entities/Players/DefaultPlayerSpriteSheet.png<>uid://cfoemwbbnhoxt::::res://Scenes/Tools/health_manager.tscn<>res://Scenes/Entities/Players/DefaultPlayerAnimations.gd<>uid://b7lq6gjy6c3df::::res://Scenes/Tools/hurtbox.tscn<>uid://by7paajtwxm1j::::res://Sprites/Effects/PlayerRunParticles.png<>res://Scenes/Entities/Players/EnergyManager.gd<>res://Scenes/Tools/PlayerHealthManager.gd<>res://Scripts/Entities/Player/PlayerGun.gd<>uid://bdr5173wns2s1::::res://Resources/Guns/Shotgun.tres<>uid://cqd2tcwsc6ars::::res://Resources/Guns/SMG.tres<>res://Scenes/Entities/Players/PlayerCamera.gd<>res://Scripts/Entities/Player/PlayerAbilities.gd<>res://Scripts/Entities/Player/Abilities/AbilityBase.gd<>res://Scripts/Entities/Player/Abilities/ObjectSpawnAbility.gd<>uid://c5xpyx4lug1ft::::res://Scenes/Entities/Misc/bomb.tscn<>res://Scenes/Entities/Players/PlayerRollAbility.gd<>uid://ctoxm2mh6bdp7::::res://Sprites/Guns/DefaultPlayerGuns.png<>uid://du67ionc4r786::::res://Scenes/Entities/Misc/ice_bomb.tscn<>uid://de08g8usoxyty::::res://Sprites/Abilities/DefaultPlayerIceGrenadeSprite.png<>uid://c378q8gnl3k4a::::res://Sprites/Abilities/DefaultPlayerBombSprite.png<>uid://cdg5pjvsn3wxb::::res://Sprites/UI/DefaultPlayerRollIcon.png<>uid://dlseb4whqrry5::::res://Scenes/Tools/overhead_health_bar.tscn<>res://Scenes/Tools/PlayerOverheadHealthBar.gd<>res://Scripts/Entities/Player/PlayerMagnet.gd
+default_player.tscn::PackedScene::8695530874562237413::1689451078::0::1::::<><>::res://Scripts/Entities/Player/Player.gd<>uid://bnx60flo0qggv::::res://Resources/Entities/Player/DefaultPlayerMovementData.tres<>res://Shaders/OutlineShader.gdshader<>uid://bha1tvdc8x88v::::res://Sprites/Entities/Players/DefaultPlayerSpriteSheet.png<>uid://cfoemwbbnhoxt::::res://Scenes/Tools/health_manager.tscn<>res://Scenes/Entities/Players/DefaultPlayerAnimations.gd<>uid://b7lq6gjy6c3df::::res://Scenes/Tools/hurtbox.tscn<>uid://by7paajtwxm1j::::res://Sprites/Effects/PlayerRunParticles.png<>res://Scenes/Entities/Players/EnergyManager.gd<>res://Scenes/Tools/PlayerHealthManager.gd<>res://Scripts/Entities/Player/PlayerGun.gd<>uid://bdr5173wns2s1::::res://Resources/Guns/Shotgun.tres<>uid://cqd2tcwsc6ars::::res://Resources/Guns/SMG.tres<>res://Scenes/Entities/Players/PlayerCamera.gd<>res://Scripts/Entities/Player/PlayerAbilities.gd<>res://Scripts/Entities/Player/Abilities/AbilityBase.gd<>res://Scripts/Entities/Player/Abilities/ObjectSpawnAbility.gd<>uid://c5xpyx4lug1ft::::res://Scenes/Entities/Misc/bomb.tscn<>res://Scenes/Entities/Players/PlayerRollAbility.gd<>uid://ctoxm2mh6bdp7::::res://Sprites/Guns/DefaultPlayerGuns.png<>uid://du67ionc4r786::::res://Scenes/Entities/Misc/ice_bomb.tscn<>uid://de08g8usoxyty::::res://Sprites/Abilities/DefaultPlayerIceGrenadeSprite.png<>uid://c378q8gnl3k4a::::res://Sprites/Abilities/DefaultPlayerBombSprite.png<>uid://cdg5pjvsn3wxb::::res://Sprites/UI/DefaultPlayerRollIcon.png<>uid://dlseb4whqrry5::::res://Scenes/Tools/overhead_health_bar.tscn<>res://Scenes/Tools/PlayerOverheadHealthBar.gd<>res://Scripts/Entities/Player/PlayerMagnet.gd
 DestroyAfterTime.gd::GDScript::-1::1686839360::0::1::::DestroyAfterTime<>GPUParticles2D<>::
 EnergyManager.gd::GDScript::-1::1686670735::0::1::::EnergyManager<>Node2D<>::
 PlayerAnimations.gd::GDScript::-1::1688764007::0::1::::PlayerAnimations<>AnimatedSprite2D<>::
@@ -332,9 +332,9 @@ PlayerOverheadHealthBar.gd::GDScript::-1::1688596021::0::1::::<>OverheadHealthBa
 single_portal.tscn::PackedScene::6423822066436411555::1687221378::0::1::::<><>::res://Scripts/Portal.gd<>uid://ccl282nq32jkr<>uid://dq0arwwggb3gs
 status_effects_manager.tscn::PackedScene::1784669062935039420::1687046767::0::1::::<><>::res://Scripts/Tools/StatusEffectsManager.gd
 tiled_bar.tscn::PackedScene::5664652797574082435::1688647946::0::1::::<><>::uid://cka7m7pym744y
-::res://Scenes/Tools/ArenaTools/::1689349884
+::res://Scenes/Tools/ArenaTools/::1689445936
 chaser_spawner.tscn::PackedScene::4586678164343029462::1688775846::0::1::::<><>::res://Scripts/ChaserSpawner.gd<>uid://cbuurvbgo67we
-target_spawner.tscn::PackedScene::8526609774758152394::1688758722::0::1::::<><>::res://Scripts/TargetSpawner.gd<>uid://b7ebm0qwnb6f1
+target_spawner.tscn::PackedScene::8526609774758152394::1689445936::0::1::::<><>::res://Scripts/TargetSpawner.gd<>uid://b7ebm0qwnb6f1::::res://Resources/EnemyPools/TargetPool.tres
 ::res://Scenes/Tools/EnemyTools/::1689349884
 close_range_attack.tscn::PackedScene::3666987987743628319::1689023155::0::1::::<><>::res://Scripts/Tools/CloseRangeAttack.gd<>uid://bgn334x3mulwc
 collision_damage.tscn::PackedScene::2101043296609786442::1687531608::0::1::::<><>::res://Scripts/CollisionDamage.gd
@@ -344,13 +344,13 @@ escape_movement.tscn::PackedScene::7066488435232421043::1685818435::0::1::::<><>
 player_prediction_movement.tscn::PackedScene::3808762132965021611::1685818457::0::1::::<><>::res://Scripts/Entities/Enemies/Movement/PlayerPredictionMovement.gd
 player_tracking_movement.tscn::PackedScene::3594944129981034682::1687565832::0::1::::<><>::res://Scripts/Entities/Enemies/Movement/PlayerTrackingMovement.gd
 wander_movement.tscn::PackedScene::8738400521929820587::1688333462::0::1::::<><>::res://Scripts/WanderMovement.gd
-::res://Scenes/UI/::1689367511
+::res://Scenes/UI/::1689451083
 ability_slot.tscn::PackedScene::8624071892327621290::1689256872::0::1::::<><>::uid://btkw2d188yg5r
 ammo_icon.tscn::PackedScene::1110426181193985380::1689188747::0::1::::<><>::uid://bmkoxpjll67gc
-character_selection_screen.tscn::PackedScene::4597465934759848795::1689367511::0::1::::<><>::uid://vspn7m7psh1b::::res://Scenes/UI/tv_screen.tscn<>res://Scripts/UI/CharacterSelectionScreen.gd<>uid://dgi4mcucy7t8i::::res://Themes/MenuTheme.tres<>res://Scripts/UI/CharacterPanel.gd<>uid://c4d5jfi8ohmdu::::res://Sprites/UI/CharacterPortraits/PlaceholderPortrait.png<>uid://bfpah0dardg0y::::res://Fonts/m5x7.ttf<>uid://cao1s75gvug8n::::res://Scenes/UI/menu_ability_slot.tscn
+character_selection_screen.tscn::PackedScene::4597465934759848795::1689451083::0::1::::<><>::uid://vspn7m7psh1b::::res://Scenes/UI/tv_screen.tscn<>res://Scripts/UI/CharacterSelectionScreen.gd<>uid://dgi4mcucy7t8i::::res://Themes/MenuTheme.tres<>res://Scripts/UI/CharacterPanel.gd<>uid://c4d5jfi8ohmdu::::res://Sprites/UI/CharacterPortraits/PlaceholderPortrait.png<>uid://bfpah0dardg0y::::res://Fonts/m5x7.ttf<>uid://cao1s75gvug8n::::res://Scenes/UI/menu_ability_slot.tscn
 cooldown_circle.tscn::PackedScene::3790813452640882428::1689038834::0::1::::<><>::uid://bho5l8etopfch
 leaderboard_display_case.tscn::PackedScene::6689567383684950766::1689041210::0::1::::<><>::res://Scripts/UI/LeaderboardDisplayCase.gd<>uid://8m065evukno3
-menu_ability_slot.tscn::PackedScene::4803355169438062007::1689367511::0::1::::<><>::res://Scripts/UI/MenuAbilitySlot.gd<>uid://dgi4mcucy7t8i::::res://Themes/MenuTheme.tres<>uid://c378q8gnl3k4a::::res://Sprites/Abilities/DefaultPlayerBombSprite.png<>uid://8m065evukno3::::res://Fonts/NbPixelFontBundle/KarenFat.ttf<>uid://bfpah0dardg0y::::res://Fonts/m5x7.ttf
+menu_ability_slot.tscn::PackedScene::4803355169438062007::1689451083::0::1::::<><>::res://Scripts/UI/MenuAbilitySlot.gd<>uid://dgi4mcucy7t8i::::res://Themes/MenuTheme.tres<>uid://c378q8gnl3k4a::::res://Sprites/Abilities/DefaultPlayerBombSprite.png<>uid://8m065evukno3::::res://Fonts/NbPixelFontBundle/KarenFat.ttf<>uid://bfpah0dardg0y::::res://Fonts/m5x7.ttf
 menu_leaderboard.tscn::PackedScene::7322968311821171003::1689367269::0::1::::<><>::res://Scripts/UI/CustomLeaderboard.gd<>uid://vspn7m7psh1b::::res://Scenes/UI/tv_screen.tscn<>uid://dgi4mcucy7t8i::::res://Themes/MenuTheme.tres<>uid://c2kqgyivh6ypi::::res://Scenes/UI/leaderboard_display_case.tscn<>uid://cktkjg2p44bsr::::res://Scenes/UI/message_from_the_top.tscn
 message_from_the_top.tscn::PackedScene::5514576580737717201::1689167675::0::1::::<><>::res://Scripts/UI/MessageFromTheTop.gd<>uid://vspn7m7psh1b
 player_hud.tscn::PackedScene::5774144818325720028::1689354469::0::1::::<><>::res://Scripts/Singletons/PlayerHUD.gd<>uid://cka7m7pym744y::::res://Sprites/UI/HUDBars.png<>res://Shaders/color_replace.gdshader<>res://Scenes/Singletons/FpsCounter.gd<>uid://btkw2d188yg5r::::res://Sprites/UI/HUDAtlas.png<>res://Scenes/Singletons/MovementAbilitySlot.gd<>uid://cdg5pjvsn3wxb::::res://Sprites/UI/DefaultPlayerRollIcon.png<>uid://bpytacx2vbouq::::res://Sprites/UI/MovementAbilitySlot.png<>uid://8m065evukno3::::res://Fonts/NbPixelFontBundle/KarenFat.ttf<>uid://du4tg656nchrm::::res://Scenes/UI/ability_slot.tscn
@@ -358,7 +358,7 @@ settings.tscn::PackedScene::8468312499512121825::1689367223::0::1::::<><>::res:/
 small_bullet_icon.tscn::PackedScene::7594869894911621229::1689354469::0::1::::<><>::uid://c1qkm36kaa4fw::::res://Sprites/UI/SmallAmmoIcon.png<>res://Scripts/UI/BulletIcon.gd
 title.tscn::PackedScene::7232489944127780790::1687624238::0::1::::<><>::uid://bk5shiiffogwf<>res://Scenes/Singletons/TitleText.gd
 tv_screen.tscn::PackedScene::1512060186943569297::1689026029::0::1::::<><>::uid://bnxfoxaguqr5t
-::res://Scripts/::1689349884
+::res://Scripts/::1689438328
 ArenaManager.gd::GDScript::-1::1687213821::0::1::::ArenaManager<>Node2D<>::
 ArmoredHealthManager.gd::GDScript::-1::1688765661::0::1::::ArmoredHealthManager<>HealthManager<>::
 BouncePad.gd::GDScript::-1::1688737790::0::1::::<>Area2D<>::
@@ -380,7 +380,7 @@ ResourcePack.gd::GDScript::-1::1688820306::0::1::::<>RigidBody2D<>::
 ScreenEffects.gd::GDScript::-1::1687887096::0::1::::<>Node2D<>::
 Shockwave.gd::GDScript::-1::1687020386::0::1::::<>Sprite2D<>::
 SuperPowerup.gd::GDScript::-1::1687050509::0::1::::<>StaticBody2D<>::
-TargetSpawner.gd::GDScript::-1::1688429575::0::1::::TargetSpawner<>Node2D<>::
+TargetSpawner.gd::GDScript::-1::1689438328::0::1::::TargetSpawner<>Node2D<>::
 WanderMovement.gd::GDScript::-1::1685886054::0::1::::WanderMovement<>PathfindingMovement<>::
 ::res://Scripts/Entities/::1689349884
 ::res://Scripts/Entities/Enemies/::1689349884
@@ -491,7 +491,7 @@ Door.gd::GDScript::-1::1688744419::0::1::::Door<>StaticBody2D<>::
 RetractingSpikes.gd::GDScript::-1::1689253862::0::1::::<>Area2D<>::
 SpeedModifier.gd::GDScript::-1::1688737433::0::1::::SpeedBooster<>Area2D<>::
 Stomper.gd::GDScript::-1::1689164038::0::1::::<>StaticBody2D<>::
-::res://Shaders/::1689367511
+::res://Shaders/::1689451083
 background_shader.gdshader::Shader::-1::1686839037::0::1::::<><>::
 BigTextShader.gdshader::Shader::-1::1687224069::0::1::::<><>::
 Blink.gdshader::Shader::-1::1687625988::0::1::::<><>::
@@ -500,7 +500,7 @@ color_replace.gdshader::Shader::-1::1687625988::0::1::::<><>::
 freeze_shader.gdshader::Shader::-1::1686856053::0::1::::<><>::
 GhostShader.gdshader::Shader::-1::1687625988::0::1::::<><>::
 ObjectShockwave.gdshader::Shader::-1::1687125873::0::1::::<><>::
-OutlineShader.gdshader::Shader::-1::1689367511::0::1::::<><>::
+OutlineShader.gdshader::Shader::-1::1689451083::0::1::::<><>::
 Shockwave.gdshader::Shader::-1::1687125873::0::1::::<><>::
 ::res://Sprites/::1689349884
 background_shader.gdshader::Shader::-1::1686666671::0::1::::<><>::
@@ -566,7 +566,7 @@ DefaultPlayerSpriteSheet.png::CompressedTexture2D::2879356268816128323::16888149
 ::res://Sprites/Guns/::1689349884
 DefaultPlayerGun.png::CompressedTexture2D::1183776292938853018::1687206672::1687206683::1::::<><>::
 DefaultPlayerGuns.png::CompressedTexture2D::6136750042453766274::1689183414::1689183415::1::::<><>::
-::res://Sprites/Misc/::1689353876
+::res://Sprites/Misc/::1689422477
 16pxSquare.png::CompressedTexture2D::2836142294347553722::1682172285::1684687975::1::::<><>::
 128pxCircle.png::CompressedTexture2D::90783737684408976::1686063464::1686063465::1::::<><>::
 Ammos.png::CompressedTexture2D::5043891884487761218::1685999527::1685999528::1::::<><>::
@@ -614,8 +614,9 @@ SmallAmmoIcon.png::CompressedTexture2D::6631411464491652788::1689196256::1689196
 TabContainerImage.png::CompressedTexture2D::1863876369180319289::1689021700::1689021702::1::::<><>::
 TitleLogo.png::CompressedTexture2D::5013383868876350800::1688861125::1688861129::1::::<><>::
 TVScreen.png::CompressedTexture2D::5442966076358689198::1687894482::1687894483::1::::<><>::
-::res://Sprites/UI/CharacterPortraits/::1689360891
+::res://Sprites/UI/CharacterPortraits/::1689451077
+MiaPortrait.png::CompressedTexture2D::7446095609546602334::1689451100::1689451109::1::::<><>::
 PlaceholderPortrait.png::CompressedTexture2D::6816348824573011426::1689360890::1689360891::1::::<><>::
-::res://Themes/::1689367511
+::res://Themes/::1689451083
 BigTextTheme.tres::Theme::7077239446442533471::1689361335::0::1::::<><>::uid://8m065evukno3::::res://Fonts/NbPixelFontBundle/KarenFat.ttf<>uid://c48usb0eg43qi::::res://Fonts/Alpenkreuzer.ttf
-MenuTheme.tres::Theme::7598692493324074230::1689367511::0::1::::<><>::uid://8m065evukno3::::res://Fonts/NbPixelFontBundle/KarenFat.ttf<>uid://bgn334x3mulwc::::res://Sprites/Misc/16pxSquare.png<>uid://cgyqdgedsfwla::::res://Sprites/UI/DropDownArrow.png<>uid://bnxfoxaguqr5t::::res://Sprites/UI/BlackScreen.png<>uid://1s41h3oym26p::::res://Sprites/UI/TabContainerImage.png
+MenuTheme.tres::Theme::7598692493324074230::1689451083::0::1::::<><>::uid://8m065evukno3::::res://Fonts/NbPixelFontBundle/KarenFat.ttf<>uid://bgn334x3mulwc::::res://Sprites/Misc/16pxSquare.png<>uid://cgyqdgedsfwla::::res://Sprites/UI/DropDownArrow.png<>uid://bnxfoxaguqr5t::::res://Sprites/UI/BlackScreen.png<>uid://1s41h3oym26p::::res://Sprites/UI/TabContainerImage.png

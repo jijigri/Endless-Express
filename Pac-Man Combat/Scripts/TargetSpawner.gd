@@ -30,7 +30,7 @@ func spawn_enemies(arena: Node2D):
 		for i in number_of_targets_of_each_type:
 			var score = clamp(game_manager.current_score, 1.0, 99999.0)
 			var random_chance: float = randf_range(0, (1.0 / score) * (50.0 * number_of_targets_of_each_type * TargetEnemyData.TYPE.size()))
-			if random_chance <= 1 && random_chance >= 0 && !spawned_special:
+			if random_chance <= 1 && random_chance >= 0 && !spawned_special && game_manager.current_score > 6:
 				instantiate_enemy(type, true)
 				spawned_special = true
 			else:

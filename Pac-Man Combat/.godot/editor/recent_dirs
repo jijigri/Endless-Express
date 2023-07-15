@@ -1,3 +1,4 @@
+D:/Godot Games/Builds/EndlessExpress/v0.3a
 res://Scripts/UI
 res://Resources/PlayableCharacters
 res://Scenes/Singletons
@@ -17,6 +18,5 @@ res://Sprites/Pickups
 res://Scripts/Entities/Player
 res://Scripts/Entities/Enemies/Movement
 res://Scripts/Tools
-D:/Godot Games/Pac-Man Combat/Builds/v0.2a
 res://Scenes/Entities/Enemies/Chasers
 res://Sprites/Entities/Bullets
