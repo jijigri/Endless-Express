@@ -15,9 +15,4 @@ res://Scenes/Entities/Players/default_player.tscn
 res://Scenes/main_menu.tscn
 res://Scenes/UI/character_selection_screen.tscn
 res://Scenes/UI/menu_ability_slot.tscn
-res://Scripts/Singletons/LootLocker.gd
-res://Scripts/Singletons/Global.gd
 res://Scenes/UI/menu_leaderboard.tscn
-res://Scripts/UI/CustomLeaderboard.gd
-res://Scenes/ArenaProps/retracting_spikes.tscn
-res://Scripts/World/ArenaProps/RetractingSpikes.gd
