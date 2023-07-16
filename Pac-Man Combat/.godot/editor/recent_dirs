@@ -1,3 +1,4 @@
+res://Scripts/Singletons
 D:/Godot Games/Builds/EndlessExpress/v0.3a
 res://Scripts/UI
 res://Resources/PlayableCharacters
@@ -19,4 +20,3 @@ res://Scripts/Entities/Player
 res://Scripts/Entities/Enemies/Movement
 res://Scripts/Tools
 res://Scenes/Entities/Enemies/Chasers
-res://Sprites/Entities/Bullets

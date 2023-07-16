@@ -54,7 +54,7 @@ func _process(_delta: float) -> void:
 							retract_spikes()
 							get_tree().call_group("RetractingSpikes", "retract_spikes")
 						else:
-							var damageData = DamageData.new(0.0, global_position, Vector2(), 3.0)
+							var damageData = DamageData.new(0.0, global_position, Vector2(), 0.5)
 							damageData.source = self
 							hit.receive_hit(damageData)
 						hits.append(hit)

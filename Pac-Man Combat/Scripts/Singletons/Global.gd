@@ -11,7 +11,7 @@ func _ready():
 	SilentWolf.configure({
 		"api_key": "LeiUamxSvV9viEP21PsfC26VxN73ynsl2FtkO7nM",
 		"game_id": "EndlessExpress",
-		"log_level": 1
+		"log_level": 0
 	})
 	
 	"""

@@ -10,16 +10,17 @@ func _ready() -> void:
 	fill_scoreboard()
 
 func fill_scoreboard():
-	var sw_result: Dictionary = await SilentWolf.Scores.get_scores(limit, "main")\
-		.sw_get_scores_complete
-	var scores = sw_result.scores
+	if LootLocker.authentificated == false:
+		await LootLocker.authentification_complete
+	
+	var result: Dictionary = await LootLocker.get_leaderboard(str(16197)).get_leaderboard_complete
 	var limit_index: int = 1
 	
-	print_debug("Found ", sw_result.scores.size(), " scores with a limit of ", limit)
+	print_debug("Found ", result.items.size(), " scores with a limit of ", limit)
 	
-	for score in scores:
+	for score in result.items:
 		var instance = Global.spawn_object(display_case, Vector2(), 0, parent)
-		instance.set_display_case(limit_index, score.player_name, str(int(score.score)))
+		instance.set_display_case(limit_index, score.player.name, str(int(score.score)))
 
 		limit_index += 1
 		if limit_index > limit:
