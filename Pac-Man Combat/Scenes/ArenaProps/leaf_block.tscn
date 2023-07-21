@@ -1,0 +1,209 @@
+[gd_scene load_steps=18 format=3 uid="uid://yj7wxv6sle14"]
+
+[ext_resource type="Script" path="res://Scripts/World/ArenaProps/LeafBlock.gd" id="1_1tnmd"]
+[ext_resource type="Texture2D" uid="uid://bv6ku7bxertqy" path="res://Sprites/Effects/LeafParticles.png" id="3_g3c2q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jopa3"]
+resource_local_to_scene = true
+size = Vector2(64, 80)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_p01r3"]
+vertices = PackedVector2Array(32, -40, 32, 40, -32, 40, -32, -40)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -40, -32, 40, 32, 40, 32, -40)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34x2l"]
+resource_local_to_scene = true
+size = Vector2(72, 88)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ufb5g"]
+load_path = "res://.godot/imported/LeafBlockSprite.png-a6bba6fb2203a0134bae510ad90be458.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txkuy"]
+resource_local_to_scene = true
+atlas = SubResource("CompressedTexture2D_ufb5g")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="Animation" id="Animation_rlvqn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 48, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_gwp86"]
+resource_name = "break"
+length = 1.2
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(48, 0, 48, 48), Rect2(96, 0, 48, 48), Rect2(144, 0, 48, 48)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"wobble"
+}, {
+"args": [],
+"method": &"wobble"
+}, {
+"args": [],
+"method": &"wobble"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_e1vq6"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 48, 48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sganv"]
+_data = {
+"RESET": SubResource("Animation_rlvqn"),
+"break": SubResource("Animation_gwp86"),
+"default": SubResource("Animation_e1vq6")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eppgu"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_4ptu3"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 3.15789), 17.0176, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nuxn3"]
+curve = SubResource("Curve_4ptu3")
+
+[sub_resource type="Curve" id="Curve_udiyd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.632302, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.39497, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0sxth"]
+curve = SubResource("Curve_udiyd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y1q8b"]
+resource_local_to_scene = true
+lifetime_randomness = 0.75
+emission_shape = 3
+emission_box_extents = Vector3(32, 40, 1)
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 150, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 110.0
+angular_velocity_min = 200.0
+angular_velocity_max = 500.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_max = 10.0
+damping_curve = SubResource("CurveTexture_nuxn3")
+angle_min = -720.0
+angle_max = 720.0
+scale_curve = SubResource("CurveTexture_0sxth")
+turbulence_enabled = true
+turbulence_noise_strength = 20.0
+anim_offset_max = 1.0
+
+[node name="LeafBlock" type="StaticBody2D" node_paths=PackedStringArray("sprite", "navigation_region", "collision_shape")]
+position = Vector2(368, 184)
+collision_layer = 4
+collision_mask = 0
+collision_priority = 8.0
+script = ExtResource("1_1tnmd")
+sprite = NodePath("NinePatchRect")
+navigation_region = NodePath("NavigationRegion2D")
+collision_shape = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jopa3")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_p01r3")
+enabled = false
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("RectangleShape2D_34x2l")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 40)
+texture = SubResource("AtlasTexture_txkuy")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+speed_scale = 0.75
+libraries = {
+"": SubResource("AnimationLibrary_sganv")
+}
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_eppgu")
+emitting = false
+amount = 102
+process_material = SubResource("ParticleProcessMaterial_y1q8b")
+texture = ExtResource("3_g3c2q")
+lifetime = 0.6
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

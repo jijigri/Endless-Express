@@ -1,3 +1,6 @@
+Node2D
+GPUParticles2D
+AnimationPlayer
 CollisionShape2D
 Area2D
 StaticBody2D
@@ -5,7 +8,6 @@ CharacterBody2D
 RigidBody2D
 NavigationRegion2D
 NinePatchRect
-GPUParticles2D
 Panel
 TextureRect
 Sprite2D
@@ -16,8 +18,6 @@ AudioStreamPlayer2D
 Control
 CanvasLayer
 Label
-AnimationPlayer
-Node2D
 HSplitContainer
 VBoxContainer
 HBoxContainer

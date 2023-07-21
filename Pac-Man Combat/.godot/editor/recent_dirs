@@ -1,3 +1,4 @@
+res://Scenes/ArenaProps
 res://Scripts/World/ArenaProps
 res://Scripts/Tools
 res://Scenes
@@ -19,4 +20,3 @@ res://Sprites/Effects/AttackAnimations
 res://Sprites/Entities/Enemies/Chasers
 res://Scenes/Tools/ArenaTools
 res://Scenes/Entities/ResourcePacks
-res://Sprites/Pickups

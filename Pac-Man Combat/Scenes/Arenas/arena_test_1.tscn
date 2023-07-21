@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cgo148uilrd2s"]
+[gd_scene load_steps=42 format=3 uid="uid://cgo148uilrd2s"]
 
 [ext_resource type="Script" path="res://Scripts/World/Arena.gd" id="1_ecp5h"]
 [ext_resource type="TileSet" uid="uid://bdvvhrogvwxky" path="res://Resources/Tilesets/arena_level_tileset.tres" id="2_3pqja"]
@@ -64,6 +64,9 @@ region = Rect2(0, 0, 8, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3l5s2"]
 resource_local_to_scene = true
 size = Vector2(32, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psbib"]
+size = Vector2(128, 32)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_c3nc6"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -449,11 +452,15 @@ position = Vector2(176, 104)
 position = Vector2(-296, -8)
 
 [node name="VoidTrap" parent="Map/Level" instance=ExtResource("10_nqa17")]
-position = Vector2(0, 256)
+position = Vector2(0, 272)
 damage = 9999.0
 
 [node name="Area2D" parent="Map/Level/VoidTrap" index="0"]
 position = Vector2(0, 24)
+
+[node name="CollisionShape2D" parent="Map/Level/VoidTrap/Area2D" index="0"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_psbib")
 
 [node name="NavigationMap" type="TileMap" parent="Map"]
 visible = false

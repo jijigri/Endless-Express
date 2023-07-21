@@ -23,6 +23,7 @@ func set_editor_size():
 	if sprite != null:
 		sprite.size = size
 		sprite.position = Vector2(-size.x / 2, -size.y / 2) + center
+		sprite.pivot_offset = size / 2
 	
 	if navigation_region != null:
 		var polygon = NavigationPolygon.new()

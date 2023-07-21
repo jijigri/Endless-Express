@@ -75,3 +75,9 @@ func get_unique_id() -> int:
 	if current_id >= 9223372036854775801:
 		current_id = 1
 	return current_id
+
+func wobble(object, from: Vector2, value: float, strength: float = 4.0):
+	object.position = from + (Vector2(randf_range(-value, value), randf_range(-value, value)) * strength)
+
+func wobble_offset(object, value: float, strength: float = 4.0):
+	object.offset = Vector2.ZERO + (Vector2.ONE * (value * strength))

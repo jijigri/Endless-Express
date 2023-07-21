@@ -12,7 +12,7 @@
 resource_local_to_scene = true
 size = Vector2(128, 80)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_3b7xt"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_m3juo"]
 vertices = PackedVector2Array(64, -40, 64, 40, -64, 40, -64, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-64, -40, -64, 40, 64, 40, 64, -40)])
@@ -125,7 +125,7 @@ axis_stretch_vertical = 1
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 z_index = 8
-navigation_polygon = SubResource("NavigationPolygon_3b7xt")
+navigation_polygon = SubResource("NavigationPolygon_m3juo")
 enabled = false
 
 [node name="PlayerCollisionDamage" type="Node2D" parent="."]
