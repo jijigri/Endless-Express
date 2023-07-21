@@ -1,7 +1,10 @@
 extends LineEdit
 
 func _ready() -> void:
-	text = ScoreManager.display_name
+	text = "player"
+	if LootLocker.authentificated == false:
+		await LootLocker.authentification_complete
+	text = await LootLocker.get_player_name().get_name_complete
 
 func _on_text_changed(new_text: String) -> void:
 	if new_text != "":

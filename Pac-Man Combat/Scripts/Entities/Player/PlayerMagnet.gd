@@ -1,6 +1,9 @@
+class_name PlayerMagnet
 extends Area2D
 
-@export var radius: float = 24.0
+@export var radius: float = 12.0
+
+var override_radius: float = -1.0
 
 @onready var player = get_parent()
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -11,11 +14,15 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	var radius_extend_size = 0.0
 	if !player.is_on_floor():
-		radius_extend_size += radius * 0.4
+		radius_extend_size += radius * 0.35
 	
-	radius_extend_size += clamp(player.velocity.length() * 0.06, 0, 24)
+	radius_extend_size += clamp(player.velocity.length() * 0.05, 0, 20)
 	
-	collision_shape.shape.radius = radius + radius_extend_size
+	
+	if override_radius == -1.0:
+		collision_shape.shape.radius = radius + radius_extend_size
+	else:
+		collision_shape.shape.radius = override_radius
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.has_method("magnet_to_player"):

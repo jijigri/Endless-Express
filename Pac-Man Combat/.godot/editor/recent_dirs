@@ -1,12 +1,16 @@
-res://Scripts/Singletons
+res://Scripts/World/ArenaProps
+res://Scripts/Tools
+res://Scenes
+res://Scenes/Arenas
 D:/Godot Games/Builds/EndlessExpress/v0.3a
+res://Scripts/Entities/Player/Abilities
 res://Scripts/UI
+res://Scenes/UI
+res://Scripts/Singletons
 res://Resources/PlayableCharacters
 res://Scenes/Singletons
 res://Scripts/Misc
 res://Scripts/Resources
-res://Scenes/UI
-res://Scenes
 D:/Godot Games/Pac-Man Combat/Builds/v0.3a
 res://Themes
 res://Scenes/Effects
@@ -16,7 +20,3 @@ res://Sprites/Entities/Enemies/Chasers
 res://Scenes/Tools/ArenaTools
 res://Scenes/Entities/ResourcePacks
 res://Sprites/Pickups
-res://Scripts/Entities/Player
-res://Scripts/Entities/Enemies/Movement
-res://Scripts/Tools
-res://Scenes/Entities/Enemies/Chasers

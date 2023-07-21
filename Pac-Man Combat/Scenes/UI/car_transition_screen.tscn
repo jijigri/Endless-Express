@@ -1,0 +1,353 @@
+[gd_scene load_steps=13 format=3 uid="uid://vvoimppiugtt"]
+
+[ext_resource type="Texture2D" uid="uid://duid6hn10op30" path="res://Sprites/UI/TransitionCar.png" id="1_ohbxx"]
+[ext_resource type="Script" path="res://Scripts/UI/CarTransitionScreen.gd" id="1_v5jys"]
+[ext_resource type="FontFile" uid="uid://c48usb0eg43qi" path="res://Fonts/Alpenkreuzer.ttf" id="2_f171i"]
+[ext_resource type="AudioStream" uid="uid://ca3r4axf2d4sm" path="res://Audio/SoundEffects/Misc/TrainSimpleLoop.wav" id="4_42h07"]
+[ext_resource type="AudioStream" uid="uid://l0jdsq20ce3l" path="res://Audio/SoundEffects/Misc/CarTransitionSong.wav" id="5_cfy1r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i12u2"]
+bg_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
+[sub_resource type="Animation" id="Animation_n3mtc"]
+resource_name = "default"
+length = 2.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Car:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.75, 0.95, 1, 1.05, 1.25, 1.9),
+"transitions": PackedFloat32Array(2.63901, 2.63901, 0.8, 2.63901, 1, 1, 1, 1.56917, 1.56917),
+"update": 0,
+"values": [Vector2(176, 116), Vector2(176, 116), Vector2(48, 116), Vector2(32, 116), Vector2(32, 116), Vector2(24, 116), Vector2(32, 116), Vector2(32, 116), Vector2(-312, 116)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Car2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75, 0.95, 1, 1.05, 1.25, 1.7, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1.56917, 0.420448, 0.420448),
+"update": 0,
+"values": [Vector2(664, 116), Vector2(664, 116), Vector2(320, 116), Vector2(328, 116), Vector2(320, 116), Vector2(320, 116), Vector2(208, 116), Vector2(176, 116)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.95, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"on_animation_collision"
+}, {
+"args": [],
+"method": &"animation_end"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.15, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SparksWhite:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.95),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SparksOrange:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.95),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%Car:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("%Car2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.75, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Song")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_egyuw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Car:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(176, 116)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Car2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(664, 116)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Car:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%Car2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mdecp"]
+_data = {
+"RESET": SubResource("Animation_egyuw"),
+"default": SubResource("Animation_n3mtc")
+}
+
+[sub_resource type="Curve" id="Curve_tju4x"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.487973, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0210526), -2.84436, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_a4lk2"]
+curve = SubResource("Curve_tju4x")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k5kln"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -0.68, 0)
+gravity = Vector3(0, 200, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_a4lk2")
+
+[node name="CarTransition" type="Control"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v5jys")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i12u2")
+
+[node name="Car" type="TextureRect" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 176.0
+offset_top = 116.0
+offset_right = 464.001
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ohbxx")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Panel/Car"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -4.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f171i")
+theme_override_font_sizes/font_size = 32
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Car2" type="TextureRect" parent="Panel"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 664.0
+offset_top = 116.0
+offset_right = 952.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ohbxx")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Panel/Car2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -4.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f171i")
+theme_override_font_sizes/font_size = 32
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_mdecp")
+}
+
+[node name="SparksWhite" type="GPUParticles2D" parent="Panel"]
+position = Vector2(320, 240)
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_k5kln")
+lifetime = 0.8
+one_shot = true
+preprocess = 0.1
+speed_scale = 2.2
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.1
+
+[node name="SparksOrange" type="GPUParticles2D" parent="Panel"]
+modulate = Color(0.886719, 0.472656, 0.152344, 1)
+position = Vector2(320, 240)
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_k5kln")
+lifetime = 0.8
+one_shot = true
+preprocess = 0.1
+speed_scale = 2.0
+explosiveness = 0.9
+trail_enabled = true
+trail_lifetime = 0.1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_42h07")
+volume_db = -80.0
+autoplay = true
+bus = &"Ambience"
+
+[node name="Song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cfy1r")
+bus = &"Ambience"

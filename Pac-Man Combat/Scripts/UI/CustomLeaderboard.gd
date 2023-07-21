@@ -13,7 +13,7 @@ func fill_scoreboard():
 	if LootLocker.authentificated == false:
 		await LootLocker.authentification_complete
 	
-	var result: Dictionary = await LootLocker.get_leaderboard(str(16197)).get_leaderboard_complete
+	var result = await LootLocker.get_leaderboard("main", 10).get_leaderboard_complete
 	var limit_index: int = 1
 	
 	print_debug("Found ", result.items.size(), " scores with a limit of ", limit)

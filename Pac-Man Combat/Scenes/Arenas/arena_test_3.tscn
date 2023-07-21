@@ -70,7 +70,7 @@ size = Vector2(32, 80)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1id88"]
 size = Vector2(96, 80)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_mgf48"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ga17b"]
 vertices = PackedVector2Array(48, -40, 48, 40, -48, 40, -48, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -40, -48, 40, 48, 40, 48, -40)])
@@ -227,13 +227,7 @@ offset_left = -48.0
 offset_right = 48.0
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/Stomper" index="2"]
-navigation_polygon = SubResource("NavigationPolygon_mgf48")
-
-[node name="Area2D" parent="Map/Level/Props/Stomper/PlayerCollisionDamage" index="0"]
-priority = 4
-
-[node name="Area2D" parent="Map/Level/Props/Stomper/EnemyCollisionDamage" index="0"]
-priority = 4
+navigation_polygon = SubResource("NavigationPolygon_ga17b")
 
 [node name="Button1" parent="Map/Level/Props/Stomper/Buttons" index="0"]
 position = Vector2(-64, 152)

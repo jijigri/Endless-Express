@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60y67"]
 size = Vector2(128, 64)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_xreus"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ojhw1"]
 vertices = PackedVector2Array(64, -24, 64, 40, -64, 40, -64, -24)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-64, -24, -64, 40, 64, 40, 64, -24)])
@@ -166,7 +166,7 @@ shape = SubResource("RectangleShape2D_60y67")
 offset_top = -24.0
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/Stomper" index="2"]
-navigation_polygon = SubResource("NavigationPolygon_xreus")
+navigation_polygon = SubResource("NavigationPolygon_ojhw1")
 
 [node name="CollisionShape2D" parent="Map/Level/Props/Stomper/PlayerCollisionDamage/Area2D" index="0"]
 position = Vector2(0, 8)

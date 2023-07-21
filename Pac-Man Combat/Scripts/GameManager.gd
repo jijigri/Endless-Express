@@ -3,6 +3,8 @@ extends Node2D
 
 @export var current_score: int = 0
 
+var old_score: int = 0
+
 @onready var player = get_tree().get_first_node_in_group("Player")
 
 func _ready() -> void:
@@ -16,6 +18,7 @@ func _ready() -> void:
 	player.health_manager.entity_killed.connect(on_player_entity_killed)
 
 func increase_score(amount: int):
+	old_score = current_score
 	current_score += amount
 	GameEvents.score_updated.emit(current_score)
 

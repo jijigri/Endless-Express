@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cci5n8kmjjh64"
+path="res://.godot/imported/Tropical Chase.wav-6a5c3e76c58d95cb4a40c809e3697ce1.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Tropical Chase.wav"
+dest_files=["res://.godot/imported/Tropical Chase.wav-6a5c3e76c58d95cb4a40c809e3697ce1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

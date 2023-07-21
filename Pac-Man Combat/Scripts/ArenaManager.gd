@@ -6,6 +6,8 @@ extends Node2D
 
 @onready var world = get_world_2d()
 
+@onready var game_manager = get_tree().get_first_node_in_group("GameManager")
+
 var current_arena: Arena
 
 func _ready() -> void:
@@ -16,9 +18,13 @@ func _ready() -> void:
 func _on_arena_exited(arena: Arena):
 	print_debug("Changing current Arena from " + current_arena.name)
 	
-	SceneTransitions.fade_in_out(1.0, 0.2)
+	#SceneTransitions.fade_in_out(1.0, 0.2)
 	
-	await get_tree().create_timer(0.5).timeout
+	var transition = Global.spawn_object(preload("res://Scenes/UI/car_transition_screen.tscn"), Vector2(), 0, HUD)
+	transition.initialize(game_manager.old_score, game_manager.current_score)
+	await transition.transition_complete
+	
+	#dawait get_tree().create_timer(0.5).timeout
 	
 	change_current_arena()
 

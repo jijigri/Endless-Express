@@ -4,6 +4,7 @@ var stream: AudioStream
 var position: Vector2
 var volume: float = 0 : set = set_volume
 var pitch: float = 1 : set = set_pitch
+var panning_strength = 1 : set = set_panning
 var max_distance: float = 4000 : set = set_distance
 var attenuation: float = 1.0
 
@@ -21,3 +22,6 @@ func set_pitch(new_pitch):
 
 func set_distance(new_distance):
 	max_distance = clamp(new_distance, 1, 10000)
+
+func set_panning(new_panning):
+	panning_strength = clamp(new_panning, 0.0, 3.0)

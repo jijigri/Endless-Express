@@ -39,6 +39,8 @@ func _ready() -> void:
 	
 	GameEvents.arena_entered.emit(self)
 	
+	await get_tree().create_timer(1.0).timeout
+	
 	var countdown_data = AudioData.new(preload("res://Audio/SoundEffects/Misc/CountdownSound.wav"), global_position)
 	var start_data = AudioData.new(preload("res://Audio/SoundEffects/Misc/ArenaStartSound.wav"), global_position)
 	#HUD.play_countdown()

@@ -71,4 +71,5 @@ func start_on_stream(stream_player: AudioStreamPlayer2D, stream_data: AudioData)
 	stream_player.pitch_scale = stream_data.pitch
 	stream_player.max_distance = stream_data.max_distance
 	stream_player.attenuation = stream_data.attenuation
+	stream_player.panning_strength = stream_data.panning_strength
 	stream_player.play()

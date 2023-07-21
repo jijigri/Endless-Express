@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://br7813oqatnq1"]
+[gd_scene load_steps=4 format=3 uid="uid://br7813oqatnq1"]
 
 [ext_resource type="AudioStream" uid="uid://beo0o1h8ogfpl" path="res://Audio/Music/Cyberfunk.wav" id="1_sdv1k"]
 [ext_resource type="Script" path="res://Scenes/MusicHandler.gd" id="2_ir766"]
+[ext_resource type="AudioStream" uid="uid://cci5n8kmjjh64" path="res://Audio/Music/Tropical Chase.wav" id="3_ntgvt"]
 
 [node name="MusicManager" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_sdv1k")
@@ -9,6 +10,6 @@ attenuation = 1e-05
 panning_strength = 0.0
 bus = &"Music"
 script = ExtResource("2_ir766")
-gameplay_tracks = Array[AudioStream]([ExtResource("1_sdv1k")])
+gameplay_tracks = Array[AudioStream]([ExtResource("3_ntgvt")])
 
 [connection signal="finished" from="." to="." method="_on_finished"]
