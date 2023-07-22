@@ -16,6 +16,8 @@ var entities_damaged = []
 
 var gun_origin
 
+var player_owned: bool = false
+
 var active: bool = true
 
 func _ready() -> void:
@@ -43,6 +45,9 @@ func set_team(team_player: bool):
 	else:
 		set_collision_mask_value(1, true)
 		set_collision_mask_value(2, false)
+		team_player = false
+	
+	player_owned = team_player
 
 func _on_lifetime_timeout() -> void:
 	if active:
@@ -73,10 +78,26 @@ func _on_area_entered(area: Area2D) -> void:
 			destroy_bullet()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Solid") && !body.is_in_group("Platform"):
+	if body.is_in_group("Hurtbox"):
+		if has_piercing:
+			if entities_damaged.has(body):
+				return
+			else:
+				entities_damaged.append(body)
+				
+			
+		var damageData = DamageData.new(damage, global_position, velocity * knockback_force)
+		damageData.source = self
+		body.receive_hit(damageData)
+		on_entity_damaged(body)
+		
+		if !has_piercing:
+			destroy_bullet()
+	
+	elif body.is_in_group("Solid") && !body.is_in_group("Platform"):
 		destroy_bullet()
 
-func on_entity_damaged(area: Area2D):
+func on_entity_damaged(area):
 	if !has_piercing:
 		active = false
 	

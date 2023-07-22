@@ -30,6 +30,8 @@ var speed_modifier: float = 1.0
 
 var is_dashing = false
 
+var jumped_this_frame: bool
+
 @onready var numberOfJumpsLeft: int = 0
 @onready var number_of_dashes_remaining: int = movement_data.initial_number_of_dashes
 
@@ -45,6 +47,7 @@ signal on_dash_begin
 signal on_dash_finish
 
 func _process(delta):
+	jumped_this_frame = false
 	if is_dashing == false:
 		process_coyote_and_buffered_time(delta)
 		get_x_input()
@@ -61,14 +64,6 @@ func _process(delta):
 	
 	if abs(velocity.x) > 0.1:
 		last_movement_direction_x = velocity.x
-	
-	"""
-	if Input.is_action_just_pressed("move_up"):
-		var enemies = get_tree().get_nodes_in_group("Enemies")
-		for i in enemies:
-			if i.has_method("retreat"):
-				i.retreat(2.0)
-	"""
 	
 func _physics_process(delta):
 	
@@ -196,6 +191,7 @@ func jump():
 		effect.scale.x = sign(velocity.x)
 	
 	jumped.emit()
+	jumped_this_frame = true
 	
 	if not is_on_floor() && not is_coyote_jump_possible():
 		numberOfJumpsLeft -= 1

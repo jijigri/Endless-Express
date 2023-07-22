@@ -1,4 +1,5 @@
 @tool
+class_name LeafBlock
 extends Resizer
 
 @onready var area_shape: CollisionShape2D = $DetectionArea/CollisionShape2D
@@ -15,6 +16,8 @@ var is_breaking: bool = false
 var active: bool = true
 
 var disabled_player_collisions: bool = false
+
+signal broke
 
 func _ready() -> void:
 	if Engine.is_editor_hint() == false:
@@ -50,6 +53,16 @@ func _process(delta: float) -> void:
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	disable_block()
+
+func receive_hit(damage_data: DamageData):
+	if active:
+		if damage_data.source is Bullet:
+			if damage_data.source.player_owned:
+				if damage_data.damage > 50:
+					is_breaking = true
+					destroy()
+				else:
+					disable_block()
 
 func disable_block() -> void:
 	
@@ -103,6 +116,8 @@ func destroy():
 	if Engine.is_editor_hint():
 		return
 	
+	animation_player.stop()
+	
 	collision_shape.set_deferred("disabled", true)
 	sprite.visible = false
 	navigation_region.set_deferred("enabled", true)
@@ -113,5 +128,7 @@ func destroy():
 	
 	var audio_data = AudioData.new(break_sound, global_position)
 	AudioManager.play_sound(audio_data)
+	
+	broke.emit()
 	
 	active = false

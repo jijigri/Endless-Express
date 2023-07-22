@@ -214,4 +214,4 @@ func update_ammo_bar(drop: bool = false):
 func shake_clip(value) -> void:
 	var last_bullet = ammo_bar.get_child(ammo_bar.get_child_count() - 1)
 	var default_pos = Vector2(5, 12)
-	last_bullet.progress.scale = Vector2.ONE + (Vector2.ONE * randf_range(value * 0.2, value * 2.0))
+	last_bullet.progress.scale = Vector2.ONE + (Vector2.ONE * randf_range(value * 0.2, value * 1.5))

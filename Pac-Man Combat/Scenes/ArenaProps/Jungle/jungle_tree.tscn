@@ -1,0 +1,214 @@
+[gd_scene load_steps=20 format=3 uid="uid://caymikuq4sssi"]
+
+[ext_resource type="Script" path="res://Scripts/World/ArenaProps/JungleTree.gd" id="1_xinru"]
+[ext_resource type="Texture2D" uid="uid://sdw76swnakla" path="res://Sprites/ArenaProps/JungleTreeSprite.png" id="2_uf2if"]
+[ext_resource type="PackedScene" uid="uid://cfoemwbbnhoxt" path="res://Scenes/Tools/health_manager.tscn" id="3_qbg1d"]
+[ext_resource type="PackedScene" uid="uid://digbyp3l8ibht" path="res://Scenes/ArenaProps/one_way_platform.tscn" id="4_erf0o"]
+[ext_resource type="PackedScene" uid="uid://c3qf8ujj87stt" path="res://Scenes/ArenaProps/bounce_pad.tscn" id="5_xkdck"]
+[ext_resource type="Texture2D" uid="uid://bv6ku7bxertqy" path="res://Sprites/Effects/LeafParticles.png" id="6_ebd11"]
+[ext_resource type="PackedScene" uid="uid://b7lq6gjy6c3df" path="res://Scenes/Tools/hurtbox.tscn" id="6_snmje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ifun"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kogn1"]
+resource_local_to_scene = true
+size = Vector2(82, 18)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cpiam"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_xs4s3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.632302, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.39497, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0sxth"]
+curve = SubResource("Curve_xs4s3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v28sj"]
+resource_local_to_scene = true
+lifetime_randomness = 0.75
+emission_shape = 3
+emission_box_extents = Vector3(32, 1, 1)
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 150, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = 10.0
+angular_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -720.0
+angle_max = 720.0
+scale_curve = SubResource("CurveTexture_0sxth")
+turbulence_enabled = true
+turbulence_noise_strength = 5.0
+turbulence_noise_scale = 9.5
+anim_offset_max = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhwb1"]
+size = Vector2(8, 58)
+
+[sub_resource type="Animation" id="Animation_3bv8t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 128, 128)]
+}
+
+[sub_resource type="Animation" id="Animation_a8wjm"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 128, 128)]
+}
+
+[sub_resource type="Animation" id="Animation_525cw"]
+resource_name = "shake"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(768, 0, 128, 128), Rect2(896, 0, 128, 128), Rect2(1024, 0, 128, 128), Rect2(1152, 0, 128, 128)]
+}
+
+[sub_resource type="Animation" id="Animation_0ovex"]
+resource_name = "wobble"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(128, 0, 128, 128), Rect2(256, 0, 128, 128), Rect2(384, 0, 128, 128), Rect2(512, 0, 128, 128)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8k6ki"]
+_data = {
+"RESET": SubResource("Animation_3bv8t"),
+"default": SubResource("Animation_a8wjm"),
+"shake": SubResource("Animation_525cw"),
+"wobble": SubResource("Animation_0ovex")
+}
+
+[node name="Tree" type="Node2D"]
+position = Vector2(-48, -40)
+script = ExtResource("1_xinru")
+size = 112
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = -64.0
+offset_top = -58.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_uf2if")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 60
+patch_margin_top = 78
+patch_margin_right = 60
+patch_margin_bottom = 44
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Leaves" type="Node2D" parent="."]
+position = Vector2(0, -18)
+
+[node name="OneWayPlatform" parent="Leaves" instance=ExtResource("4_erf0o")]
+visible = false
+position = Vector2(0, 1)
+size = 80.0
+
+[node name="BouncePad" parent="Leaves" instance=ExtResource("5_xkdck")]
+visible = false
+position = Vector2(0, -23)
+bounce_velocity = Vector2(0, -800)
+only_on_key_press = true
+muted = true
+
+[node name="CollisionShape2D" parent="Leaves/BouncePad" index="1"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_4ifun")
+
+[node name="LeavesHurtbox" parent="Leaves" node_paths=PackedStringArray("health_manager") instance=ExtResource("6_snmje")]
+collision_layer = 2
+collision_mask = 0
+health_manager = NodePath("../../HealthManager")
+
+[node name="CollisionShape2D" parent="Leaves/LeavesHurtbox" index="0"]
+shape = SubResource("RectangleShape2D_kogn1")
+
+[node name="SeedSlot0" type="Node2D" parent="Leaves"]
+position = Vector2(-24, 16)
+
+[node name="SeedSlot1" type="Node2D" parent="Leaves"]
+position = Vector2(24, 16)
+
+[node name="Particles" type="GPUParticles2D" parent="Leaves"]
+z_index = -1
+material = SubResource("CanvasItemMaterial_cpiam")
+position = Vector2(0, 4)
+process_material = SubResource("ParticleProcessMaterial_v28sj")
+texture = ExtResource("6_ebd11")
+lifetime = 1.5
+preprocess = 4.0
+randomness = 0.5
+
+[node name="HealthManager" parent="." instance=ExtResource("3_qbg1d")]
+max_health = 9999.0
+health_to_kill = -9999
+
+[node name="TrunkHurtbox" parent="." node_paths=PackedStringArray("health_manager") instance=ExtResource("6_snmje")]
+collision_layer = 2
+collision_mask = 0
+health_manager = NodePath("../HealthManager")
+
+[node name="CollisionShape2D" parent="TrunkHurtbox" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_hhwb1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_8k6ki")
+}
+next/shake = &"default"
+
+[connection signal="bounced" from="Leaves/BouncePad" to="." method="_on_bounce_pad_bounced"]
+[connection signal="health_updated" from="HealthManager" to="." method="_on_health_manager_health_updated"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="Leaves/BouncePad"]
+[editable path="Leaves/LeavesHurtbox"]
+[editable path="TrunkHurtbox"]

@@ -1,0 +1,97 @@
+[gd_scene load_steps=21 format=3 uid="uid://17imy3nkqo68"]
+
+[ext_resource type="Script" path="res://Scenes/ArenaProps/Seed.gd" id="1_som8x"]
+[ext_resource type="PackedScene" uid="uid://dikaag12v0yrj" path="res://Scenes/Entities/ResourcePacks/health_resource_pack.tscn" id="2_efw8t"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropData.gd" id="3_ui1ok"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropPool.gd" id="4_jcawe"]
+[ext_resource type="PackedScene" uid="uid://timcni11hara" path="res://Scenes/Entities/ResourcePacks/energy_resource_pack.tscn" id="5_15bvi"]
+[ext_resource type="Script" path="res://Scripts/Resources/TargetDropPool.gd" id="6_13cib"]
+[ext_resource type="Script" path="res://Scripts/Resources/ColorSwap.gd" id="7_wior0"]
+[ext_resource type="Shader" path="res://Shaders/bubble_target.gdshader" id="8_coxst"]
+[ext_resource type="Texture2D" uid="uid://gdr4irmhs38r" path="res://Sprites/Pickups/SeedsSprite.png" id="9_j2jd1"]
+[ext_resource type="PackedScene" uid="uid://b7lq6gjy6c3df" path="res://Scenes/Tools/hurtbox.tscn" id="10_f7lue"]
+[ext_resource type="Script" path="res://Scripts/Tools/HealthManager.gd" id="11_oqtyc"]
+
+[sub_resource type="Resource" id="Resource_88f5p"]
+script = ExtResource("3_ui1ok")
+scene = ExtResource("2_efw8t")
+amount = 12
+
+[sub_resource type="Resource" id="Resource_irkns"]
+script = ExtResource("4_jcawe")
+pool = Array[ExtResource("3_ui1ok")]([SubResource("Resource_88f5p")])
+
+[sub_resource type="Resource" id="Resource_0a7r4"]
+script = ExtResource("3_ui1ok")
+scene = ExtResource("5_15bvi")
+amount = 18
+
+[sub_resource type="Resource" id="Resource_wg4wi"]
+script = ExtResource("4_jcawe")
+pool = Array[ExtResource("3_ui1ok")]([SubResource("Resource_0a7r4")])
+
+[sub_resource type="Resource" id="Resource_hu0tb"]
+script = ExtResource("6_13cib")
+drops_in_enum_order = Array[ExtResource("4_jcawe")]([SubResource("Resource_irkns"), SubResource("Resource_wg4wi")])
+
+[sub_resource type="Resource" id="Resource_oahig"]
+script = ExtResource("7_wior0")
+default_colors = Array[Color]([Color(0.807843, 0.176471, 0.45098, 1), Color(0.980392, 0.74902, 0.47451, 1), Color(0.968627, 0.917647, 0.745098, 1)])
+replace_colors = {
+0: [Color(0.317647, 0.396078, 0.870588, 1), Color(0.301961, 0.945098, 0.352941, 1), Color(0.960784, 0.964706, 0.811765, 1)],
+1: [Color(0.807843, 0.176471, 0.45098, 1), Color(0.980392, 0.74902, 0.47451, 1), Color(0.968627, 0.917647, 0.745098, 1)]
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n70ok"]
+resource_local_to_scene = true
+shader = ExtResource("8_coxst")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = null
+shader_parameter/OLD_COLOR1 = null
+shader_parameter/OLD_COLOR2 = null
+shader_parameter/OLD_COLOR3 = null
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = null
+shader_parameter/NEW_COLOR2 = null
+shader_parameter/NEW_COLOR3 = null
+shader_parameter/NEW_COLOR4 = null
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ikcs"]
+resource_local_to_scene = true
+radius = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa0bh"]
+resource_local_to_scene = true
+size = Vector2(30, 30)
+
+[node name="Seed" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 12
+script = ExtResource("1_som8x")
+drop_pool = SubResource("Resource_hu0tb")
+color_swap = SubResource("Resource_oahig")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_n70ok")
+texture = ExtResource("9_j2jd1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0ikcs")
+
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health_manager") instance=ExtResource("10_f7lue")]
+collision_layer = 2
+collision_mask = 0
+health_manager = NodePath("../HealthManager")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_aa0bh")
+
+[node name="HealthManager" type="Node2D" parent="."]
+script = ExtResource("11_oqtyc")
+max_health = 1.0
+
+[connection signal="entity_killed" from="HealthManager" to="." method="_on_health_manager_entity_killed"]
+
+[editable path="Hurtbox"]

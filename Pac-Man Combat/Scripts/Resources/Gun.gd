@@ -28,8 +28,6 @@ signal hit
 
 func shoot(player_gun: Node2D, team_player: bool = true) -> void:
 	
-	print_debug("Shooting gun")
-	
 	if initial_pos == Vector2(9999, 9999):
 		initial_pos = player_gun.sprite.position
 	

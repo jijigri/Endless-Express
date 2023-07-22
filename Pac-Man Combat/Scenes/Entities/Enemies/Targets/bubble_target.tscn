@@ -166,6 +166,7 @@ shape = SubResource("RectangleShape2D_23ivx")
 max_health = 30.0
 
 [node name="Sprite" parent="." index="4"]
+z_index = 7
 material = SubResource("ShaderMaterial_kuarj")
 sprite_frames = SubResource("SpriteFrames_2keoq")
 autoplay = "spawn"

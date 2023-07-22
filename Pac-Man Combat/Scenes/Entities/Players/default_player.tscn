@@ -31,7 +31,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq30f"]
 resource_local_to_scene = true
-size = Vector2(16, 32)
+size = Vector2(16, 31)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6c7qa"]
 shader = ExtResource("3_emw6l")
@@ -369,6 +369,7 @@ script = ExtResource("1_i5iyk")
 movement_data = ExtResource("2_u2t6b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_yq30f")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
@@ -427,6 +428,7 @@ drag_top_margin = 0.1
 script = ExtResource("9_ljrqa")
 
 [node name="PlayerGun" type="Node2D" parent="." node_paths=PackedStringArray("spawn_point", "ammo_bar")]
+z_index = 1
 position = Vector2(0, 3)
 script = ExtResource("6_yyim4")
 ammo_count = 2

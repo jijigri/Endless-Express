@@ -3,23 +3,23 @@
 [ext_resource type="Script" path="res://Scripts/World/ArenaProps/LeafBlock.gd" id="1_1tnmd"]
 [ext_resource type="Texture2D" uid="uid://bv6ku7bxertqy" path="res://Sprites/Effects/LeafParticles.png" id="3_g3c2q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jopa3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cn8rh"]
 resource_local_to_scene = true
 size = Vector2(64, 80)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_p01r3"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_aw8eo"]
 vertices = PackedVector2Array(32, -40, 32, 40, -32, 40, -32, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -40, -32, 40, 32, 40, 32, -40)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_34x2l"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub22a"]
 resource_local_to_scene = true
 size = Vector2(72, 88)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ufb5g"]
 load_path = "res://.godot/imported/LeafBlockSprite.png-a6bba6fb2203a0134bae510ad90be458.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_txkuy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4c70"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
@@ -119,7 +119,7 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_0sxth"]
 curve = SubResource("Curve_udiyd")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y1q8b"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xsme6"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -143,7 +143,7 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[node name="LeafBlock" type="StaticBody2D" node_paths=PackedStringArray("sprite", "navigation_region", "collision_shape")]
+[node name="LeafBlock" type="StaticBody2D" node_paths=PackedStringArray("sprite", "navigation_region", "collision_shape") groups=["Hurtbox", "Solid"]]
 position = Vector2(368, 184)
 collision_layer = 4
 collision_mask = 0
@@ -154,19 +154,20 @@ navigation_region = NodePath("NavigationRegion2D")
 collision_shape = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_jopa3")
+shape = SubResource("RectangleShape2D_cn8rh")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_p01r3")
+navigation_polygon = SubResource("NavigationPolygon_aw8eo")
 enabled = false
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-shape = SubResource("RectangleShape2D_34x2l")
+shape = SubResource("RectangleShape2D_ub22a")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = -2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -179,7 +180,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(32, 40)
-texture = SubResource("AtlasTexture_txkuy")
+texture = SubResource("AtlasTexture_h4c70")
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
@@ -198,7 +199,7 @@ libraries = {
 material = SubResource("CanvasItemMaterial_eppgu")
 emitting = false
 amount = 102
-process_material = SubResource("ParticleProcessMaterial_y1q8b")
+process_material = SubResource("ParticleProcessMaterial_xsme6")
 texture = ExtResource("3_g3c2q")
 lifetime = 0.6
 one_shot = true
