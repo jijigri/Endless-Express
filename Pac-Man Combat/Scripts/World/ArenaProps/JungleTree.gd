@@ -8,6 +8,9 @@ extends Node2D
 @onready var seed_slot0 = $Leaves/SeedSlot0
 @onready var seed_slot1 = $Leaves/SeedSlot1
 
+@onready var bounce_sound = preload("res://Audio/SoundEffects/ArenaProps/JungleTree/JungleTreeBounceSound.wav")
+@onready var shake_sound = preload("res://Audio/SoundEffects/ArenaProps/JungleTree/JungleTreeShakeSound.wav")
+
 var sprite: NinePatchRect
 var hurt_box_shapes
 var leaves
@@ -80,11 +83,25 @@ func _on_bounce_pad_bounced() -> void:
 func wobble_tree():
 	animation_player.play("wobble")
 	detach_seeds()
+	
+	var audio_data = AudioData.new(
+		bounce_sound,
+		global_position
+	)
+	audio_data.max_distance = 500
+	AudioManager.play_sound(audio_data)
 
 func shake_tree():
 	if seeds.size() > 0:
 		animation_player.play("shake")
 		detach_seeds()
+	
+		var audio_data = AudioData.new(
+			shake_sound,
+			global_position
+		)
+		audio_data.max_distance = 1000
+		AudioManager.play_sound(audio_data)
 
 func detach_seeds():
 	if Engine.is_editor_hint():

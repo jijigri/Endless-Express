@@ -9,6 +9,8 @@ extends RigidBody2D
 @onready var sprite = $Sprite
 @onready var health_manager: HealthManager = $HealthManager
 
+@onready var activated_sound = preload("res://Audio/SoundEffects/ArenaProps/Seeds/SeedsActivatedSound.wav")
+
 func _ready() -> void:
 	
 	if get_parent() is LeafBlock:
@@ -60,3 +62,10 @@ func drop():
 
 func set_dynamic():
 	set_deferred("freeze", false)
+	
+	var audio_data = AudioData.new(
+			activated_sound,
+			global_position
+		)
+	audio_data.max_distance = 1000
+	AudioManager.play_sound(audio_data)
