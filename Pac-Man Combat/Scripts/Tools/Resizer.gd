@@ -6,6 +6,9 @@ extends StaticBody2D
 @export var navigation_region: NavigationRegion2D
 @export var collision_shape: CollisionShape2D
 
+func _ready() -> void:
+	collision_shape = $CollisionShape2D
+
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		set_editor_size()

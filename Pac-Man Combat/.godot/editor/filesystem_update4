@@ -1,4 +1,4 @@
-res://Scenes/game.tscn
+res://Scenes/ArenaProps/Jungle/lock_block.tscn
 res://Fonts/LabelSettings/BigTextSettings.tres
 res://Themes/MenuTheme.tres
 res://Shaders/OutlineShader.gdshader
@@ -11,10 +11,14 @@ res://Shaders/bubble_target.gdshader
 res://Resources/ColorSwaps/BubbleColorSwap.tres
 res://Resources/EnemyPools/TargetPool.tres
 res://Resources/EnemyPools/ChaserPool.tres
-res://Scenes/Entities/Players/default_player.tscn
 res://Scenes/Arenas/jungle_arena_1.tscn
+res://Scenes/ArenaProps/Jungle/LockBlock.gd
+res://Scenes/game.tscn
+res://Scenes/Entities/Players/default_player.tscn
+res://Scenes/ArenaProps/Jungle/key.tscn
 res://Scenes/ArenaProps/Jungle/seed.tscn
-res://Scripts/BouncePad.gd
-res://Scripts/World/ArenaProps/JungleTree.gd
-res://Scenes/ArenaProps/Jungle/jungle_tree.tscn
 res://Scenes/ArenaProps/Seed.gd
+res://Scenes/ArenaProps/Jungle/jungle_tree.tscn
+res://Scenes/Misc/StatusEffects/freeze_status_effect.tscn
+res://Scripts/World/ArenaProps/WindArea.gd
+res://Scripts/GameManager.gd

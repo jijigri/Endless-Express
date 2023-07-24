@@ -1,5 +1,6 @@
-res://Scenes/ArenaProps/Jungle
 res://Scripts/World/ArenaProps
+res://Sprites/ArenaProps
+res://Scenes/ArenaProps/Jungle
 res://Scenes/ArenaProps
 res://Scripts/Tools
 res://Scenes
@@ -19,4 +20,3 @@ res://Scenes/Effects
 res://Shaders
 res://Sprites/Effects/AttackAnimations
 res://Sprites/Entities/Enemies/Chasers
-res://Scenes/Tools/ArenaTools

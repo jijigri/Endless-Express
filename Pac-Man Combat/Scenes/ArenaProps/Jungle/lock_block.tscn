@@ -1,0 +1,148 @@
+[gd_scene load_steps=13 format=3 uid="uid://bwjwxiirovhjb"]
+
+[ext_resource type="Script" path="res://Scenes/ArenaProps/Jungle/LockBlock.gd" id="1_bin24"]
+[ext_resource type="Texture2D" uid="uid://2kxeg2l78sw8" path="res://Sprites/ArenaProps/LockedBlock.png" id="2_ra3pf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbkua"]
+size = Vector2(16, 80)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fi7qy"]
+vertices = PackedVector2Array(8, -40, 8, 40, -8, 40, -8, -40)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -40, -8, 40, 8, 40, 8, -40)])
+
+[sub_resource type="Animation" id="Animation_xyqh2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(2, 2, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_8v4is"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(2, 2, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_he8he"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(2, 2, 16, 16), Rect2(22, 2, 16, 16), Rect2(42, 2, 16, 16), Rect2(62, 2, 16, 16), Rect2(82, 2, 16, 16), Rect2(500, 2, 16, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nf2st"]
+_data = {
+"RESET": SubResource("Animation_xyqh2"),
+"default": SubResource("Animation_8v4is"),
+"open": SubResource("Animation_he8he")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2m7o"]
+atlas = ExtResource("2_ra3pf")
+region = Rect2(100, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf1pv"]
+atlas = ExtResource("2_ra3pf")
+region = Rect2(120, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp0vs"]
+atlas = ExtResource("2_ra3pf")
+region = Rect2(140, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e60t7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2m7o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jf1pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rp0vs")
+}],
+"loop": false,
+"name": &"unlocked",
+"speed": 8.0
+}]
+
+[node name="LockBlock" type="StaticBody2D" node_paths=PackedStringArray("sprite", "navigation_region", "collision_shape")]
+position = Vector2(-24, -408)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_bin24")
+sprite = NodePath("Sprite")
+navigation_region = NodePath("NavigationRegion2D")
+collision_shape = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rbkua")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_fi7qy")
+enabled = false
+
+[node name="Sprite" type="NinePatchRect" parent="."]
+offset_left = -8.0
+offset_top = -40.0
+offset_right = 8.0
+offset_bottom = 40.0
+pivot_offset = Vector2(8, 40)
+texture = ExtResource("2_ra3pf")
+region_rect = Rect2(2, 2, 16, 16)
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nf2st")
+}
+
+[node name="Locks" type="Node2D" parent="."]
+
+[node name="Lock1" type="AnimatedSprite2D" parent="Locks"]
+sprite_frames = SubResource("SpriteFrames_e60t7")
+autoplay = "default"
+
+[node name="Lock2" type="AnimatedSprite2D" parent="Locks"]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_e60t7")
+autoplay = "default"
+
+[node name="Lock3" type="AnimatedSprite2D" parent="Locks"]
+position = Vector2(0, 16)
+sprite_frames = SubResource("SpriteFrames_e60t7")
+autoplay = "default"
+
+[node name="Keys" type="Node2D" parent="."]

@@ -66,7 +66,8 @@ size = Vector2(30, 30)
 
 [node name="Seed" type="RigidBody2D"]
 collision_layer = 2
-collision_mask = 12
+collision_mask = 14
+can_sleep = false
 script = ExtResource("1_som8x")
 drop_pool = SubResource("Resource_hu0tb")
 color_swap = SubResource("Resource_oahig")

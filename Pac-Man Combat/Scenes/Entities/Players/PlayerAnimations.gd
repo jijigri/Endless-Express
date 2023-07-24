@@ -15,7 +15,7 @@ func set_animations(grounded: bool, velocity: Vector2, is_wall_sliding: bool, la
 	speed_scale = 1
 	
 	if grounded:
-		if abs(velocity.x) > 5:
+		if abs(velocity.x) > 20:
 			play("run")
 			run_particles.emitting = true
 			if flip_h && velocity.x > 0:

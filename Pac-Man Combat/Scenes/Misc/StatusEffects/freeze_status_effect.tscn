@@ -52,6 +52,7 @@ scale_max = 0.03
 color_ramp = SubResource("GradientTexture1D_1juxf")
 
 [node name="FreezeStatusEffect" instance=ExtResource("1_eftti")]
+z_index = 5
 script = ExtResource("2_84bpx")
 
 [node name="Particles" type="GPUParticles2D" parent="." index="1"]

@@ -67,5 +67,6 @@ func set_dynamic():
 			activated_sound,
 			global_position
 		)
+	audio_data.volume = -1
 	audio_data.max_distance = 1000
 	AudioManager.play_sound(audio_data)

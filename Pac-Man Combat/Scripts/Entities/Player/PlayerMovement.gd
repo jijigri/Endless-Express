@@ -85,6 +85,9 @@ func _physics_process(delta):
 		var justLanded = is_on_floor() && wasInTheAir
 		var justOffGround = not is_on_floor() && not wasInTheAir
 		
+		if is_on_wall():
+			velocity.x = 0
+		
 		if justLanded:
 			on_land()
 		

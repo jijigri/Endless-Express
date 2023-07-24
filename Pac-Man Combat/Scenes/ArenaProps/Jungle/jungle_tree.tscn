@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ifun"]
 size = Vector2(80, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kogn1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvbcl"]
 resource_local_to_scene = true
 size = Vector2(82, 18)
 
@@ -50,7 +50,7 @@ turbulence_noise_strength = 5.0
 turbulence_noise_scale = 9.5
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhwb1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tcqh"]
 size = Vector2(8, 58)
 
 [sub_resource type="Animation" id="Animation_3bv8t"]
@@ -167,7 +167,7 @@ collision_mask = 0
 health_manager = NodePath("../../HealthManager")
 
 [node name="CollisionShape2D" parent="Leaves/LeavesHurtbox" index="0"]
-shape = SubResource("RectangleShape2D_kogn1")
+shape = SubResource("RectangleShape2D_rvbcl")
 
 [node name="SeedSlot0" type="Node2D" parent="Leaves"]
 position = Vector2(-24, 16)
@@ -196,7 +196,7 @@ health_manager = NodePath("../HealthManager")
 
 [node name="CollisionShape2D" parent="TrunkHurtbox" index="0"]
 position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_hhwb1")
+shape = SubResource("RectangleShape2D_0tcqh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "default"
