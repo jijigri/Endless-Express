@@ -65,7 +65,6 @@ func on_attack_end():
 
 
 func _on_health_manager_armor_broken() -> void:
-	print_debug("ARMOR BROKEN")
 	cancelled = true
 	current_shot_start_time = 0.5
 

@@ -1,6 +1,7 @@
+res://Scripts/Resources
+res://Scenes/ArenaProps/Jungle
 res://Scripts/World/ArenaProps
 res://Sprites/ArenaProps
-res://Scenes/ArenaProps/Jungle
 res://Scenes/ArenaProps
 res://Scripts/Tools
 res://Scenes
@@ -13,7 +14,6 @@ res://Scripts/Singletons
 res://Resources/PlayableCharacters
 res://Scenes/Singletons
 res://Scripts/Misc
-res://Scripts/Resources
 D:/Godot Games/Pac-Man Combat/Builds/v0.3a
 res://Themes
 res://Scenes/Effects

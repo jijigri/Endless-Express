@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/World/ArenaProps/Key.gd" id="1_hwcvr"]
 [ext_resource type="Texture2D" uid="uid://c1u4a4wjd7khf" path="res://Sprites/ArenaProps/KeySprite.png" id="2_n7ifu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b17iu"]
-size = Vector2(20, 26)
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvgeh"]
+radius = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ph6ba"]
 atlas = ExtResource("2_n7ifu")
@@ -150,7 +150,7 @@ monitorable = false
 script = ExtResource("1_hwcvr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_b17iu")
+shape = SubResource("CircleShape2D_gvgeh")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 4)

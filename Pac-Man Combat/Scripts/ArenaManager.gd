@@ -3,6 +3,11 @@ extends Node2D
 
 @export var solo_arena: PackedScene = null
 @export var arena_pool: Array[PackedScene]
+@export var biome_pool: Array[BiomeData]
+@export var biome_change_step: int = 10
+
+var current_biome: BiomeData
+var used_biomes = []
 
 @onready var world = get_world_2d()
 
@@ -11,6 +16,9 @@ extends Node2D
 var current_arena: Arena
 
 func _ready() -> void:
+	
+	change_current_biome()
+	
 	spawn_arena()
 	GameEvents.arena_exited.connect(_on_arena_exited)
 
@@ -38,14 +46,40 @@ func delete_current_arena() -> void:
 func spawn_arena() -> void:
 	var arena: PackedScene
 	if solo_arena == null:
-		arena = arena_pool[get_random_arena()]
+		var index: int = get_random_arena()
+		arena = current_biome.arenas[index]
 	else:
 		arena = solo_arena
 	current_arena = Global.spawn_object(arena, global_position)
 
 func get_random_arena() -> int:
-	var random_arena_index: int = randi_range(0, arena_pool.size() - 1)
+	
+	try_change_biome()
+	
+	var random_arena_index: int = randi_range(0, current_biome.arenas.size() - 1)
 	return random_arena_index
+
+func try_change_biome():
+	var diff = game_manager.current_score - game_manager.old_score
+	for i in diff:
+		if (game_manager.current_score - i) % biome_change_step == 0:
+			change_current_biome()
+			return
+
+func change_current_biome():
+	var current_score = game_manager.current_score
+	
+	if used_biomes.size() >= biome_pool.size():
+		current_biome = biome_pool[randf_range(0, biome_pool.size() - 1)]
+		print_debug("Ran through all possible biomes, returning a random one")
+		return
+	
+	for i in biome_pool:
+		if !used_biomes.has(i):
+			if i.min_level <= current_score:
+				current_biome = i
+				used_biomes.append(i)
+				GameEvents.biome_changed.emit(i)
 
 func get_random_position_on_navmesh() -> Vector2:
 	randomize()

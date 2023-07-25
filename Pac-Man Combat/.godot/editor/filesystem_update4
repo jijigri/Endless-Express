@@ -22,3 +22,12 @@ res://Scenes/ArenaProps/Jungle/jungle_tree.tscn
 res://Scenes/Misc/StatusEffects/freeze_status_effect.tscn
 res://Scripts/World/ArenaProps/WindArea.gd
 res://Scripts/GameManager.gd
+res://Scenes/ArenaProps/Jungle/wind_area.tscn
+res://Scripts/Resources/ArenaData.gd
+res://Scripts/Resources/BiomeData.gd
+res://Scripts/ArenaManager.gd
+res://Scenes/Arenas/arena_test_2.tscn
+res://Scripts/GunAttack.gd
+res://Scenes/Singletons/music_handler.tscn
+res://Scenes/MusicHandler.gd
+res://Scripts/Singletons/GameEvents.gd
