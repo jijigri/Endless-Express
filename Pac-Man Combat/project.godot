@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Endless Express"
+config/description="Navigate your way through an endless train as you try to reach the highest score!"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 run/max_fps=144
 boot_splash/bg_color=Color(0, 0, 0, 0)
 boot_splash/show_image=false
-config/icon="res://icon.svg"
+config/icon="res://icon_big.svg"
 
 [autoload]
 

@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var can_hide: bool = true
+
 @onready var sprite = $Sprite
 
 var target_position = null
@@ -39,10 +41,11 @@ func set_marker_position(bounds: Rect2):
 	
 		sprite.global_position = Vector2(length * cos(displacement.angle()), length * sin(displacement.angle())) + target_position
 	
-	if bounds.has_point(global_position):
-		hide()
-	else:
-		show()
+	if can_hide:
+		if bounds.has_point(global_position):
+			hide()
+		else:
+			show()
 
 func set_marker_rotation():
 	look_at(get_tree().get_first_node_in_group("Player").global_position)

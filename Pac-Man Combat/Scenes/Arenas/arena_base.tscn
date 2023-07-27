@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dwicf5b18uev1"]
+[gd_scene load_steps=26 format=3 uid="uid://dwicf5b18uev1"]
 
 [ext_resource type="Script" path="res://Scripts/World/Arena.gd" id="1_q5fpj"]
 [ext_resource type="TileSet" uid="uid://bdvvhrogvwxky" path="res://Resources/Tilesets/arena_level_tileset.tres" id="2_xcwdr"]
@@ -7,8 +7,11 @@
 [ext_resource type="Script" path="res://Scripts/World/Door.gd" id="4_maydk"]
 [ext_resource type="Texture2D" uid="uid://b7tali3qj2wsy" path="res://Sprites/Misc/DoorSprite.png" id="6_34kxh"]
 [ext_resource type="PackedScene" uid="uid://b6l26iv80biyo" path="res://Scenes/Tools/ArenaTools/chaser_spawner.tscn" id="7_f8lv4"]
+[ext_resource type="PackedScene" uid="uid://dhep68bj3q2qd" path="res://Scenes/Misc/off_screen_marker.tscn" id="7_u3tfq"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="8_204od"]
 [ext_resource type="PackedScene" uid="uid://dtqmat6qn4j2y" path="res://Scenes/Tools/ArenaTools/target_spawner.tscn" id="8_b3rjt"]
 [ext_resource type="Texture2D" uid="uid://bvbflk0i70qct" path="res://Sprites/Tilesets/Pickups_Icons.png" id="9_mrqvj"]
+[ext_resource type="Texture2D" uid="uid://ds5iapaksdpdl" path="res://Sprites/Misc/ExitDoorMarker.png" id="9_xub80"]
 [ext_resource type="Script" path="res://Scripts/PickupSpawner.gd" id="10_3r113"]
 [ext_resource type="FontFile" uid="uid://c48usb0eg43qi" path="res://Fonts/Alpenkreuzer.ttf" id="11_htth0"]
 
@@ -32,6 +35,19 @@ size = Vector2(32, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2uty"]
 size = Vector2(64, 48)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0ejg"]
+resource_local_to_scene = true
+shader = ExtResource("8_204od")
+shader_parameter/STRENGTH = 1.0
+shader_parameter/OLD_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/OLD_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/OLD_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/NEW_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/NEW_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/NEW_COLOR4 = null
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_elx2c"]
 tile_data = PackedInt32Array(0, 65536, 0, 3, 65536, 0, 5, 131072, 0)
@@ -134,6 +150,14 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Exit/Area2D"]
 shape = SubResource("RectangleShape2D_s2uty")
 
+[node name="OffScreenMarker" parent="Map/Exit" instance=ExtResource("7_u3tfq")]
+position = Vector2(104, 0)
+can_hide = false
+
+[node name="Sprite" parent="Map/Exit/OffScreenMarker" index="0"]
+material = SubResource("ShaderMaterial_k0ejg")
+texture = ExtResource("9_xub80")
+
 [node name="ChaserSpawner" parent="." instance=ExtResource("7_f8lv4")]
 
 [node name="TargetSpawner" parent="." instance=ExtResource("8_b3rjt")]
@@ -161,3 +185,5 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "ARENA_BASE"
 label_settings = SubResource("LabelSettings_87tvy")
+
+[editable path="Map/Exit/OffScreenMarker"]

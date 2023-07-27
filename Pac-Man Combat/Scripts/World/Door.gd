@@ -10,6 +10,8 @@ enum DOOR_TYPE {ENTRANCE, EXIT}
 @onready var initial_sprite_position: Vector2 = sprite.position
 @onready var close_sound = preload("res://Audio/SoundEffects/Misc/DoorCloseSound.wav")
 
+var marker = null
+
 var is_open: bool = false
 var arena: Arena
 
@@ -27,6 +29,12 @@ func initialize(arena: Arena):
 	if sprite == null:
 		sprite = $Sprite2D
 	
+	if has_node("OffScreenMarker"):
+		marker = $OffScreenMarker
+	
+	if marker != null:
+		marker.visible = false
+	
 	initial_sprite_position = sprite.position
 
 func open():
@@ -35,6 +43,9 @@ func open():
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "position", initial_sprite_position + (Vector2.UP * 48), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	tween.play()
+	
+	if marker != null:
+		marker.visible = true
 
 func close():
 	is_open = false

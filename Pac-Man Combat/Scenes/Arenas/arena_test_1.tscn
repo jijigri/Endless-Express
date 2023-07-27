@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cgo148uilrd2s"]
+[gd_scene load_steps=46 format=3 uid="uid://cgo148uilrd2s"]
 
 [ext_resource type="Script" path="res://Scripts/World/Arena.gd" id="1_ecp5h"]
 [ext_resource type="TileSet" uid="uid://bdvvhrogvwxky" path="res://Resources/Tilesets/arena_level_tileset.tres" id="2_3pqja"]
@@ -12,10 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://460412mt4ky1" path="res://Scenes/Tools/EnemyTools/collision_damage.tscn" id="10_nqa17"]
 [ext_resource type="Texture2D" uid="uid://ciku36nrdwe76" path="res://Sprites/Misc/OneWayPlatform.png" id="12_umm6u"]
 [ext_resource type="Texture2D" uid="uid://b7tali3qj2wsy" path="res://Sprites/Misc/DoorSprite.png" id="13_0hg1i"]
+[ext_resource type="PackedScene" uid="uid://dhep68bj3q2qd" path="res://Scenes/Misc/off_screen_marker.tscn" id="14_34kks"]
 [ext_resource type="PackedScene" uid="uid://b6l26iv80biyo" path="res://Scenes/Tools/ArenaTools/chaser_spawner.tscn" id="14_q2fsa"]
 [ext_resource type="Script" path="res://Scripts/TargetSpawner.gd" id="14_vr6ap"]
 [ext_resource type="PackedScene" uid="uid://b5s2afxn66hsi" path="res://Scenes/ArenaProps/portals.tscn" id="15_2fw8w"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="15_6gx5s"]
 [ext_resource type="Texture2D" uid="uid://dq0arwwggb3gs" path="res://Sprites/Misc/IdentifiersIconsAtlas.png" id="16_s8rem"]
+[ext_resource type="Texture2D" uid="uid://ds5iapaksdpdl" path="res://Sprites/Misc/ExitDoorMarker.png" id="16_uptts"]
 [ext_resource type="Script" path="res://Scripts/PickupSpawner.gd" id="17_fdpmp"]
 [ext_resource type="PackedScene" uid="uid://c0uw81i2nyde4" path="res://Scenes/ArenaProps/speed_booster.tscn" id="17_hng0c"]
 [ext_resource type="FontFile" uid="uid://c48usb0eg43qi" path="res://Fonts/Alpenkreuzer.ttf" id="18_qiekj"]
@@ -88,6 +91,19 @@ size = Vector2(32, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2uty"]
 size = Vector2(64, 48)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q4pne"]
+resource_local_to_scene = true
+shader = ExtResource("15_6gx5s")
+shader_parameter/STRENGTH = 1.0
+shader_parameter/OLD_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/OLD_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/OLD_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/NEW_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/NEW_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/NEW_COLOR4 = null
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_elx2c"]
 tile_data = PackedInt32Array(0, 65536, 0, 3, 65536, 0, 5, 131072, 0)
@@ -503,6 +519,14 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Exit/Area2D"]
 shape = SubResource("RectangleShape2D_s2uty")
 
+[node name="OffScreenMarker" parent="Map/Exit" instance=ExtResource("14_34kks")]
+position = Vector2(104, 0)
+can_hide = false
+
+[node name="Sprite" parent="Map/Exit/OffScreenMarker" index="0"]
+material = SubResource("ShaderMaterial_q4pne")
+texture = ExtResource("16_uptts")
+
 [node name="ChaserSpawner" parent="." instance=ExtResource("14_q2fsa")]
 position = Vector2(-78.9432, 18.4816)
 
@@ -549,3 +573,4 @@ label_settings = SubResource("LabelSettings_wjqmc")
 [editable path="Map/Level/Props/Portals2/PortalA"]
 [editable path="Map/Level/Props/Portals2/PortalB"]
 [editable path="Map/Level/VoidTrap"]
+[editable path="Map/Exit/OffScreenMarker"]

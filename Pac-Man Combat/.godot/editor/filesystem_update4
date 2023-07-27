@@ -31,3 +31,9 @@ res://Scripts/GunAttack.gd
 res://Scenes/Singletons/music_handler.tscn
 res://Scenes/MusicHandler.gd
 res://Scripts/Singletons/GameEvents.gd
+res://Scripts/Entities/Player/PlayerAbilities.gd
+res://Scenes/Arenas/arena_base.tscn
+res://Scripts/OffScreenMarker.gd
+res://Scripts/World/Door.gd
+res://Scenes/Arenas/arena_test_1.tscn
+res://Scenes/main_menu.tscn
