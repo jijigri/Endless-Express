@@ -18,7 +18,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24to2"]
 resource_local_to_scene = true
-size = Vector2(16, 16)
+size = Vector2(8, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3e86r"]
 resource_local_to_scene = true
@@ -119,17 +119,19 @@ projectile_speed = 600.0
 projectiles_per_shot = 4
 spread = 20.0
 bullet_lifetime = 0.15
+ignore_iframes = true
 damage = 8.0
 cooldown = 0.5
+on_switch_cooldown = 0.05
 type = 1
 knockback_force = 0.0
 shake_force = 2.0
 shake_time = 0.05
 recoil_strength_degrees = 70.0
 recoil_strength_pixels = 9.0
-recoil_time = 0.375
 muzzle_flash = ExtResource("11_qustn")
 player_push_force = 0.0
+push_in_all_directions = false
 drop_ammo = SubResource("AtlasTexture_8l4b7")
 audio = ExtResource("9_3m2pn")
 

@@ -119,7 +119,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme = ExtResource("2_cn7uc")
-min_value = -80.0
+min_value = -60.0
 max_value = 0.0
 
 [node name="FXVolume" type="HSplitContainer" parent="TabContainer/GENERAL/Container"]
@@ -139,7 +139,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme = ExtResource("2_cn7uc")
-min_value = -80.0
+min_value = -60.0
 max_value = 0.0
 
 [node name="MusicVolume" type="HSplitContainer" parent="TabContainer/GENERAL/Container"]
@@ -158,7 +158,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme = ExtResource("2_cn7uc")
-min_value = -80.0
+min_value = -60.0
 max_value = 0.0
 
 [node name="AmbienceVolume" type="HSplitContainer" parent="TabContainer/GENERAL/Container"]
@@ -177,7 +177,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme = ExtResource("2_cn7uc")
-min_value = -80.0
+min_value = -60.0
 max_value = 0.0
 
 [node name="BackButton" type="Button" parent="TabContainer/GENERAL"]

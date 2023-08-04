@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dc8ngtaahwest"]
+[gd_scene load_steps=26 format=3 uid="uid://dc8ngtaahwest"]
 
 [ext_resource type="PackedScene" uid="uid://dwicf5b18uev1" path="res://Scenes/Arenas/arena_base.tscn" id="1_rjbef"]
 [ext_resource type="PackedScene" uid="uid://s8nmrudluwr8" path="res://Scenes/ArenaProps/stomper.tscn" id="2_p8ck5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://digbyp3l8ibht" path="res://Scenes/ArenaProps/one_way_platform.tscn" id="2_w05j0"]
 [ext_resource type="PackedScene" uid="uid://b5s2afxn66hsi" path="res://Scenes/ArenaProps/portals.tscn" id="3_vqfub"]
 [ext_resource type="PackedScene" uid="uid://c0uw81i2nyde4" path="res://Scenes/ArenaProps/speed_booster.tscn" id="6_vlasn"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="7_0vk0d"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pno1w"]
 load_path = "res://.godot/imported/IdentifiersIconsAtlas.png-dd43336651b913271ce804adabbf39ef.ctex"
@@ -70,7 +71,7 @@ size = Vector2(32, 80)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1id88"]
 size = Vector2(96, 80)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_ga17b"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_oxnul"]
 vertices = PackedVector2Array(48, -40, 48, 40, -48, 40, -48, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -40, -48, 40, 48, 40, 48, -40)])
@@ -78,6 +79,19 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -40, -48, 40, 48, 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4onj"]
 resource_local_to_scene = true
 size = Vector2(32, 48)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecxat"]
+resource_local_to_scene = true
+shader = ExtResource("7_0vk0d")
+shader_parameter/STRENGTH = 1.0
+shader_parameter/OLD_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/OLD_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/OLD_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/NEW_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/NEW_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/NEW_COLOR4 = null
 
 [node name="Arena3" instance=ExtResource("1_rjbef")]
 
@@ -227,7 +241,7 @@ offset_left = -48.0
 offset_right = 48.0
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/Stomper" index="2"]
-navigation_polygon = SubResource("NavigationPolygon_ga17b")
+navigation_polygon = SubResource("NavigationPolygon_oxnul")
 
 [node name="Button1" parent="Map/Level/Props/Stomper/Buttons" index="0"]
 position = Vector2(-64, 152)
@@ -277,6 +291,9 @@ position = Vector2(560, 56)
 [node name="Shape" parent="Map/Exit" index="0"]
 shape = SubResource("RectangleShape2D_v4onj")
 
+[node name="Sprite" parent="Map/Exit/OffScreenMarker" index="0"]
+material = SubResource("ShaderMaterial_ecxat")
+
 [node name="PickupSpawner" parent="." index="3"]
 layer_0/tile_data = PackedInt32Array(65529, 65536, 0, 851961, 65536, 0, 720889, 65536, 0, 589817, 65536, 0, 458745, 65536, 0, 327673, 65536, 0, 196601, 65536, 0, 786438, 65536, 0, 655366, 65536, 0, 524294, 65536, 0, 393222, 65536, 0, 262150, 65536, 0, 131078, 65536, 0, 6, 65536, 0, 786449, 65536, 0, 655377, 65536, 0, 524305, 65536, 0, 393233, 65536, 0, 262161, 65536, 0, 131089, 65536, 0, 17, 65536, 0, -131055, 65536, 0, -262127, 65536, 0, -393199, 65536, 0, -524271, 65536, 0, -655343, 65536, 0, 851950, 65536, 0, 720878, 65536, 0, 589806, 65536, 0, 458734, 65536, 0, 327662, 65536, 0, 196590, 65536, 0, 65518, 65536, 0, -65554, 65536, 0, -196626, 65536, 0, -327698, 65536, 0, -458770, 65536, 0, -589842, 65536, 0, -720891, 65536, 0, -720889, 65536, 0, -720887, 65536, 0, -720885, 65536, 0, -720883, 65536, 0, -655366, 65536, 0, -655368, 65536, 0, -655370, 65536, 0, -655372, 65536, 0, -655374, 65536, 0, -720875, 65536, 0, -720873, 65536, 0, -720871, 65536, 0, -655382, 65536, 0, -655384, 65536, 0, -655386, 65536, 0, -655388, 65536, 0, -655390, 65536, 0, 131039, 65536, 0, -33, 65536, 0, -131105, 65536, 0, -262177, 65536, 0, -393249, 65536, 0, -524321, 65536, 0, 262111, 65536, 0, 262113, 65536, 0, 262115, 65536, 0, 262117, 65536, 0, 262119, 65536, 0, 262121, 65536, 0, 196629, 65536, 0, 196631, 65536, 0, 196633, 65536, 0, 196635, 65536, 0, 196637, 65536, 0, -1114133, 65536, 0, -1114131, 65536, 0, -1114129, 65536, 0, -1114127, 65536, 0, -1114125, 65536, 0, -1114123, 65536, 0, -1114121, 65536, 0, -1179640, 65536, 0, -1179638, 65536, 0, -1179636, 65536, 0, -1179634, 65536, 0, -1179632, 65536, 0, -1179630, 65536, 0, -1179628, 65536, 0, -1179620, 65536, 0, -1179618, 65536, 0, -196615, 0, 0, -196613, 0, 0, -196611, 0, 0, -262138, 0, 0, 1245190, 65536, 0, 1245192, 65536, 0, 1245194, 65536, 0, 1245196, 65536, 0, 1245198, 65536, 0, 1245200, 65536, 0, 1245202, 65536, 0, 1245204, 65536, 0, 1245206, 65536, 0, 1245208, 65536, 0, 1245210, 65536, 0, 1245212, 65536, 0, 1245214, 65536, 0, -655362, 0, 0, -720895, 0, 0, -262142, 0, 0, -262140, 0, 0, -655364, 0, 0, -720893, 0, 0, -917472, 0, 0, -786400, 0, 0, -655328, 0, 0, -524256, 0, 0, -393184, 0, 0, -262112, 0, 0, -131040, 0, 0, 393248, 65536, 0, 524320, 65536, 0, 655392, 65536, 0, 786464, 65536, 0, 917536, 65536, 0, 1048608, 65536, 0, 1179680, 65536, 0)
 pickups_placed = 128
@@ -302,3 +319,4 @@ text = "ARENA_TEST_3"
 [editable path="Map/Level/Props/Portals/Portals3/PortalA"]
 [editable path="Map/Level/Props/Portals/Portals3/PortalB"]
 [editable path="Map/Level/Props/Stomper"]
+[editable path="Map/Exit/OffScreenMarker"]

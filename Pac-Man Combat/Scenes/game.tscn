@@ -30,7 +30,7 @@ arenas = Array[PackedScene]([ExtResource("3_v7soj")])
 min_level = 5
 music = ExtResource("10_fyofk")
 
-[sub_resource type="Resource" id="Resource_8roqi"]
+[sub_resource type="Resource" id="Resource_4fsfe"]
 resource_local_to_scene = true
 script = ExtResource("5_y3ork")
 speed = 240.0
@@ -109,7 +109,7 @@ biome_pool = Array[ExtResource("8_af1qc")]([SubResource("Resource_2v5qa"), SubRe
 
 [node name="Player" parent="." instance=ExtResource("4_hdyj7")]
 position = Vector2(0, 0)
-movement_data = SubResource("Resource_8roqi")
+movement_data = SubResource("Resource_4fsfe")
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_cm2bt")

@@ -52,3 +52,11 @@ func set_player_name():
 		await LootLocker.authentification_complete
 	
 	LootLocker.set_player_name(%DisplayNameEdit.text)
+
+
+func _on_button_pressed() -> void:
+	OS.shell_open("https://discord.gg/gJSYsBntT3")
+
+
+func _on_survey_button_pressed() -> void:
+	OS.shell_open("https://forms.gle/eyxRvw5GmiufLpbK7")

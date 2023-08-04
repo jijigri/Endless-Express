@@ -18,7 +18,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnhyw"]
 resource_local_to_scene = true
-size = Vector2(16, 16)
+size = Vector2(8, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7psyp"]
 resource_local_to_scene = true
@@ -118,6 +118,7 @@ bullet_lifetime = 0.15
 ignore_iframes = true
 damage = 8.0
 cooldown = 0.5
+on_switch_cooldown = 0.05
 type = 1
 knockback_force = 0.0
 shake_force = 2.0
