@@ -1,22 +1,35 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwjwxiirovhjb"]
+[gd_scene load_steps=15 format=3 uid="uid://bwjwxiirovhjb"]
 
 [ext_resource type="Script" path="res://Scenes/ArenaProps/Jungle/LockBlock.gd" id="1_bin24"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="2_4hln6"]
 [ext_resource type="Texture2D" uid="uid://2kxeg2l78sw8" path="res://Sprites/ArenaProps/LockedBlock.png" id="2_ra3pf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbkua"]
-size = Vector2(16, 80)
+size = Vector2(96, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_fi7qy"]
-vertices = PackedVector2Array(8, -40, 8, 40, -8, 40, -8, -40)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7mfcf"]
+vertices = PackedVector2Array(48, -16, 48, 16, -48, 16, -48, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -40, -8, 40, 8, 40, 8, -40)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -16, -48, 16, 48, 16, 48, -16)])
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mey1l"]
+shader = ExtResource("2_4hln6")
+shader_parameter/STRENGTH = 0.0
+shader_parameter/OLD_COLOR1 = Color(0.968627, 0.917647, 0.745098, 1)
+shader_parameter/OLD_COLOR2 = Color(0.678431, 0.529412, 0.611765, 1)
+shader_parameter/OLD_COLOR3 = Color(0.454902, 0.290196, 0.462745, 1)
+shader_parameter/OLD_COLOR4 = Color(0, 0, 0, 1)
+shader_parameter/NEW_COLOR1 = null
+shader_parameter/NEW_COLOR2 = null
+shader_parameter/NEW_COLOR3 = null
+shader_parameter/NEW_COLOR4 = null
 
 [sub_resource type="Animation" id="Animation_xyqh2"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/path = NodePath("NinePatchRect:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -31,7 +44,7 @@ resource_name = "default"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/path = NodePath("NinePatchRect:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -46,7 +59,7 @@ resource_name = "open"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/path = NodePath("NinePatchRect:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -97,12 +110,13 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="LockBlock" type="StaticBody2D" node_paths=PackedStringArray("sprite", "navigation_region", "collision_shape")]
+[node name="LockBlock" type="StaticBody2D" node_paths=PackedStringArray("sprite", "navigation_region", "collision_shape") groups=["Solid"]]
 position = Vector2(-24, -408)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_bin24")
-sprite = NodePath("Sprite")
+color = null
+sprite = NodePath("NinePatchRect")
 navigation_region = NodePath("NavigationRegion2D")
 collision_shape = NodePath("CollisionShape2D")
 
@@ -110,15 +124,16 @@ collision_shape = NodePath("CollisionShape2D")
 shape = SubResource("RectangleShape2D_rbkua")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_fi7qy")
+navigation_polygon = SubResource("NavigationPolygon_7mfcf")
 enabled = false
 
-[node name="Sprite" type="NinePatchRect" parent="."]
-offset_left = -8.0
-offset_top = -40.0
-offset_right = 8.0
-offset_bottom = 40.0
-pivot_offset = Vector2(8, 40)
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+material = SubResource("ShaderMaterial_mey1l")
+offset_left = -48.0
+offset_top = -16.0
+offset_right = 48.0
+offset_bottom = 16.0
+pivot_offset = Vector2(48, 16)
 texture = ExtResource("2_ra3pf")
 region_rect = Rect2(2, 2, 16, 16)
 axis_stretch_horizontal = 1

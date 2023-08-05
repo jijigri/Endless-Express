@@ -1,14 +1,16 @@
-D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5a
+res://Sprites/Effects
+res://Resources/Biomes
 res://Scenes
-D:/Godot Games/Builds/EndlessExpress/v0.4a
+res://Scenes/Arenas
 res://
+D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5a
+D:/Godot Games/Builds/EndlessExpress/v0.4a
 res://Scripts/Resources
 res://Scenes/ArenaProps/Jungle
 res://Scripts/World/ArenaProps
 res://Sprites/ArenaProps
 res://Scenes/ArenaProps
 res://Scripts/Tools
-res://Scenes/Arenas
 D:/Godot Games/Builds/EndlessExpress/v0.3a
 res://Scripts/Entities/Player/Abilities
 res://Scripts/UI
@@ -18,5 +20,3 @@ res://Resources/PlayableCharacters
 res://Scenes/Singletons
 res://Scripts/Misc
 D:/Godot Games/Pac-Man Combat/Builds/v0.3a
-res://Themes
-res://Scenes/Effects

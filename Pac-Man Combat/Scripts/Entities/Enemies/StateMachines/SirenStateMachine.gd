@@ -70,7 +70,8 @@ func summon_enemies():
 	
 	var enemies_to_spawn: Array[PackedScene] = enemy_spawner.get_enemies_to_spawn(current_intensity, current_intensity * 2)
 	var positions: Array[Vector2] = []
-	summon_effects.clear()
+	if summon_effects.size() > 0:
+		destroy_summon_effects(true)
 	for i in enemies_to_spawn:
 		var pos = arena_manager.get_random_position_on_navmesh()
 		positions.append(pos)
@@ -89,11 +90,14 @@ func summon_enemies():
 	
 	summon_sound.playing = false
 
-func destroy_summon_effects():
-	await get_tree().create_timer(time_to_summon).timeout
+func destroy_summon_effects(instant: bool = false):
+	if !instant:
+		await get_tree().create_timer(time_to_summon).timeout
 	if summon_effects.size() > 0:
 		for i in summon_effects:
-			i.queue_free()
+			if i != null:
+				i.queue_free()
+	summon_effects.clear()
 
 func spawn_enemies(enemies_to_spawn, positions):
 	for i in enemies_to_spawn.size():
@@ -118,9 +122,8 @@ func kill():
 	super.kill()
 	
 	if summon_effects.size() > 0:
-		for i in summon_effects:
-			if i != null:
-				i.queue_free()
+		destroy_summon_effects(true)
+	summon_effects.clear()
 
 func _on_sprite_animation_finished() -> void:
 	if sprite.animation == "appear":

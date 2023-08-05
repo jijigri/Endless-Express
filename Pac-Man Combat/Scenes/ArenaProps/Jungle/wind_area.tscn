@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/World/ArenaProps/WindArea.gd" id="1_vh813"]
 [ext_resource type="Texture2D" uid="uid://bbqbsqlftsi4u" path="res://Sprites/Effects/Particles/WindParticles.png" id="2_43wwm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_prstv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1vp4"]
 size = Vector2(272, 80)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j3cu3"]
@@ -12,7 +12,7 @@ particles_anim_h_frames = 7
 particles_anim_v_frames = 2
 particles_anim_loop = false
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b0gxs"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jyto7"]
 lifetime_randomness = 0.5
 emission_shape = 3
 emission_box_extents = Vector3(120, 36, 0)
@@ -31,19 +31,22 @@ rotation = -1.57079
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_vh813")
+force = 3000.0
+max_force = 700.0
 width = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-32, -0.000175476)
-shape = SubResource("RectangleShape2D_prstv")
+shape = SubResource("RectangleShape2D_w1vp4")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_j3cu3")
 position = Vector2(-32, -0.000175476)
 amount = 84
-process_material = SubResource("ParticleProcessMaterial_b0gxs")
+process_material = SubResource("ParticleProcessMaterial_jyto7")
 texture = ExtResource("2_43wwm")
 fixed_fps = 60
+visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 local_coords = true
 draw_order = 0
 
@@ -51,4 +54,3 @@ draw_order = 0
 position = Vector2(-168, -0.00012207)
 target_position = Vector2(272, -0.000106812)
 collision_mask = 4
-hit_from_inside = true

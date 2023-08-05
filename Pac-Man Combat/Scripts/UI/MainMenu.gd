@@ -10,7 +10,11 @@ func _ready() -> void:
 	settings_screen.back_button.pressed.connect(_on_back_pressed)
 	HUD.visible = false
 	set_screen(0)
-	
+
+func _process(delta: float) -> void:
+	if Input.is_key_pressed(KEY_ESCAPE):
+		if(menu_screen.visible == false):
+			set_screen(0)
 
 func _on_play_button_pressed() -> void:
 	set_screen(2)

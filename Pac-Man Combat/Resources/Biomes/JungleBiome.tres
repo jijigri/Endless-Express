@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BiomeData" load_steps=5 format=3 uid="uid://c38x2m2fndcou"]
+
+[ext_resource type="PackedScene" uid="uid://bdh0s8yeyx4m3" path="res://Scenes/Arenas/jungle_arena_1.tscn" id="1_1ong6"]
+[ext_resource type="PackedScene" uid="uid://d3os78hsubpck" path="res://Scenes/Arenas/jungle_arena_2.tscn" id="2_een61"]
+[ext_resource type="AudioStream" uid="uid://cci5n8kmjjh64" path="res://Audio/Music/Tropical Chase.wav" id="2_s4v01"]
+[ext_resource type="Script" path="res://Scripts/Resources/BiomeData.gd" id="3_afe6o"]
+
+[resource]
+script = ExtResource("3_afe6o")
+name = "Jungle"
+arenas = Array[PackedScene]([ExtResource("1_1ong6"), ExtResource("2_een61")])
+min_level = 5
+music = ExtResource("2_s4v01")

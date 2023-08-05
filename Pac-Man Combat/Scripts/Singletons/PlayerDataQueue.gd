@@ -5,7 +5,7 @@ var player
 var data_update_time: float = 0.01
 
 var data_queue = []
-var max_queue_size = 500
+var max_queue_size = 650
 var frames_between_ghosts = 18
 
 var current_number_of_ghosts: int = 0

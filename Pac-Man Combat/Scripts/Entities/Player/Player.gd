@@ -57,6 +57,9 @@ func _on_health_manager_entity_killed() -> void:
 	visible = false
 	set_process(false)
 	set_physics_process(false)
+	
+	player_gun.set_process(false)
+	$PlayerAbilities.set_process(false)
 
 func gain_health(value: float):
 	health_manager.heal(value)

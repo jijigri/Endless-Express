@@ -41,7 +41,7 @@ func spawn_with_indicator(indicator_type: SpawnIndicatorType.TYPE, object, posit
 	if callable != Callable():
 		callable.call(instance)
 
-func swap_color(old_colors: Array[Color], new_colors: Array, mat: Material):
+func swap_color(old_colors: Array, new_colors: Array, mat: Material):
 	
 	#mat.set_shader_parameter("OLD_COLOR1", Color("fabf79"))
 	#mat.set_shader_parameter("NEW_COLOR1", Color.RED)

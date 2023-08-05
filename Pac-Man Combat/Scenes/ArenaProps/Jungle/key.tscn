@@ -1,10 +1,23 @@
-[gd_scene load_steps=18 format=3 uid="uid://bifm3xkqlpxgv"]
+[gd_scene load_steps=20 format=3 uid="uid://bifm3xkqlpxgv"]
 
 [ext_resource type="Script" path="res://Scripts/World/ArenaProps/Key.gd" id="1_hwcvr"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="2_4eiwu"]
 [ext_resource type="Texture2D" uid="uid://c1u4a4wjd7khf" path="res://Sprites/ArenaProps/KeySprite.png" id="2_n7ifu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gvgeh"]
 radius = 24.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ji0uv"]
+shader = ExtResource("2_4eiwu")
+shader_parameter/STRENGTH = null
+shader_parameter/OLD_COLOR1 = null
+shader_parameter/OLD_COLOR2 = null
+shader_parameter/OLD_COLOR3 = null
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = null
+shader_parameter/NEW_COLOR2 = null
+shader_parameter/NEW_COLOR3 = null
+shader_parameter/NEW_COLOR4 = null
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ph6ba"]
 atlas = ExtResource("2_n7ifu")
@@ -153,6 +166,7 @@ script = ExtResource("1_hwcvr")
 shape = SubResource("CircleShape2D_gvgeh")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ji0uv")
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_ey7rj")
 autoplay = "default"

@@ -261,7 +261,6 @@ scale_curve = SubResource("CurveTexture_f32h6")
 anim_offset_max = 1.0
 
 [node name="TargetSiren" node_paths=PackedStringArray("default_movement") instance=ExtResource("1_gs0by")]
-collision_mask = 4
 script = ExtResource("2_vrw2b")
 damage_to_cancel_summoning = 50.0
 time_to_summon = 6.0

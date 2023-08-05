@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Misc/StatusEffects/StatusEffect.gd" id="1_033x5"]
 
 [node name="StatusEffectBase" type="Node2D"]
+z_index = 8
 script = ExtResource("1_033x5")
 
 [node name="Timer" type="Timer" parent="."]

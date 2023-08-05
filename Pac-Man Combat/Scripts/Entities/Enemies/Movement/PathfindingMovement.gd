@@ -45,3 +45,12 @@ func move_along_path(distance: float) -> void:
 
 func update_path() -> void:
 	agent.target_position = target_position
+	
+	"""
+	if agent.is_target_reachable() == false:
+		return
+		var audio = preload("res://Audio/SoundEffects/Misc/BugSound.wav")
+		var data = AudioData.new(audio, global_position)
+		data.max_distance = 8000
+		AudioManager.play_sound(data)
+	"""

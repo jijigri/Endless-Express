@@ -2,7 +2,8 @@
 extends Area2D
 
 @export var force: float = 1800
-@export_range(16, 1080, 16) var width: float = 64
+@export var max_force: float = 8000
+@export_range(16, 1080, 8) var width: float = 64
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var particles: GPUParticles2D = $GPUParticles2D
@@ -11,6 +12,9 @@ extends Area2D
 @onready var initial_target_position = source.target_position
 
 func _ready() -> void:
+	collision_shape = $CollisionShape2D
+	source = $Source
+	
 	collision_shape.shape = collision_shape.shape.duplicate()
 	particles.process_material = particles.process_material.duplicate()
 
@@ -34,7 +38,7 @@ func set_editor_size():
 		source = $Source
 	
 	var size = Vector2(source.target_position.x / 2, width)
-	
+
 	particles.process_material.emission_box_extents = Vector3(
 		size.x - 16,
 		size.y - 4,
@@ -43,7 +47,7 @@ func set_editor_size():
 	
 	collision_shape.shape.size = size * 2
 	collision_shape.position = source.position + (source.target_position / 2)
-	
+
 	particles.position = collision_shape.position
 	var perimeter = (collision_shape.shape.size.x * 2) + (collision_shape.shape.size.y * 2)
 	particles.amount = perimeter * 0.12
@@ -58,9 +62,13 @@ func _physics_process(delta: float) -> void:
 		return
 	for body in bodies:
 		if body.is_in_group("Player"):
-			var dist = source.global_position.distance_to(body.global_position)
-			var curr_force = force
-			body.velocity += transform.x * curr_force * delta
+			
+			if !Input.is_action_pressed("interact_cancel"):
+				var dist = source.global_position.distance_to(body.global_position)
+				var curr_force = force
+				
+				if transform.x.dot(body.velocity) < max_force:
+					body.velocity += transform.x * curr_force * delta
 		elif body is Seed:
 			body.apply_force(transform.x * force * delta)
 

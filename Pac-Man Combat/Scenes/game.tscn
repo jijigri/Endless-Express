@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://chw0ydc058ox0"]
+[gd_scene load_steps=28 format=3 uid="uid://chw0ydc058ox0"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_lg5uc"]
 [ext_resource type="PackedScene" uid="uid://cgo148uilrd2s" path="res://Scenes/Arenas/arena_test_1.tscn" id="2_1lhxp"]
@@ -9,28 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://b26pryaeluhog" path="res://Scenes/Arenas/arena_test_2.tscn" id="4_4d446"]
 [ext_resource type="PackedScene" uid="uid://dv5gegjgkxtb6" path="res://Scenes/Entities/Players/default_player.tscn" id="4_hdyj7"]
 [ext_resource type="Script" path="res://Scripts/Resources/PlayerMovementData.gd" id="5_y3ork"]
-[ext_resource type="Script" path="res://Scripts/Resources/BiomeData.gd" id="8_af1qc"]
 [ext_resource type="AudioStream" uid="uid://bxj2gr5djf7uj" path="res://Audio/Ambience/TrainAmbience.wav" id="8_cm2bt"]
-[ext_resource type="AudioStream" uid="uid://beo0o1h8ogfpl" path="res://Audio/Music/Cyberfunk.wav" id="8_j6nfx"]
-[ext_resource type="AudioStream" uid="uid://cci5n8kmjjh64" path="res://Audio/Music/Tropical Chase.wav" id="10_fyofk"]
+[ext_resource type="Resource" uid="uid://c5rquu1ljmm3r" path="res://Resources/Biomes/TrainBiome.tres" id="9_ywl3c"]
+[ext_resource type="Resource" uid="uid://c38x2m2fndcou" path="res://Resources/Biomes/JungleBiome.tres" id="10_jvpsu"]
 [ext_resource type="Script" path="res://Scripts/Misc/AutomaticParallaxBackground.gd" id="12_v2wr0"]
 [ext_resource type="Texture2D" uid="uid://dvpmw8lvylxt" path="res://Sprites/Background/ParallaxBackground.png" id="13_818sd"]
 
-[sub_resource type="Resource" id="Resource_2v5qa"]
-script = ExtResource("8_af1qc")
-name = "Default"
-arenas = Array[PackedScene]([ExtResource("2_1lhxp"), ExtResource("4_4d446"), ExtResource("3_2lpal"), ExtResource("3_ria7w")])
-min_level = 0
-music = ExtResource("8_j6nfx")
-
-[sub_resource type="Resource" id="Resource_tysw3"]
-script = ExtResource("8_af1qc")
-name = "Jungle"
-arenas = Array[PackedScene]([ExtResource("3_v7soj")])
-min_level = 5
-music = ExtResource("10_fyofk")
-
-[sub_resource type="Resource" id="Resource_4fsfe"]
+[sub_resource type="Resource" id="Resource_p8buv"]
 resource_local_to_scene = true
 script = ExtResource("5_y3ork")
 speed = 240.0
@@ -105,11 +90,11 @@ script = ExtResource("1_lg5uc")
 [node name="ArenaManager" type="Node2D" parent="." groups=["ArenaManager"]]
 script = ExtResource("2_ii7w5")
 arena_pool = Array[PackedScene]([ExtResource("2_1lhxp"), ExtResource("4_4d446"), ExtResource("3_2lpal"), ExtResource("3_ria7w"), ExtResource("3_v7soj")])
-biome_pool = Array[ExtResource("8_af1qc")]([SubResource("Resource_2v5qa"), SubResource("Resource_tysw3")])
+biome_pool = Array[Resource("res://Scripts/Resources/BiomeData.gd")]([ExtResource("9_ywl3c"), ExtResource("10_jvpsu")])
 
 [node name="Player" parent="." instance=ExtResource("4_hdyj7")]
 position = Vector2(0, 0)
-movement_data = SubResource("Resource_4fsfe")
+movement_data = SubResource("Resource_p8buv")
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_cm2bt")

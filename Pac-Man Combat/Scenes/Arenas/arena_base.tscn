@@ -113,7 +113,6 @@ layer_2/tile_data = PackedInt32Array()
 [node name="NavigationMap" type="TileMap" parent="Map"]
 modulate = Color(0, 0, 0, 0.305882)
 z_index = -5
-position = Vector2(-1, 0)
 tile_set = SubResource("TileSet_80kv0")
 format = 2
 script = ExtResource("4_jt7dm")

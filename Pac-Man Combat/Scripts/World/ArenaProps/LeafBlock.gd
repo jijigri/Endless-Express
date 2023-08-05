@@ -7,6 +7,8 @@ extends Resizer
 @onready var particles: GPUParticles2D = $Particles
 @onready var player = get_tree().get_first_node_in_group("Player")
 
+@onready var detection_area = $DetectionArea
+
 @onready var default_sprite_pos = sprite.position
 
 @onready var wobble_sound = preload("res://Audio/SoundEffects/ArenaProps/LeafBlocks/LeafBlockWobbleSound.wav")
@@ -47,9 +49,10 @@ func _process(delta: float) -> void:
 				disabled_player_collisions = true
 				collision_shape.set_deferred("disabled", true)
 		else:
-			if(abs(player.velocity.x) < 700.0):
-				disabled_player_collisions = false
-				collision_shape.set_deferred("disabled", false)
+			if detection_area.has_overlapping_bodies() == false:
+				if(abs(player.velocity.x) < 700.0):
+					disabled_player_collisions = false
+					collision_shape.set_deferred("disabled", false)
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	disable_block()
@@ -67,7 +70,6 @@ func receive_hit(damage_data: DamageData):
 func disable_block() -> void:
 	
 	if disabled_player_collisions && active:
-		animation_player.stop()
 		is_breaking = true
 		destroy()
 		return
