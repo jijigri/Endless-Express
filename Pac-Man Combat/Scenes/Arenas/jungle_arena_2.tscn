@@ -186,7 +186,7 @@ size = Vector2(32, 80)
 resource_local_to_scene = true
 size = Vector2(96, 64)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_fyty1"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rfyhl"]
 vertices = PackedVector2Array(48, -32, 48, 32, -48, 32, -48, -32)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -32, -48, 32, 48, 32, 48, -32)])
@@ -246,7 +246,7 @@ anim_offset_max = 1.0
 resource_local_to_scene = true
 size = Vector2(96, 128)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_rfado"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_eda4j"]
 vertices = PackedVector2Array(48, -32, 48, 96, -48, 96, -48, -32)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -32, -48, 96, 48, 96, 48, -32)])
@@ -288,7 +288,7 @@ anim_offset_max = 1.0
 resource_local_to_scene = true
 size = Vector2(96, 64)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_tslx7"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hf8fs"]
 vertices = PackedVector2Array(48, -32, 48, 32, -48, 32, -48, -32)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -32, -48, 32, 48, 32, 48, -32)])
@@ -330,7 +330,7 @@ anim_offset_max = 1.0
 resource_local_to_scene = true
 size = Vector2(96, 96)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_7ltkm"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_gddbv"]
 vertices = PackedVector2Array(48, -48, 48, 48, -48, 48, -48, -48)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -48, -48, 48, 48, 48, 48, -48)])
@@ -372,7 +372,7 @@ anim_offset_max = 1.0
 resource_local_to_scene = true
 size = Vector2(96, 48)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_eqs0y"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0ypc3"]
 vertices = PackedVector2Array(48, -24, 48, 24, -48, 24, -48, -24)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -24, -48, 24, 48, 24, 48, -24)])
@@ -414,7 +414,7 @@ anim_offset_max = 1.0
 resource_local_to_scene = true
 size = Vector2(96, 144)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_fevrw"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wu84i"]
 vertices = PackedVector2Array(48, -72, 48, 72, -48, 72, -48, -72)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -72, -48, 72, 48, 72, 48, -72)])
@@ -455,7 +455,7 @@ anim_offset_max = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhnsu"]
 size = Vector2(96, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_pwmwo"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hsxm1"]
 vertices = PackedVector2Array(48, -16, 48, 16, -48, 16, -48, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -16, -48, 16, 48, 16, 48, -16)])
@@ -466,7 +466,7 @@ load_path = "res://.godot/imported/LockedBlock.png-52e9570f844ea748362edb093a600
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7puj"]
 size = Vector2(128, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_hk15b"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ings3"]
 vertices = PackedVector2Array(64, -16, 64, 16, -64, 16, -64, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-64, -16, -64, 16, 64, 16, 64, -16)])
@@ -477,7 +477,7 @@ load_path = "res://.godot/imported/LockedBlock.png-52e9570f844ea748362edb093a600
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6an0"]
 size = Vector2(64, 16)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_1d8lb"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pc7n0"]
 vertices = PackedVector2Array(32, -16, 32, 0, -32, 0, -32, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -16, -32, 0, 32, 0, 32, -16)])
@@ -757,7 +757,7 @@ position = Vector2(192, -400)
 shape = SubResource("RectangleShape2D_rsplb")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_fyty1")
+navigation_polygon = SubResource("NavigationPolygon_rfyhl")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock/DetectionArea" index="0"]
 shape = SubResource("RectangleShape2D_cd5ty")
@@ -782,7 +782,7 @@ position = Vector2(0, 32)
 shape = SubResource("RectangleShape2D_8nito")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock5" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_rfado")
+navigation_polygon = SubResource("NavigationPolygon_eda4j")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock5/DetectionArea" index="0"]
 position = Vector2(0, 32)
@@ -807,7 +807,7 @@ position = Vector2(96, -336)
 shape = SubResource("RectangleShape2D_o2o58")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock2" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_tslx7")
+navigation_polygon = SubResource("NavigationPolygon_hf8fs")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock2/DetectionArea" index="0"]
 shape = SubResource("RectangleShape2D_eojgl")
@@ -831,7 +831,7 @@ position = Vector2(-224, -48)
 shape = SubResource("RectangleShape2D_s1rm1")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock4" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_7ltkm")
+navigation_polygon = SubResource("NavigationPolygon_gddbv")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock4/DetectionArea" index="0"]
 shape = SubResource("RectangleShape2D_3gjb2")
@@ -855,7 +855,7 @@ position = Vector2(192, 248)
 shape = SubResource("RectangleShape2D_yv4yh")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock6" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_eqs0y")
+navigation_polygon = SubResource("NavigationPolygon_0ypc3")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock6/DetectionArea" index="0"]
 shape = SubResource("RectangleShape2D_8gacc")
@@ -879,7 +879,7 @@ position = Vector2(-480, -168)
 shape = SubResource("RectangleShape2D_q0bjr")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock7" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_fevrw")
+navigation_polygon = SubResource("NavigationPolygon_wu84i")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock7/DetectionArea" index="0"]
 shape = SubResource("RectangleShape2D_xd6w0")
@@ -906,7 +906,7 @@ color = 1
 shape = SubResource("RectangleShape2D_hhnsu")
 
 [node name="NavigationRegion2D" parent="Map/Level/LockBlocks/LockBlock" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_pwmwo")
+navigation_polygon = SubResource("NavigationPolygon_hsxm1")
 
 [node name="NinePatchRect" parent="Map/Level/LockBlocks/LockBlock" index="2"]
 texture = SubResource("CompressedTexture2D_fu11h")
@@ -925,7 +925,7 @@ color = 0
 shape = SubResource("RectangleShape2D_v7puj")
 
 [node name="NavigationRegion2D" parent="Map/Level/LockBlocks/LockBlock2" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_hk15b")
+navigation_polygon = SubResource("NavigationPolygon_ings3")
 
 [node name="NinePatchRect" parent="Map/Level/LockBlocks/LockBlock2" index="2"]
 offset_left = -64.0
@@ -954,7 +954,7 @@ position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_f6an0")
 
 [node name="NavigationRegion2D" parent="Map/Level/LockBlocks/LockBlock3" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_1d8lb")
+navigation_polygon = SubResource("NavigationPolygon_pc7n0")
 
 [node name="NinePatchRect" parent="Map/Level/LockBlocks/LockBlock3" index="2"]
 offset_left = -32.0

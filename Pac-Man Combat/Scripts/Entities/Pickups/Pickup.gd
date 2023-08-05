@@ -43,7 +43,8 @@ func pickup_obtained(player: CharacterBody2D) -> void:
 		spawner.remove_pickup()
 
 func _on_arena_clear(arena: Arena):
-	destroy_pickup()
+	Global.spawn_object(preload("res://Scenes/Effects/pickup_obtained_effect.tscn"), global_position)
+	queue_free()
 
 func destroy_pickup() -> void:
 	var audio_data := AudioData.new(sound, global_position)

@@ -30,7 +30,7 @@ func play_sound(streamData: AudioData):
 			start_on_stream(audio_stream_player, streamData)
 			return
 	
-	print("AudioManager: Not enough audio source to play sound, overriding!")
+	print("AudioManager: Not enough audio source to play sound, overriding! ")
 	start_on_stream(players_parent.get_child(0), streamData)
 
 func play_delayed(steam_data: AudioData, time: float):

@@ -41,3 +41,7 @@ res://Scenes/ArenaProps/Jungle/key.tscn
 res://Scenes/Arenas/arena_base.tscn
 res://Resources/Biomes/JungleBiome.tres
 res://Scenes/Effects/sniper_muzzleflash.tscn
+res://Scenes/Arenas/jungle_arena_3.tscn
+res://Scripts/Singletons/AudioManager.gd
+res://Scenes/Entities/Pickups/pickup_base.tscn
+res://Scripts/Entities/Pickups/Pickup.gd
