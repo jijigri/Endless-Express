@@ -1,36 +1,61 @@
-[gd_scene load_steps=28 format=3 uid="uid://b26pryaeluhog"]
+[gd_scene load_steps=36 format=3 uid="uid://b26pryaeluhog"]
 
 [ext_resource type="PackedScene" uid="uid://dwicf5b18uev1" path="res://Scenes/Arenas/arena_base.tscn" id="1_cp0fx"]
 [ext_resource type="PackedScene" uid="uid://c3qf8ujj87stt" path="res://Scenes/ArenaProps/bounce_pad.tscn" id="2_4d2k2"]
 [ext_resource type="PackedScene" uid="uid://digbyp3l8ibht" path="res://Scenes/ArenaProps/one_way_platform.tscn" id="3_fopsc"]
 [ext_resource type="PackedScene" uid="uid://b5s2afxn66hsi" path="res://Scenes/ArenaProps/portals.tscn" id="4_kqyfn"]
 [ext_resource type="PackedScene" uid="uid://c0uw81i2nyde4" path="res://Scenes/ArenaProps/speed_booster.tscn" id="5_6mdd0"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="6_3nftg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_crb1x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocfvc"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx1al"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ne6ck"]
+resource_local_to_scene = true
+size = Vector2(80, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdmlb"]
+resource_local_to_scene = true
+size = Vector2(80, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fu08m"]
 resource_local_to_scene = true
 size = Vector2(96, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4h0f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nvpk"]
 resource_local_to_scene = true
 size = Vector2(96, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtrwq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhiiy"]
 resource_local_to_scene = true
 size = Vector2(96, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_45p36"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btgum"]
+resource_local_to_scene = true
+size = Vector2(96, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlwv5"]
 resource_local_to_scene = true
 size = Vector2(176, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow1xj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bbg8"]
+resource_local_to_scene = true
+size = Vector2(176, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hapgt"]
 resource_local_to_scene = true
 size = Vector2(416, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cq7h4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkneu"]
+resource_local_to_scene = true
+size = Vector2(416, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkhtn"]
+resource_local_to_scene = true
+size = Vector2(80, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te5eh"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
@@ -98,6 +123,19 @@ region = Rect2(24, 0, 8, 8)
 resource_local_to_scene = true
 size = Vector2(32, 48)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3wecs"]
+resource_local_to_scene = true
+shader = ExtResource("6_3nftg")
+shader_parameter/STRENGTH = 1.0
+shader_parameter/OLD_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/OLD_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/OLD_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/NEW_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/NEW_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/NEW_COLOR4 = null
+
 [node name="ArenaTest2" instance=ExtResource("1_cp0fx")]
 
 [node name="Level" parent="Map" index="0"]
@@ -126,7 +164,7 @@ position = Vector2(472, -264)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform6" index="0"]
-shape = SubResource("RectangleShape2D_crb1x")
+shape = SubResource("RectangleShape2D_ocfvc")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform6" index="1"]
 region_rect = Rect2(0, 0, 80, 16)
@@ -136,7 +174,7 @@ position = Vector2(-472, -264)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform7" index="0"]
-shape = SubResource("RectangleShape2D_crb1x")
+shape = SubResource("RectangleShape2D_ne6ck")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform7" index="1"]
 region_rect = Rect2(0, 0, 80, 16)
@@ -146,7 +184,7 @@ position = Vector2(-472, -24)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform8" index="0"]
-shape = SubResource("RectangleShape2D_crb1x")
+shape = SubResource("RectangleShape2D_cdmlb")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform8" index="1"]
 region_rect = Rect2(0, 0, 80, 16)
@@ -156,7 +194,7 @@ position = Vector2(176, -56)
 size = 96.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform9" index="0"]
-shape = SubResource("RectangleShape2D_lx1al")
+shape = SubResource("RectangleShape2D_fu08m")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform9" index="1"]
 region_rect = Rect2(0, 0, 96, 16)
@@ -166,7 +204,7 @@ position = Vector2(-176, -56)
 size = 96.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform10" index="0"]
-shape = SubResource("RectangleShape2D_lx1al")
+shape = SubResource("RectangleShape2D_0nvpk")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform10" index="1"]
 region_rect = Rect2(0, 0, 96, 16)
@@ -176,7 +214,7 @@ position = Vector2(-96, -264)
 size = 96.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform11" index="0"]
-shape = SubResource("RectangleShape2D_d4h0f")
+shape = SubResource("RectangleShape2D_dhiiy")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform11" index="1"]
 region_rect = Rect2(0, 0, 96, 16)
@@ -186,7 +224,7 @@ position = Vector2(96, -264)
 size = 96.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform14" index="0"]
-shape = SubResource("RectangleShape2D_wtrwq")
+shape = SubResource("RectangleShape2D_btgum")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform14" index="1"]
 region_rect = Rect2(0, 0, 96, 16)
@@ -196,7 +234,7 @@ position = Vector2(-136, -152)
 size = 176.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform12" index="0"]
-shape = SubResource("RectangleShape2D_45p36")
+shape = SubResource("RectangleShape2D_hlwv5")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform12" index="1"]
 region_rect = Rect2(0, 0, 176, 16)
@@ -206,7 +244,7 @@ position = Vector2(136, -152)
 size = 176.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform13" index="0"]
-shape = SubResource("RectangleShape2D_45p36")
+shape = SubResource("RectangleShape2D_8bbg8")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform13" index="1"]
 region_rect = Rect2(0, 0, 176, 16)
@@ -216,7 +254,7 @@ position = Vector2(-352, -408)
 size = 416.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform15" index="0"]
-shape = SubResource("RectangleShape2D_ow1xj")
+shape = SubResource("RectangleShape2D_hapgt")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform15" index="1"]
 region_rect = Rect2(0, 0, 416, 16)
@@ -226,7 +264,7 @@ position = Vector2(352, -408)
 size = 416.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform16" index="0"]
-shape = SubResource("RectangleShape2D_ow1xj")
+shape = SubResource("RectangleShape2D_bkneu")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform16" index="1"]
 region_rect = Rect2(0, 0, 416, 16)
@@ -237,7 +275,7 @@ rotation = 1.5708
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform17" index="0"]
-shape = SubResource("RectangleShape2D_cq7h4")
+shape = SubResource("RectangleShape2D_dkhtn")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform17" index="1"]
 region_rect = Rect2(0, 0, 80, 16)
@@ -248,7 +286,7 @@ rotation = 4.71239
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform18" index="0"]
-shape = SubResource("RectangleShape2D_cq7h4")
+shape = SubResource("RectangleShape2D_te5eh")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform18" index="1"]
 region_rect = Rect2(0, 0, 80, 16)
@@ -397,6 +435,9 @@ position = Vector2(528, 200)
 [node name="Shape" parent="Map/Exit" index="0"]
 shape = SubResource("RectangleShape2D_t7t5m")
 
+[node name="Sprite" parent="Map/Exit/OffScreenMarker" index="0"]
+material = SubResource("ShaderMaterial_3wecs")
+
 [node name="PickupSpawner" parent="." index="3"]
 layer_0/tile_data = PackedInt32Array(196600, 65536, 0, 131079, 65536, 0, 131076, 65536, 0, 196603, 65536, 0, 196606, 65536, 0, 131073, 65536, 0, 131086, 65536, 0, 131089, 65536, 0, 131092, 65536, 0, 131095, 65536, 0, 131098, 65536, 0, 131101, 65536, 0, 196592, 65536, 0, 196578, 65536, 0, -30, 65536, 0, -196638, 65536, 0, -393246, 65536, 0, -589854, 65536, 0, -786462, 65536, 0, -983070, 65536, 0, -1179678, 65536, 0, -1376286, 65536, 0, -1572894, 65536, 0, -524268, 0, 0, -393196, 0, 0, -327660, 0, 0, -196588, 0, 0, -131052, 0, 0, -1900529, 0, 0, -1900520, 0, 0, -1835034, 0, 0, -1835033, 0, 0, -1835032, 0, 0, -1835030, 0, 0, -1835029, 0, 0, -1835028, 0, 0, -1835026, 0, 0, -1835025, 0, 0, -1835024, 0, 0, -65507, 65536, 0, -262115, 65536, 0, -458723, 65536, 0, -655331, 65536, 0, -851939, 65536, 0, -1048547, 65536, 0, 327709, 65536, 0, 524317, 65536, 0, 720925, 65536, 0, 720875, 65536, 0, 524267, 65536, 0, 131051, 65536, 0, -65557, 65536, 0, -262165, 65536, 0, -458773, 65536, 0, -1900534, 65536, 0, -1900531, 65536, 0, -1900514, 65536, 0, -1245196, 65536, 0, -1376268, 65536, 0, -1507340, 65536, 0, -1310709, 65536, 0, -1441781, 65536, 0, -1572853, 65536, 0, -1245187, 65536, 0, -1245190, 65536, 0, -1245193, 65536, 0, -1310718, 65536, 0, -1310715, 65536, 0, -1310712, 65536, 0, -393228, 0, 0, -393225, 0, 0, -393222, 0, 0, -458747, 0, 0, -458744, 0, 0, -458741, 0, 0, -720902, 65536, 0, -720905, 65536, 0, -720908, 65536, 0, -720911, 65536, 0, -720914, 65536, 0, -720917, 65536, 0, -786427, 65536, 0, -786424, 65536, 0, -786421, 65536, 0, -786418, 65536, 0, -786415, 65536, 0, -786412, 65536, 0, 786399, 65536, 0, 786402, 65536, 0, 786405, 65536, 0, 720922, 65536, 0, 720919, 65536, 0, 720916, 65536, 0, 524308, 65536, 0, -1900519, 0, 0, -1900521, 0, 0, -1900525, 0, 0, -1900524, 0, 0, -1900528, 0, 0, -1900523, 0, 0, -1900527, 0, 0, -589804, 0, 0, 524250, 65536, 0, 327642, 65536, 0, 131034, 65536, 0, -65574, 65536, 0)
 pickups_placed = 106
@@ -436,3 +477,4 @@ text = "ARENA_TEST_02"
 [editable path="Map/Level/Props/Portals4"]
 [editable path="Map/Level/Props/Portals4/PortalA"]
 [editable path="Map/Level/Props/Portals4/PortalB"]
+[editable path="Map/Exit/OffScreenMarker"]

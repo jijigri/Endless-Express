@@ -53,6 +53,10 @@ func _process(delta: float) -> void:
 				if(abs(player.velocity.x) < 700.0):
 					disabled_player_collisions = false
 					collision_shape.set_deferred("disabled", false)
+			else:
+				is_breaking = true
+				destroy()
+				return
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	disable_block()

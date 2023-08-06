@@ -1,13 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://chvuudxbkii2v"]
+[gd_scene load_steps=12 format=3 uid="uid://chvuudxbkii2v"]
 
 [ext_resource type="Script" path="res://Scripts/UI/loading_screen.gd" id="1_2ivfk"]
 [ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="1_cja13"]
+[ext_resource type="Texture2D" uid="uid://cq1idafifpljm" path="res://Sprites/UI/LoadingScreenIcon.png" id="3_eoegu"]
+[ext_resource type="AudioStream" uid="uid://ca3r4axf2d4sm" path="res://Audio/SoundEffects/Misc/TrainSimpleLoop.wav" id="3_lhptu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0o1e"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_dfjyq"]
 font = ExtResource("1_cja13")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85d05"]
+atlas = ExtResource("3_eoegu")
+region = Rect2(0, 0, 128, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm6nk"]
+atlas = ExtResource("3_eoegu")
+region = Rect2(128, 0, 128, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_758b2"]
+atlas = ExtResource("3_eoegu")
+region = Rect2(256, 0, 128, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i02l"]
+atlas = ExtResource("3_eoegu")
+region = Rect2(384, 0, 128, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06l77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85d05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm6nk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_758b2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i02l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="LoadingScreen" type="CanvasLayer"]
 script = ExtResource("1_2ivfk")
@@ -30,19 +68,31 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o0o1e")
 
 [node name="LoadingLabel" type="Label" parent="Control"]
+visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -37.5
-offset_top = -13.0
-offset_right = 37.5
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -40.0
+offset_right = -19.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Loading..."
 label_settings = SubResource("LabelSettings_dfjyq")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(576, 320)
+sprite_frames = SubResource("SpriteFrames_06l77")
+autoplay = "default"
+frame = 1
+frame_progress = 0.45017
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lhptu")
+autoplay = true

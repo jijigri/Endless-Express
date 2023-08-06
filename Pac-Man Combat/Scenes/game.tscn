@@ -1,10 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://chw0ydc058ox0"]
+[gd_scene load_steps=32 format=3 uid="uid://chw0ydc058ox0"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_lg5uc"]
 [ext_resource type="PackedScene" uid="uid://cgo148uilrd2s" path="res://Scenes/Arenas/arena_test_1.tscn" id="2_1lhxp"]
 [ext_resource type="Script" path="res://Scripts/ArenaManager.gd" id="2_ii7w5"]
 [ext_resource type="PackedScene" uid="uid://dc8ngtaahwest" path="res://Scenes/Arenas/arena_test_3.tscn" id="3_2lpal"]
-[ext_resource type="PackedScene" uid="uid://b4ovmjflwvwsd" path="res://Scenes/Arenas/jungle_arena_4.tscn" id="3_qcf2j"]
 [ext_resource type="PackedScene" uid="uid://kanbh3luanee" path="res://Scenes/Arenas/arena_test_4.tscn" id="3_ria7w"]
 [ext_resource type="PackedScene" uid="uid://bdh0s8yeyx4m3" path="res://Scenes/Arenas/jungle_arena_1.tscn" id="3_v7soj"]
 [ext_resource type="PackedScene" uid="uid://b26pryaeluhog" path="res://Scenes/Arenas/arena_test_2.tscn" id="4_4d446"]
@@ -15,8 +14,10 @@
 [ext_resource type="Resource" uid="uid://c38x2m2fndcou" path="res://Resources/Biomes/JungleBiome.tres" id="10_jvpsu"]
 [ext_resource type="Script" path="res://Scripts/Misc/AutomaticParallaxBackground.gd" id="12_v2wr0"]
 [ext_resource type="Texture2D" uid="uid://dvpmw8lvylxt" path="res://Sprites/Background/ParallaxBackground.png" id="13_818sd"]
+[ext_resource type="Script" path="res://Scripts/UI/DebugScreen.gd" id="15_g6u1k"]
+[ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="16_1yujc"]
 
-[sub_resource type="Resource" id="Resource_toys0"]
+[sub_resource type="Resource" id="Resource_18uol"]
 resource_local_to_scene = true
 script = ExtResource("5_y3ork")
 speed = 240.0
@@ -82,6 +83,12 @@ region = Rect2(3200, 0, 640, 628)
 atlas = SubResource("CompressedTexture2D_i0t4n")
 region = Rect2(3840, 0, 640, 628)
 
+[sub_resource type="LabelSettings" id="LabelSettings_qjqm1"]
+font = ExtResource("16_1yujc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_2tdds"]
+font = ExtResource("16_1yujc")
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node2D" parent="." groups=["GameManager"]]
@@ -90,13 +97,12 @@ script = ExtResource("1_lg5uc")
 
 [node name="ArenaManager" type="Node2D" parent="." groups=["ArenaManager"]]
 script = ExtResource("2_ii7w5")
-solo_arena = ExtResource("3_qcf2j")
 arena_pool = Array[PackedScene]([ExtResource("2_1lhxp"), ExtResource("4_4d446"), ExtResource("3_2lpal"), ExtResource("3_ria7w"), ExtResource("3_v7soj")])
 biome_pool = Array[Resource("res://Scripts/Resources/BiomeData.gd")]([ExtResource("9_ywl3c"), ExtResource("10_jvpsu")])
 
 [node name="Player" parent="." instance=ExtResource("4_hdyj7")]
 position = Vector2(0, 0)
-movement_data = SubResource("Resource_toys0")
+movement_data = SubResource("Resource_18uol")
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_cm2bt")
@@ -175,3 +181,42 @@ motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer07"]
 texture = SubResource("AtlasTexture_26cwd")
+
+[node name="DebugScreen" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("15_g6u1k")
+
+[node name="Control" type="Control" parent="DebugScreen"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NumberOfEnemiesLabel" type="Label" parent="DebugScreen/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_right = -2.0
+offset_bottom = 26.0
+grow_horizontal = 0
+text = "Number of enemies:"
+label_settings = SubResource("LabelSettings_qjqm1")
+vertical_alignment = 1
+
+[node name="EnemiesLabel" type="Label" parent="DebugScreen/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 24.0
+offset_right = -2.0
+offset_bottom = 50.0
+grow_horizontal = 0
+text = "Number of enemies:"
+label_settings = SubResource("LabelSettings_2tdds")
+vertical_alignment = 1

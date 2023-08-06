@@ -12,75 +12,75 @@
 [ext_resource type="PackedScene" uid="uid://17imy3nkqo68" path="res://Scenes/ArenaProps/Jungle/seed.tscn" id="8_ne1s6"]
 [ext_resource type="PackedScene" uid="uid://caymikuq4sssi" path="res://Scenes/ArenaProps/Jungle/jungle_tree.tscn" id="9_x4m0o"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wenq3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oe254"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4xat"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0e2y"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_81fl2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q6dg"]
 resource_local_to_scene = true
 size = Vector2(144, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhr2e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hdj1"]
 resource_local_to_scene = true
 size = Vector2(144, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjjqc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8au3p"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8chv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygbay"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcimi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rx32"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kiwln"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mg0i"]
 resource_local_to_scene = true
 size = Vector2(272, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsapu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mhj7"]
 resource_local_to_scene = true
 size = Vector2(272, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jqr1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhm03"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r120e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft75g"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gab5a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blthd"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_420t8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06esd"]
 resource_local_to_scene = true
 size = Vector2(144, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oasr0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27j28"]
 resource_local_to_scene = true
 size = Vector2(80, 112)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_sjcks"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4i28q"]
 vertices = PackedVector2Array(40, -32, 40, 80, -40, 80, -40, -32)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-40, -32, -40, 80, 40, 80, 40, -32)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s84pp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qeprq"]
 resource_local_to_scene = true
 size = Vector2(88, 120)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ufb5g"]
 load_path = "res://.godot/imported/LeafBlockSprite.png-a6bba6fb2203a0134bae510ad90be458.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6wmkb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnwuc"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
@@ -100,7 +100,7 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_0sxth"]
 curve = SubResource("Curve_udiyd")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wapiq"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2u76t"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -166,32 +166,32 @@ region = Rect2(8, 0, 8, 8)
 resource_local_to_scene = true
 size = Vector2(32, 80)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xjyf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggy0w"]
 size = Vector2(128, 144)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_08q0r"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jpomb"]
 vertices = PackedVector2Array(-40, -16, -40, 128, -168, 128, -168, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-168, -16, -168, 128, -40, 128, -40, -16)])
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nnl5u"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4dnki"]
 load_path = "res://.godot/imported/LockedBlock.png-52e9570f844ea748362edb093a600642.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggd3y"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckqju"]
 size = Vector2(128, 144)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_jx72p"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ei5vs"]
 vertices = PackedVector2Array(-40, -16, -40, 128, -168, 128, -168, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-168, -16, -168, 128, -40, 128, -40, -16)])
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ifeix"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nst41"]
 load_path = "res://.godot/imported/LockedBlock.png-52e9570f844ea748362edb093a600642.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldniy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdldc"]
 size = Vector2(300, 80)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7gpnu"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g0o2f"]
 lifetime_randomness = 0.5
 emission_shape = 3
 emission_box_extents = Vector3(134, 36, 0)
@@ -203,10 +203,10 @@ orbit_velocity_max = 0.0
 anim_speed_min = 0.4
 anim_speed_max = 0.6
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vropp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfsw3"]
 size = Vector2(300, 80)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yqkf6"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jdw21"]
 lifetime_randomness = 0.5
 emission_shape = 3
 emission_box_extents = Vector3(134, 36, 0)
@@ -218,7 +218,7 @@ orbit_velocity_max = 0.0
 anim_speed_min = 0.4
 anim_speed_max = 0.6
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qk8f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0x438"]
 resource_local_to_scene = true
 size = Vector2(82, 18)
 
@@ -251,17 +251,17 @@ turbulence_noise_strength = 5.0
 turbulence_noise_scale = 9.5
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwvxe"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68t5e"]
 size = Vector2(8, 58)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3xcf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1igtv"]
 resource_local_to_scene = true
 size = Vector2(82, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyvjm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk84j"]
 size = Vector2(8, 98)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fonaq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bagv"]
 resource_local_to_scene = true
 size = Vector2(82, 18)
 
@@ -287,7 +287,7 @@ turbulence_noise_strength = 5.0
 turbulence_noise_scale = 9.5
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kytid"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1cvu"]
 size = Vector2(8, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkx38"]
@@ -317,7 +317,7 @@ position = Vector2(-344, 120)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform" index="0"]
-shape = SubResource("RectangleShape2D_wenq3")
+shape = SubResource("RectangleShape2D_oe254")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform" index="1"]
 texture = ExtResource("3_apm8t")
@@ -328,7 +328,7 @@ position = Vector2(-344, -40)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform2" index="0"]
-shape = SubResource("RectangleShape2D_t4xat")
+shape = SubResource("RectangleShape2D_u0e2y")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform2" index="1"]
 texture = ExtResource("3_apm8t")
@@ -339,7 +339,7 @@ position = Vector2(-136, -40)
 size = 144.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform3" index="0"]
-shape = SubResource("RectangleShape2D_81fl2")
+shape = SubResource("RectangleShape2D_7q6dg")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform3" index="1"]
 texture = ExtResource("3_apm8t")
@@ -350,7 +350,7 @@ position = Vector2(-136, -168)
 size = 144.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform4" index="0"]
-shape = SubResource("RectangleShape2D_hhr2e")
+shape = SubResource("RectangleShape2D_4hdj1")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform4" index="1"]
 texture = ExtResource("3_apm8t")
@@ -361,7 +361,7 @@ position = Vector2(104, -40)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform5" index="0"]
-shape = SubResource("RectangleShape2D_kjjqc")
+shape = SubResource("RectangleShape2D_8au3p")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform5" index="1"]
 texture = ExtResource("3_apm8t")
@@ -372,7 +372,7 @@ position = Vector2(312, -40)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform6" index="0"]
-shape = SubResource("RectangleShape2D_m8chv")
+shape = SubResource("RectangleShape2D_ygbay")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform6" index="1"]
 texture = ExtResource("3_apm8t")
@@ -383,7 +383,7 @@ position = Vector2(520, -40)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform7" index="0"]
-shape = SubResource("RectangleShape2D_fcimi")
+shape = SubResource("RectangleShape2D_4rx32")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform7" index="1"]
 texture = ExtResource("3_apm8t")
@@ -394,7 +394,7 @@ position = Vector2(312, -96)
 size = 272.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform8" index="0"]
-shape = SubResource("RectangleShape2D_kiwln")
+shape = SubResource("RectangleShape2D_3mg0i")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform8" index="1"]
 texture = ExtResource("3_apm8t")
@@ -405,7 +405,7 @@ position = Vector2(312, -168)
 size = 272.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform9" index="0"]
-shape = SubResource("RectangleShape2D_vsapu")
+shape = SubResource("RectangleShape2D_7mhj7")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform9" index="1"]
 texture = ExtResource("3_apm8t")
@@ -416,7 +416,7 @@ position = Vector2(520, -296)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform10" index="0"]
-shape = SubResource("RectangleShape2D_2jqr1")
+shape = SubResource("RectangleShape2D_qhm03")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform10" index="1"]
 texture = ExtResource("3_apm8t")
@@ -427,7 +427,7 @@ position = Vector2(-520, -40)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform11" index="0"]
-shape = SubResource("RectangleShape2D_r120e")
+shape = SubResource("RectangleShape2D_ft75g")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform11" index="1"]
 texture = ExtResource("3_apm8t")
@@ -438,7 +438,7 @@ position = Vector2(-520, 120)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform12" index="0"]
-shape = SubResource("RectangleShape2D_gab5a")
+shape = SubResource("RectangleShape2D_blthd")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform12" index="1"]
 texture = ExtResource("3_apm8t")
@@ -449,7 +449,7 @@ position = Vector2(-136, 120)
 size = 144.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform13" index="0"]
-shape = SubResource("RectangleShape2D_420t8")
+shape = SubResource("RectangleShape2D_06esd")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform13" index="1"]
 texture = ExtResource("3_apm8t")
@@ -460,14 +460,14 @@ position = Vector2(-344, -80)
 
 [node name="CollisionShape2D" parent="Map/Level/Props/LeafBlock" index="0"]
 position = Vector2(0, 24)
-shape = SubResource("RectangleShape2D_oasr0")
+shape = SubResource("RectangleShape2D_27j28")
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/LeafBlock" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_sjcks")
+navigation_polygon = SubResource("NavigationPolygon_4i28q")
 
 [node name="CollisionShape2D" parent="Map/Level/Props/LeafBlock/DetectionArea" index="0"]
 position = Vector2(0, 24)
-shape = SubResource("RectangleShape2D_s84pp")
+shape = SubResource("RectangleShape2D_qeprq")
 
 [node name="NinePatchRect" parent="Map/Level/Props/LeafBlock" index="3"]
 offset_left = -40.0
@@ -475,11 +475,11 @@ offset_top = -32.0
 offset_right = 40.0
 offset_bottom = 80.0
 pivot_offset = Vector2(40, 56)
-texture = SubResource("AtlasTexture_6wmkb")
+texture = SubResource("AtlasTexture_lnwuc")
 
 [node name="Particles" parent="Map/Level/Props/LeafBlock" index="5"]
 amount = 179
-process_material = SubResource("ParticleProcessMaterial_wapiq")
+process_material = SubResource("ParticleProcessMaterial_2u76t")
 
 [node name="Portals" parent="Map/Level/Props" index="1" instance=ExtResource("5_6e3i1")]
 
@@ -529,17 +529,17 @@ color = 0
 
 [node name="CollisionShape2D" parent="Map/Level/Props/LockBlock" index="0"]
 position = Vector2(-104, 56)
-shape = SubResource("RectangleShape2D_3xjyf")
+shape = SubResource("RectangleShape2D_ggy0w")
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/LockBlock" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_08q0r")
+navigation_polygon = SubResource("NavigationPolygon_jpomb")
 
 [node name="NinePatchRect" parent="Map/Level/Props/LockBlock" index="2"]
 offset_left = -168.0
 offset_right = -40.0
 offset_bottom = 128.0
 pivot_offset = Vector2(64, 72)
-texture = SubResource("CompressedTexture2D_nnl5u")
+texture = SubResource("CompressedTexture2D_4dnki")
 
 [node name="Locks" parent="Map/Level/Props/LockBlock" index="4"]
 position = Vector2(-104, 0)
@@ -578,17 +578,17 @@ color = 0
 
 [node name="CollisionShape2D" parent="Map/Level/Props/LockBlock2" index="0"]
 position = Vector2(-104, 56)
-shape = SubResource("RectangleShape2D_ggd3y")
+shape = SubResource("RectangleShape2D_ckqju")
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/LockBlock2" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_jx72p")
+navigation_polygon = SubResource("NavigationPolygon_ei5vs")
 
 [node name="NinePatchRect" parent="Map/Level/Props/LockBlock2" index="2"]
 offset_left = -168.0
 offset_right = -40.0
 offset_bottom = 128.0
 pivot_offset = Vector2(64, 72)
-texture = SubResource("CompressedTexture2D_ifeix")
+texture = SubResource("CompressedTexture2D_nst41")
 
 [node name="Locks" parent="Map/Level/Props/LockBlock2" index="4"]
 position = Vector2(-104, 0)
@@ -615,12 +615,12 @@ position = Vector2(-520, -24)
 
 [node name="CollisionShape2D" parent="Map/Level/Props/WindArea" index="0"]
 position = Vector2(-18, -0.00012207)
-shape = SubResource("RectangleShape2D_ldniy")
+shape = SubResource("RectangleShape2D_hdldc")
 
 [node name="GPUParticles2D" parent="Map/Level/Props/WindArea" index="1"]
 position = Vector2(-18, -0.00012207)
 amount = 91
-process_material = SubResource("ParticleProcessMaterial_7gpnu")
+process_material = SubResource("ParticleProcessMaterial_g0o2f")
 
 [node name="Source" parent="Map/Level/Props/WindArea" index="2"]
 target_position = Vector2(300, 0)
@@ -630,12 +630,12 @@ position = Vector2(520, -24)
 
 [node name="CollisionShape2D" parent="Map/Level/Props/WindArea2" index="0"]
 position = Vector2(-18, -0.00012207)
-shape = SubResource("RectangleShape2D_vropp")
+shape = SubResource("RectangleShape2D_qfsw3")
 
 [node name="GPUParticles2D" parent="Map/Level/Props/WindArea2" index="1"]
 position = Vector2(-18, -0.00012207)
 amount = 91
-process_material = SubResource("ParticleProcessMaterial_yqkf6")
+process_material = SubResource("ParticleProcessMaterial_jdw21")
 
 [node name="Source" parent="Map/Level/Props/WindArea2" index="2"]
 target_position = Vector2(300, 0)
@@ -653,7 +653,7 @@ bounce_velocity = Vector2(0, -940)
 health_manager = NodePath("../../../Tree/HealthManager")
 
 [node name="CollisionShape2D" parent="Map/Level/Props/Tree2/Leaves/LeavesHurtbox" index="0"]
-shape = SubResource("RectangleShape2D_0qk8f")
+shape = SubResource("RectangleShape2D_0x438")
 
 [node name="Particles" parent="Map/Level/Props/Tree2/Leaves" index="5"]
 process_material = SubResource("ParticleProcessMaterial_wlf27")
@@ -662,7 +662,7 @@ process_material = SubResource("ParticleProcessMaterial_wlf27")
 health_manager = NodePath("../../Tree/HealthManager")
 
 [node name="CollisionShape2D" parent="Map/Level/Props/Tree2/TrunkHurtbox" index="0"]
-shape = SubResource("RectangleShape2D_wwvxe")
+shape = SubResource("RectangleShape2D_68t5e")
 
 [node name="Tree3" parent="Map/Level/Props" index="9" instance=ExtResource("9_x4m0o")]
 position = Vector2(104, 192)
@@ -681,7 +681,7 @@ bounce_velocity = Vector2(0, -940)
 health_manager = NodePath("../../../Tree/HealthManager")
 
 [node name="CollisionShape2D" parent="Map/Level/Props/Tree3/Leaves/LeavesHurtbox" index="0"]
-shape = SubResource("RectangleShape2D_l3xcf")
+shape = SubResource("RectangleShape2D_1igtv")
 
 [node name="Particles" parent="Map/Level/Props/Tree3/Leaves" index="5"]
 process_material = SubResource("ParticleProcessMaterial_wlf27")
@@ -691,7 +691,7 @@ health_manager = NodePath("../../Tree/HealthManager")
 
 [node name="CollisionShape2D" parent="Map/Level/Props/Tree3/TrunkHurtbox" index="0"]
 position = Vector2(0, -17)
-shape = SubResource("RectangleShape2D_tyvjm")
+shape = SubResource("RectangleShape2D_mk84j")
 
 [node name="Tree4" parent="Map/Level/Props" index="10" instance=ExtResource("9_x4m0o")]
 position = Vector2(-136, 192)
@@ -700,13 +700,13 @@ position = Vector2(-136, 192)
 bounce_velocity = Vector2(0, -1050)
 
 [node name="CollisionShape2D" parent="Map/Level/Props/Tree4/Leaves/LeavesHurtbox" index="0"]
-shape = SubResource("RectangleShape2D_fonaq")
+shape = SubResource("RectangleShape2D_2bagv")
 
 [node name="Particles" parent="Map/Level/Props/Tree4/Leaves" index="5"]
 process_material = SubResource("ParticleProcessMaterial_8b8lw")
 
 [node name="CollisionShape2D" parent="Map/Level/Props/Tree4/TrunkHurtbox" index="0"]
-shape = SubResource("RectangleShape2D_kytid")
+shape = SubResource("RectangleShape2D_n1cvu")
 
 [node name="Far" parent="Map/Level/Background" index="0"]
 offset_left = -1560.0

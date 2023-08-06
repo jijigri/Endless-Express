@@ -17,6 +17,10 @@ func _ready() -> void:
 	await get_tree().process_frame
 	player.health_manager.entity_killed.connect(on_player_entity_killed)
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle_debug_mode"):
+		Global.debug_mode = !Global.debug_mode
+
 func increase_score(amount: int):
 	old_score = current_score
 	current_score += amount

@@ -13,79 +13,79 @@
 [ext_resource type="PackedScene" uid="uid://dxi16ato1by5j" path="res://Scenes/ArenaProps/Jungle/wind_area.tscn" id="11_ephpl"]
 [ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="12_nwp7i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk5c5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16kgd"]
 resource_local_to_scene = true
 size = Vector2(208, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_arpvh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yiowf"]
 resource_local_to_scene = true
 size = Vector2(336, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_55c04"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xosla"]
 resource_local_to_scene = true
 size = Vector2(432, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_exehy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt1s"]
 resource_local_to_scene = true
 size = Vector2(560, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k41bp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnwoe"]
 resource_local_to_scene = true
 size = Vector2(448, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1bah"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecqdw"]
 resource_local_to_scene = true
 size = Vector2(224, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f3vt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2g4b"]
 resource_local_to_scene = true
 size = Vector2(224, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pt4jt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l54ft"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnj2u"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpmcm"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrqgf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q0mp"]
 resource_local_to_scene = true
 size = Vector2(224, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox3dl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlwrw"]
 resource_local_to_scene = true
 size = Vector2(224, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_58vxn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fsdq"]
 resource_local_to_scene = true
 size = Vector2(448, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kjr6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5046"]
 resource_local_to_scene = true
 size = Vector2(448, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8efw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vovb"]
 resource_local_to_scene = true
 size = Vector2(64, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyjxv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jb1v"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_0y0i4"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_d7rbg"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pg45c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyj5n"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ufb5g"]
 load_path = "res://.godot/imported/LeafBlockSprite.png-a6bba6fb2203a0134bae510ad90be458.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2lxhx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5kca"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
@@ -105,7 +105,7 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_0sxth"]
 curve = SubResource("Curve_udiyd")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p7jdu"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n4a1g"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -129,25 +129,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o10l"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s8up"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_k4pmn"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7hivx"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqk4s"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agaco"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cah2v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn24o"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qdl1i"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i8sd6"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -171,25 +171,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vir0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t0ay"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_vbif3"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_kks3l"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vje2w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_870cw"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pviqu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnkfu"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0xhvm"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ncmum"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -213,25 +213,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfdxn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrp77"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_l4glx"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lwwtp"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl52o"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dak37"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bj6j1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6gxk"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_624l3"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_itcid"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -255,25 +255,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0esrt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg4f5"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_q34gv"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8tr8v"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk42d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi5mb"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fmd06"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxiln"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pwwt6"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ug6qf"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -297,25 +297,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg0xx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c34hk"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_go7th"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bshpe"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bspw2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfbwm"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l1t6u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w44m4"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fdex3"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2o62r"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -339,25 +339,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgl4m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggqxv"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_whvus"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ks6qt"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_llo4c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2kf4"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gp8jb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f63a"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rwa87"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7rwjm"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -381,25 +381,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_khsmy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aasih"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_gw7mc"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1sr40"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wv0d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grhco"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qiwus"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbs3y"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1yynt"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7u5lu"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -423,25 +423,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_op2cv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pfd2"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_we62h"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_md80r"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kvom"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3lwc"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xid3r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp1lb"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ubmei"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eao1l"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -465,25 +465,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_on0kf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f67c3"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_qgvfr"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ho555"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywmd3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gml85"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ng05b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnq8x"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ya5jk"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hbq1w"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -507,25 +507,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvjnd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh0t7"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_p0rb0"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_u1vfs"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_urabk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qwqg"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yy8wq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gd3i"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a0p26"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vlxcn"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -549,25 +549,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hdn0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enhib"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_j78xw"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ryb8k"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5hb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxjuy"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gkxtg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl1kq"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7cepd"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fb6o1"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -591,25 +591,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ydr2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qotau"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_7e3nr"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_iswsl"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2pg7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqtcy"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbbsa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vclui"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xbntn"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xbdt8"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -633,25 +633,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d76jo"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uti83"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_dk1tq"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_cvq4n"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl3tw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtx4a"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_04jrf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v64i4"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ipj7"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_myxrm"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -675,26 +675,26 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtdru"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r0j7"]
 size = Vector2(16, 96)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_givhf"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ghnf1"]
 vertices = PackedVector2Array(8, -40, 8, 56, -8, 56, -8, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -40, -8, 56, 8, 56, 8, -40)])
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mf77j"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gd757"]
 load_path = "res://.godot/imported/LockedBlock.png-52e9570f844ea748362edb093a600642.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfnb0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u8ls"]
 size = Vector2(16, 96)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_u3g0j"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ix0mh"]
 vertices = PackedVector2Array(8, -40, 8, 56, -8, 56, -8, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -40, -8, 56, 8, 56, 8, -40)])
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l3tkr"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pqnoq"]
 load_path = "res://.godot/imported/LockedBlock.png-52e9570f844ea748362edb093a600642.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pno1w"]
@@ -721,10 +721,10 @@ region = Rect2(0, 0, 8, 8)
 resource_local_to_scene = true
 size = Vector2(32, 80)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_plogf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlld2"]
 size = Vector2(248, 80)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e08kp"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dl56t"]
 lifetime_randomness = 0.5
 emission_shape = 3
 emission_box_extents = Vector3(108, 36, 0)
@@ -736,10 +736,10 @@ orbit_velocity_max = 0.0
 anim_speed_min = 0.4
 anim_speed_max = 0.6
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d0yo"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jsu1"]
 size = Vector2(248, 64)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yo4if"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yrhl5"]
 lifetime_randomness = 0.5
 emission_shape = 3
 emission_box_extents = Vector3(108, 28, 0)
@@ -781,7 +781,7 @@ position = Vector2(-8, -40)
 size = 208.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform" index="0"]
-shape = SubResource("RectangleShape2D_nk5c5")
+shape = SubResource("RectangleShape2D_16kgd")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform" index="1"]
 texture = ExtResource("3_nxq67")
@@ -792,7 +792,7 @@ position = Vector2(-312, -168)
 size = 336.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform2" index="0"]
-shape = SubResource("RectangleShape2D_arpvh")
+shape = SubResource("RectangleShape2D_yiowf")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform2" index="1"]
 texture = ExtResource("3_nxq67")
@@ -803,7 +803,7 @@ position = Vector2(344, -168)
 size = 432.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform3" index="0"]
-shape = SubResource("RectangleShape2D_55c04")
+shape = SubResource("RectangleShape2D_xosla")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform3" index="1"]
 texture = ExtResource("3_nxq67")
@@ -814,7 +814,7 @@ position = Vector2(312, -264)
 size = 560.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform4" index="0"]
-shape = SubResource("RectangleShape2D_exehy")
+shape = SubResource("RectangleShape2D_pjt1s")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform4" index="1"]
 texture = ExtResource("3_nxq67")
@@ -825,7 +825,7 @@ position = Vector2(-256, -264)
 size = 448.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform5" index="0"]
-shape = SubResource("RectangleShape2D_k41bp")
+shape = SubResource("RectangleShape2D_nnwoe")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform5" index="1"]
 texture = ExtResource("3_nxq67")
@@ -836,7 +836,7 @@ position = Vector2(368, 120)
 size = 224.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform6" index="0"]
-shape = SubResource("RectangleShape2D_n1bah")
+shape = SubResource("RectangleShape2D_ecqdw")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform6" index="1"]
 texture = ExtResource("3_nxq67")
@@ -847,7 +847,7 @@ position = Vector2(-368, 56)
 size = 224.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform7" index="0"]
-shape = SubResource("RectangleShape2D_7f3vt")
+shape = SubResource("RectangleShape2D_f2g4b")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform7" index="1"]
 texture = ExtResource("3_nxq67")
@@ -858,7 +858,7 @@ position = Vector2(-440, 144)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform8" index="0"]
-shape = SubResource("RectangleShape2D_pt4jt")
+shape = SubResource("RectangleShape2D_l54ft")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform8" index="1"]
 texture = ExtResource("3_nxq67")
@@ -869,7 +869,7 @@ position = Vector2(-296, 144)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform14" index="0"]
-shape = SubResource("RectangleShape2D_hnj2u")
+shape = SubResource("RectangleShape2D_bpmcm")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform14" index="1"]
 texture = ExtResource("3_nxq67")
@@ -880,7 +880,7 @@ position = Vector2(-368, -40)
 size = 224.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform9" index="0"]
-shape = SubResource("RectangleShape2D_rrqgf")
+shape = SubResource("RectangleShape2D_8q0mp")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform9" index="1"]
 texture = ExtResource("3_nxq67")
@@ -891,7 +891,7 @@ position = Vector2(368, -40)
 size = 224.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform10" index="0"]
-shape = SubResource("RectangleShape2D_ox3dl")
+shape = SubResource("RectangleShape2D_hlwrw")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform10" index="1"]
 texture = ExtResource("3_nxq67")
@@ -902,7 +902,7 @@ position = Vector2(0, 56)
 size = 448.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform11" index="0"]
-shape = SubResource("RectangleShape2D_58vxn")
+shape = SubResource("RectangleShape2D_1fsdq")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform11" index="1"]
 texture = ExtResource("3_nxq67")
@@ -913,7 +913,7 @@ position = Vector2(0, 144)
 size = 448.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform12" index="0"]
-shape = SubResource("RectangleShape2D_8kjr6")
+shape = SubResource("RectangleShape2D_h5046")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform12" index="1"]
 texture = ExtResource("3_nxq67")
@@ -923,7 +923,7 @@ region_rect = Rect2(0, 0, 448, 16)
 position = Vector2(624, -168)
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform13" index="0"]
-shape = SubResource("RectangleShape2D_m8efw")
+shape = SubResource("RectangleShape2D_5vovb")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform13" index="1"]
 texture = ExtResource("3_nxq67")
@@ -934,13 +934,13 @@ texture = ExtResource("3_nxq67")
 position = Vector2(-208, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock3" index="0"]
-shape = SubResource("RectangleShape2D_fyjxv")
+shape = SubResource("RectangleShape2D_8jb1v")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock3" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_0y0i4")
+navigation_polygon = SubResource("NavigationPolygon_d7rbg")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock3/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_pg45c")
+shape = SubResource("RectangleShape2D_gyj5n")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock3" index="3"]
 offset_left = -16.0
@@ -948,23 +948,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_2lxhx")
+texture = SubResource("AtlasTexture_o5kca")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock3" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_p7jdu")
+process_material = SubResource("ParticleProcessMaterial_n4a1g")
 
 [node name="LeafBlock4" parent="Map/Level/LeafBlocks" index="1" instance=ExtResource("4_asj5n")]
 position = Vector2(-176, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock4" index="0"]
-shape = SubResource("RectangleShape2D_5o10l")
+shape = SubResource("RectangleShape2D_0s8up")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock4" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_k4pmn")
+navigation_polygon = SubResource("NavigationPolygon_7hivx")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock4/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_mqk4s")
+shape = SubResource("RectangleShape2D_agaco")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock4" index="3"]
 offset_left = -16.0
@@ -972,23 +972,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_cah2v")
+texture = SubResource("AtlasTexture_yn24o")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock4" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_qdl1i")
+process_material = SubResource("ParticleProcessMaterial_i8sd6")
 
 [node name="LeafBlock5" parent="Map/Level/LeafBlocks" index="2" instance=ExtResource("4_asj5n")]
 position = Vector2(-144, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock5" index="0"]
-shape = SubResource("RectangleShape2D_7vir0")
+shape = SubResource("RectangleShape2D_0t0ay")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock5" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_vbif3")
+navigation_polygon = SubResource("NavigationPolygon_kks3l")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock5/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_vje2w")
+shape = SubResource("RectangleShape2D_870cw")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock5" index="3"]
 offset_left = -16.0
@@ -996,23 +996,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_pviqu")
+texture = SubResource("AtlasTexture_qnkfu")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock5" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_0xhvm")
+process_material = SubResource("ParticleProcessMaterial_ncmum")
 
 [node name="LeafBlock6" parent="Map/Level/LeafBlocks" index="3" instance=ExtResource("4_asj5n")]
 position = Vector2(-112, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock6" index="0"]
-shape = SubResource("RectangleShape2D_rfdxn")
+shape = SubResource("RectangleShape2D_mrp77")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock6" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_l4glx")
+navigation_polygon = SubResource("NavigationPolygon_lwwtp")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock6/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_xl52o")
+shape = SubResource("RectangleShape2D_dak37")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock6" index="3"]
 offset_left = -16.0
@@ -1020,23 +1020,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_bj6j1")
+texture = SubResource("AtlasTexture_m6gxk")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock6" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_624l3")
+process_material = SubResource("ParticleProcessMaterial_itcid")
 
 [node name="LeafBlock7" parent="Map/Level/LeafBlocks" index="4" instance=ExtResource("4_asj5n")]
 position = Vector2(-80, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock7" index="0"]
-shape = SubResource("RectangleShape2D_0esrt")
+shape = SubResource("RectangleShape2D_dg4f5")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock7" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_q34gv")
+navigation_polygon = SubResource("NavigationPolygon_8tr8v")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock7/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_vk42d")
+shape = SubResource("RectangleShape2D_xi5mb")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock7" index="3"]
 offset_left = -16.0
@@ -1044,23 +1044,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_fmd06")
+texture = SubResource("AtlasTexture_uxiln")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock7" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_pwwt6")
+process_material = SubResource("ParticleProcessMaterial_ug6qf")
 
 [node name="LeafBlock8" parent="Map/Level/LeafBlocks" index="5" instance=ExtResource("4_asj5n")]
 position = Vector2(-48, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock8" index="0"]
-shape = SubResource("RectangleShape2D_hg0xx")
+shape = SubResource("RectangleShape2D_c34hk")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock8" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_go7th")
+navigation_polygon = SubResource("NavigationPolygon_bshpe")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock8/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_bspw2")
+shape = SubResource("RectangleShape2D_lfbwm")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock8" index="3"]
 offset_left = -16.0
@@ -1068,23 +1068,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_l1t6u")
+texture = SubResource("AtlasTexture_w44m4")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock8" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_fdex3")
+process_material = SubResource("ParticleProcessMaterial_2o62r")
 
 [node name="LeafBlock9" parent="Map/Level/LeafBlocks" index="6" instance=ExtResource("4_asj5n")]
 position = Vector2(-16, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock9" index="0"]
-shape = SubResource("RectangleShape2D_jgl4m")
+shape = SubResource("RectangleShape2D_ggqxv")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock9" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_whvus")
+navigation_polygon = SubResource("NavigationPolygon_ks6qt")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock9/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_llo4c")
+shape = SubResource("RectangleShape2D_l2kf4")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock9" index="3"]
 offset_left = -16.0
@@ -1092,23 +1092,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_gp8jb")
+texture = SubResource("AtlasTexture_7f63a")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock9" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_rwa87")
+process_material = SubResource("ParticleProcessMaterial_7rwjm")
 
 [node name="LeafBlock10" parent="Map/Level/LeafBlocks" index="7" instance=ExtResource("4_asj5n")]
 position = Vector2(16, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock10" index="0"]
-shape = SubResource("RectangleShape2D_khsmy")
+shape = SubResource("RectangleShape2D_aasih")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock10" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_gw7mc")
+navigation_polygon = SubResource("NavigationPolygon_1sr40")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock10/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_5wv0d")
+shape = SubResource("RectangleShape2D_grhco")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock10" index="3"]
 offset_left = -16.0
@@ -1116,23 +1116,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_qiwus")
+texture = SubResource("AtlasTexture_xbs3y")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock10" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_1yynt")
+process_material = SubResource("ParticleProcessMaterial_7u5lu")
 
 [node name="LeafBlock11" parent="Map/Level/LeafBlocks" index="8" instance=ExtResource("4_asj5n")]
 position = Vector2(48, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock11" index="0"]
-shape = SubResource("RectangleShape2D_op2cv")
+shape = SubResource("RectangleShape2D_0pfd2")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock11" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_we62h")
+navigation_polygon = SubResource("NavigationPolygon_md80r")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock11/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_5kvom")
+shape = SubResource("RectangleShape2D_l3lwc")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock11" index="3"]
 offset_left = -16.0
@@ -1140,23 +1140,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_xid3r")
+texture = SubResource("AtlasTexture_rp1lb")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock11" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_ubmei")
+process_material = SubResource("ParticleProcessMaterial_eao1l")
 
 [node name="LeafBlock12" parent="Map/Level/LeafBlocks" index="9" instance=ExtResource("4_asj5n")]
 position = Vector2(80, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock12" index="0"]
-shape = SubResource("RectangleShape2D_on0kf")
+shape = SubResource("RectangleShape2D_f67c3")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock12" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_qgvfr")
+navigation_polygon = SubResource("NavigationPolygon_ho555")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock12/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_ywmd3")
+shape = SubResource("RectangleShape2D_gml85")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock12" index="3"]
 offset_left = -16.0
@@ -1164,23 +1164,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_ng05b")
+texture = SubResource("AtlasTexture_wnq8x")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock12" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_ya5jk")
+process_material = SubResource("ParticleProcessMaterial_hbq1w")
 
 [node name="LeafBlock13" parent="Map/Level/LeafBlocks" index="10" instance=ExtResource("4_asj5n")]
 position = Vector2(112, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock13" index="0"]
-shape = SubResource("RectangleShape2D_jvjnd")
+shape = SubResource("RectangleShape2D_bh0t7")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock13" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_p0rb0")
+navigation_polygon = SubResource("NavigationPolygon_u1vfs")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock13/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_urabk")
+shape = SubResource("RectangleShape2D_7qwqg")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock13" index="3"]
 offset_left = -16.0
@@ -1188,23 +1188,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_yy8wq")
+texture = SubResource("AtlasTexture_6gd3i")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock13" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_a0p26")
+process_material = SubResource("ParticleProcessMaterial_vlxcn")
 
 [node name="LeafBlock14" parent="Map/Level/LeafBlocks" index="11" instance=ExtResource("4_asj5n")]
 position = Vector2(144, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock14" index="0"]
-shape = SubResource("RectangleShape2D_6hdn0")
+shape = SubResource("RectangleShape2D_enhib")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock14" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_j78xw")
+navigation_polygon = SubResource("NavigationPolygon_ryb8k")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock14/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_6t5hb")
+shape = SubResource("RectangleShape2D_rxjuy")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock14" index="3"]
 offset_left = -16.0
@@ -1212,23 +1212,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_gkxtg")
+texture = SubResource("AtlasTexture_kl1kq")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock14" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_7cepd")
+process_material = SubResource("ParticleProcessMaterial_fb6o1")
 
 [node name="LeafBlock15" parent="Map/Level/LeafBlocks" index="12" instance=ExtResource("4_asj5n")]
 position = Vector2(176, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock15" index="0"]
-shape = SubResource("RectangleShape2D_5ydr2")
+shape = SubResource("RectangleShape2D_qotau")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock15" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_7e3nr")
+navigation_polygon = SubResource("NavigationPolygon_iswsl")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock15/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_y2pg7")
+shape = SubResource("RectangleShape2D_gqtcy")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock15" index="3"]
 offset_left = -16.0
@@ -1236,23 +1236,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_lbbsa")
+texture = SubResource("AtlasTexture_vclui")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock15" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_xbntn")
+process_material = SubResource("ParticleProcessMaterial_xbdt8")
 
 [node name="LeafBlock16" parent="Map/Level/LeafBlocks" index="13" instance=ExtResource("4_asj5n")]
 position = Vector2(208, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock16" index="0"]
-shape = SubResource("RectangleShape2D_d76jo")
+shape = SubResource("RectangleShape2D_uti83")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock16" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_dk1tq")
+navigation_polygon = SubResource("NavigationPolygon_cvq4n")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock16/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_sl3tw")
+shape = SubResource("RectangleShape2D_jtx4a")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock16" index="3"]
 offset_left = -16.0
@@ -1260,11 +1260,11 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_04jrf")
+texture = SubResource("AtlasTexture_v64i4")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock16" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_6ipj7")
+process_material = SubResource("ParticleProcessMaterial_myxrm")
 
 [node name="LeafBlock" parent="Map/Level/LeafBlocks" index="14" instance=ExtResource("4_asj5n")]
 
@@ -1293,10 +1293,10 @@ color = 0
 
 [node name="CollisionShape2D" parent="Map/Level/Props/LockBlock" index="0"]
 position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_vtdru")
+shape = SubResource("RectangleShape2D_3r0j7")
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/LockBlock" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_givhf")
+navigation_polygon = SubResource("NavigationPolygon_ghnf1")
 
 [node name="NinePatchRect" parent="Map/Level/Props/LockBlock" index="2"]
 offset_left = -8.0
@@ -1304,7 +1304,7 @@ offset_top = -40.0
 offset_right = 8.0
 offset_bottom = 56.0
 pivot_offset = Vector2(8, 48)
-texture = SubResource("CompressedTexture2D_mf77j")
+texture = SubResource("CompressedTexture2D_gd757")
 
 [node name="Locks" parent="Map/Level/Props/LockBlock" index="4"]
 position = Vector2(0, 16)
@@ -1322,10 +1322,10 @@ color = 0
 
 [node name="CollisionShape2D" parent="Map/Level/Props/LockBlock2" index="0"]
 position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_rfnb0")
+shape = SubResource("RectangleShape2D_6u8ls")
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/LockBlock2" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_u3g0j")
+navigation_polygon = SubResource("NavigationPolygon_ix0mh")
 
 [node name="NinePatchRect" parent="Map/Level/Props/LockBlock2" index="2"]
 offset_left = -8.0
@@ -1333,7 +1333,7 @@ offset_top = -40.0
 offset_right = 8.0
 offset_bottom = 56.0
 pivot_offset = Vector2(8, 48)
-texture = SubResource("CompressedTexture2D_l3tkr")
+texture = SubResource("CompressedTexture2D_pqnoq")
 
 [node name="Locks" parent="Map/Level/Props/LockBlock2" index="4"]
 position = Vector2(0, 16)
@@ -1374,12 +1374,12 @@ max_force = 300.0
 
 [node name="CollisionShape2D" parent="Map/Level/Props/WindArea" index="0"]
 position = Vector2(-44, -0.00012207)
-shape = SubResource("RectangleShape2D_plogf")
+shape = SubResource("RectangleShape2D_qlld2")
 
 [node name="GPUParticles2D" parent="Map/Level/Props/WindArea" index="1"]
 position = Vector2(-44, -0.00012207)
 amount = 78
-process_material = SubResource("ParticleProcessMaterial_e08kp")
+process_material = SubResource("ParticleProcessMaterial_dl56t")
 
 [node name="Source" parent="Map/Level/Props/WindArea" index="2"]
 target_position = Vector2(248, 0)
@@ -1392,12 +1392,12 @@ width = 32.0
 
 [node name="CollisionShape2D" parent="Map/Level/Props/WindArea2" index="0"]
 position = Vector2(-44, -0.00012207)
-shape = SubResource("RectangleShape2D_6d0yo")
+shape = SubResource("RectangleShape2D_6jsu1")
 
 [node name="GPUParticles2D" parent="Map/Level/Props/WindArea2" index="1"]
 position = Vector2(-44, -0.00012207)
 amount = 74
-process_material = SubResource("ParticleProcessMaterial_yo4if")
+process_material = SubResource("ParticleProcessMaterial_yrhl5")
 
 [node name="Source" parent="Map/Level/Props/WindArea2" index="2"]
 target_position = Vector2(248, 0)
@@ -1414,7 +1414,7 @@ damage = 9999.0
 shape = SubResource("RectangleShape2D_u5gec")
 
 [node name="NavigationMap" parent="Map" index="1"]
-layer_0/tile_data = PackedInt32Array(-393250, 0, 0, -327714, 0, 0, -262178, 0, 0, -393249, 0, 0, -327713, 0, 0, -262177, 0, 0, -393248, 0, 0, -327712, 0, 0, -262176, 0, 0, -393247, 0, 0, -327711, 0, 0, -262175, 0, 0, 720865, 0, 0, 786401, 0, 0, 851937, 0, 0, -393246, 0, 0, -327710, 0, 0, -262174, 0, 0, 720866, 0, 0, 786402, 0, 0, 851938, 0, 0, -1376285, 0, 0, -1310749, 0, 0, -1245213, 0, 0, -1179677, 0, 0, -1114141, 0, 0, -1048605, 0, 0, -983069, 0, 0, -917533, 0, 0, -851997, 0, 0, -786461, 0, 0, -720925, 0, 0, -655389, 0, 0, -589853, 0, 0, -524317, 0, 0, -458781, 0, 0, -393245, 0, 0, -327709, 0, 0, -262173, 0, 0, -196637, 0, 0, -131101, 0, 0, -65565, 0, 0, -29, 0, 0, 65507, 0, 0, 131043, 0, 0, 196579, 0, 0, 262115, 0, 0, 327651, 0, 0, 393187, 0, 0, 458723, 0, 0, 524259, 0, 0, 589795, 0, 0, 655331, 0, 0, 720867, 0, 0, 786403, 0, 0, 851939, 0, 0, -1376284, 0, 0, -1310748, 0, 0, -1245212, 0, 0, -1179676, 0, 0, -1114140, 0, 0, -1048604, 0, 0, -983068, 0, 0, -917532, 0, 0, -851996, 0, 0, -786460, 0, 0, -720924, 0, 0, -655388, 0, 0, -589852, 0, 0, -524316, 0, 0, -458780, 0, 0, -393244, 0, 0, -327708, 0, 0, -262172, 0, 0, -196636, 0, 0, -131100, 0, 0, -65564, 0, 0, -28, 0, 0, 65508, 0, 0, 131044, 0, 0, 196580, 0, 0, 262116, 0, 0, 327652, 0, 0, 393188, 0, 0, 458724, 0, 0, 524260, 0, 0, 589796, 0, 0, 655332, 0, 0, 720868, 0, 0, 786404, 0, 0, 851940, 0, 0, -1376283, 0, 0, -1310747, 0, 0, -1245211, 0, 0, -1179675, 0, 0, -1114139, 0, 0, -1048603, 0, 0, -983067, 0, 0, -917531, 0, 0, -851995, 0, 0, -786459, 0, 0, -720923, 0, 0, -655387, 0, 0, -589851, 0, 0, -524315, 0, 0, -458779, 0, 0, -393243, 0, 0, -327707, 0, 0, -262171, 0, 0, -196635, 0, 0, -131099, 0, 0, -65563, 0, 0, -27, 0, 0, 65509, 0, 0, 131045, 0, 0, 196581, 0, 0, 262117, 0, 0, 327653, 0, 0, 393189, 0, 0, 458725, 0, 0, 524261, 0, 0, 589797, 0, 0, 655333, 0, 0, 720869, 0, 0, 786405, 0, 0, 851941, 0, 0, -1376282, 0, 0, -1310746, 0, 0, -1245210, 0, 0, -1179674, 0, 0, -1114138, 0, 0, -1048602, 0, 0, -983066, 0, 0, -917530, 0, 0, -851994, 0, 0, -786458, 0, 0, -720922, 0, 0, -655386, 0, 0, -589850, 0, 0, -524314, 0, 0, -458778, 0, 0, -393242, 0, 0, -327706, 0, 0, -262170, 0, 0, 720870, 0, 0, 786406, 0, 0, 851942, 0, 0, -1376281, 0, 0, -1310745, 0, 0, -1245209, 0, 0, -1179673, 0, 0, -1114137, 0, 0, -1048601, 0, 0, -983065, 0, 0, -917529, 0, 0, -851993, 0, 0, -786457, 0, 0, -720921, 0, 0, -655385, 0, 0, -589849, 0, 0, -524313, 0, 0, -458777, 0, 0, -393241, 0, 0, -327705, 0, 0, -262169, 0, 0, -1376280, 0, 0, -1310744, 0, 0, -1245208, 0, 0, -1179672, 0, 0, -1114136, 0, 0, -1048600, 0, 0, -983064, 0, 0, -917528, 0, 0, -851992, 0, 0, -786456, 0, 0, -720920, 0, 0, -655384, 0, 0, -589848, 0, 0, -524312, 0, 0, -458776, 0, 0, -393240, 0, 0, -327704, 0, 0, -262168, 0, 0, -1376279, 0, 0, -1310743, 0, 0, -1245207, 0, 0, -1179671, 0, 0, -1114135, 0, 0, -1048599, 0, 0, -983063, 0, 0, -917527, 0, 0, -851991, 0, 0, -786455, 0, 0, -720919, 0, 0, -655383, 0, 0, -589847, 0, 0, -524311, 0, 0, -458775, 0, 0, -393239, 0, 0, -327703, 0, 0, -262167, 0, 0, -1376278, 0, 0, -1310742, 0, 0, -1245206, 0, 0, -1179670, 0, 0, -1114134, 0, 0, -1048598, 0, 0, -983062, 0, 0, -917526, 0, 0, -851990, 0, 0, -786454, 0, 0, -720918, 0, 0, -655382, 0, 0, -589846, 0, 0, -524310, 0, 0, -458774, 0, 0, -393238, 0, 0, -327702, 0, 0, -262166, 0, 0, -1376277, 0, 0, -1310741, 0, 0, -1245205, 0, 0, -1179669, 0, 0, -1114133, 0, 0, -1048597, 0, 0, -983061, 0, 0, -917525, 0, 0, -851989, 0, 0, -786453, 0, 0, -720917, 0, 0, -655381, 0, 0, -589845, 0, 0, -524309, 0, 0, -458773, 0, 0, -393237, 0, 0, -327701, 0, 0, -262165, 0, 0, 720875, 0, 0, 786411, 0, 0, 851947, 0, 0, -1376276, 0, 0, -1310740, 0, 0, -1245204, 0, 0, -1179668, 0, 0, -1114132, 0, 0, -1048596, 0, 0, -983060, 0, 0, -917524, 0, 0, -851988, 0, 0, -786452, 0, 0, -720916, 0, 0, -655380, 0, 0, -589844, 0, 0, -524308, 0, 0, -458772, 0, 0, -393236, 0, 0, -327700, 0, 0, -262164, 0, 0, -196628, 0, 0, -131092, 0, 0, -65556, 0, 0, -20, 0, 0, 65516, 0, 0, 131052, 0, 0, 196588, 0, 0, 262124, 0, 0, 327660, 0, 0, 393196, 0, 0, 458732, 0, 0, 524268, 0, 0, 589804, 0, 0, 655340, 0, 0, 720876, 0, 0, 786412, 0, 0, 851948, 0, 0, -1376275, 0, 0, -1310739, 0, 0, -1245203, 0, 0, -1179667, 0, 0, -1114131, 0, 0, -1048595, 0, 0, -983059, 0, 0, -917523, 0, 0, -851987, 0, 0, -786451, 0, 0, -720915, 0, 0, -655379, 0, 0, -589843, 0, 0, -524307, 0, 0, -458771, 0, 0, -393235, 0, 0, -327699, 0, 0, -262163, 0, 0, -196627, 0, 0, -131091, 0, 0, -65555, 0, 0, -19, 0, 0, 65517, 0, 0, 131053, 0, 0, 196589, 0, 0, 262125, 0, 0, 327661, 0, 0, 393197, 0, 0, 458733, 0, 0, 524269, 0, 0, 589805, 0, 0, 655341, 0, 0, 720877, 0, 0, 786413, 0, 0, 851949, 0, 0, -1376274, 0, 0, -1310738, 0, 0, -1245202, 0, 0, -1179666, 0, 0, -1114130, 0, 0, -1048594, 0, 0, -983058, 0, 0, -917522, 0, 0, -851986, 0, 0, -786450, 0, 0, -720914, 0, 0, -655378, 0, 0, -589842, 0, 0, -524306, 0, 0, -458770, 0, 0, -393234, 0, 0, -327698, 0, 0, -262162, 0, 0, -196626, 0, 0, -131090, 0, 0, -65554, 0, 0, -18, 0, 0, 65518, 0, 0, 131054, 0, 0, 196590, 0, 0, 262126, 0, 0, 327662, 0, 0, 393198, 0, 0, 458734, 0, 0, 524270, 0, 0, 589806, 0, 0, 655342, 0, 0, 720878, 0, 0, 786414, 0, 0, 851950, 0, 0, -1376273, 0, 0, -1310737, 0, 0, -1245201, 0, 0, -1179665, 0, 0, -1114129, 0, 0, -1048593, 0, 0, -983057, 0, 0, -917521, 0, 0, -851985, 0, 0, -786449, 0, 0, -720913, 0, 0, -655377, 0, 0, -589841, 0, 0, -524305, 0, 0, -458769, 0, 0, -393233, 0, 0, -327697, 0, 0, -262161, 0, 0, 65519, 0, 0, 131055, 0, 0, 720879, 0, 0, 786415, 0, 0, 851951, 0, 0, -1376272, 0, 0, -1310736, 0, 0, -1245200, 0, 0, -1179664, 0, 0, -1114128, 0, 0, -1048592, 0, 0, -983056, 0, 0, -917520, 0, 0, -851984, 0, 0, -786448, 0, 0, -720912, 0, 0, -655376, 0, 0, -589840, 0, 0, -524304, 0, 0, -458768, 0, 0, -393232, 0, 0, -327696, 0, 0, -262160, 0, 0, 65520, 0, 0, 131056, 0, 0, 720880, 0, 0, 786416, 0, 0, 851952, 0, 0, -1376271, 0, 0, -1310735, 0, 0, -1245199, 0, 0, -1179663, 0, 0, -1114127, 0, 0, -1048591, 0, 0, -983055, 0, 0, -917519, 0, 0, -851983, 0, 0, -786447, 0, 0, -720911, 0, 0, -655375, 0, 0, -589839, 0, 0, -524303, 0, 0, -458767, 0, 0, -393231, 0, 0, -327695, 0, 0, -262159, 0, 0, 65521, 0, 0, 131057, 0, 0, 720881, 0, 0, 786417, 0, 0, 851953, 0, 0, -1376270, 0, 0, -1310734, 0, 0, -1245198, 0, 0, -1179662, 0, 0, -1114126, 0, 0, -1048590, 0, 0, -983054, 0, 0, -917518, 0, 0, -851982, 0, 0, -786446, 0, 0, -720910, 0, 0, -655374, 0, 0, -589838, 0, 0, -524302, 0, 0, -458766, 0, 0, -393230, 0, 0, -327694, 0, 0, -262158, 0, 0, 65522, 0, 0, 131058, 0, 0, 720882, 0, 0, 786418, 0, 0, 851954, 0, 0, -1376269, 0, 0, -1310733, 0, 0, -1245197, 0, 0, -1179661, 0, 0, -1114125, 0, 0, -1048589, 0, 0, -983053, 0, 0, -917517, 0, 0, -851981, 0, 0, -786445, 0, 0, -720909, 0, 0, -655373, 0, 0, -589837, 0, 0, -524301, 0, 0, -458765, 0, 0, -393229, 0, 0, -327693, 0, 0, -262157, 0, 0, 65523, 0, 0, 131059, 0, 0, 196595, 0, 0, 262131, 0, 0, 327667, 0, 0, 393203, 0, 0, 458739, 0, 0, 524275, 0, 0, 589811, 0, 0, 655347, 0, 0, 720883, 0, 0, 786419, 0, 0, 851955, 0, 0, 917491, 0, 0, -1376268, 0, 0, -1310732, 0, 0, -1245196, 0, 0, -1179660, 0, 0, -1114124, 0, 0, -1048588, 0, 0, -983052, 0, 0, -917516, 0, 0, -851980, 0, 0, -786444, 0, 0, -720908, 0, 0, -655372, 0, 0, -589836, 0, 0, -524300, 0, 0, -458764, 0, 0, -393228, 0, 0, -327692, 0, 0, -262156, 0, 0, 65524, 0, 0, 131060, 0, 0, 196596, 0, 0, 262132, 0, 0, 327668, 0, 0, 393204, 0, 0, 458740, 0, 0, 524276, 0, 0, 589812, 0, 0, 655348, 0, 0, 720884, 0, 0, 786420, 0, 0, 851956, 0, 0, 917492, 0, 0, -1376267, 0, 0, -1310731, 0, 0, -1245195, 0, 0, -1179659, 0, 0, -1114123, 0, 0, -1048587, 0, 0, -983051, 0, 0, -917515, 0, 0, -851979, 0, 0, -786443, 0, 0, -720907, 0, 0, -655371, 0, 0, -589835, 0, 0, -524299, 0, 0, -458763, 0, 0, -393227, 0, 0, -327691, 0, 0, -262155, 0, 0, 65525, 0, 0, 131061, 0, 0, 196597, 0, 0, 262133, 0, 0, 327669, 0, 0, 393205, 0, 0, 458741, 0, 0, 524277, 0, 0, 589813, 0, 0, 655349, 0, 0, 720885, 0, 0, 786421, 0, 0, 851957, 0, 0, 917493, 0, 0, -1376266, 0, 0, -1310730, 0, 0, -1245194, 0, 0, -1179658, 0, 0, -1114122, 0, 0, -1048586, 0, 0, -983050, 0, 0, -917514, 0, 0, -851978, 0, 0, -786442, 0, 0, -262154, 0, 0, 65526, 0, 0, 131062, 0, 0, 196598, 0, 0, 262134, 0, 0, 327670, 0, 0, 393206, 0, 0, 458742, 0, 0, 524278, 0, 0, 589814, 0, 0, 655350, 0, 0, 720886, 0, 0, 786422, 0, 0, 851958, 0, 0, 917494, 0, 0, -1376265, 0, 0, -1310729, 0, 0, -1245193, 0, 0, -1179657, 0, 0, -1114121, 0, 0, -1048585, 0, 0, -983049, 0, 0, -917513, 0, 0, -851977, 0, 0, -786441, 0, 0, -262153, 0, 0, 65527, 0, 0, 131063, 0, 0, 196599, 0, 0, 262135, 0, 0, 327671, 0, 0, 393207, 0, 0, 458743, 0, 0, 524279, 0, 0, 589815, 0, 0, 655351, 0, 0, 720887, 0, 0, 786423, 0, 0, 851959, 0, 0, 917495, 0, 0, -1769480, 0, 0, -1703944, 0, 0, -1638408, 0, 0, -1572872, 0, 0, -1507336, 0, 0, -1441800, 0, 0, -1376264, 0, 0, -1310728, 0, 0, -1245192, 0, 0, -1179656, 0, 0, -1114120, 0, 0, -1048584, 0, 0, -983048, 0, 0, -917512, 0, 0, -851976, 0, 0, -786440, 0, 0, -262152, 0, 0, 65528, 0, 0, 131064, 0, 0, 196600, 0, 0, 262136, 0, 0, 327672, 0, 0, 393208, 0, 0, 458744, 0, 0, 524280, 0, 0, 589816, 0, 0, 655352, 0, 0, 720888, 0, 0, 786424, 0, 0, 851960, 0, 0, 917496, 0, 0, -1769479, 0, 0, -1703943, 0, 0, -1638407, 0, 0, -1572871, 0, 0, -1507335, 0, 0, -1441799, 0, 0, -1376263, 0, 0, -1310727, 0, 0, -1245191, 0, 0, -1179655, 0, 0, -1114119, 0, 0, -1048583, 0, 0, -983047, 0, 0, -917511, 0, 0, -851975, 0, 0, -786439, 0, 0, -262151, 0, 0, 65529, 0, 0, 131065, 0, 0, 196601, 0, 0, 262137, 0, 0, 327673, 0, 0, 393209, 0, 0, 458745, 0, 0, 524281, 0, 0, 589817, 0, 0, 655353, 0, 0, 720889, 0, 0, 786425, 0, 0, 851961, 0, 0, 917497, 0, 0, -1769478, 0, 0, -1703942, 0, 0, -1638406, 0, 0, -1572870, 0, 0, -1507334, 0, 0, -1441798, 0, 0, -1376262, 0, 0, -1310726, 0, 0, -1245190, 0, 0, -1179654, 0, 0, -1114118, 0, 0, -1048582, 0, 0, -983046, 0, 0, -917510, 0, 0, -851974, 0, 0, -786438, 0, 0, -720902, 0, 0, -655366, 0, 0, -589830, 0, 0, -524294, 0, 0, -458758, 0, 0, -393222, 0, 0, -327686, 0, 0, -262150, 0, 0, -196614, 0, 0, -131078, 0, 0, -65542, 0, 0, -6, 0, 0, 65530, 0, 0, 131066, 0, 0, 196602, 0, 0, 262138, 0, 0, 327674, 0, 0, 393210, 0, 0, 458746, 0, 0, 524282, 0, 0, 589818, 0, 0, 655354, 0, 0, 720890, 0, 0, 786426, 0, 0, 851962, 0, 0, 917498, 0, 0, -1769477, 0, 0, -1703941, 0, 0, -1638405, 0, 0, -1572869, 0, 0, -1507333, 0, 0, -1441797, 0, 0, -1376261, 0, 0, -1310725, 0, 0, -1245189, 0, 0, -1179653, 0, 0, -1114117, 0, 0, -1048581, 0, 0, -983045, 0, 0, -917509, 0, 0, -851973, 0, 0, -786437, 0, 0, -720901, 0, 0, -655365, 0, 0, -589829, 0, 0, -524293, 0, 0, -458757, 0, 0, -393221, 0, 0, -327685, 0, 0, -262149, 0, 0, -196613, 0, 0, -131077, 0, 0, -65541, 0, 0, -5, 0, 0, 65531, 0, 0, 131067, 0, 0, 196603, 0, 0, 262139, 0, 0, 327675, 0, 0, 393211, 0, 0, 458747, 0, 0, 524283, 0, 0, 589819, 0, 0, 655355, 0, 0, 720891, 0, 0, 786427, 0, 0, 851963, 0, 0, 917499, 0, 0, -1769476, 0, 0, -1703940, 0, 0, -1638404, 0, 0, -1572868, 0, 0, -1507332, 0, 0, -1441796, 0, 0, -1376260, 0, 0, -1310724, 0, 0, -1245188, 0, 0, -1179652, 0, 0, -1114116, 0, 0, -1048580, 0, 0, -983044, 0, 0, -917508, 0, 0, -851972, 0, 0, -786436, 0, 0, -720900, 0, 0, -655364, 0, 0, -589828, 0, 0, -524292, 0, 0, -458756, 0, 0, -393220, 0, 0, -327684, 0, 0, -262148, 0, 0, -196612, 0, 0, -131076, 0, 0, -65540, 0, 0, -4, 0, 0, 65532, 0, 0, 131068, 0, 0, 196604, 0, 0, 262140, 0, 0, 327676, 0, 0, 393212, 0, 0, 458748, 0, 0, 524284, 0, 0, 589820, 0, 0, 655356, 0, 0, 720892, 0, 0, 786428, 0, 0, 851964, 0, 0, 917500, 0, 0, -1769475, 0, 0, -1703939, 0, 0, -1638403, 0, 0, -1572867, 0, 0, -262147, 0, 0, -196611, 0, 0, -131075, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 327677, 0, 0, 393213, 0, 0, 458749, 0, 0, 524285, 0, 0, 589821, 0, 0, 655357, 0, 0, 720893, 0, 0, 786429, 0, 0, 851965, 0, 0, 917501, 0, 0, -1769474, 0, 0, -1703938, 0, 0, -1638402, 0, 0, -1572866, 0, 0, -262146, 0, 0, -196610, 0, 0, -131074, 0, 0, -65538, 0, 0, -2, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, 262142, 0, 0, 327678, 0, 0, 393214, 0, 0, 458750, 0, 0, 524286, 0, 0, 589822, 0, 0, 655358, 0, 0, 720894, 0, 0, 786430, 0, 0, 851966, 0, 0, 917502, 0, 0, -1769473, 0, 0, -1703937, 0, 0, -1638401, 0, 0, -1572865, 0, 0, -262145, 0, 0, -196609, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 720895, 0, 0, 786431, 0, 0, 851967, 0, 0, 917503, 0, 0, -1835008, 0, 0, -1769472, 0, 0, -1703936, 0, 0, -1638400, 0, 0, -327680, 0, 0, -262144, 0, 0, -196608, 0, 0, -131072, 0, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, -1835007, 0, 0, -1769471, 0, 0, -1703935, 0, 0, -1638399, 0, 0, -327679, 0, 0, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0, -1835006, 0, 0, -1769470, 0, 0, -1703934, 0, 0, -1638398, 0, 0, -327678, 0, 0, -262142, 0, 0, -196606, 0, 0, -131070, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, -1835005, 0, 0, -1769469, 0, 0, -1703933, 0, 0, -1638397, 0, 0, -1572861, 0, 0, -1507325, 0, 0, -1441789, 0, 0, -1376253, 0, 0, -1310717, 0, 0, -1245181, 0, 0, -1179645, 0, 0, -1114109, 0, 0, -1048573, 0, 0, -983037, 0, 0, -917501, 0, 0, -851965, 0, 0, -786429, 0, 0, -720893, 0, 0, -655357, 0, 0, -589821, 0, 0, -524285, 0, 0, -458749, 0, 0, -393213, 0, 0, -327677, 0, 0, -262141, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, -1835004, 0, 0, -1769468, 0, 0, -1703932, 0, 0, -1638396, 0, 0, -1572860, 0, 0, -1507324, 0, 0, -1441788, 0, 0, -1376252, 0, 0, -1310716, 0, 0, -1245180, 0, 0, -1179644, 0, 0, -1114108, 0, 0, -1048572, 0, 0, -983036, 0, 0, -917500, 0, 0, -851964, 0, 0, -786428, 0, 0, -720892, 0, 0, -655356, 0, 0, -589820, 0, 0, -524284, 0, 0, -458748, 0, 0, -393212, 0, 0, -327676, 0, 0, -262140, 0, 0, -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 720900, 0, 0, 786436, 0, 0, 851972, 0, 0, -1835003, 0, 0, -1769467, 0, 0, -1703931, 0, 0, -1638395, 0, 0, -1572859, 0, 0, -1507323, 0, 0, -1441787, 0, 0, -1376251, 0, 0, -1310715, 0, 0, -1245179, 0, 0, -1179643, 0, 0, -1114107, 0, 0, -1048571, 0, 0, -983035, 0, 0, -917499, 0, 0, -851963, 0, 0, -327675, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 720901, 0, 0, 786437, 0, 0, 851973, 0, 0, -1835002, 0, 0, -1769466, 0, 0, -1703930, 0, 0, -1638394, 0, 0, -1572858, 0, 0, -1507322, 0, 0, -1441786, 0, 0, -1376250, 0, 0, -1310714, 0, 0, -1245178, 0, 0, -1179642, 0, 0, -1114106, 0, 0, -1048570, 0, 0, -983034, 0, 0, -917498, 0, 0, -851962, 0, 0, -327674, 0, 0, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0, 720902, 0, 0, 786438, 0, 0, 851974, 0, 0, -1835001, 0, 0, -1769465, 0, 0, -1703929, 0, 0, -1638393, 0, 0, -1572857, 0, 0, -1507321, 0, 0, -1441785, 0, 0, -1376249, 0, 0, -1310713, 0, 0, -1245177, 0, 0, -1179641, 0, 0, -1114105, 0, 0, -1048569, 0, 0, -983033, 0, 0, -917497, 0, 0, -851961, 0, 0, -327673, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 851975, 0, 0, -1441784, 0, 0, -1376248, 0, 0, -1310712, 0, 0, -1245176, 0, 0, -1179640, 0, 0, -1114104, 0, 0, -1048568, 0, 0, -983032, 0, 0, -917496, 0, 0, -851960, 0, 0, -327672, 0, 0, 8, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 720904, 0, 0, 786440, 0, 0, 851976, 0, 0, -1441783, 0, 0, -1376247, 0, 0, -1310711, 0, 0, -1245175, 0, 0, -1179639, 0, 0, -1114103, 0, 0, -1048567, 0, 0, -983031, 0, 0, -917495, 0, 0, -851959, 0, 0, -786423, 0, 0, -720887, 0, 0, -655351, 0, 0, -589815, 0, 0, -524279, 0, 0, -458743, 0, 0, -393207, 0, 0, -327671, 0, 0, 9, 0, 0, 65545, 0, 0, 131081, 0, 0, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 393225, 0, 0, 458761, 0, 0, 524297, 0, 0, 589833, 0, 0, 655369, 0, 0, 720905, 0, 0, 786441, 0, 0, 851977, 0, 0, -1441782, 0, 0, -1376246, 0, 0, -1310710, 0, 0, -1245174, 0, 0, -1179638, 0, 0, -1114102, 0, 0, -1048566, 0, 0, -983030, 0, 0, -917494, 0, 0, -851958, 0, 0, -786422, 0, 0, -720886, 0, 0, -655350, 0, 0, -589814, 0, 0, -524278, 0, 0, -458742, 0, 0, -393206, 0, 0, -327670, 0, 0, 10, 0, 0, 65546, 0, 0, 131082, 0, 0, 196618, 0, 0, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0, 458762, 0, 0, 524298, 0, 0, 589834, 0, 0, 655370, 0, 0, 720906, 0, 0, 786442, 0, 0, 851978, 0, 0, -1441781, 0, 0, -1376245, 0, 0, -1310709, 0, 0, -1245173, 0, 0, -1179637, 0, 0, -1114101, 0, 0, -1048565, 0, 0, -983029, 0, 0, -917493, 0, 0, -851957, 0, 0, -786421, 0, 0, -720885, 0, 0, -655349, 0, 0, -589813, 0, 0, -524277, 0, 0, -458741, 0, 0, -393205, 0, 0, -327669, 0, 0, 11, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0, 393227, 0, 0, 458763, 0, 0, 524299, 0, 0, 589835, 0, 0, 655371, 0, 0, 720907, 0, 0, 786443, 0, 0, 851979, 0, 0, -1441780, 0, 0, -1376244, 0, 0, -1310708, 0, 0, -1245172, 0, 0, -1179636, 0, 0, -1114100, 0, 0, -1048564, 0, 0, -983028, 0, 0, -917492, 0, 0, -851956, 0, 0, -786420, 0, 0, -720884, 0, 0, -655348, 0, 0, -589812, 0, 0, -524276, 0, 0, -458740, 0, 0, -393204, 0, 0, -327668, 0, 0, 12, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393228, 0, 0, 458764, 0, 0, 524300, 0, 0, 589836, 0, 0, 655372, 0, 0, 720908, 0, 0, 786444, 0, 0, 851980, 0, 0, -1441779, 0, 0, -1376243, 0, 0, -1310707, 0, 0, -1245171, 0, 0, -1179635, 0, 0, -1114099, 0, 0, -1048563, 0, 0, -983027, 0, 0, -917491, 0, 0, -851955, 0, 0, -786419, 0, 0, -720883, 0, 0, -655347, 0, 0, -589811, 0, 0, -524275, 0, 0, -458739, 0, 0, -393203, 0, 0, -327667, 0, 0, 13, 0, 0, 65549, 0, 0, 655373, 0, 0, 720909, 0, 0, 786445, 0, 0, -1441778, 0, 0, -1376242, 0, 0, -1310706, 0, 0, -1245170, 0, 0, -1179634, 0, 0, -1114098, 0, 0, -1048562, 0, 0, -983026, 0, 0, -917490, 0, 0, -851954, 0, 0, -786418, 0, 0, -720882, 0, 0, -655346, 0, 0, -589810, 0, 0, -524274, 0, 0, -458738, 0, 0, -393202, 0, 0, -327666, 0, 0, 14, 0, 0, 65550, 0, 0, 655374, 0, 0, 720910, 0, 0, 786446, 0, 0, -1441777, 0, 0, -1376241, 0, 0, -1310705, 0, 0, -1245169, 0, 0, -1179633, 0, 0, -1114097, 0, 0, -1048561, 0, 0, -983025, 0, 0, -917489, 0, 0, -851953, 0, 0, -786417, 0, 0, -720881, 0, 0, -655345, 0, 0, -589809, 0, 0, -524273, 0, 0, -458737, 0, 0, -393201, 0, 0, -327665, 0, 0, 15, 0, 0, 65551, 0, 0, 655375, 0, 0, 720911, 0, 0, 786447, 0, 0, -1441776, 0, 0, -1376240, 0, 0, -1310704, 0, 0, -1245168, 0, 0, -1179632, 0, 0, -1114096, 0, 0, -1048560, 0, 0, -983024, 0, 0, -917488, 0, 0, -851952, 0, 0, -786416, 0, 0, -720880, 0, 0, -655344, 0, 0, -589808, 0, 0, -524272, 0, 0, -458736, 0, 0, -393200, 0, 0, -327664, 0, 0, 16, 0, 0, 65552, 0, 0, 655376, 0, 0, 720912, 0, 0, 786448, 0, 0, -1441775, 0, 0, -1376239, 0, 0, -1310703, 0, 0, -1245167, 0, 0, -1179631, 0, 0, -1114095, 0, 0, -1048559, 0, 0, -983023, 0, 0, -917487, 0, 0, -851951, 0, 0, -786415, 0, 0, -720879, 0, 0, -655343, 0, 0, -589807, 0, 0, -524271, 0, 0, -458735, 0, 0, -393199, 0, 0, -327663, 0, 0, -262127, 0, 0, -196591, 0, 0, -131055, 0, 0, -65519, 0, 0, 17, 0, 0, 65553, 0, 0, 131089, 0, 0, 196625, 0, 0, 262161, 0, 0, 327697, 0, 0, 393233, 0, 0, 458769, 0, 0, 524305, 0, 0, 589841, 0, 0, 655377, 0, 0, 720913, 0, 0, 786449, 0, 0, -1441774, 0, 0, -1376238, 0, 0, -1310702, 0, 0, -1245166, 0, 0, -1179630, 0, 0, -1114094, 0, 0, -1048558, 0, 0, -983022, 0, 0, -917486, 0, 0, -851950, 0, 0, -786414, 0, 0, -720878, 0, 0, -655342, 0, 0, -589806, 0, 0, -524270, 0, 0, -458734, 0, 0, -393198, 0, 0, -327662, 0, 0, -262126, 0, 0, -196590, 0, 0, -131054, 0, 0, -65518, 0, 0, 18, 0, 0, 65554, 0, 0, 131090, 0, 0, 196626, 0, 0, 262162, 0, 0, 327698, 0, 0, 393234, 0, 0, 458770, 0, 0, 524306, 0, 0, 589842, 0, 0, 655378, 0, 0, 720914, 0, 0, 786450, 0, 0, -1441773, 0, 0, -1376237, 0, 0, -1310701, 0, 0, -1245165, 0, 0, -1179629, 0, 0, -1114093, 0, 0, -1048557, 0, 0, -983021, 0, 0, -917485, 0, 0, -851949, 0, 0, -786413, 0, 0, -720877, 0, 0, -655341, 0, 0, -589805, 0, 0, -524269, 0, 0, -458733, 0, 0, -393197, 0, 0, -327661, 0, 0, -262125, 0, 0, -196589, 0, 0, -131053, 0, 0, -65517, 0, 0, 19, 0, 0, 65555, 0, 0, 131091, 0, 0, 196627, 0, 0, 262163, 0, 0, 327699, 0, 0, 393235, 0, 0, 458771, 0, 0, 524307, 0, 0, 589843, 0, 0, 655379, 0, 0, 720915, 0, 0, 786451, 0, 0, -1441772, 0, 0, -1376236, 0, 0, -1310700, 0, 0, -1245164, 0, 0, -1179628, 0, 0, -1114092, 0, 0, -1048556, 0, 0, -983020, 0, 0, -917484, 0, 0, -851948, 0, 0, -786412, 0, 0, -720876, 0, 0, -655340, 0, 0, -589804, 0, 0, -524268, 0, 0, -458732, 0, 0, -393196, 0, 0, -327660, 0, 0, 655380, 0, 0, 720916, 0, 0, 786452, 0, 0, -1441771, 0, 0, -1376235, 0, 0, -1310699, 0, 0, -1245163, 0, 0, -1179627, 0, 0, -1114091, 0, 0, -1048555, 0, 0, -983019, 0, 0, -917483, 0, 0, -851947, 0, 0, -786411, 0, 0, -720875, 0, 0, -655339, 0, 0, -589803, 0, 0, -524267, 0, 0, -458731, 0, 0, -393195, 0, 0, -327659, 0, 0, -1441770, 0, 0, -1376234, 0, 0, -1310698, 0, 0, -1245162, 0, 0, -1179626, 0, 0, -1114090, 0, 0, -1048554, 0, 0, -983018, 0, 0, -917482, 0, 0, -851946, 0, 0, -786410, 0, 0, -720874, 0, 0, -655338, 0, 0, -589802, 0, 0, -524266, 0, 0, -458730, 0, 0, -393194, 0, 0, -327658, 0, 0, -1441769, 0, 0, -1376233, 0, 0, -1310697, 0, 0, -1245161, 0, 0, -1179625, 0, 0, -1114089, 0, 0, -1048553, 0, 0, -983017, 0, 0, -917481, 0, 0, -851945, 0, 0, -786409, 0, 0, -720873, 0, 0, -655337, 0, 0, -589801, 0, 0, -524265, 0, 0, -458729, 0, 0, -393193, 0, 0, -327657, 0, 0, -1441768, 0, 0, -1376232, 0, 0, -1310696, 0, 0, -1245160, 0, 0, -1179624, 0, 0, -1114088, 0, 0, -1048552, 0, 0, -983016, 0, 0, -917480, 0, 0, -851944, 0, 0, -786408, 0, 0, -720872, 0, 0, -655336, 0, 0, -589800, 0, 0, -524264, 0, 0, -458728, 0, 0, -393192, 0, 0, -327656, 0, 0, -1441767, 0, 0, -1376231, 0, 0, -1310695, 0, 0, -1245159, 0, 0, -1179623, 0, 0, -1114087, 0, 0, -1048551, 0, 0, -983015, 0, 0, -917479, 0, 0, -851943, 0, 0, -786407, 0, 0, -720871, 0, 0, -655335, 0, 0, -589799, 0, 0, -524263, 0, 0, -458727, 0, 0, -393191, 0, 0, -327655, 0, 0, 655385, 0, 0, 720921, 0, 0, 786457, 0, 0, -1441766, 0, 0, -1376230, 0, 0, -1310694, 0, 0, -1245158, 0, 0, -1179622, 0, 0, -1114086, 0, 0, -1048550, 0, 0, -983014, 0, 0, -917478, 0, 0, -851942, 0, 0, -786406, 0, 0, -720870, 0, 0, -655334, 0, 0, -589798, 0, 0, -524262, 0, 0, -458726, 0, 0, -393190, 0, 0, -327654, 0, 0, -262118, 0, 0, -196582, 0, 0, -131046, 0, 0, -65510, 0, 0, 26, 0, 0, 65562, 0, 0, 131098, 0, 0, 196634, 0, 0, 262170, 0, 0, 327706, 0, 0, 393242, 0, 0, 458778, 0, 0, 524314, 0, 0, 589850, 0, 0, 655386, 0, 0, 720922, 0, 0, 786458, 0, 0, -1441765, 0, 0, -1376229, 0, 0, -1310693, 0, 0, -1245157, 0, 0, -1179621, 0, 0, -1114085, 0, 0, -1048549, 0, 0, -983013, 0, 0, -917477, 0, 0, -851941, 0, 0, -786405, 0, 0, -720869, 0, 0, -655333, 0, 0, -589797, 0, 0, -524261, 0, 0, -458725, 0, 0, -393189, 0, 0, -327653, 0, 0, -262117, 0, 0, -196581, 0, 0, -131045, 0, 0, -65509, 0, 0, 27, 0, 0, 65563, 0, 0, 131099, 0, 0, 196635, 0, 0, 262171, 0, 0, 327707, 0, 0, 393243, 0, 0, 458779, 0, 0, 524315, 0, 0, 589851, 0, 0, 655387, 0, 0, 720923, 0, 0, 786459, 0, 0, -1441764, 0, 0, -1376228, 0, 0, -1310692, 0, 0, -1245156, 0, 0, -1179620, 0, 0, -1114084, 0, 0, -1048548, 0, 0, -983012, 0, 0, -917476, 0, 0, -851940, 0, 0, -786404, 0, 0, -720868, 0, 0, -655332, 0, 0, -589796, 0, 0, -524260, 0, 0, -458724, 0, 0, -393188, 0, 0, -327652, 0, 0, -262116, 0, 0, -196580, 0, 0, -131044, 0, 0, -65508, 0, 0, 28, 0, 0, 65564, 0, 0, 131100, 0, 0, 196636, 0, 0, 262172, 0, 0, 327708, 0, 0, 393244, 0, 0, 458780, 0, 0, 524316, 0, 0, 589852, 0, 0, 655388, 0, 0, 720924, 0, 0, 786460, 0, 0, -1441763, 0, 0, -1376227, 0, 0, -1310691, 0, 0, -1245155, 0, 0, -1179619, 0, 0, -1114083, 0, 0, -1048547, 0, 0, -983011, 0, 0, -917475, 0, 0, -851939, 0, 0, -786403, 0, 0, -720867, 0, 0, -655331, 0, 0, -589795, 0, 0, -524259, 0, 0, -458723, 0, 0, -393187, 0, 0, -327651, 0, 0, 262173, 0, 0, 327709, 0, 0, 655389, 0, 0, 720925, 0, 0, 786461, 0, 0, -1441762, 0, 0, -1376226, 0, 0, -1310690, 0, 0, -1245154, 0, 0, -1179618, 0, 0, -1114082, 0, 0, -1048546, 0, 0, -983010, 0, 0, -917474, 0, 0, -851938, 0, 0, -786402, 0, 0, -720866, 0, 0, -655330, 0, 0, -589794, 0, 0, -524258, 0, 0, -458722, 0, 0, -393186, 0, 0, -327650, 0, 0, 262174, 0, 0, 327710, 0, 0, 655390, 0, 0, 720926, 0, 0, 786462, 0, 0, -1441761, 0, 0, -1376225, 0, 0, -1310689, 0, 0, -1245153, 0, 0, -1179617, 0, 0, -1114081, 0, 0, -1048545, 0, 0, -983009, 0, 0, -917473, 0, 0, -851937, 0, 0, -786401, 0, 0, -720865, 0, 0, -655329, 0, 0, -589793, 0, 0, -524257, 0, 0, -458721, 0, 0, -393185, 0, 0, -327649, 0, 0, 262175, 0, 0, 327711, 0, 0, 655391, 0, 0, 720927, 0, 0, 786463, 0, 0, -1441760, 0, 0, -1376224, 0, 0, -1310688, 0, 0, -1245152, 0, 0, -1179616, 0, 0, -1114080, 0, 0, -1048544, 0, 0, -983008, 0, 0, -917472, 0, 0, -851936, 0, 0, -786400, 0, 0, -720864, 0, 0, -655328, 0, 0, -589792, 0, 0, -524256, 0, 0, -458720, 0, 0, -393184, 0, 0, -327648, 0, 0, 262176, 0, 0, 327712, 0, 0, 655392, 0, 0, 720928, 0, 0, 786464, 0, 0, -1441759, 0, 0, -1376223, 0, 0, -1310687, 0, 0, -1245151, 0, 0, -1179615, 0, 0, -1114079, 0, 0, -1048543, 0, 0, -983007, 0, 0, -917471, 0, 0, -851935, 0, 0, -786399, 0, 0, -720863, 0, 0, -655327, 0, 0, -589791, 0, 0, -524255, 0, 0, -458719, 0, 0, -393183, 0, 0, -327647, 0, 0, 262177, 0, 0, 327713, 0, 0, 655393, 0, 0, 720929, 0, 0, 786465, 0, 0, -1441758, 0, 0, -1376222, 0, 0, -1310686, 0, 0, -1245150, 0, 0, -1179614, 0, 0, -1114078, 0, 0, -1048542, 0, 0, -983006, 0, 0, -917470, 0, 0, -851934, 0, 0, 262178, 0, 0, 327714, 0, 0, -1441757, 0, 0, -1376221, 0, 0, -1310685, 0, 0, -1245149, 0, 0, -1179613, 0, 0, -1114077, 0, 0, -1048541, 0, 0, -983005, 0, 0, -917469, 0, 0, -851933, 0, 0, 262179, 0, 0, 327715, 0, 0, -1441756, 0, 0, -1376220, 0, 0, -1310684, 0, 0, -1245148, 0, 0, -1179612, 0, 0, -1114076, 0, 0, -1048540, 0, 0, -983004, 0, 0, -917468, 0, 0, -851932, 0, 0, 262180, 0, 0, 327716, 0, 0, -1441755, 0, 0, -1376219, 0, 0, -1310683, 0, 0, -1245147, 0, 0, -1179611, 0, 0, -1114075, 0, 0, -1048539, 0, 0, -983003, 0, 0, -917467, 0, 0, -851931, 0, 0, 262181, 0, 0, 327717, 0, 0, -1441754, 0, 0, -1376218, 0, 0, -1310682, 0, 0, -1245146, 0, 0, -1179610, 0, 0, -1114074, 0, 0, -1048538, 0, 0, -983002, 0, 0, -917466, 0, 0, -851930, 0, 0, -786394, 0, 0, -720858, 0, 0, -655322, 0, 0, -589786, 0, 0, -524250, 0, 0, -458714, 0, 0, -393178, 0, 0, -327642, 0, 0, -262106, 0, 0, -196570, 0, 0, -131034, 0, 0, -65498, 0, 0, 38, 0, 0, 65574, 0, 0, 131110, 0, 0, 196646, 0, 0, 262182, 0, 0, 327718, 0, 0, -1441753, 0, 0, -1376217, 0, 0, -1310681, 0, 0, -1245145, 0, 0, -1179609, 0, 0, -1114073, 0, 0, -1048537, 0, 0, -983001, 0, 0, -917465, 0, 0, -851929, 0, 0, -786393, 0, 0, -720857, 0, 0, -655321, 0, 0, -589785, 0, 0, -524249, 0, 0, -458713, 0, 0, -393177, 0, 0, -327641, 0, 0, -262105, 0, 0, -196569, 0, 0, -131033, 0, 0, -65497, 0, 0, 39, 0, 0, 65575, 0, 0, 131111, 0, 0, 196647, 0, 0, 262183, 0, 0, 327719, 0, 0, 720862, 0, 0, 786398, 0, 0, 851934, 0, 0, 720863, 0, 0, 786399, 0, 0, 851935, 0, 0, 720864, 0, 0, 786400, 0, 0, 851936, 0, 0, -1441801, 0, 0, -1507337, 0, 0, -1572873, 0, 0, -1638409, 0, 0, -1703945, 0, 0, -1572874, 0, 0, -1507338, 0, 0, -1507339, 0, 0, -1441803, 0, 0, -1441802, 0, 0, -1441804, 0, 0, -1507340, 0, 0, -1572876, 0, 0, -1572875, 0, 0, -1441805, 0, 0, -1507341, 0, 0, -1572877, 0, 0, -1638410, 0, 0, -1703946, 0, 0, -1769482, 0, 0, -1769481, 0, 0, -1769464, 0, 0, -1703928, 0, 0, -1638392, 0, 0, -1572856, 0, 0, -1507320, 0, 0, -1507319, 0, 0, -1835000, 0, 0, -1507316, 0, 0, -1572852, 0, 0, -1572853, 0, 0, -1507317, 0, 0, -1507318, 0, 0, -1572855, 0, 0, -1572854, 0, 0, -1638388, 0, 0, -1638389, 0, 0, -1638390, 0, 0, -1638391, 0, 0, -1703927, 0, 0, -1769463, 0, 0, -1834999, 0, 0, -1703926, 0, 0, -1769462, 0, 0, -1834998, 0, 0, -1703925, 0, 0, -1703924, 0, 0, -1638413, 0, 0, -1638412, 0, 0, -1638411, 0, 0, -1703947, 0, 0, -1769483, 0, 0)
+layer_0/tile_data = PackedInt32Array(720865, 0, 0, 786401, 0, 0, 851937, 0, 0, 720866, 0, 0, 786402, 0, 0, 851938, 0, 0, -1376285, 0, 0, -1310749, 0, 0, -1245213, 0, 0, -1179677, 0, 0, -1114141, 0, 0, -1048605, 0, 0, -983069, 0, 0, -917533, 0, 0, -851997, 0, 0, -786461, 0, 0, -720925, 0, 0, -655389, 0, 0, -589853, 0, 0, -524317, 0, 0, -458781, 0, 0, -393245, 0, 0, -327709, 0, 0, -262173, 0, 0, -196637, 0, 0, -131101, 0, 0, -65565, 0, 0, -29, 0, 0, 65507, 0, 0, 131043, 0, 0, 196579, 0, 0, 262115, 0, 0, 327651, 0, 0, 393187, 0, 0, 458723, 0, 0, 524259, 0, 0, 589795, 0, 0, 655331, 0, 0, 720867, 0, 0, 786403, 0, 0, 851939, 0, 0, -1376284, 0, 0, -1310748, 0, 0, -1245212, 0, 0, -1179676, 0, 0, -1114140, 0, 0, -1048604, 0, 0, -983068, 0, 0, -917532, 0, 0, -851996, 0, 0, -786460, 0, 0, -720924, 0, 0, -655388, 0, 0, -589852, 0, 0, -524316, 0, 0, -458780, 0, 0, -393244, 0, 0, -327708, 0, 0, -262172, 0, 0, -196636, 0, 0, -131100, 0, 0, -65564, 0, 0, -28, 0, 0, 65508, 0, 0, 131044, 0, 0, 196580, 0, 0, 262116, 0, 0, 327652, 0, 0, 393188, 0, 0, 458724, 0, 0, 524260, 0, 0, 589796, 0, 0, 655332, 0, 0, 720868, 0, 0, 786404, 0, 0, 851940, 0, 0, -1376283, 0, 0, -1310747, 0, 0, -1245211, 0, 0, -1179675, 0, 0, -1114139, 0, 0, -1048603, 0, 0, -983067, 0, 0, -917531, 0, 0, -851995, 0, 0, -786459, 0, 0, -720923, 0, 0, -655387, 0, 0, -589851, 0, 0, -524315, 0, 0, -458779, 0, 0, -393243, 0, 0, -327707, 0, 0, -262171, 0, 0, -196635, 0, 0, -131099, 0, 0, -65563, 0, 0, -27, 0, 0, 65509, 0, 0, 131045, 0, 0, 196581, 0, 0, 262117, 0, 0, 327653, 0, 0, 393189, 0, 0, 458725, 0, 0, 524261, 0, 0, 589797, 0, 0, 655333, 0, 0, 720869, 0, 0, 786405, 0, 0, 851941, 0, 0, -1376282, 0, 0, -1310746, 0, 0, -1245210, 0, 0, -1179674, 0, 0, -1114138, 0, 0, -1048602, 0, 0, -983066, 0, 0, -917530, 0, 0, -851994, 0, 0, -786458, 0, 0, -720922, 0, 0, -655386, 0, 0, -589850, 0, 0, -524314, 0, 0, -458778, 0, 0, -393242, 0, 0, -327706, 0, 0, -262170, 0, 0, 720870, 0, 0, 786406, 0, 0, 851942, 0, 0, -1376281, 0, 0, -1310745, 0, 0, -1245209, 0, 0, -1179673, 0, 0, -1114137, 0, 0, -1048601, 0, 0, -983065, 0, 0, -917529, 0, 0, -851993, 0, 0, -786457, 0, 0, -720921, 0, 0, -655385, 0, 0, -589849, 0, 0, -524313, 0, 0, -458777, 0, 0, -393241, 0, 0, -327705, 0, 0, -262169, 0, 0, -1376280, 0, 0, -1310744, 0, 0, -1245208, 0, 0, -1179672, 0, 0, -1114136, 0, 0, -1048600, 0, 0, -983064, 0, 0, -917528, 0, 0, -851992, 0, 0, -786456, 0, 0, -720920, 0, 0, -655384, 0, 0, -589848, 0, 0, -524312, 0, 0, -458776, 0, 0, -393240, 0, 0, -327704, 0, 0, -262168, 0, 0, -1376279, 0, 0, -1310743, 0, 0, -1245207, 0, 0, -1179671, 0, 0, -1114135, 0, 0, -1048599, 0, 0, -983063, 0, 0, -917527, 0, 0, -851991, 0, 0, -786455, 0, 0, -720919, 0, 0, -655383, 0, 0, -589847, 0, 0, -524311, 0, 0, -458775, 0, 0, -393239, 0, 0, -327703, 0, 0, -262167, 0, 0, -1376278, 0, 0, -1310742, 0, 0, -1245206, 0, 0, -1179670, 0, 0, -1114134, 0, 0, -1048598, 0, 0, -983062, 0, 0, -917526, 0, 0, -851990, 0, 0, -786454, 0, 0, -720918, 0, 0, -655382, 0, 0, -589846, 0, 0, -524310, 0, 0, -458774, 0, 0, -393238, 0, 0, -327702, 0, 0, -262166, 0, 0, -1376277, 0, 0, -1310741, 0, 0, -1245205, 0, 0, -1179669, 0, 0, -1114133, 0, 0, -1048597, 0, 0, -983061, 0, 0, -917525, 0, 0, -851989, 0, 0, -786453, 0, 0, -720917, 0, 0, -655381, 0, 0, -589845, 0, 0, -524309, 0, 0, -458773, 0, 0, -393237, 0, 0, -327701, 0, 0, -262165, 0, 0, 720875, 0, 0, 786411, 0, 0, 851947, 0, 0, -1376276, 0, 0, -1310740, 0, 0, -1245204, 0, 0, -1179668, 0, 0, -1114132, 0, 0, -1048596, 0, 0, -983060, 0, 0, -917524, 0, 0, -851988, 0, 0, -786452, 0, 0, -720916, 0, 0, -655380, 0, 0, -589844, 0, 0, -524308, 0, 0, -458772, 0, 0, -393236, 0, 0, -327700, 0, 0, -262164, 0, 0, -196628, 0, 0, -131092, 0, 0, -65556, 0, 0, -20, 0, 0, 65516, 0, 0, 131052, 0, 0, 196588, 0, 0, 262124, 0, 0, 327660, 0, 0, 393196, 0, 0, 458732, 0, 0, 524268, 0, 0, 589804, 0, 0, 655340, 0, 0, 720876, 0, 0, 786412, 0, 0, 851948, 0, 0, -1376275, 0, 0, -1310739, 0, 0, -1245203, 0, 0, -1179667, 0, 0, -1114131, 0, 0, -1048595, 0, 0, -983059, 0, 0, -917523, 0, 0, -851987, 0, 0, -786451, 0, 0, -720915, 0, 0, -655379, 0, 0, -589843, 0, 0, -524307, 0, 0, -458771, 0, 0, -393235, 0, 0, -327699, 0, 0, -262163, 0, 0, -196627, 0, 0, -131091, 0, 0, -65555, 0, 0, -19, 0, 0, 65517, 0, 0, 131053, 0, 0, 196589, 0, 0, 262125, 0, 0, 327661, 0, 0, 393197, 0, 0, 458733, 0, 0, 524269, 0, 0, 589805, 0, 0, 655341, 0, 0, 720877, 0, 0, 786413, 0, 0, 851949, 0, 0, -1376274, 0, 0, -1310738, 0, 0, -1245202, 0, 0, -1179666, 0, 0, -1114130, 0, 0, -1048594, 0, 0, -983058, 0, 0, -917522, 0, 0, -851986, 0, 0, -786450, 0, 0, -720914, 0, 0, -655378, 0, 0, -589842, 0, 0, -524306, 0, 0, -458770, 0, 0, -393234, 0, 0, -327698, 0, 0, -262162, 0, 0, -196626, 0, 0, -131090, 0, 0, -65554, 0, 0, -18, 0, 0, 65518, 0, 0, 131054, 0, 0, 196590, 0, 0, 262126, 0, 0, 327662, 0, 0, 393198, 0, 0, 458734, 0, 0, 524270, 0, 0, 589806, 0, 0, 655342, 0, 0, 720878, 0, 0, 786414, 0, 0, 851950, 0, 0, -1376273, 0, 0, -1310737, 0, 0, -1245201, 0, 0, -1179665, 0, 0, -1114129, 0, 0, -1048593, 0, 0, -983057, 0, 0, -917521, 0, 0, -851985, 0, 0, -786449, 0, 0, -720913, 0, 0, -655377, 0, 0, -589841, 0, 0, -524305, 0, 0, -458769, 0, 0, -393233, 0, 0, -327697, 0, 0, -262161, 0, 0, 65519, 0, 0, 131055, 0, 0, 720879, 0, 0, 786415, 0, 0, 851951, 0, 0, -1376272, 0, 0, -1310736, 0, 0, -1245200, 0, 0, -1179664, 0, 0, -1114128, 0, 0, -1048592, 0, 0, -983056, 0, 0, -917520, 0, 0, -851984, 0, 0, -786448, 0, 0, -720912, 0, 0, -655376, 0, 0, -589840, 0, 0, -524304, 0, 0, -458768, 0, 0, -393232, 0, 0, -327696, 0, 0, -262160, 0, 0, 65520, 0, 0, 131056, 0, 0, 720880, 0, 0, 786416, 0, 0, 851952, 0, 0, -1376271, 0, 0, -1310735, 0, 0, -1245199, 0, 0, -1179663, 0, 0, -1114127, 0, 0, -1048591, 0, 0, -983055, 0, 0, -917519, 0, 0, -851983, 0, 0, -786447, 0, 0, -720911, 0, 0, -655375, 0, 0, -589839, 0, 0, -524303, 0, 0, -458767, 0, 0, -393231, 0, 0, -327695, 0, 0, -262159, 0, 0, 65521, 0, 0, 131057, 0, 0, 720881, 0, 0, 786417, 0, 0, 851953, 0, 0, -1376270, 0, 0, -1310734, 0, 0, -1245198, 0, 0, -1179662, 0, 0, -1114126, 0, 0, -1048590, 0, 0, -983054, 0, 0, -917518, 0, 0, -851982, 0, 0, -786446, 0, 0, -720910, 0, 0, -655374, 0, 0, -589838, 0, 0, -524302, 0, 0, -458766, 0, 0, -393230, 0, 0, -327694, 0, 0, -262158, 0, 0, 65522, 0, 0, 131058, 0, 0, 720882, 0, 0, 786418, 0, 0, 851954, 0, 0, -1376269, 0, 0, -1310733, 0, 0, -1245197, 0, 0, -1179661, 0, 0, -1114125, 0, 0, -1048589, 0, 0, -983053, 0, 0, -917517, 0, 0, -851981, 0, 0, -786445, 0, 0, -720909, 0, 0, -655373, 0, 0, -589837, 0, 0, -524301, 0, 0, -458765, 0, 0, -393229, 0, 0, -327693, 0, 0, -262157, 0, 0, 65523, 0, 0, 131059, 0, 0, 196595, 0, 0, 262131, 0, 0, 327667, 0, 0, 393203, 0, 0, 458739, 0, 0, 524275, 0, 0, 589811, 0, 0, 655347, 0, 0, 720883, 0, 0, 786419, 0, 0, 851955, 0, 0, 917491, 0, 0, -1376268, 0, 0, -1310732, 0, 0, -1245196, 0, 0, -1179660, 0, 0, -1114124, 0, 0, -1048588, 0, 0, -983052, 0, 0, -917516, 0, 0, -851980, 0, 0, -786444, 0, 0, -720908, 0, 0, -655372, 0, 0, -589836, 0, 0, -524300, 0, 0, -458764, 0, 0, -393228, 0, 0, -327692, 0, 0, -262156, 0, 0, 65524, 0, 0, 131060, 0, 0, 196596, 0, 0, 262132, 0, 0, 327668, 0, 0, 393204, 0, 0, 458740, 0, 0, 524276, 0, 0, 589812, 0, 0, 655348, 0, 0, 720884, 0, 0, 786420, 0, 0, 851956, 0, 0, 917492, 0, 0, -1376267, 0, 0, -1310731, 0, 0, -1245195, 0, 0, -1179659, 0, 0, -1114123, 0, 0, -1048587, 0, 0, -983051, 0, 0, -917515, 0, 0, -851979, 0, 0, -786443, 0, 0, -720907, 0, 0, -655371, 0, 0, -589835, 0, 0, -524299, 0, 0, -458763, 0, 0, -393227, 0, 0, -327691, 0, 0, -262155, 0, 0, 65525, 0, 0, 131061, 0, 0, 196597, 0, 0, 262133, 0, 0, 327669, 0, 0, 393205, 0, 0, 458741, 0, 0, 524277, 0, 0, 589813, 0, 0, 655349, 0, 0, 720885, 0, 0, 786421, 0, 0, 851957, 0, 0, 917493, 0, 0, -1376266, 0, 0, -1310730, 0, 0, -1245194, 0, 0, -1179658, 0, 0, -1114122, 0, 0, -1048586, 0, 0, -983050, 0, 0, -917514, 0, 0, -851978, 0, 0, -786442, 0, 0, -262154, 0, 0, 65526, 0, 0, 131062, 0, 0, 196598, 0, 0, 262134, 0, 0, 327670, 0, 0, 393206, 0, 0, 458742, 0, 0, 524278, 0, 0, 589814, 0, 0, 655350, 0, 0, 720886, 0, 0, 786422, 0, 0, 851958, 0, 0, 917494, 0, 0, -1376265, 0, 0, -1310729, 0, 0, -1245193, 0, 0, -1179657, 0, 0, -1114121, 0, 0, -1048585, 0, 0, -983049, 0, 0, -917513, 0, 0, -851977, 0, 0, -786441, 0, 0, -262153, 0, 0, 65527, 0, 0, 131063, 0, 0, 196599, 0, 0, 262135, 0, 0, 327671, 0, 0, 393207, 0, 0, 458743, 0, 0, 524279, 0, 0, 589815, 0, 0, 655351, 0, 0, 720887, 0, 0, 786423, 0, 0, 851959, 0, 0, 917495, 0, 0, -1769480, 0, 0, -1703944, 0, 0, -1638408, 0, 0, -1572872, 0, 0, -1507336, 0, 0, -1441800, 0, 0, -1376264, 0, 0, -1310728, 0, 0, -1245192, 0, 0, -1179656, 0, 0, -1114120, 0, 0, -1048584, 0, 0, -983048, 0, 0, -917512, 0, 0, -851976, 0, 0, -786440, 0, 0, -262152, 0, 0, 65528, 0, 0, 131064, 0, 0, 196600, 0, 0, 262136, 0, 0, 327672, 0, 0, 393208, 0, 0, 458744, 0, 0, 524280, 0, 0, 589816, 0, 0, 655352, 0, 0, 720888, 0, 0, 786424, 0, 0, 851960, 0, 0, 917496, 0, 0, -1769479, 0, 0, -1703943, 0, 0, -1638407, 0, 0, -1572871, 0, 0, -1507335, 0, 0, -1441799, 0, 0, -1376263, 0, 0, -1310727, 0, 0, -1245191, 0, 0, -1179655, 0, 0, -1114119, 0, 0, -1048583, 0, 0, -983047, 0, 0, -917511, 0, 0, -851975, 0, 0, -786439, 0, 0, -262151, 0, 0, 65529, 0, 0, 131065, 0, 0, 196601, 0, 0, 262137, 0, 0, 327673, 0, 0, 393209, 0, 0, 458745, 0, 0, 524281, 0, 0, 589817, 0, 0, 655353, 0, 0, 720889, 0, 0, 786425, 0, 0, 851961, 0, 0, 917497, 0, 0, -1769478, 0, 0, -1703942, 0, 0, -1638406, 0, 0, -1572870, 0, 0, -1507334, 0, 0, -1441798, 0, 0, -1376262, 0, 0, -1310726, 0, 0, -1245190, 0, 0, -1179654, 0, 0, -1114118, 0, 0, -1048582, 0, 0, -983046, 0, 0, -917510, 0, 0, -851974, 0, 0, -786438, 0, 0, -720902, 0, 0, -655366, 0, 0, -589830, 0, 0, -524294, 0, 0, -458758, 0, 0, -393222, 0, 0, -327686, 0, 0, -262150, 0, 0, -196614, 0, 0, -131078, 0, 0, -65542, 0, 0, -6, 0, 0, 65530, 0, 0, 131066, 0, 0, 196602, 0, 0, 262138, 0, 0, 327674, 0, 0, 393210, 0, 0, 458746, 0, 0, 524282, 0, 0, 589818, 0, 0, 655354, 0, 0, 720890, 0, 0, 786426, 0, 0, 851962, 0, 0, 917498, 0, 0, -1769477, 0, 0, -1703941, 0, 0, -1638405, 0, 0, -1572869, 0, 0, -1507333, 0, 0, -1441797, 0, 0, -1376261, 0, 0, -1310725, 0, 0, -1245189, 0, 0, -1179653, 0, 0, -1114117, 0, 0, -1048581, 0, 0, -983045, 0, 0, -917509, 0, 0, -851973, 0, 0, -786437, 0, 0, -720901, 0, 0, -655365, 0, 0, -589829, 0, 0, -524293, 0, 0, -458757, 0, 0, -393221, 0, 0, -327685, 0, 0, -262149, 0, 0, -196613, 0, 0, -131077, 0, 0, -65541, 0, 0, -5, 0, 0, 65531, 0, 0, 131067, 0, 0, 196603, 0, 0, 262139, 0, 0, 327675, 0, 0, 393211, 0, 0, 458747, 0, 0, 524283, 0, 0, 589819, 0, 0, 655355, 0, 0, 720891, 0, 0, 786427, 0, 0, 851963, 0, 0, 917499, 0, 0, -1769476, 0, 0, -1703940, 0, 0, -1638404, 0, 0, -1572868, 0, 0, -1507332, 0, 0, -1441796, 0, 0, -1376260, 0, 0, -1310724, 0, 0, -1245188, 0, 0, -1179652, 0, 0, -1114116, 0, 0, -1048580, 0, 0, -983044, 0, 0, -917508, 0, 0, -851972, 0, 0, -786436, 0, 0, -720900, 0, 0, -655364, 0, 0, -589828, 0, 0, -524292, 0, 0, -458756, 0, 0, -393220, 0, 0, -327684, 0, 0, -262148, 0, 0, -196612, 0, 0, -131076, 0, 0, -65540, 0, 0, -4, 0, 0, 65532, 0, 0, 131068, 0, 0, 196604, 0, 0, 262140, 0, 0, 327676, 0, 0, 393212, 0, 0, 458748, 0, 0, 524284, 0, 0, 589820, 0, 0, 655356, 0, 0, 720892, 0, 0, 786428, 0, 0, 851964, 0, 0, 917500, 0, 0, -1769475, 0, 0, -1703939, 0, 0, -1638403, 0, 0, -1572867, 0, 0, -262147, 0, 0, -196611, 0, 0, -131075, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 327677, 0, 0, 393213, 0, 0, 458749, 0, 0, 524285, 0, 0, 589821, 0, 0, 655357, 0, 0, 720893, 0, 0, 786429, 0, 0, 851965, 0, 0, 917501, 0, 0, -1769474, 0, 0, -1703938, 0, 0, -1638402, 0, 0, -1572866, 0, 0, -262146, 0, 0, -196610, 0, 0, -131074, 0, 0, -65538, 0, 0, -2, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, 262142, 0, 0, 327678, 0, 0, 393214, 0, 0, 458750, 0, 0, 524286, 0, 0, 589822, 0, 0, 655358, 0, 0, 720894, 0, 0, 786430, 0, 0, 851966, 0, 0, 917502, 0, 0, -1769473, 0, 0, -1703937, 0, 0, -1638401, 0, 0, -1572865, 0, 0, -262145, 0, 0, -196609, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 720895, 0, 0, 786431, 0, 0, 851967, 0, 0, 917503, 0, 0, -1835008, 0, 0, -1769472, 0, 0, -1703936, 0, 0, -1638400, 0, 0, -327680, 0, 0, -262144, 0, 0, -196608, 0, 0, -131072, 0, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, -1835007, 0, 0, -1769471, 0, 0, -1703935, 0, 0, -1638399, 0, 0, -327679, 0, 0, -262143, 0, 0, -196607, 0, 0, -131071, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0, -1835006, 0, 0, -1769470, 0, 0, -1703934, 0, 0, -1638398, 0, 0, -327678, 0, 0, -262142, 0, 0, -196606, 0, 0, -131070, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, -1835005, 0, 0, -1769469, 0, 0, -1703933, 0, 0, -1638397, 0, 0, -1572861, 0, 0, -1507325, 0, 0, -1441789, 0, 0, -1376253, 0, 0, -1310717, 0, 0, -1245181, 0, 0, -1179645, 0, 0, -1114109, 0, 0, -1048573, 0, 0, -983037, 0, 0, -917501, 0, 0, -851965, 0, 0, -786429, 0, 0, -720893, 0, 0, -655357, 0, 0, -589821, 0, 0, -524285, 0, 0, -458749, 0, 0, -393213, 0, 0, -327677, 0, 0, -262141, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, -1835004, 0, 0, -1769468, 0, 0, -1703932, 0, 0, -1638396, 0, 0, -1572860, 0, 0, -1507324, 0, 0, -1441788, 0, 0, -1376252, 0, 0, -1310716, 0, 0, -1245180, 0, 0, -1179644, 0, 0, -1114108, 0, 0, -1048572, 0, 0, -983036, 0, 0, -917500, 0, 0, -851964, 0, 0, -786428, 0, 0, -720892, 0, 0, -655356, 0, 0, -589820, 0, 0, -524284, 0, 0, -458748, 0, 0, -393212, 0, 0, -327676, 0, 0, -262140, 0, 0, -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 720900, 0, 0, 786436, 0, 0, 851972, 0, 0, -1835003, 0, 0, -1769467, 0, 0, -1703931, 0, 0, -1638395, 0, 0, -1572859, 0, 0, -1507323, 0, 0, -1441787, 0, 0, -1376251, 0, 0, -1310715, 0, 0, -1245179, 0, 0, -1179643, 0, 0, -1114107, 0, 0, -1048571, 0, 0, -983035, 0, 0, -917499, 0, 0, -851963, 0, 0, -327675, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 720901, 0, 0, 786437, 0, 0, 851973, 0, 0, -1835002, 0, 0, -1769466, 0, 0, -1703930, 0, 0, -1638394, 0, 0, -1572858, 0, 0, -1507322, 0, 0, -1441786, 0, 0, -1376250, 0, 0, -1310714, 0, 0, -1245178, 0, 0, -1179642, 0, 0, -1114106, 0, 0, -1048570, 0, 0, -983034, 0, 0, -917498, 0, 0, -851962, 0, 0, -327674, 0, 0, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0, 720902, 0, 0, 786438, 0, 0, 851974, 0, 0, -1835001, 0, 0, -1769465, 0, 0, -1703929, 0, 0, -1638393, 0, 0, -1572857, 0, 0, -1507321, 0, 0, -1441785, 0, 0, -1376249, 0, 0, -1310713, 0, 0, -1245177, 0, 0, -1179641, 0, 0, -1114105, 0, 0, -1048569, 0, 0, -983033, 0, 0, -917497, 0, 0, -851961, 0, 0, -327673, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 851975, 0, 0, -1441784, 0, 0, -1376248, 0, 0, -1310712, 0, 0, -1245176, 0, 0, -1179640, 0, 0, -1114104, 0, 0, -1048568, 0, 0, -983032, 0, 0, -917496, 0, 0, -851960, 0, 0, -327672, 0, 0, 8, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 720904, 0, 0, 786440, 0, 0, 851976, 0, 0, -1441783, 0, 0, -1376247, 0, 0, -1310711, 0, 0, -1245175, 0, 0, -1179639, 0, 0, -1114103, 0, 0, -1048567, 0, 0, -983031, 0, 0, -917495, 0, 0, -851959, 0, 0, -786423, 0, 0, -720887, 0, 0, -655351, 0, 0, -589815, 0, 0, -524279, 0, 0, -458743, 0, 0, -393207, 0, 0, -327671, 0, 0, 9, 0, 0, 65545, 0, 0, 131081, 0, 0, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 393225, 0, 0, 458761, 0, 0, 524297, 0, 0, 589833, 0, 0, 655369, 0, 0, 720905, 0, 0, 786441, 0, 0, 851977, 0, 0, -1441782, 0, 0, -1376246, 0, 0, -1310710, 0, 0, -1245174, 0, 0, -1179638, 0, 0, -1114102, 0, 0, -1048566, 0, 0, -983030, 0, 0, -917494, 0, 0, -851958, 0, 0, -786422, 0, 0, -720886, 0, 0, -655350, 0, 0, -589814, 0, 0, -524278, 0, 0, -458742, 0, 0, -393206, 0, 0, -327670, 0, 0, 10, 0, 0, 65546, 0, 0, 131082, 0, 0, 196618, 0, 0, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0, 458762, 0, 0, 524298, 0, 0, 589834, 0, 0, 655370, 0, 0, 720906, 0, 0, 786442, 0, 0, 851978, 0, 0, -1441781, 0, 0, -1376245, 0, 0, -1310709, 0, 0, -1245173, 0, 0, -1179637, 0, 0, -1114101, 0, 0, -1048565, 0, 0, -983029, 0, 0, -917493, 0, 0, -851957, 0, 0, -786421, 0, 0, -720885, 0, 0, -655349, 0, 0, -589813, 0, 0, -524277, 0, 0, -458741, 0, 0, -393205, 0, 0, -327669, 0, 0, 11, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0, 393227, 0, 0, 458763, 0, 0, 524299, 0, 0, 589835, 0, 0, 655371, 0, 0, 720907, 0, 0, 786443, 0, 0, 851979, 0, 0, -1441780, 0, 0, -1376244, 0, 0, -1310708, 0, 0, -1245172, 0, 0, -1179636, 0, 0, -1114100, 0, 0, -1048564, 0, 0, -983028, 0, 0, -917492, 0, 0, -851956, 0, 0, -786420, 0, 0, -720884, 0, 0, -655348, 0, 0, -589812, 0, 0, -524276, 0, 0, -458740, 0, 0, -393204, 0, 0, -327668, 0, 0, 12, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393228, 0, 0, 458764, 0, 0, 524300, 0, 0, 589836, 0, 0, 655372, 0, 0, 720908, 0, 0, 786444, 0, 0, 851980, 0, 0, -1441779, 0, 0, -1376243, 0, 0, -1310707, 0, 0, -1245171, 0, 0, -1179635, 0, 0, -1114099, 0, 0, -1048563, 0, 0, -983027, 0, 0, -917491, 0, 0, -851955, 0, 0, -786419, 0, 0, -720883, 0, 0, -655347, 0, 0, -589811, 0, 0, -524275, 0, 0, -458739, 0, 0, -393203, 0, 0, -327667, 0, 0, 13, 0, 0, 65549, 0, 0, 655373, 0, 0, 720909, 0, 0, 786445, 0, 0, -1441778, 0, 0, -1376242, 0, 0, -1310706, 0, 0, -1245170, 0, 0, -1179634, 0, 0, -1114098, 0, 0, -1048562, 0, 0, -983026, 0, 0, -917490, 0, 0, -851954, 0, 0, -786418, 0, 0, -720882, 0, 0, -655346, 0, 0, -589810, 0, 0, -524274, 0, 0, -458738, 0, 0, -393202, 0, 0, -327666, 0, 0, 14, 0, 0, 65550, 0, 0, 655374, 0, 0, 720910, 0, 0, 786446, 0, 0, -1441777, 0, 0, -1376241, 0, 0, -1310705, 0, 0, -1245169, 0, 0, -1179633, 0, 0, -1114097, 0, 0, -1048561, 0, 0, -983025, 0, 0, -917489, 0, 0, -851953, 0, 0, -786417, 0, 0, -720881, 0, 0, -655345, 0, 0, -589809, 0, 0, -524273, 0, 0, -458737, 0, 0, -393201, 0, 0, -327665, 0, 0, 15, 0, 0, 65551, 0, 0, 655375, 0, 0, 720911, 0, 0, 786447, 0, 0, -1441776, 0, 0, -1376240, 0, 0, -1310704, 0, 0, -1245168, 0, 0, -1179632, 0, 0, -1114096, 0, 0, -1048560, 0, 0, -983024, 0, 0, -917488, 0, 0, -851952, 0, 0, -786416, 0, 0, -720880, 0, 0, -655344, 0, 0, -589808, 0, 0, -524272, 0, 0, -458736, 0, 0, -393200, 0, 0, -327664, 0, 0, 16, 0, 0, 65552, 0, 0, 655376, 0, 0, 720912, 0, 0, 786448, 0, 0, -1441775, 0, 0, -1376239, 0, 0, -1310703, 0, 0, -1245167, 0, 0, -1179631, 0, 0, -1114095, 0, 0, -1048559, 0, 0, -983023, 0, 0, -917487, 0, 0, -851951, 0, 0, -786415, 0, 0, -720879, 0, 0, -655343, 0, 0, -589807, 0, 0, -524271, 0, 0, -458735, 0, 0, -393199, 0, 0, -327663, 0, 0, -262127, 0, 0, -196591, 0, 0, -131055, 0, 0, -65519, 0, 0, 17, 0, 0, 65553, 0, 0, 131089, 0, 0, 196625, 0, 0, 262161, 0, 0, 327697, 0, 0, 393233, 0, 0, 458769, 0, 0, 524305, 0, 0, 589841, 0, 0, 655377, 0, 0, 720913, 0, 0, 786449, 0, 0, -1441774, 0, 0, -1376238, 0, 0, -1310702, 0, 0, -1245166, 0, 0, -1179630, 0, 0, -1114094, 0, 0, -1048558, 0, 0, -983022, 0, 0, -917486, 0, 0, -851950, 0, 0, -786414, 0, 0, -720878, 0, 0, -655342, 0, 0, -589806, 0, 0, -524270, 0, 0, -458734, 0, 0, -393198, 0, 0, -327662, 0, 0, -262126, 0, 0, -196590, 0, 0, -131054, 0, 0, -65518, 0, 0, 18, 0, 0, 65554, 0, 0, 131090, 0, 0, 196626, 0, 0, 262162, 0, 0, 327698, 0, 0, 393234, 0, 0, 458770, 0, 0, 524306, 0, 0, 589842, 0, 0, 655378, 0, 0, 720914, 0, 0, 786450, 0, 0, -1441773, 0, 0, -1376237, 0, 0, -1310701, 0, 0, -1245165, 0, 0, -1179629, 0, 0, -1114093, 0, 0, -1048557, 0, 0, -983021, 0, 0, -917485, 0, 0, -851949, 0, 0, -786413, 0, 0, -720877, 0, 0, -655341, 0, 0, -589805, 0, 0, -524269, 0, 0, -458733, 0, 0, -393197, 0, 0, -327661, 0, 0, -262125, 0, 0, -196589, 0, 0, -131053, 0, 0, -65517, 0, 0, 19, 0, 0, 65555, 0, 0, 131091, 0, 0, 196627, 0, 0, 262163, 0, 0, 327699, 0, 0, 393235, 0, 0, 458771, 0, 0, 524307, 0, 0, 589843, 0, 0, 655379, 0, 0, 720915, 0, 0, 786451, 0, 0, -1441772, 0, 0, -1376236, 0, 0, -1310700, 0, 0, -1245164, 0, 0, -1179628, 0, 0, -1114092, 0, 0, -1048556, 0, 0, -983020, 0, 0, -917484, 0, 0, -851948, 0, 0, -786412, 0, 0, -720876, 0, 0, -655340, 0, 0, -589804, 0, 0, -524268, 0, 0, -458732, 0, 0, -393196, 0, 0, -327660, 0, 0, 655380, 0, 0, 720916, 0, 0, 786452, 0, 0, -1441771, 0, 0, -1376235, 0, 0, -1310699, 0, 0, -1245163, 0, 0, -1179627, 0, 0, -1114091, 0, 0, -1048555, 0, 0, -983019, 0, 0, -917483, 0, 0, -851947, 0, 0, -786411, 0, 0, -720875, 0, 0, -655339, 0, 0, -589803, 0, 0, -524267, 0, 0, -458731, 0, 0, -393195, 0, 0, -327659, 0, 0, -1441770, 0, 0, -1376234, 0, 0, -1310698, 0, 0, -1245162, 0, 0, -1179626, 0, 0, -1114090, 0, 0, -1048554, 0, 0, -983018, 0, 0, -917482, 0, 0, -851946, 0, 0, -786410, 0, 0, -720874, 0, 0, -655338, 0, 0, -589802, 0, 0, -524266, 0, 0, -458730, 0, 0, -393194, 0, 0, -327658, 0, 0, -1441769, 0, 0, -1376233, 0, 0, -1310697, 0, 0, -1245161, 0, 0, -1179625, 0, 0, -1114089, 0, 0, -1048553, 0, 0, -983017, 0, 0, -917481, 0, 0, -851945, 0, 0, -786409, 0, 0, -720873, 0, 0, -655337, 0, 0, -589801, 0, 0, -524265, 0, 0, -458729, 0, 0, -393193, 0, 0, -327657, 0, 0, -1441768, 0, 0, -1376232, 0, 0, -1310696, 0, 0, -1245160, 0, 0, -1179624, 0, 0, -1114088, 0, 0, -1048552, 0, 0, -983016, 0, 0, -917480, 0, 0, -851944, 0, 0, -786408, 0, 0, -720872, 0, 0, -655336, 0, 0, -589800, 0, 0, -524264, 0, 0, -458728, 0, 0, -393192, 0, 0, -327656, 0, 0, -1441767, 0, 0, -1376231, 0, 0, -1310695, 0, 0, -1245159, 0, 0, -1179623, 0, 0, -1114087, 0, 0, -1048551, 0, 0, -983015, 0, 0, -917479, 0, 0, -851943, 0, 0, -786407, 0, 0, -720871, 0, 0, -655335, 0, 0, -589799, 0, 0, -524263, 0, 0, -458727, 0, 0, -393191, 0, 0, -327655, 0, 0, 655385, 0, 0, 720921, 0, 0, 786457, 0, 0, -1441766, 0, 0, -1376230, 0, 0, -1310694, 0, 0, -1245158, 0, 0, -1179622, 0, 0, -1114086, 0, 0, -1048550, 0, 0, -983014, 0, 0, -917478, 0, 0, -851942, 0, 0, -786406, 0, 0, -720870, 0, 0, -655334, 0, 0, -589798, 0, 0, -524262, 0, 0, -458726, 0, 0, -393190, 0, 0, -327654, 0, 0, -262118, 0, 0, -196582, 0, 0, -131046, 0, 0, -65510, 0, 0, 26, 0, 0, 65562, 0, 0, 131098, 0, 0, 196634, 0, 0, 262170, 0, 0, 327706, 0, 0, 393242, 0, 0, 458778, 0, 0, 524314, 0, 0, 589850, 0, 0, 655386, 0, 0, 720922, 0, 0, 786458, 0, 0, -1441765, 0, 0, -1376229, 0, 0, -1310693, 0, 0, -1245157, 0, 0, -1179621, 0, 0, -1114085, 0, 0, -1048549, 0, 0, -983013, 0, 0, -917477, 0, 0, -851941, 0, 0, -786405, 0, 0, -720869, 0, 0, -655333, 0, 0, -589797, 0, 0, -524261, 0, 0, -458725, 0, 0, -393189, 0, 0, -327653, 0, 0, -262117, 0, 0, -196581, 0, 0, -131045, 0, 0, -65509, 0, 0, 27, 0, 0, 65563, 0, 0, 131099, 0, 0, 196635, 0, 0, 262171, 0, 0, 327707, 0, 0, 393243, 0, 0, 458779, 0, 0, 524315, 0, 0, 589851, 0, 0, 655387, 0, 0, 720923, 0, 0, 786459, 0, 0, -1441764, 0, 0, -1376228, 0, 0, -1310692, 0, 0, -1245156, 0, 0, -1179620, 0, 0, -1114084, 0, 0, -1048548, 0, 0, -983012, 0, 0, -917476, 0, 0, -851940, 0, 0, -786404, 0, 0, -720868, 0, 0, -655332, 0, 0, -589796, 0, 0, -524260, 0, 0, -458724, 0, 0, -393188, 0, 0, -327652, 0, 0, -262116, 0, 0, -196580, 0, 0, -131044, 0, 0, -65508, 0, 0, 28, 0, 0, 65564, 0, 0, 131100, 0, 0, 196636, 0, 0, 262172, 0, 0, 327708, 0, 0, 393244, 0, 0, 458780, 0, 0, 524316, 0, 0, 589852, 0, 0, 655388, 0, 0, 720924, 0, 0, 786460, 0, 0, -1441763, 0, 0, -1376227, 0, 0, -1310691, 0, 0, -1245155, 0, 0, -1179619, 0, 0, -1114083, 0, 0, -1048547, 0, 0, -983011, 0, 0, -917475, 0, 0, -851939, 0, 0, -786403, 0, 0, -720867, 0, 0, -655331, 0, 0, -589795, 0, 0, -524259, 0, 0, -458723, 0, 0, -393187, 0, 0, -327651, 0, 0, 262173, 0, 0, 327709, 0, 0, 655389, 0, 0, 720925, 0, 0, 786461, 0, 0, -1441762, 0, 0, -1376226, 0, 0, -1310690, 0, 0, -1245154, 0, 0, -1179618, 0, 0, -1114082, 0, 0, -1048546, 0, 0, -983010, 0, 0, -917474, 0, 0, -851938, 0, 0, -786402, 0, 0, -720866, 0, 0, -655330, 0, 0, -589794, 0, 0, -524258, 0, 0, -458722, 0, 0, -393186, 0, 0, -327650, 0, 0, 262174, 0, 0, 327710, 0, 0, 655390, 0, 0, 720926, 0, 0, 786462, 0, 0, -1441761, 0, 0, -1376225, 0, 0, -1310689, 0, 0, -1245153, 0, 0, -1179617, 0, 0, -1114081, 0, 0, -1048545, 0, 0, -983009, 0, 0, -917473, 0, 0, -851937, 0, 0, -786401, 0, 0, -720865, 0, 0, -655329, 0, 0, -589793, 0, 0, -524257, 0, 0, -458721, 0, 0, -393185, 0, 0, -327649, 0, 0, 262175, 0, 0, 327711, 0, 0, 655391, 0, 0, 720927, 0, 0, 786463, 0, 0, -1441760, 0, 0, -1376224, 0, 0, -1310688, 0, 0, -1245152, 0, 0, -1179616, 0, 0, -1114080, 0, 0, -1048544, 0, 0, -983008, 0, 0, -917472, 0, 0, -851936, 0, 0, 262176, 0, 0, 327712, 0, 0, 655392, 0, 0, 720928, 0, 0, 786464, 0, 0, -1441759, 0, 0, -1376223, 0, 0, -1310687, 0, 0, -1245151, 0, 0, -1179615, 0, 0, -1114079, 0, 0, -1048543, 0, 0, -983007, 0, 0, -917471, 0, 0, -851935, 0, 0, 262177, 0, 0, 327713, 0, 0, 655393, 0, 0, 720929, 0, 0, 786465, 0, 0, -1441758, 0, 0, -1376222, 0, 0, -1310686, 0, 0, -1245150, 0, 0, -1179614, 0, 0, -1114078, 0, 0, -1048542, 0, 0, -983006, 0, 0, -917470, 0, 0, -851934, 0, 0, 262178, 0, 0, 327714, 0, 0, -1441757, 0, 0, -1376221, 0, 0, -1310685, 0, 0, -1245149, 0, 0, -1179613, 0, 0, -1114077, 0, 0, -1048541, 0, 0, -983005, 0, 0, -917469, 0, 0, -851933, 0, 0, 262179, 0, 0, 327715, 0, 0, -1441756, 0, 0, -1376220, 0, 0, -1310684, 0, 0, -1245148, 0, 0, -1179612, 0, 0, -1114076, 0, 0, -1048540, 0, 0, -983004, 0, 0, -917468, 0, 0, -851932, 0, 0, 262180, 0, 0, 327716, 0, 0, -1441755, 0, 0, -1376219, 0, 0, -1310683, 0, 0, -1245147, 0, 0, -1179611, 0, 0, -1114075, 0, 0, -1048539, 0, 0, -983003, 0, 0, -917467, 0, 0, -851931, 0, 0, 262181, 0, 0, 327717, 0, 0, -1441754, 0, 0, -1376218, 0, 0, -1310682, 0, 0, -1245146, 0, 0, -1179610, 0, 0, -1114074, 0, 0, -1048538, 0, 0, -983002, 0, 0, -917466, 0, 0, -851930, 0, 0, -786394, 0, 0, -720858, 0, 0, -655322, 0, 0, -589786, 0, 0, -524250, 0, 0, -458714, 0, 0, -393178, 0, 0, -327642, 0, 0, -262106, 0, 0, -196570, 0, 0, -131034, 0, 0, -65498, 0, 0, 38, 0, 0, 65574, 0, 0, 131110, 0, 0, 196646, 0, 0, 262182, 0, 0, 327718, 0, 0, -1441753, 0, 0, -1376217, 0, 0, -1310681, 0, 0, -1245145, 0, 0, -1179609, 0, 0, -1114073, 0, 0, -1048537, 0, 0, -983001, 0, 0, -917465, 0, 0, -851929, 0, 0, -786393, 0, 0, -720857, 0, 0, -655321, 0, 0, -589785, 0, 0, -524249, 0, 0, -458713, 0, 0, -393177, 0, 0, -327641, 0, 0, -262105, 0, 0, -196569, 0, 0, -131033, 0, 0, -65497, 0, 0, 39, 0, 0, 65575, 0, 0, 131111, 0, 0, 196647, 0, 0, 262183, 0, 0, 327719, 0, 0, 720862, 0, 0, 786398, 0, 0, 851934, 0, 0, 720863, 0, 0, 786399, 0, 0, 851935, 0, 0, 720864, 0, 0, 786400, 0, 0, 851936, 0, 0, -1441801, 0, 0, -1507337, 0, 0, -1572873, 0, 0, -1638409, 0, 0, -1703945, 0, 0, -1572874, 0, 0, -1507338, 0, 0, -1507339, 0, 0, -1441803, 0, 0, -1441802, 0, 0, -1441804, 0, 0, -1507340, 0, 0, -1572876, 0, 0, -1572875, 0, 0, -1441805, 0, 0, -1507341, 0, 0, -1572877, 0, 0, -1638410, 0, 0, -1703946, 0, 0, -1769482, 0, 0, -1769481, 0, 0, -1769464, 0, 0, -1703928, 0, 0, -1638392, 0, 0, -1572856, 0, 0, -1507320, 0, 0, -1507319, 0, 0, -1835000, 0, 0, -1507316, 0, 0, -1572852, 0, 0, -1572853, 0, 0, -1507317, 0, 0, -1507318, 0, 0, -1572855, 0, 0, -1572854, 0, 0, -1638388, 0, 0, -1638389, 0, 0, -1638390, 0, 0, -1638391, 0, 0, -1703927, 0, 0, -1769463, 0, 0, -1834999, 0, 0, -1703926, 0, 0, -1769462, 0, 0, -1834998, 0, 0, -1703925, 0, 0, -1703924, 0, 0, -1638413, 0, 0, -1638412, 0, 0, -1638411, 0, 0, -1703947, 0, 0, -1769483, 0, 0)
 
 [node name="Shape" parent="Map/Entrance" index="0"]
 shape = SubResource("RectangleShape2D_nypwg")

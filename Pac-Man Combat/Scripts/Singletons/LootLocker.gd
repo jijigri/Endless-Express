@@ -17,6 +17,8 @@ var player_id
 
 var authentificated: bool = false
 
+var guest_exists: bool = true
+
 signal authentification_complete
 signal get_player_info_complete
 signal get_leaderboard_complete
@@ -46,6 +48,8 @@ func authentification_request() -> void:
 		if player_id.length() > 1:
 			player_session_exists = true
 		file.close()
+	else:
+		guest_exists = false
 	
 	var data = {"game_key": API_key, "game_version": version}
 	

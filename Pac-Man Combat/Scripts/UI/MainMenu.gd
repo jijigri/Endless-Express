@@ -1,8 +1,11 @@
+class_name MainMenu
 extends Control
 
 @onready var menu_screen = $CanvasLayer/Menu
 @onready var settings_screen = $CanvasLayer/Settings
 @onready var character_screen = $CanvasLayer/CharacterSelectionScreen
+
+@onready var display_name_edit = %DisplayNameEdit
 
 @onready var button_pressed_player: AudioStreamPlayer2D = $ButtonPressedPlayer
 
@@ -10,6 +13,20 @@ func _ready() -> void:
 	settings_screen.back_button.pressed.connect(_on_back_pressed)
 	HUD.visible = false
 	set_screen(0)
+	
+	var guest_exists = true
+	if LootLocker.authentificated:
+		guest_exists = LootLocker.guest_exists
+	else:
+		await LootLocker.authentification_complete
+		guest_exists = LootLocker.guest_exists
+	
+	if guest_exists == false:
+		var box = $CanvasLayer/NameSelectionBox
+		box.visible = true
+		box.main_menu = self
+	else:
+		$CanvasLayer/NameSelectionBox.queue_free()
 
 func _process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):
@@ -51,11 +68,14 @@ func set_screen_visibility(menu: bool, settings: bool, characters: bool):
 	settings_screen.visible = settings
 	character_screen.visible = characters
 
-func set_player_name():
+func set_player_name(name: String = ""):
 	if LootLocker.authentificated == false:
 		await LootLocker.authentification_complete
 	
-	LootLocker.set_player_name(%DisplayNameEdit.text)
+	if name == "":
+		LootLocker.set_player_name(display_name_edit.text)
+	else:
+		LootLocker.set_player_name(name)
 
 
 func _on_button_pressed() -> void:

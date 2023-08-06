@@ -6,12 +6,15 @@ const GAME_SCENES = {
 }
 
 var loading_screen = preload("res://Scenes/UI/loading_screen.tscn")
+var current_scene
 
 @onready var world = get_world_2d()
 
 var indicator_type_manager = SpawnIndicatorType.new()
 
 var current_id: int = 0
+
+var debug_mode: bool = false
 
 func _ready():
 	
@@ -26,9 +29,16 @@ func _ready():
 		"open_scene_on_close": "res://scenes/MainPage.tscn"
 	})
 	"""
+	
+	if current_scene == null:
+		if get_tree().get_root().has_node("Game"):
+			current_scene = get_tree().get_root().get_node("Game")
+		elif get_tree().get_root().has_node("MainMenu"):
+			current_scene = get_tree().get_root().get_node("MainMenu")
 
-func load_scene(current_scene: String, next_scene: String):
-	var loading_screen_instance = spawn_object(loading_screen, Vector2())
+func load_scene(next_scene: String):
+	var loading_screen_instance = loading_screen.instantiate()
+	get_tree().get_root().call_deferred("add_child", loading_screen_instance)
 	
 	var load_path: String
 	if GAME_SCENES.has(next_scene):
@@ -40,12 +50,44 @@ func load_scene(current_scene: String, next_scene: String):
 	
 	if ResourceLoader.exists(load_path):
 		loader_next_scene = ResourceLoader.load_threaded_request(load_path)
+	
+	if loader_next_scene == null:
+		print_debug("Error: Attempting to load a non-existent file!")
+		return
+	
+	#await loading_screen_instance.safe_to_load
+	current_scene.queue_free()
+	
+	while true:
+		var load_progress = []
+		var load_status = ResourceLoader.load_threaded_get_status(load_path, load_progress)
+		
+		match load_status:
+			0: #LOAD INVALID
+				print_debug("Error: Cannot load, resource is invalid.")
+				return
+			1: #LOAD IN PROGRESS
+				pass
+			2: #LOAD FAILED
+				print_debug("Error: Loading failed.")
+				return
+			3: #LOAD LOADED
+				var next_scene_instance = ResourceLoader.load_threaded_get(load_path).instantiate()
+				get_tree().get_root().call_deferred("add_child", next_scene_instance)
+				
+				loading_screen_instance.queue_free()
+				current_scene = next_scene_instance
+				return
+		await get_tree().process_frame
 
 func spawn_object(object, position: Vector2, rotation: float = 0, parent = null):
 	var instance = object.instantiate()
 	
 	if parent == null:
-		get_tree().root.get_node("Game").add_child.call_deferred(instance)
+		if get_tree().root.has_node("Game"):
+			get_tree().root.get_node("Game").add_child.call_deferred(instance)
+		else:
+			get_tree().root.add_child.call_deferred(instance)
 	else:
 		parent.add_child(instance)
 	
@@ -59,6 +101,9 @@ func spawn_with_indicator(indicator_type: SpawnIndicatorType.TYPE, object, posit
 	spawn_object(indicator_scene, position, rotation, parent)
 	await get_tree().create_timer(time).timeout
 	var instance = spawn_object(object, position, rotation, parent)
+	
+	GameEvents.enemy_spawned.emit()
+	
 	if callable != Callable():
 		callable.call(instance)
 

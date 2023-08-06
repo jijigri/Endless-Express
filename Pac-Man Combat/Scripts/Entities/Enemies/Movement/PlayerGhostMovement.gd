@@ -14,7 +14,12 @@ func set_pos():
 		if rand_index > PlayerDataQueue.max_queue_size - PlayerDataQueue.frames_between_ghosts:
 			rand_index = PlayerDataQueue.max_queue_size - PlayerDataQueue.frames_between_ghosts
 		
-		debug_label.text = str(rand_index)
+		if Global.debug_mode:
+			debug_label.text = str(rand_index)
+			debug_label.visible = true
+		else:
+			debug_label.visible = false
+		
 		if speed_modifier >= 1:
 			var data = PlayerDataQueue.get_data(rand_index)
 			if data != null:
