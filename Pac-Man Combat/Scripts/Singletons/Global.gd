@@ -1,5 +1,12 @@
 extends Node2D
 
+const GAME_SCENES = {
+	"game": "res://Scenes/game.tscn",
+	"main_menu": "res://Scenes/main_menu.tscn"
+}
+
+var loading_screen = preload("res://Scenes/UI/loading_screen.tscn")
+
 @onready var world = get_world_2d()
 
 var indicator_type_manager = SpawnIndicatorType.new()
@@ -19,6 +26,20 @@ func _ready():
 		"open_scene_on_close": "res://scenes/MainPage.tscn"
 	})
 	"""
+
+func load_scene(current_scene: String, next_scene: String):
+	var loading_screen_instance = spawn_object(loading_screen, Vector2())
+	
+	var load_path: String
+	if GAME_SCENES.has(next_scene):
+		load_path = GAME_SCENES[next_scene]
+	else:
+		load_path = next_scene
+	
+	var loader_next_scene
+	
+	if ResourceLoader.exists(load_path):
+		loader_next_scene = ResourceLoader.load_threaded_request(load_path)
 
 func spawn_object(object, position: Vector2, rotation: float = 0, parent = null):
 	var instance = object.instantiate()

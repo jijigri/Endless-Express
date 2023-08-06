@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="BiomeData" load_steps=7 format=3 uid="uid://c5rquu1ljmm3r"]
+[gd_resource type="Resource" script_class="BiomeData" load_steps=9 format=3 uid="uid://c5rquu1ljmm3r"]
 
 [ext_resource type="PackedScene" uid="uid://cgo148uilrd2s" path="res://Scenes/Arenas/arena_test_1.tscn" id="1_1em4f"]
 [ext_resource type="PackedScene" uid="uid://b26pryaeluhog" path="res://Scenes/Arenas/arena_test_2.tscn" id="2_1tjym"]
 [ext_resource type="PackedScene" uid="uid://dc8ngtaahwest" path="res://Scenes/Arenas/arena_test_3.tscn" id="3_ldjwg"]
 [ext_resource type="PackedScene" uid="uid://kanbh3luanee" path="res://Scenes/Arenas/arena_test_4.tscn" id="4_3csei"]
 [ext_resource type="AudioStream" uid="uid://beo0o1h8ogfpl" path="res://Audio/Music/Cyberfunk.wav" id="5_blp2k"]
+[ext_resource type="PackedScene" uid="uid://cc4cpootfap80" path="res://Scenes/Arenas/train_arena_5.tscn" id="5_lv5vu"]
+[ext_resource type="PackedScene" uid="uid://bn3sqfmfiewv0" path="res://Scenes/Arenas/train_arena_6.tscn" id="6_aepuu"]
 [ext_resource type="Script" path="res://Scripts/Resources/BiomeData.gd" id="6_w54ud"]
 
 [resource]
 script = ExtResource("6_w54ud")
 name = "Default"
-arenas = Array[PackedScene]([ExtResource("1_1em4f"), ExtResource("2_1tjym"), ExtResource("3_ldjwg"), ExtResource("4_3csei")])
+arenas = Array[PackedScene]([ExtResource("1_1em4f"), ExtResource("2_1tjym"), ExtResource("3_ldjwg"), ExtResource("4_3csei"), ExtResource("5_lv5vu"), ExtResource("6_aepuu")])
 min_level = 0
 music = ExtResource("5_blp2k")

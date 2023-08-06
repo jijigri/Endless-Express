@@ -14,6 +14,10 @@ var has_released_down: bool = false
 
 func _ready() -> void:
 	collision_shape = $CollisionShape2D
+	
+	if Engine.is_editor_hint():
+		collision_shape.shape = collision_shape.shape.duplicate()
+	
 	set_editable_instance(collision_shape, false)
 	collision_shape.shape.size.x = size
 	

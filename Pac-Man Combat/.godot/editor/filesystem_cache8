@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1691262469
+::res://::1691320813
 Bomb.gd::GDScript::-1::1688765903::0::1::::<>RigidBody2D<>::
 default_bus_layout.tres::AudioBusLayout::1995808036201110885::1689967570::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1691071531::0::1::::<><>::
@@ -137,7 +137,7 @@ SirenSummoningFinishSound.wav::AudioStreamWAV::918713310689927456::1687996033::1
 SirenSummoningSound.wav::AudioStreamWAV::8997277489345196046::1687996419::1687996494::1::::<><>::
 SirenTeleportEndSound.wav::AudioStreamWAV::8684897575335397415::1687995401::1687995456::1::::<><>::
 SirenTeleportStartSound.wav::AudioStreamWAV::5166397405758954421::1687995454::1687995456::1::::<><>::
-::res://Audio/SoundEffects/Guns/::1691272315
+::res://Audio/SoundEffects/Guns/::1691272584
 GunJamSound.wav::AudioStreamWAV::9060343520549043883::1689259941::1689259943::1::::<><>::
 ShotgunShot.wav::AudioStreamWAV::8146485379037538434::1686147172::1686147712::1::::<><>::
 SniperShot.wav::AudioStreamWAV::8452318743912239121::1691272458::1691272584::1::::<><>::
@@ -209,9 +209,9 @@ TripleN.ttf::FontFile::6761740253721233073::1662624384::1687183743::1::::<><>::
 Unknown.ttf::FontFile::1187737178205143739::1662623703::1687183743::1::::<><>::
 Zicons.ttf::FontFile::7074048928294689270::1662624327::1687183743::1::::<><>::
 ::res://Resources/::1691270760
-::res://Resources/Biomes/::1691270803
-JungleBiome.tres::Resource/BiomeData::6807698834638733504::1691270803::0::1::::<><>::uid://bdh0s8yeyx4m3::::res://Scenes/Arenas/jungle_arena_1.tscn<>uid://d3os78hsubpck::::res://Scenes/Arenas/jungle_arena_2.tscn<>uid://cci5n8kmjjh64::::res://Audio/Music/Tropical Chase.wav<>res://Scripts/Resources/BiomeData.gd
-TrainBiome.tres::Resource/BiomeData::6914609377252772041::1691270780::0::1::::<><>::uid://cgo148uilrd2s::::res://Scenes/Arenas/arena_test_1.tscn<>uid://b26pryaeluhog::::res://Scenes/Arenas/arena_test_2.tscn<>uid://dc8ngtaahwest::::res://Scenes/Arenas/arena_test_3.tscn<>uid://kanbh3luanee::::res://Scenes/Arenas/arena_test_4.tscn<>uid://beo0o1h8ogfpl::::res://Audio/Music/Cyberfunk.wav<>res://Scripts/Resources/BiomeData.gd
+::res://Resources/Biomes/::1691276992
+JungleBiome.tres::Resource/BiomeData::6807698834638733504::1691276992::0::1::::<><>::uid://bdh0s8yeyx4m3::::res://Scenes/Arenas/jungle_arena_1.tscn<>uid://d3os78hsubpck::::res://Scenes/Arenas/jungle_arena_2.tscn<>uid://cci5n8kmjjh64::::res://Audio/Music/Tropical Chase.wav<>res://Scripts/Resources/BiomeData.gd<>uid://d1vxgrqbr10c7::::res://Scenes/Arenas/jungle_arena_3.tscn
+TrainBiome.tres::Resource/Resource::6914609377252772041::1691270780::0::1::::<><>::uid://cgo148uilrd2s
 ::res://Resources/ColorSwaps/::1691253412
 BubbleColorSwap.tres::Resource/ColorSwap::3303867557303353468::1691253412::0::1::::<><>::res://Scripts/Resources/ColorSwap.gd
 ::res://Resources/DropPools/::1691253412
@@ -230,9 +230,9 @@ SMG.tres::Resource/ProjectileGun::5903729427599913900::1691272361::0::1::::<><>:
 Mia.tres::Resource/PlayableCharacterData::6718331458329791251::1691253412::0::1::::<><>::res://Scripts/Misc/PlayableCharacterData.gd<>res://Scripts/Misc/AbilityData.gd<>uid://de08g8usoxyty::::res://Sprites/Abilities/DefaultPlayerIceGrenadeSprite.png<>uid://c378q8gnl3k4a::::res://Sprites/Abilities/DefaultPlayerBombSprite.png<>uid://dec7dvpyc7hr7::::res://Sprites/UI/CharacterPortraits/MiaPortrait.png<>uid://dv5gegjgkxtb6::::res://Scenes/Entities/Players/default_player.tscn
 ::res://Resources/Tilesets/::1691253412
 arena_level_tileset.tres::TileSet::2641627619673665032::1691253412::0::1::::<><>::uid://dv6fu6pl3sht0::::res://Sprites/Tilesets/Tileset1.png<>uid://b5wbvyu0u83ry::::res://Sprites/Tilesets/Background_Tileset.png<>uid://8pohm5t85k3x::::res://Sprites/Tilesets/Props.png<>uid://b8s87nb5kksky::::res://Sprites/Tilesets/JungleTileset.png<>uid://bayr31ajy3log::::res://Sprites/Tilesets/JungleBackground.png<>uid://bctjreaecb8ea::::res://Sprites/Tilesets/Jungle_WoodTileset.png<>uid://fhphrc3b00qc::::res://Sprites/Tilesets/Jungle_TempleTileset.png
-::res://Scenes/::1691272316
+::res://Scenes/::1691276992
 Bullet.gd::GDScript::-1::1689975174::0::1::::Bullet<>Area2D<>::
-game.tscn::PackedScene::5311140529151571943::1691272316::0::1::::<><>::res://Scripts/GameManager.gd<>uid://cgo148uilrd2s::::res://Scenes/Arenas/arena_test_1.tscn<>res://Scripts/ArenaManager.gd<>uid://dc8ngtaahwest::::res://Scenes/Arenas/arena_test_3.tscn<>uid://kanbh3luanee::::res://Scenes/Arenas/arena_test_4.tscn<>uid://bdh0s8yeyx4m3::::res://Scenes/Arenas/jungle_arena_1.tscn<>uid://b26pryaeluhog::::res://Scenes/Arenas/arena_test_2.tscn<>uid://dv5gegjgkxtb6::::res://Scenes/Entities/Players/default_player.tscn<>res://Scripts/Resources/PlayerMovementData.gd<>uid://bxj2gr5djf7uj::::res://Audio/Ambience/TrainAmbience.wav<>uid://c5rquu1ljmm3r::::res://Resources/Biomes/TrainBiome.tres<>uid://c38x2m2fndcou::::res://Resources/Biomes/JungleBiome.tres<>res://Scripts/Misc/AutomaticParallaxBackground.gd<>uid://dvpmw8lvylxt::::res://Sprites/Background/ParallaxBackground.png
+game.tscn::PackedScene::5311140529151571943::1691276992::0::1::::<><>::res://Scripts/GameManager.gd<>uid://cgo148uilrd2s::::res://Scenes/Arenas/arena_test_1.tscn<>res://Scripts/ArenaManager.gd<>uid://dc8ngtaahwest::::res://Scenes/Arenas/arena_test_3.tscn<>uid://kanbh3luanee::::res://Scenes/Arenas/arena_test_4.tscn<>uid://bdh0s8yeyx4m3::::res://Scenes/Arenas/jungle_arena_1.tscn<>uid://b26pryaeluhog::::res://Scenes/Arenas/arena_test_2.tscn<>uid://dv5gegjgkxtb6::::res://Scenes/Entities/Players/default_player.tscn<>res://Scripts/Resources/PlayerMovementData.gd<>uid://bxj2gr5djf7uj::::res://Audio/Ambience/TrainAmbience.wav<>uid://c5rquu1ljmm3r::::res://Resources/Biomes/TrainBiome.tres<>uid://c38x2m2fndcou::::res://Resources/Biomes/JungleBiome.tres<>res://Scripts/Misc/AutomaticParallaxBackground.gd<>uid://dvpmw8lvylxt::::res://Sprites/Background/ParallaxBackground.png
 main_menu.tscn::PackedScene::6327993902357891697::1691260949::0::1::::<><>::uid://c3haj7dw63v6p::::res://Sprites/UI/MainMenuArtNonAnimated.png<>res://Scripts/UI/MainMenu.gd<>uid://8m065evukno3::::res://Fonts/NbPixelFontBundle/KarenFat.ttf<>uid://cwg54bchnjd4f::::res://Sprites/UI/NameEditIcon.png<>res://Scripts/UI/DisplayNameEdit.gd<>uid://dcvioy7ned84w::::res://Sprites/UI/DiscordIcon.png<>uid://cik3jmm7m3d08::::res://Sprites/UI/SurveyIcon.png<>uid://dclkhoiaauuch::::res://Scenes/UI/menu_leaderboard.tscn<>res://Scripts/Misc/AutomaticParallaxBackground.gd<>uid://b6rbuevxn5dhb::::res://Scenes/UI/character_selection_screen.tscn<>uid://dvpmw8lvylxt::::res://Sprites/Background/ParallaxBackground.png<>uid://dswd4tj8ik4q4::::res://Scenes/UI/settings.tscn<>uid://hgf0hi4j7fji::::res://Sprites/UI/MenuButton.png<>uid://cdorx2bes8siq::::res://Sprites/UI/TitleLogo.png<>uid://h53cqmgngi1o::::res://Audio/Music/Endless Train - Title Theme.wav<>uid://brf5x7nv0jsif::::res://Audio/SoundEffects/UI/ButtonPressedSound.wav
 MouseCursor.gd::GDScript::-1::1687910960::0::1::::MouseCursor<>CanvasLayer<>::
 MusicHandler.gd::GDScript::-1::1690289364::0::1::::<>AudioStreamPlayer2D<>::
@@ -254,14 +254,15 @@ LockBlock.gd::GDScript::-1::1691267619::0::1::::<>Resizer<>::
 lock_block.tscn::PackedScene::3950531923954207479::1691267620::0::1::::<><>::res://Scenes/ArenaProps/Jungle/LockBlock.gd<>res://Shaders/color_replace.gdshader<>uid://2kxeg2l78sw8::::res://Sprites/ArenaProps/LockedBlock.png
 seed.tscn::PackedScene::1891478492607342391::1690389852::0::1::::<><>::res://Scenes/ArenaProps/Seed.gd<>uid://dikaag12v0yrj
 wind_area.tscn::PackedScene::8791754508231698701::1691266203::0::1::::<><>::res://Scripts/World/ArenaProps/WindArea.gd<>uid://bbqbsqlftsi4u::::res://Sprites/Effects/Particles/WindParticles.png
-::res://Scenes/Arenas/::1691272342
+::res://Scenes/Arenas/::1691276945
 arena_base.tscn::PackedScene::8720063574575071524::1691268101::0::1::::<><>::res://Scripts/World/Arena.gd<>uid://bdvvhrogvwxky::::res://Resources/Tilesets/arena_level_tileset.tres<>uid://bgn334x3mulwc::::res://Sprites/Misc/16pxSquare.png<>res://Scripts/Tools/NavigationMap.gd<>res://Scripts/World/Door.gd<>uid://b7tali3qj2wsy::::res://Sprites/Misc/DoorSprite.png<>uid://b6l26iv80biyo::::res://Scenes/Tools/ArenaTools/chaser_spawner.tscn<>uid://dhep68bj3q2qd::::res://Scenes/Misc/off_screen_marker.tscn<>res://Shaders/color_replace.gdshader<>uid://dtqmat6qn4j2y::::res://Scenes/Tools/ArenaTools/target_spawner.tscn<>uid://bvbflk0i70qct::::res://Sprites/Tilesets/Pickups_Icons.png<>uid://ds5iapaksdpdl::::res://Sprites/Misc/ExitDoorMarker.png<>res://Scripts/PickupSpawner.gd<>uid://c48usb0eg43qi::::res://Fonts/Alpenkreuzer.ttf
 arena_test_1.tscn::PackedScene::5224507912151902060::1691254515::0::1::::<><>::res://Scripts/World/Arena.gd<>uid://bdvvhrogvwxky::::res://Resources/Tilesets/arena_level_tileset.tres<>uid://digbyp3l8ibht::::res://Scenes/ArenaProps/one_way_platform.tscn<>uid://bgn334x3mulwc::::res://Sprites/Misc/16pxSquare.png<>res://Scripts/OneWayPlatform.gd<>uid://bvbflk0i70qct::::res://Sprites/Tilesets/Pickups_Icons.png<>res://Scripts/World/Door.gd<>uid://b7ebm0qwnb6f1::::res://Resources/EnemyPools/TargetPool.tres<>uid://c3qf8ujj87stt::::res://Scenes/ArenaProps/bounce_pad.tscn<>uid://460412mt4ky1::::res://Scenes/Tools/EnemyTools/collision_damage.tscn<>uid://ciku36nrdwe76::::res://Sprites/Misc/OneWayPlatform.png<>uid://b7tali3qj2wsy::::res://Sprites/Misc/DoorSprite.png<>uid://dhep68bj3q2qd::::res://Scenes/Misc/off_screen_marker.tscn<>uid://b6l26iv80biyo::::res://Scenes/Tools/ArenaTools/chaser_spawner.tscn<>res://Scripts/TargetSpawner.gd<>uid://b5s2afxn66hsi::::res://Scenes/ArenaProps/portals.tscn<>res://Shaders/color_replace.gdshader<>uid://dq0arwwggb3gs::::res://Sprites/Misc/IdentifiersIconsAtlas.png<>uid://ds5iapaksdpdl::::res://Sprites/Misc/ExitDoorMarker.png<>res://Scripts/PickupSpawner.gd<>uid://c0uw81i2nyde4::::res://Scenes/ArenaProps/speed_booster.tscn<>uid://c48usb0eg43qi::::res://Fonts/Alpenkreuzer.ttf
 arena_test_2.tscn::PackedScene::4346457546441348174::1690285456::0::1::::<><>::uid://dwicf5b18uev1
 arena_test_3.tscn::PackedScene::7368565237862610983::1691069546::0::1::::<><>::uid://dwicf5b18uev1
 arena_test_4.tscn::PackedScene::702679954524698976::1689711293::0::1::::<><>::uid://dwicf5b18uev1
-jungle_arena_1.tscn::PackedScene::2612989698555678816::1691265183::0::1::::<><>::uid://b173nty7vrr31::::res://Scenes/Arenas/jungle_arena_base.tscn<>uid://digbyp3l8ibht::::res://Scenes/ArenaProps/one_way_platform.tscn<>uid://dgx3r8rj2rqk0::::res://Sprites/Misc/JungleOneWayPlatform.png<>uid://yj7wxv6sle14::::res://Scenes/ArenaProps/leaf_block.tscn<>uid://460412mt4ky1::::res://Scenes/Tools/EnemyTools/collision_damage.tscn<>uid://17imy3nkqo68::::res://Scenes/ArenaProps/Jungle/seed.tscn<>uid://caymikuq4sssi::::res://Scenes/ArenaProps/Jungle/jungle_tree.tscn<>uid://bwjwxiirovhjb::::res://Scenes/ArenaProps/Jungle/lock_block.tscn<>uid://bifm3xkqlpxgv::::res://Scenes/ArenaProps/Jungle/key.tscn<>uid://b5s2afxn66hsi::::res://Scenes/ArenaProps/portals.tscn<>uid://dxi16ato1by5j::::res://Scenes/ArenaProps/Jungle/wind_area.tscn<>res://Shaders/color_replace.gdshader
-jungle_arena_2.tscn::PackedScene::9154602757704606546::1691272342::0::1::::<><>::uid://b173nty7vrr31::::res://Scenes/Arenas/jungle_arena_base.tscn<>uid://dxi16ato1by5j::::res://Scenes/ArenaProps/Jungle/wind_area.tscn<>uid://digbyp3l8ibht::::res://Scenes/ArenaProps/one_way_platform.tscn<>res://Shaders/color_replace.gdshader<>uid://caymikuq4sssi::::res://Scenes/ArenaProps/Jungle/jungle_tree.tscn<>uid://dgx3r8rj2rqk0::::res://Sprites/Misc/JungleOneWayPlatform.png<>uid://yj7wxv6sle14::::res://Scenes/ArenaProps/leaf_block.tscn<>uid://bwjwxiirovhjb::::res://Scenes/ArenaProps/Jungle/lock_block.tscn<>uid://b5s2afxn66hsi::::res://Scenes/ArenaProps/portals.tscn<>uid://bifm3xkqlpxgv::::res://Scenes/ArenaProps/Jungle/key.tscn<>uid://17imy3nkqo68::::res://Scenes/ArenaProps/Jungle/seed.tscn
+jungle_arena_1.tscn::PackedScene::2612989698555678816::1691276388::0::1::::<><>::uid://b173nty7vrr31::::res://Scenes/Arenas/jungle_arena_base.tscn<>uid://digbyp3l8ibht::::res://Scenes/ArenaProps/one_way_platform.tscn<>uid://dgx3r8rj2rqk0::::res://Sprites/Misc/JungleOneWayPlatform.png<>uid://yj7wxv6sle14::::res://Scenes/ArenaProps/leaf_block.tscn<>uid://460412mt4ky1::::res://Scenes/Tools/EnemyTools/collision_damage.tscn<>uid://17imy3nkqo68::::res://Scenes/ArenaProps/Jungle/seed.tscn<>uid://caymikuq4sssi::::res://Scenes/ArenaProps/Jungle/jungle_tree.tscn<>uid://bwjwxiirovhjb::::res://Scenes/ArenaProps/Jungle/lock_block.tscn<>uid://bifm3xkqlpxgv::::res://Scenes/ArenaProps/Jungle/key.tscn<>uid://b5s2afxn66hsi::::res://Scenes/ArenaProps/portals.tscn<>uid://dxi16ato1by5j::::res://Scenes/ArenaProps/Jungle/wind_area.tscn<>res://Shaders/color_replace.gdshader
+jungle_arena_2.tscn::PackedScene::9154602757704606546::1691273936::0::1::::<><>::uid://b173nty7vrr31::::res://Scenes/Arenas/jungle_arena_base.tscn<>uid://dxi16ato1by5j::::res://Scenes/ArenaProps/Jungle/wind_area.tscn<>uid://digbyp3l8ibht::::res://Scenes/ArenaProps/one_way_platform.tscn<>res://Shaders/color_replace.gdshader<>uid://caymikuq4sssi::::res://Scenes/ArenaProps/Jungle/jungle_tree.tscn<>uid://dgx3r8rj2rqk0::::res://Sprites/Misc/JungleOneWayPlatform.png<>uid://yj7wxv6sle14::::res://Scenes/ArenaProps/leaf_block.tscn<>uid://bwjwxiirovhjb::::res://Scenes/ArenaProps/Jungle/lock_block.tscn<>uid://b5s2afxn66hsi::::res://Scenes/ArenaProps/portals.tscn<>uid://bifm3xkqlpxgv::::res://Scenes/ArenaProps/Jungle/key.tscn<>uid://17imy3nkqo68::::res://Scenes/ArenaProps/Jungle/seed.tscn
+jungle_arena_3.tscn::PackedScene::9028932041783485640::1691276945::0::1::::<><>::uid://b173nty7vrr31::::res://Scenes/Arenas/jungle_arena_base.tscn<>uid://digbyp3l8ibht::::res://Scenes/ArenaProps/one_way_platform.tscn<>res://Shaders/color_replace.gdshader<>uid://dgx3r8rj2rqk0::::res://Sprites/Misc/JungleOneWayPlatform.png<>uid://caymikuq4sssi::::res://Scenes/ArenaProps/Jungle/jungle_tree.tscn<>uid://b5s2afxn66hsi::::res://Scenes/ArenaProps/portals.tscn<>uid://dxi16ato1by5j::::res://Scenes/ArenaProps/Jungle/wind_area.tscn<>uid://yj7wxv6sle14::::res://Scenes/ArenaProps/leaf_block.tscn<>uid://17imy3nkqo68::::res://Scenes/ArenaProps/Jungle/seed.tscn
 jungle_arena_base.tscn::PackedScene::4279115034031724654::1691268092::0::1::::<><>::uid://dwicf5b18uev1::::res://Scenes/Arenas/arena_base.tscn<>uid://bobobvmnurwd5::::res://Sprites/Background/JungleTrainBackground.png<>res://Shaders/color_replace.gdshader
 ::res://Scenes/Effects/::1691272286
 barrel_destroy_effect.tscn::PackedScene::7910930589171264849::1688475055::0::1::::<><>::uid://dltworcmti20e<>res://Scenes/Effects/ParticlesEffect.gd<>uid://bj8gvkgsbldw
@@ -316,13 +317,13 @@ IceExplosion.gd::GDScript::-1::1688765859::0::1::::<>Explosion<>::
 ice_bomb.tscn::PackedScene::8628992619875260249::1689094461::0::1::::<><>::res://Bomb.gd<>uid://by75m07u6y3gr
 ice_explosion.tscn::PackedScene::4138857321914249469::1688766541::0::1::::<><>::res://Scenes/Entities/Misc/IceExplosion.gd<>uid://cnhlocgpduw2p
 Trail.gd::GDScript::-1::1688763992::0::1::::<>Line2D<>::
-::res://Scenes/Entities/Pickups/::1689349883
+::res://Scenes/Entities/Pickups/::1691276962
 energy_pickup.tscn::PackedScene::4769776446654412629::1688746947::0::1::::<><>::uid://cduaek24i8wxp
 health_pickup.tscn::PackedScene::120907354807615482::1688744612::0::1::::<><>::uid://cduaek24i8wxp
-pickup_base.tscn::PackedScene::5024703164829976285::1688750438::0::1::::<><>::res://Scripts/Entities/Pickups/Pickup.gd<>uid://cv84gq5ejq5gu
-::res://Scenes/Entities/Players/::1691272361
+pickup_base.tscn::PackedScene::5024703164829976285::1691276962::0::1::::<><>::res://Scripts/Entities/Pickups/Pickup.gd<>uid://cv84gq5ejq5gu::::res://Sprites/Pickups/Health_Pickup.png
+::res://Scenes/Entities/Players/::1691276945
 DefaultPlayerAnimations.gd::GDScript::-1::1686924282::0::1::::<>PlayerAnimations<>::
-default_player.tscn::PackedScene::8695530874562237413::1691272361::0::1::::<><>::res://Scripts/Entities/Player/Player.gd<>uid://bnx60flo0qggv::::res://Resources/Entities/Player/DefaultPlayerMovementData.tres<>res://Shaders/OutlineShader.gdshader<>uid://bha1tvdc8x88v::::res://Sprites/Entities/Players/DefaultPlayerSpriteSheet.png<>uid://cfoemwbbnhoxt::::res://Scenes/Tools/health_manager.tscn<>res://Scenes/Entities/Players/DefaultPlayerAnimations.gd<>uid://b7lq6gjy6c3df::::res://Scenes/Tools/hurtbox.tscn<>uid://by7paajtwxm1j::::res://Sprites/Effects/PlayerRunParticles.png<>res://Scenes/Entities/Players/EnergyManager.gd<>res://Scenes/Tools/PlayerHealthManager.gd<>res://Scripts/Entities/Player/PlayerGun.gd<>uid://bdr5173wns2s1::::res://Resources/Guns/Shotgun.tres<>uid://cqd2tcwsc6ars::::res://Resources/Guns/SMG.tres<>res://Scenes/Entities/Players/PlayerCamera.gd<>res://Scripts/Entities/Player/PlayerAbilities.gd<>res://Scripts/Entities/Player/Abilities/AbilityBase.gd<>res://Scripts/Entities/Player/Abilities/ObjectSpawnAbility.gd<>uid://c5xpyx4lug1ft::::res://Scenes/Entities/Misc/bomb.tscn<>res://Scenes/Entities/Players/PlayerRollAbility.gd<>uid://ctoxm2mh6bdp7::::res://Sprites/Guns/DefaultPlayerGuns.png<>uid://du67ionc4r786::::res://Scenes/Entities/Misc/ice_bomb.tscn<>uid://de08g8usoxyty::::res://Sprites/Abilities/DefaultPlayerIceGrenadeSprite.png<>uid://c378q8gnl3k4a::::res://Sprites/Abilities/DefaultPlayerBombSprite.png<>uid://cdg5pjvsn3wxb::::res://Sprites/UI/DefaultPlayerRollIcon.png<>res://Scripts/Entities/Player/Abilities/MagnetAbility.gd<>uid://dlseb4whqrry5::::res://Scenes/Tools/overhead_health_bar.tscn<>res://Scenes/Tools/PlayerOverheadHealthBar.gd<>res://Scripts/Entities/Player/PlayerMagnet.gd
+default_player.tscn::PackedScene::8695530874562237413::1691276945::0::1::::<><>::res://Scripts/Entities/Player/Player.gd<>uid://bnx60flo0qggv::::res://Resources/Entities/Player/DefaultPlayerMovementData.tres<>res://Shaders/OutlineShader.gdshader<>uid://bha1tvdc8x88v::::res://Sprites/Entities/Players/DefaultPlayerSpriteSheet.png<>uid://cfoemwbbnhoxt::::res://Scenes/Tools/health_manager.tscn<>res://Scenes/Entities/Players/DefaultPlayerAnimations.gd<>uid://b7lq6gjy6c3df::::res://Scenes/Tools/hurtbox.tscn<>uid://by7paajtwxm1j::::res://Sprites/Effects/PlayerRunParticles.png<>res://Scenes/Entities/Players/EnergyManager.gd<>res://Scenes/Tools/PlayerHealthManager.gd<>res://Scripts/Entities/Player/PlayerGun.gd<>uid://bdr5173wns2s1::::res://Resources/Guns/Shotgun.tres<>uid://cqd2tcwsc6ars::::res://Resources/Guns/SMG.tres<>res://Scenes/Entities/Players/PlayerCamera.gd<>res://Scripts/Entities/Player/PlayerAbilities.gd<>res://Scripts/Entities/Player/Abilities/AbilityBase.gd<>res://Scripts/Entities/Player/Abilities/ObjectSpawnAbility.gd<>uid://c5xpyx4lug1ft::::res://Scenes/Entities/Misc/bomb.tscn<>res://Scenes/Entities/Players/PlayerRollAbility.gd<>uid://ctoxm2mh6bdp7::::res://Sprites/Guns/DefaultPlayerGuns.png<>uid://du67ionc4r786::::res://Scenes/Entities/Misc/ice_bomb.tscn<>uid://de08g8usoxyty::::res://Sprites/Abilities/DefaultPlayerIceGrenadeSprite.png<>uid://c378q8gnl3k4a::::res://Sprites/Abilities/DefaultPlayerBombSprite.png<>uid://cdg5pjvsn3wxb::::res://Sprites/UI/DefaultPlayerRollIcon.png<>res://Scripts/Entities/Player/Abilities/MagnetAbility.gd<>uid://dlseb4whqrry5::::res://Scenes/Tools/overhead_health_bar.tscn<>res://Scenes/Tools/PlayerOverheadHealthBar.gd<>res://Scripts/Entities/Player/PlayerMagnet.gd
 DestroyAfterTime.gd::GDScript::-1::1686839360::0::1::::DestroyAfterTime<>GPUParticles2D<>::
 EnergyManager.gd::GDScript::-1::1686670735::0::1::::EnergyManager<>Node2D<>::
 PlayerAnimations.gd::GDScript::-1::1690224532::0::1::::PlayerAnimations<>AnimatedSprite2D<>::
@@ -443,10 +444,10 @@ TargetStateMachine.gd::GDScript::-1::1688737487::0::1::::TargetStateMachine<>Ene
 ::res://Scripts/Entities/Misc/::1689349884
 Barrel.gd::GDScript::-1::1688766086::0::1::::Barrel<>RigidBody2D<>::
 Entity.gd::GDScript::-1::1687461701::0::1::::Entity<>RigidBody2D<>::
-::res://Scripts/Entities/Pickups/::1689349884
+::res://Scripts/Entities/Pickups/::1691276944
 EnergyPickup.gd::GDScript::-1::1685647782::0::1::::<>Pickup<>::
 HealthPickup.gd::GDScript::-1::1685647778::0::1::::<>Pickup<>::
-Pickup.gd::GDScript::-1::1688749120::0::1::::Pickup<>Area2D<>::
+Pickup.gd::GDScript::-1::1691276944::0::1::::Pickup<>Area2D<>::
 ::res://Scripts/Entities/Player/::1691253477
 Player.gd::GDScript::-1::1691253477::0::1::::Player<>PlayerMovement<>::
 PlayerAbilities.gd::GDScript::-1::1690388384::0::1::::PlayerAbilities<>Node2D<>::
@@ -482,8 +483,8 @@ PlayerMovementData.gd::GDScript::-1::1686606166::0::1::::PlayerMovementData<>Res
 ProjectileGun.gd::GDScript::-1::1689190914::0::1::::ProjectileGun<>Gun<>::
 TargetDropPool.gd::GDScript::-1::1686001954::0::1::::TargetDropPool<>Resource<>::
 TargetEnemyData.gd::GDScript::-1::1685563490::0::1::::TargetEnemyData<>EnemyData<>::
-::res://Scripts/Singletons/::1691266947
-AudioManager.gd::GDScript::-1::1689692454::0::1::::<>Node2D<>::
+::res://Scripts/Singletons/::1691276882
+AudioManager.gd::GDScript::-1::1691276882::0::1::::<>Node2D<>::
 CameraManager.gd::GDScript::-1::1688736715::0::1::::<>Camera2D<>::
 DrawUtils.gd::GDScript::-1::1688755296::0::1::::<>Node2D<>::
 GameEvents.gd::GDScript::-1::1690289148::0::1::::<>Node<>::
@@ -534,16 +535,16 @@ RetractingSpikes.gd::GDScript::-1::1689516947::0::1::::<>Area2D<>::
 SpeedModifier.gd::GDScript::-1::1688737433::0::1::::SpeedBooster<>Area2D<>::
 Stomper.gd::GDScript::-1::1689164038::0::1::::<>StaticBody2D<>::
 WindArea.gd::GDScript::-1::1691270643::0::1::::<>Area2D<>::
-::res://Shaders/::1691272361
+::res://Shaders/::1691276995
 background_shader.gdshader::Shader::-1::1686839037::0::1::::<><>::
 BigTextShader.gdshader::Shader::-1::1687224069::0::1::::<><>::
 Blink.gdshader::Shader::-1::1687625988::0::1::::<><>::
-bubble_target.gdshader::Shader::-1::1691272361::0::1::::<><>::
-color_replace.gdshader::Shader::-1::1691272361::0::1::::<><>::
+bubble_target.gdshader::Shader::-1::1691276995::0::1::::<><>::
+color_replace.gdshader::Shader::-1::1691276995::0::1::::<><>::
 freeze_shader.gdshader::Shader::-1::1686856053::0::1::::<><>::
 GhostShader.gdshader::Shader::-1::1687625988::0::1::::<><>::
 ObjectShockwave.gdshader::Shader::-1::1687125873::0::1::::<><>::
-OutlineShader.gdshader::Shader::-1::1691272361::0::1::::<><>::
+OutlineShader.gdshader::Shader::-1::1691276995::0::1::::<><>::
 Shockwave.gdshader::Shader::-1::1687125873::0::1::::<><>::
 ::res://Sprites/::1689349884
 background_shader.gdshader::Shader::-1::1686666671::0::1::::<><>::

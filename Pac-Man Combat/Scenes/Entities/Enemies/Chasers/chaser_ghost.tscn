@@ -1,9 +1,10 @@
-[gd_scene load_steps=66 format=3 uid="uid://dq4ktf3nlttk7"]
+[gd_scene load_steps=68 format=3 uid="uid://dq4ktf3nlttk7"]
 
 [ext_resource type="PackedScene" uid="uid://byf88knlr3kiy" path="res://Scenes/Entities/Enemies/Chasers/enemy_chaser_base.tscn" id="1_e0j3l"]
 [ext_resource type="PackedScene" uid="uid://c7xcbddyitqet" path="res://Scenes/Tools/EnemyTools/Movement/escape_movement.tscn" id="2_1acq8"]
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/Movement/PlayerGhostMovement.gd" id="2_3yolg"]
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/StateMachines/ChaserGhost.gd" id="2_y6box"]
+[ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="5_iv15d"]
 [ext_resource type="Shader" path="res://Shaders/GhostShader.gdshader" id="5_s0xcv"]
 [ext_resource type="PackedScene" uid="uid://460412mt4ky1" path="res://Scenes/Tools/EnemyTools/collision_damage.tscn" id="6_1a4am"]
 [ext_resource type="Texture2D" uid="uid://bha1tvdc8x88v" path="res://Sprites/Entities/Players/DefaultPlayerSpriteSheet.png" id="6_7tee0"]
@@ -14,6 +15,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg3bk"]
 resource_local_to_scene = true
 size = Vector2(16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n2h42"]
+font = ExtResource("5_iv15d")
+font_color = Color(1, 1, 1, 0.313726)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7b01j"]
 resource_local_to_scene = true
@@ -445,6 +450,16 @@ push_force = 0.0
 
 [node name="PlayerGhostMovement" type="Node2D" parent="Movement" index="1"]
 script = ExtResource("2_3yolg")
+
+[node name="DebugLabel" type="Label" parent="Movement/PlayerGhostMovement" index="0"]
+offset_left = -19.0
+offset_top = -63.0
+offset_right = 21.0
+offset_bottom = -37.0
+text = "5"
+label_settings = SubResource("LabelSettings_n2h42")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hurtbox" parent="." index="3"]
 position = Vector2(0, -16)

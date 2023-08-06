@@ -51,6 +51,7 @@ offset_right = 1360.0
 offset_bottom = 228.0
 texture = ExtResource("2_l0t7w")
 stretch_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Far" type="Panel" parent="Map/Level/Background" index="0"]
 z_index = -1
@@ -67,9 +68,7 @@ offset_bottom = 800.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8q8pi")
-
-[node name="NavigationMap" parent="Map" index="1"]
-position = Vector2(0, 0)
+metadata/_edit_lock_ = true
 
 [node name="Shape" parent="Map/Entrance" index="0"]
 shape = SubResource("RectangleShape2D_pd1ti")

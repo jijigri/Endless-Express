@@ -1,3 +1,5 @@
+res://Scripts/UI
+res://Scenes/UI
 res://Scenes/Arenas
 res://Sprites/Effects
 res://Resources/Biomes
@@ -13,8 +15,6 @@ res://Scenes/ArenaProps
 res://Scripts/Tools
 D:/Godot Games/Builds/EndlessExpress/v0.3a
 res://Scripts/Entities/Player/Abilities
-res://Scripts/UI
-res://Scenes/UI
 res://Scripts/Singletons
 res://Resources/PlayableCharacters
 res://Scenes/Singletons

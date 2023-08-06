@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://chw0ydc058ox0"]
+[gd_scene load_steps=29 format=3 uid="uid://chw0ydc058ox0"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_lg5uc"]
 [ext_resource type="PackedScene" uid="uid://cgo148uilrd2s" path="res://Scenes/Arenas/arena_test_1.tscn" id="2_1lhxp"]
 [ext_resource type="Script" path="res://Scripts/ArenaManager.gd" id="2_ii7w5"]
 [ext_resource type="PackedScene" uid="uid://dc8ngtaahwest" path="res://Scenes/Arenas/arena_test_3.tscn" id="3_2lpal"]
+[ext_resource type="PackedScene" uid="uid://b4ovmjflwvwsd" path="res://Scenes/Arenas/jungle_arena_4.tscn" id="3_qcf2j"]
 [ext_resource type="PackedScene" uid="uid://kanbh3luanee" path="res://Scenes/Arenas/arena_test_4.tscn" id="3_ria7w"]
 [ext_resource type="PackedScene" uid="uid://bdh0s8yeyx4m3" path="res://Scenes/Arenas/jungle_arena_1.tscn" id="3_v7soj"]
 [ext_resource type="PackedScene" uid="uid://b26pryaeluhog" path="res://Scenes/Arenas/arena_test_2.tscn" id="4_4d446"]
@@ -15,7 +16,7 @@
 [ext_resource type="Script" path="res://Scripts/Misc/AutomaticParallaxBackground.gd" id="12_v2wr0"]
 [ext_resource type="Texture2D" uid="uid://dvpmw8lvylxt" path="res://Sprites/Background/ParallaxBackground.png" id="13_818sd"]
 
-[sub_resource type="Resource" id="Resource_s31jv"]
+[sub_resource type="Resource" id="Resource_toys0"]
 resource_local_to_scene = true
 script = ExtResource("5_y3ork")
 speed = 240.0
@@ -89,12 +90,13 @@ script = ExtResource("1_lg5uc")
 
 [node name="ArenaManager" type="Node2D" parent="." groups=["ArenaManager"]]
 script = ExtResource("2_ii7w5")
+solo_arena = ExtResource("3_qcf2j")
 arena_pool = Array[PackedScene]([ExtResource("2_1lhxp"), ExtResource("4_4d446"), ExtResource("3_2lpal"), ExtResource("3_ria7w"), ExtResource("3_v7soj")])
 biome_pool = Array[Resource("res://Scripts/Resources/BiomeData.gd")]([ExtResource("9_ywl3c"), ExtResource("10_jvpsu")])
 
 [node name="Player" parent="." instance=ExtResource("4_hdyj7")]
 position = Vector2(0, 0)
-movement_data = SubResource("Resource_s31jv")
+movement_data = SubResource("Resource_toys0")
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_cm2bt")

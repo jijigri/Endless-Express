@@ -235,8 +235,6 @@ animations = [{
 }]
 
 [node name="ChaserEagle" node_paths=PackedStringArray("retreat_movement", "default_movement") instance=ExtResource("1_d4j8o")]
-collision_mask = 4
-continuous_cd = 1
 max_contacts_reported = 8
 contact_monitor = true
 linear_damp = 8.0

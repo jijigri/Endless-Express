@@ -1,5 +1,7 @@
 extends EntityMovement
 
+@onready var debug_label: Label = $DebugLabel
+
 signal received_player_data(data: PlayerData)
 
 func _ready() -> void:
@@ -9,6 +11,10 @@ func _ready() -> void:
 func set_pos():
 	var rand_index = PlayerDataQueue.max_queue_size - ((PlayerDataQueue.current_number_of_ghosts) * PlayerDataQueue.frames_between_ghosts)
 	while true:
+		if rand_index > PlayerDataQueue.max_queue_size - PlayerDataQueue.frames_between_ghosts:
+			rand_index = PlayerDataQueue.max_queue_size - PlayerDataQueue.frames_between_ghosts
+		
+		debug_label.text = str(rand_index)
 		if speed_modifier >= 1:
 			var data = PlayerDataQueue.get_data(rand_index)
 			if data != null:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://bdh0s8yeyx4m3"]
+[gd_scene load_steps=121 format=3 uid="uid://bdh0s8yeyx4m3"]
 
 [ext_resource type="PackedScene" uid="uid://b173nty7vrr31" path="res://Scenes/Arenas/jungle_arena_base.tscn" id="1_72e0w"]
 [ext_resource type="PackedScene" uid="uid://digbyp3l8ibht" path="res://Scenes/ArenaProps/one_way_platform.tscn" id="2_wnlvx"]
@@ -13,59 +13,79 @@
 [ext_resource type="PackedScene" uid="uid://dxi16ato1by5j" path="res://Scenes/ArenaProps/Jungle/wind_area.tscn" id="11_ephpl"]
 [ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="12_nwp7i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5wu2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk5c5"]
 resource_local_to_scene = true
 size = Vector2(208, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2c02"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arpvh"]
 resource_local_to_scene = true
 size = Vector2(336, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v522v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55c04"]
 resource_local_to_scene = true
 size = Vector2(432, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_831k3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exehy"]
 resource_local_to_scene = true
 size = Vector2(560, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc8h6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k41bp"]
 resource_local_to_scene = true
 size = Vector2(448, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_264ad"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1bah"]
 resource_local_to_scene = true
 size = Vector2(224, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx5gt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f3vt"]
+resource_local_to_scene = true
+size = Vector2(224, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pt4jt"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dboii"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnj2u"]
+resource_local_to_scene = true
+size = Vector2(80, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrqgf"]
+resource_local_to_scene = true
+size = Vector2(224, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox3dl"]
+resource_local_to_scene = true
+size = Vector2(224, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58vxn"]
 resource_local_to_scene = true
 size = Vector2(448, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdsjf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kjr6"]
+resource_local_to_scene = true
+size = Vector2(448, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8efw"]
 resource_local_to_scene = true
 size = Vector2(64, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvb0d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyjxv"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_gnl4r"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0y0i4"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnhdn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pg45c"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ufb5g"]
 load_path = "res://.godot/imported/LeafBlockSprite.png-a6bba6fb2203a0134bae510ad90be458.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m8534"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lxhx"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
@@ -85,7 +105,7 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_0sxth"]
 curve = SubResource("Curve_udiyd")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i5rlk"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p7jdu"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -109,25 +129,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4geu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o10l"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_qwt5n"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_k4pmn"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbv7w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqk4s"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yipct"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cah2v"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8armh"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qdl1i"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -151,25 +171,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bg1sc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vir0"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_wsfhd"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vbif3"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx6o1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vje2w"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_27x74"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pviqu"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7imae"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0xhvm"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -193,25 +213,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkh2k"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfdxn"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_exfgs"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_l4glx"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kn3sf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl52o"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hg5ex"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj6j1"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_45pye"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_624l3"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -235,25 +255,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b68ua"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0esrt"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_muvy2"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q34gv"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8823p"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk42d"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqatf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmd06"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rx7ib"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pwwt6"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -277,25 +297,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fidp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg0xx"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_xgluj"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_go7th"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eid3m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bspw2"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mypiv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1t6u"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pilsq"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fdex3"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -319,25 +339,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkfx5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgl4m"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_cb6e2"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_whvus"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_41x2i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llo4c"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0mnr0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp8jb"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pekrj"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rwa87"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -361,25 +381,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gjph"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khsmy"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_dag8k"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_gw7mc"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_skly0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wv0d"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jws8w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiwus"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kika0"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1yynt"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -403,25 +423,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yfls"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_op2cv"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_fll01"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_we62h"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lxbj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kvom"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mx5gf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xid3r"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yhprd"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ubmei"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -445,25 +465,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1xnt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_on0kf"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_ofwgr"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qgvfr"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r6t3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywmd3"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lqfdx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng05b"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ugkf2"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ya5jk"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -487,25 +507,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj1e4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvjnd"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_8lgpk"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_p0rb0"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jopcq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urabk"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rxtit"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy8wq"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xtc10"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a0p26"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -529,25 +549,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnmk0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hdn0"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_cw5uw"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_j78xw"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rym7v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5hb"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x0sxs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkxtg"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_303te"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7cepd"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -571,25 +591,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ju1g4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ydr2"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_21wbb"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7e3nr"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywvxn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2pg7"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f23u3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbbsa"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wiogj"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xbntn"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -613,25 +633,25 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4xwl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d76jo"]
 resource_local_to_scene = true
 size = Vector2(32, 32)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_titg3"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dk1tq"]
 vertices = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tku03"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl3tw"]
 resource_local_to_scene = true
 size = Vector2(40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqlkk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_04jrf"]
 resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_ufb5g")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a2ne7"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ipj7"]
 resource_local_to_scene = true
 lifetime_randomness = 0.75
 emission_shape = 3
@@ -655,26 +675,26 @@ turbulence_enabled = true
 turbulence_noise_strength = 20.0
 anim_offset_max = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsb5x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtdru"]
 size = Vector2(16, 96)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_vy4at"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_givhf"]
 vertices = PackedVector2Array(8, -40, 8, 56, -8, 56, -8, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -40, -8, 56, 8, 56, 8, -40)])
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_22i6q"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mf77j"]
 load_path = "res://.godot/imported/LockedBlock.png-52e9570f844ea748362edb093a600642.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cd08"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfnb0"]
 size = Vector2(16, 96)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_jhk5m"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_u3g0j"]
 vertices = PackedVector2Array(8, -40, 8, 56, -8, 56, -8, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -40, -8, 56, 8, 56, 8, -40)])
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s75kr"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l3tkr"]
 load_path = "res://.godot/imported/LockedBlock.png-52e9570f844ea748362edb093a600642.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pno1w"]
@@ -700,6 +720,36 @@ region = Rect2(0, 0, 8, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbmoo"]
 resource_local_to_scene = true
 size = Vector2(32, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plogf"]
+size = Vector2(248, 80)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e08kp"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(108, 36, 0)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+anim_speed_min = 0.4
+anim_speed_max = 0.6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d0yo"]
+size = Vector2(248, 64)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yo4if"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(108, 28, 0)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+anim_speed_min = 0.4
+anim_speed_max = 0.6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5gec"]
 size = Vector2(448, 32)
@@ -731,7 +781,7 @@ position = Vector2(-8, -40)
 size = 208.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform" index="0"]
-shape = SubResource("RectangleShape2D_f5wu2")
+shape = SubResource("RectangleShape2D_nk5c5")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform" index="1"]
 texture = ExtResource("3_nxq67")
@@ -742,7 +792,7 @@ position = Vector2(-312, -168)
 size = 336.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform2" index="0"]
-shape = SubResource("RectangleShape2D_j2c02")
+shape = SubResource("RectangleShape2D_arpvh")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform2" index="1"]
 texture = ExtResource("3_nxq67")
@@ -753,7 +803,7 @@ position = Vector2(344, -168)
 size = 432.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform3" index="0"]
-shape = SubResource("RectangleShape2D_v522v")
+shape = SubResource("RectangleShape2D_55c04")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform3" index="1"]
 texture = ExtResource("3_nxq67")
@@ -764,7 +814,7 @@ position = Vector2(312, -264)
 size = 560.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform4" index="0"]
-shape = SubResource("RectangleShape2D_831k3")
+shape = SubResource("RectangleShape2D_exehy")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform4" index="1"]
 texture = ExtResource("3_nxq67")
@@ -775,7 +825,7 @@ position = Vector2(-256, -264)
 size = 448.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform5" index="0"]
-shape = SubResource("RectangleShape2D_yc8h6")
+shape = SubResource("RectangleShape2D_k41bp")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform5" index="1"]
 texture = ExtResource("3_nxq67")
@@ -786,7 +836,7 @@ position = Vector2(368, 120)
 size = 224.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform6" index="0"]
-shape = SubResource("RectangleShape2D_264ad")
+shape = SubResource("RectangleShape2D_n1bah")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform6" index="1"]
 texture = ExtResource("3_nxq67")
@@ -797,7 +847,7 @@ position = Vector2(-368, 56)
 size = 224.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform7" index="0"]
-shape = SubResource("RectangleShape2D_264ad")
+shape = SubResource("RectangleShape2D_7f3vt")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform7" index="1"]
 texture = ExtResource("3_nxq67")
@@ -808,7 +858,7 @@ position = Vector2(-440, 144)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform8" index="0"]
-shape = SubResource("RectangleShape2D_gx5gt")
+shape = SubResource("RectangleShape2D_pt4jt")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform8" index="1"]
 texture = ExtResource("3_nxq67")
@@ -819,7 +869,7 @@ position = Vector2(-296, 144)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform14" index="0"]
-shape = SubResource("RectangleShape2D_gx5gt")
+shape = SubResource("RectangleShape2D_hnj2u")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform14" index="1"]
 texture = ExtResource("3_nxq67")
@@ -830,7 +880,7 @@ position = Vector2(-368, -40)
 size = 224.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform9" index="0"]
-shape = SubResource("RectangleShape2D_264ad")
+shape = SubResource("RectangleShape2D_rrqgf")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform9" index="1"]
 texture = ExtResource("3_nxq67")
@@ -841,7 +891,7 @@ position = Vector2(368, -40)
 size = 224.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform10" index="0"]
-shape = SubResource("RectangleShape2D_264ad")
+shape = SubResource("RectangleShape2D_ox3dl")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform10" index="1"]
 texture = ExtResource("3_nxq67")
@@ -852,7 +902,7 @@ position = Vector2(0, 56)
 size = 448.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform11" index="0"]
-shape = SubResource("RectangleShape2D_dboii")
+shape = SubResource("RectangleShape2D_58vxn")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform11" index="1"]
 texture = ExtResource("3_nxq67")
@@ -863,7 +913,7 @@ position = Vector2(0, 144)
 size = 448.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform12" index="0"]
-shape = SubResource("RectangleShape2D_dboii")
+shape = SubResource("RectangleShape2D_8kjr6")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform12" index="1"]
 texture = ExtResource("3_nxq67")
@@ -873,7 +923,7 @@ region_rect = Rect2(0, 0, 448, 16)
 position = Vector2(624, -168)
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform13" index="0"]
-shape = SubResource("RectangleShape2D_gdsjf")
+shape = SubResource("RectangleShape2D_m8efw")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform13" index="1"]
 texture = ExtResource("3_nxq67")
@@ -884,13 +934,13 @@ texture = ExtResource("3_nxq67")
 position = Vector2(-208, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock3" index="0"]
-shape = SubResource("RectangleShape2D_pvb0d")
+shape = SubResource("RectangleShape2D_fyjxv")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock3" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_gnl4r")
+navigation_polygon = SubResource("NavigationPolygon_0y0i4")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock3/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_pnhdn")
+shape = SubResource("RectangleShape2D_pg45c")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock3" index="3"]
 offset_left = -16.0
@@ -898,23 +948,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_m8534")
+texture = SubResource("AtlasTexture_2lxhx")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock3" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_i5rlk")
+process_material = SubResource("ParticleProcessMaterial_p7jdu")
 
 [node name="LeafBlock4" parent="Map/Level/LeafBlocks" index="1" instance=ExtResource("4_asj5n")]
 position = Vector2(-176, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock4" index="0"]
-shape = SubResource("RectangleShape2D_b4geu")
+shape = SubResource("RectangleShape2D_5o10l")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock4" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_qwt5n")
+navigation_polygon = SubResource("NavigationPolygon_k4pmn")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock4/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_qbv7w")
+shape = SubResource("RectangleShape2D_mqk4s")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock4" index="3"]
 offset_left = -16.0
@@ -922,23 +972,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_yipct")
+texture = SubResource("AtlasTexture_cah2v")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock4" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_8armh")
+process_material = SubResource("ParticleProcessMaterial_qdl1i")
 
 [node name="LeafBlock5" parent="Map/Level/LeafBlocks" index="2" instance=ExtResource("4_asj5n")]
 position = Vector2(-144, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock5" index="0"]
-shape = SubResource("RectangleShape2D_bg1sc")
+shape = SubResource("RectangleShape2D_7vir0")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock5" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_wsfhd")
+navigation_polygon = SubResource("NavigationPolygon_vbif3")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock5/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_vx6o1")
+shape = SubResource("RectangleShape2D_vje2w")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock5" index="3"]
 offset_left = -16.0
@@ -946,23 +996,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_27x74")
+texture = SubResource("AtlasTexture_pviqu")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock5" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_7imae")
+process_material = SubResource("ParticleProcessMaterial_0xhvm")
 
 [node name="LeafBlock6" parent="Map/Level/LeafBlocks" index="3" instance=ExtResource("4_asj5n")]
 position = Vector2(-112, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock6" index="0"]
-shape = SubResource("RectangleShape2D_hkh2k")
+shape = SubResource("RectangleShape2D_rfdxn")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock6" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_exfgs")
+navigation_polygon = SubResource("NavigationPolygon_l4glx")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock6/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_kn3sf")
+shape = SubResource("RectangleShape2D_xl52o")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock6" index="3"]
 offset_left = -16.0
@@ -970,23 +1020,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_hg5ex")
+texture = SubResource("AtlasTexture_bj6j1")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock6" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_45pye")
+process_material = SubResource("ParticleProcessMaterial_624l3")
 
 [node name="LeafBlock7" parent="Map/Level/LeafBlocks" index="4" instance=ExtResource("4_asj5n")]
 position = Vector2(-80, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock7" index="0"]
-shape = SubResource("RectangleShape2D_b68ua")
+shape = SubResource("RectangleShape2D_0esrt")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock7" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_muvy2")
+navigation_polygon = SubResource("NavigationPolygon_q34gv")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock7/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_8823p")
+shape = SubResource("RectangleShape2D_vk42d")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock7" index="3"]
 offset_left = -16.0
@@ -994,23 +1044,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_mqatf")
+texture = SubResource("AtlasTexture_fmd06")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock7" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_rx7ib")
+process_material = SubResource("ParticleProcessMaterial_pwwt6")
 
 [node name="LeafBlock8" parent="Map/Level/LeafBlocks" index="5" instance=ExtResource("4_asj5n")]
 position = Vector2(-48, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock8" index="0"]
-shape = SubResource("RectangleShape2D_2fidp")
+shape = SubResource("RectangleShape2D_hg0xx")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock8" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_xgluj")
+navigation_polygon = SubResource("NavigationPolygon_go7th")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock8/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_eid3m")
+shape = SubResource("RectangleShape2D_bspw2")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock8" index="3"]
 offset_left = -16.0
@@ -1018,23 +1068,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_mypiv")
+texture = SubResource("AtlasTexture_l1t6u")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock8" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_pilsq")
+process_material = SubResource("ParticleProcessMaterial_fdex3")
 
 [node name="LeafBlock9" parent="Map/Level/LeafBlocks" index="6" instance=ExtResource("4_asj5n")]
 position = Vector2(-16, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock9" index="0"]
-shape = SubResource("RectangleShape2D_tkfx5")
+shape = SubResource("RectangleShape2D_jgl4m")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock9" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_cb6e2")
+navigation_polygon = SubResource("NavigationPolygon_whvus")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock9/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_41x2i")
+shape = SubResource("RectangleShape2D_llo4c")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock9" index="3"]
 offset_left = -16.0
@@ -1042,23 +1092,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_0mnr0")
+texture = SubResource("AtlasTexture_gp8jb")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock9" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_pekrj")
+process_material = SubResource("ParticleProcessMaterial_rwa87")
 
 [node name="LeafBlock10" parent="Map/Level/LeafBlocks" index="7" instance=ExtResource("4_asj5n")]
 position = Vector2(16, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock10" index="0"]
-shape = SubResource("RectangleShape2D_4gjph")
+shape = SubResource("RectangleShape2D_khsmy")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock10" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_dag8k")
+navigation_polygon = SubResource("NavigationPolygon_gw7mc")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock10/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_skly0")
+shape = SubResource("RectangleShape2D_5wv0d")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock10" index="3"]
 offset_left = -16.0
@@ -1066,23 +1116,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_jws8w")
+texture = SubResource("AtlasTexture_qiwus")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock10" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_kika0")
+process_material = SubResource("ParticleProcessMaterial_1yynt")
 
 [node name="LeafBlock11" parent="Map/Level/LeafBlocks" index="8" instance=ExtResource("4_asj5n")]
 position = Vector2(48, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock11" index="0"]
-shape = SubResource("RectangleShape2D_1yfls")
+shape = SubResource("RectangleShape2D_op2cv")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock11" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_fll01")
+navigation_polygon = SubResource("NavigationPolygon_we62h")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock11/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_2lxbj")
+shape = SubResource("RectangleShape2D_5kvom")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock11" index="3"]
 offset_left = -16.0
@@ -1090,23 +1140,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_mx5gf")
+texture = SubResource("AtlasTexture_xid3r")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock11" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_yhprd")
+process_material = SubResource("ParticleProcessMaterial_ubmei")
 
 [node name="LeafBlock12" parent="Map/Level/LeafBlocks" index="9" instance=ExtResource("4_asj5n")]
 position = Vector2(80, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock12" index="0"]
-shape = SubResource("RectangleShape2D_f1xnt")
+shape = SubResource("RectangleShape2D_on0kf")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock12" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_ofwgr")
+navigation_polygon = SubResource("NavigationPolygon_qgvfr")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock12/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_2r6t3")
+shape = SubResource("RectangleShape2D_ywmd3")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock12" index="3"]
 offset_left = -16.0
@@ -1114,23 +1164,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_lqfdx")
+texture = SubResource("AtlasTexture_ng05b")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock12" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_ugkf2")
+process_material = SubResource("ParticleProcessMaterial_ya5jk")
 
 [node name="LeafBlock13" parent="Map/Level/LeafBlocks" index="10" instance=ExtResource("4_asj5n")]
 position = Vector2(112, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock13" index="0"]
-shape = SubResource("RectangleShape2D_rj1e4")
+shape = SubResource("RectangleShape2D_jvjnd")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock13" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_8lgpk")
+navigation_polygon = SubResource("NavigationPolygon_p0rb0")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock13/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_jopcq")
+shape = SubResource("RectangleShape2D_urabk")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock13" index="3"]
 offset_left = -16.0
@@ -1138,23 +1188,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_rxtit")
+texture = SubResource("AtlasTexture_yy8wq")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock13" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_xtc10")
+process_material = SubResource("ParticleProcessMaterial_a0p26")
 
 [node name="LeafBlock14" parent="Map/Level/LeafBlocks" index="11" instance=ExtResource("4_asj5n")]
 position = Vector2(144, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock14" index="0"]
-shape = SubResource("RectangleShape2D_gnmk0")
+shape = SubResource("RectangleShape2D_6hdn0")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock14" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_cw5uw")
+navigation_polygon = SubResource("NavigationPolygon_j78xw")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock14/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_rym7v")
+shape = SubResource("RectangleShape2D_6t5hb")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock14" index="3"]
 offset_left = -16.0
@@ -1162,23 +1212,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_x0sxs")
+texture = SubResource("AtlasTexture_gkxtg")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock14" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_303te")
+process_material = SubResource("ParticleProcessMaterial_7cepd")
 
 [node name="LeafBlock15" parent="Map/Level/LeafBlocks" index="12" instance=ExtResource("4_asj5n")]
 position = Vector2(176, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock15" index="0"]
-shape = SubResource("RectangleShape2D_ju1g4")
+shape = SubResource("RectangleShape2D_5ydr2")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock15" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_21wbb")
+navigation_polygon = SubResource("NavigationPolygon_7e3nr")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock15/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_ywvxn")
+shape = SubResource("RectangleShape2D_y2pg7")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock15" index="3"]
 offset_left = -16.0
@@ -1186,23 +1236,23 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_f23u3")
+texture = SubResource("AtlasTexture_lbbsa")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock15" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_wiogj")
+process_material = SubResource("ParticleProcessMaterial_xbntn")
 
 [node name="LeafBlock16" parent="Map/Level/LeafBlocks" index="13" instance=ExtResource("4_asj5n")]
 position = Vector2(208, 240)
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock16" index="0"]
-shape = SubResource("RectangleShape2D_h4xwl")
+shape = SubResource("RectangleShape2D_d76jo")
 
 [node name="NavigationRegion2D" parent="Map/Level/LeafBlocks/LeafBlock16" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_titg3")
+navigation_polygon = SubResource("NavigationPolygon_dk1tq")
 
 [node name="CollisionShape2D" parent="Map/Level/LeafBlocks/LeafBlock16/DetectionArea" index="0"]
-shape = SubResource("RectangleShape2D_tku03")
+shape = SubResource("RectangleShape2D_sl3tw")
 
 [node name="NinePatchRect" parent="Map/Level/LeafBlocks/LeafBlock16" index="3"]
 offset_left = -16.0
@@ -1210,11 +1260,11 @@ offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
 pivot_offset = Vector2(16, 16)
-texture = SubResource("AtlasTexture_mqlkk")
+texture = SubResource("AtlasTexture_04jrf")
 
 [node name="Particles" parent="Map/Level/LeafBlocks/LeafBlock16" index="5"]
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_a2ne7")
+process_material = SubResource("ParticleProcessMaterial_6ipj7")
 
 [node name="LeafBlock" parent="Map/Level/LeafBlocks" index="14" instance=ExtResource("4_asj5n")]
 
@@ -1243,10 +1293,10 @@ color = 0
 
 [node name="CollisionShape2D" parent="Map/Level/Props/LockBlock" index="0"]
 position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_hsb5x")
+shape = SubResource("RectangleShape2D_vtdru")
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/LockBlock" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_vy4at")
+navigation_polygon = SubResource("NavigationPolygon_givhf")
 
 [node name="NinePatchRect" parent="Map/Level/Props/LockBlock" index="2"]
 offset_left = -8.0
@@ -1254,7 +1304,7 @@ offset_top = -40.0
 offset_right = 8.0
 offset_bottom = 56.0
 pivot_offset = Vector2(8, 48)
-texture = SubResource("CompressedTexture2D_22i6q")
+texture = SubResource("CompressedTexture2D_mf77j")
 
 [node name="Locks" parent="Map/Level/Props/LockBlock" index="4"]
 position = Vector2(0, 16)
@@ -1272,10 +1322,10 @@ color = 0
 
 [node name="CollisionShape2D" parent="Map/Level/Props/LockBlock2" index="0"]
 position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_0cd08")
+shape = SubResource("RectangleShape2D_rfnb0")
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/LockBlock2" index="1"]
-navigation_polygon = SubResource("NavigationPolygon_jhk5m")
+navigation_polygon = SubResource("NavigationPolygon_u3g0j")
 
 [node name="NinePatchRect" parent="Map/Level/Props/LockBlock2" index="2"]
 offset_left = -8.0
@@ -1283,7 +1333,7 @@ offset_top = -40.0
 offset_right = 8.0
 offset_bottom = 56.0
 pivot_offset = Vector2(8, 48)
-texture = SubResource("CompressedTexture2D_s75kr")
+texture = SubResource("CompressedTexture2D_l3tkr")
 
 [node name="Locks" parent="Map/Level/Props/LockBlock2" index="4"]
 position = Vector2(0, 16)
@@ -1319,10 +1369,38 @@ texture = SubResource("AtlasTexture_vrk6n")
 shape = SubResource("RectangleShape2D_mbmoo")
 
 [node name="WindArea" parent="Map/Level/Props" index="8" instance=ExtResource("11_ephpl")]
+force = 5000.0
+max_force = 300.0
+
+[node name="CollisionShape2D" parent="Map/Level/Props/WindArea" index="0"]
+position = Vector2(-44, -0.00012207)
+shape = SubResource("RectangleShape2D_plogf")
+
+[node name="GPUParticles2D" parent="Map/Level/Props/WindArea" index="1"]
+position = Vector2(-44, -0.00012207)
+amount = 78
+process_material = SubResource("ParticleProcessMaterial_e08kp")
+
+[node name="Source" parent="Map/Level/Props/WindArea" index="2"]
+target_position = Vector2(248, 0)
 
 [node name="WindArea2" parent="Map/Level/Props" index="9" instance=ExtResource("11_ephpl")]
 position = Vector2(64, -264)
+force = 5000.0
+max_force = 300.0
 width = 32.0
+
+[node name="CollisionShape2D" parent="Map/Level/Props/WindArea2" index="0"]
+position = Vector2(-44, -0.00012207)
+shape = SubResource("RectangleShape2D_6d0yo")
+
+[node name="GPUParticles2D" parent="Map/Level/Props/WindArea2" index="1"]
+position = Vector2(-44, -0.00012207)
+amount = 74
+process_material = SubResource("ParticleProcessMaterial_yo4if")
+
+[node name="Source" parent="Map/Level/Props/WindArea2" index="2"]
+target_position = Vector2(248, 0)
 
 [node name="Background" parent="Map/Level" index="3"]
 offset_top = -184.0
@@ -1393,5 +1471,7 @@ text = "JUNGLE_01"
 [editable path="Map/Level/Props/Portals"]
 [editable path="Map/Level/Props/Portals/PortalA"]
 [editable path="Map/Level/Props/Portals/PortalB"]
+[editable path="Map/Level/Props/WindArea"]
+[editable path="Map/Level/Props/WindArea2"]
 [editable path="Map/Level/VoidTrap"]
 [editable path="Map/Exit/OffScreenMarker"]

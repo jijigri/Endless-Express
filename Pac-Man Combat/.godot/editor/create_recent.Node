@@ -1,5 +1,8 @@
-Node2D
 Label
+Panel
+Control
+CanvasLayer
+Node2D
 LinkButton
 Button
 RayCast2D
@@ -16,14 +19,11 @@ HealthManager
 RigidBody2D
 CharacterBody2D
 NavigationRegion2D
-Panel
 TextureRect
 TileMap
 Line2D
 AudioStreamPlayer
 AudioStreamPlayer2D
-Control
-CanvasLayer
 HSplitContainer
 VBoxContainer
 HBoxContainer

@@ -11,11 +11,16 @@ extends RigidBody2D
 
 @onready var activated_sound = preload("res://Audio/SoundEffects/ArenaProps/Seeds/SeedsActivatedSound.wav")
 
+@onready var death_effect = preload("res://Scenes/Effects/bubble_death_effect.tscn")
+
 func _ready() -> void:
 	
 	if get_parent() is LeafBlock:
 		set_static()
 		get_parent().broke.connect(set_dynamic)
+	elif get_parent() is LockBlock:
+		set_static()
+		get_parent().opened.connect(set_dynamic)
 	
 	var collision_shape = $CollisionShape2D
 	collision_shape.shape = collision_shape.shape.duplicate()
@@ -47,8 +52,13 @@ func _on_health_manager_entity_killed() -> void:
 func kill():
 	drop()
 	
+	Global.spawn_object(death_effect, global_position)
+	
 	var instance = Global.spawn_object(ScenesPool.shockwave, global_position)
 	instance.initialize(0.26, 6.0, 0.5, 0.18)
+	
+	var audio_data = AudioData.new(preload("res://Audio/SoundEffects/Enemies/TargetDeathSound.wav"), global_position)
+	AudioManager.play_sound(audio_data)
 	
 	queue_free()
 

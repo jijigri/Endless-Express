@@ -15,6 +15,9 @@ extends StaticBody2D
 @onready var health_manager = $HealthManager
 @onready var buttons: Node2D = $Buttons
 
+@onready var player_collision_shape: CollisionShape2D = $PlayerCollisionDamage/Area2D/CollisionShape2D
+@onready var enemy_collision_shape: CollisionShape2D = $EnemyCollisionDamage/Area2D/CollisionShape2D
+
 @onready var hurtbox1 = $Buttons/Button1/Hurtbox
 @onready var hurtbox2 = $Buttons/Button2/Hurtbox
 
@@ -34,6 +37,7 @@ func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		set_editor_size()
 	else:
+		set_editor_size()
 		if is_closed == false:
 			if timer.time_left < 3.0 - closing_time / 2 && countdown_index == 0:
 				countdown_index += 1
@@ -53,10 +57,16 @@ func set_editor_size():
 		collision_shape = $CollisionShape2D
 	
 	if player_collision_damage == null:
-		player_collision_damage = $CollisionDamage
+		player_collision_damage = $PlayerCollisionDamage
+		
+	if player_collision_shape == null:
+		player_collision_shape = $PlayerCollisionDamage/Area2D/CollisionShape2D
 	
 	if enemy_collision_damage == null:
-		enemy_collision_damage = $CollisionDamage
+		enemy_collision_damage = $EnemyCollisionDamage
+
+	if enemy_collision_shape == null:
+		enemy_collision_shape = $EnemyCollisionDamage/Area2D/CollisionShape2D
 	
 	var size: Vector2 = collision_shape.shape.size
 	var center: Vector2 = collision_shape.position
@@ -72,11 +82,11 @@ func set_editor_size():
 	polygon.make_polygons_from_outlines()
 	navigation_region.navigation_polygon = polygon
 	
-	var shape = player_collision_damage.get_node("Area2D/CollisionShape2D")
+	var shape = player_collision_shape
 	shape.position = collision_shape.position
 	shape.shape.size = collision_shape.shape.size - Vector2(4, 0)
 	
-	shape = enemy_collision_damage.get_node("Area2D/CollisionShape2D")
+	shape = enemy_collision_shape
 	shape.position = collision_shape.position
 	shape.shape.size = collision_shape.shape.size
 

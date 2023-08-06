@@ -1,4 +1,5 @@
 @tool
+class_name LockBlock
 extends Resizer
 
 @export var keys_parent: Node2D
