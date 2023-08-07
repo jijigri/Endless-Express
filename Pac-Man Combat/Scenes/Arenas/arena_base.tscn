@@ -122,6 +122,7 @@ position = Vector2(-576, 200)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("4_maydk")
+metadata/_edit_group_ = true
 
 [node name="Shape" type="CollisionShape2D" parent="Map/Entrance"]
 shape = SubResource("RectangleShape2D_n5ss1")
@@ -135,6 +136,7 @@ collision_layer = 4
 collision_mask = 0
 script = ExtResource("4_maydk")
 door_type = 1
+metadata/_edit_group_ = true
 
 [node name="Shape" type="CollisionShape2D" parent="Map/Exit"]
 shape = SubResource("RectangleShape2D_n5ss1")

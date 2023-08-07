@@ -51,3 +51,9 @@ res://Scenes/ArenaProps/leaf_block.tscn
 res://Scripts/World/ArenaProps/LeafBlock.gd
 res://Scenes/Arenas/arena_test_2.tscn
 res://default_bus_layout.tres
+res://Scenes/Entities/ResourcePacks/energy_resource_pack.tscn
+res://Scripts/ResourcePack.gd
+res://Scenes/Entities/Pickups/pickup_base.tscn
+res://Scenes/Arenas/jungle_arena_5.tscn
+res://Scenes/ArenaProps/jungle_platform.tscn
+res://Scenes/Arenas/arena_base.tscn

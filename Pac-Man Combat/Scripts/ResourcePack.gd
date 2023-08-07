@@ -7,6 +7,7 @@ enum TYPE {HEALTH, ENERGY}
 @export var magnet_speed: float = 1800.0
 @export var audio: AudioStream = preload("res://Audio/SoundEffects/Packs/HealthPack.wav")
 
+@onready var sprite: Sprite2D = $Sprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 var magnet_target: Node2D = null
@@ -15,6 +16,7 @@ var effect
 
 func _ready() -> void:
 	GameEvents.arena_cleared.connect(_on_arena_clear)
+	GameEvents.arena_exited.connect(_on_arena_clear)
 	
 	effect = preload("res://Scenes/Effects/energy_pack_obtained_effect.tscn")
 	
@@ -26,7 +28,10 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(8.0).timeout
 	
-	queue_free()
+	var tween = create_tween()
+	tween.tween_property(sprite, "scale", Vector2(1.1, 1.1), 0.02).set_ease(Tween.EASE_OUT)
+	tween.tween_property(sprite, "scale", Vector2(0.0, 0.0), 0.05).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_callback(destroy_pickup)
 
 func _physics_process(delta: float) -> void:
 	if magnet_target != null:
@@ -56,6 +61,7 @@ func pickup_obtained(player: CharacterBody2D) -> void:
 		Global.spawn_object(effect, global_position)
 
 func _on_arena_clear(arena: Arena):
+	
 	destroy_pickup()
 
 func destroy_pickup() -> void:

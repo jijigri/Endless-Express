@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfwjreqbpup7h"]
+
+[ext_resource type="Script" path="res://Scripts/OneWayPlatform.gd" id="1_hwgo6"]
+[ext_resource type="Texture2D" uid="uid://dgx3r8rj2rqk0" path="res://Sprites/Misc/JungleOneWayPlatform.png" id="2_cn301"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnojj"]
+resource_local_to_scene = true
+size = Vector2(64, 4)
+
+[node name="JunglePlatform" type="StaticBody2D" groups=["Platform", "Solid"]]
+z_index = -5
+position = Vector2(0, -56)
+collision_layer = 8
+collision_priority = 2.0
+script = ExtResource("1_hwgo6")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_tnojj")
+one_way_collision = true
+one_way_collision_margin = 8.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = -2
+texture_repeat = 2
+texture = ExtResource("2_cn301")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 16)
