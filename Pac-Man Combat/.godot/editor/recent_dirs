@@ -1,3 +1,5 @@
+D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5.1a
+res://Scenes
 res://Sprites/Abilities
 res://Scripts/Misc/StatusEffects
 res://Scenes/Misc/StatusEffects
@@ -5,9 +7,7 @@ res://Scripts/Entities/Misc
 res://Scenes/Entities/Misc
 res://Scripts/Entities/Player/Abilities
 res://Scenes/Abilities
-res://Scenes
 res://Scripts/Misc
-D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5.1a
 res://Scenes/Arenas
 res://Scripts/UI
 res://Scenes/UI
@@ -20,4 +20,3 @@ D:/Godot Games/Builds/EndlessExpress/v0.4a
 res://Scripts/Resources
 res://Scenes/ArenaProps/Jungle
 res://Scripts/World/ArenaProps
-D:/Godot Games/Builds/EndlessExpress/v0.3a

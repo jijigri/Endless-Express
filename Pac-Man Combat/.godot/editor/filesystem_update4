@@ -26,3 +26,8 @@ res://Scripts/Misc/StatusEffects/StaggerStatusEffect.gd
 res://Scenes/Entities/Bullets/bullet.tscn
 res://Scripts/Entities/Player/PlayerGun.gd
 res://Scripts/Entities/Misc/HomingMissile.gd
+res://Scenes/Arenas/arena_test_1.tscn
+res://Scenes/Arenas/train_arena_5.tscn
+res://default_bus_layout.tres
+res://Scenes/UI/player_hud.tscn
+res://Scenes/Entities/Enemies/Chasers/enemy_bat.tscn
