@@ -18,10 +18,12 @@ signal attack_performed
 signal attack_ended
 
 func _process(delta: float) -> void:
+	super._process(delta)
+	
 	if dont_shoot_automatically:
 		return
 	
-	if active == false:
+	if active == false || is_locked:
 		return
 	
 	if is_on_cooldown == false:
@@ -38,7 +40,7 @@ func start_shooting_sequence():
 	
 	await get_tree().create_timer(current_shot_start_time).timeout
 	
-	if !active:
+	if !active || is_locked:
 		return
 	
 	if !cancelled:

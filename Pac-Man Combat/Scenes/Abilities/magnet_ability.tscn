@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://btjancmqy3l0o"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Player/Abilities/MagnetAbility.gd" id="1_f50e1"]
+
+[sub_resource type="Curve" id="Curve_64yhd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.108761, 0), 0.0, 0.0, 0, 0, Vector2(0.208459, 1), 0.0, 0.0, 0, 0, Vector2(0.870091, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -18.7277, 0.0, 0, 0]
+point_count = 5
+
+[node name="MagnetAbility" type="Node2D" node_paths=PackedStringArray("magnet")]
+z_index = -8
+script = ExtResource("1_f50e1")
+magnet = NodePath("")
+magnet_radius = 92.0
+width_curve = SubResource("Curve_64yhd")
+energy_cost = 0.0

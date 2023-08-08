@@ -20,6 +20,10 @@ func _initiated():
 
 func disable_effect(called_from_manager: bool = false):
 	
+	if !active:
+		return
+	
+	
 	var tween = create_tween()
 	tween.tween_property(effect, "scale", Vector2.ZERO, 0.1).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_IN)
 	tween.tween_callback(effect.set_deferred.bind("visible", false))

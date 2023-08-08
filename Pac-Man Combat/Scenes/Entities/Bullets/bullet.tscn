@@ -68,7 +68,7 @@ particles_anim_loop = false
 _data = [Vector2(0, 0), 0.0, 13.1948, 0, 0, Vector2(0.0905512, 1), 0.0, 0.0, 0, 0, Vector2(0.590551, 1), -0.041234, -0.041234, 0, 0, Vector2(1, 0), -6.15757, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_nhdbf"]
+[sub_resource type="CurveTexture" id="CurveTexture_1rnha"]
 curve = SubResource("Curve_hn0eh")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s6rdf"]
@@ -80,7 +80,7 @@ gravity = Vector3(0, 98, 0)
 initial_velocity_max = 8.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-scale_curve = SubResource("CurveTexture_nhdbf")
+scale_curve = SubResource("CurveTexture_1rnha")
 color = Color(0.839216, 0.839216, 0.839216, 1)
 anim_offset_max = 1.0
 

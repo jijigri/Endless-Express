@@ -4,7 +4,7 @@ extends EnemyAttack
 @export var rigidbody_to_throw: PackedScene
 
 func throw(velocity: Vector2):
-	if !active:
+	if !active || is_locked:
 		return
 
 	var instance: RigidBody2D = Global.spawn_object(rigidbody_to_throw, global_position)

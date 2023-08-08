@@ -16,7 +16,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if !auto_monitor:
 		return
 	
-	if !active:
+	if !active || is_locked:
 		return
 	
 	if !can_attack:
@@ -32,7 +32,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			can_attack = false
 
 func check_damage():
-	if !active:
+	if !active || is_locked:
 		return
 	
 	if !can_attack:

@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	if can_explode == false:
 		return
 	
-	if frozen:
+	if frozen || is_staggered():
 		return
 	
 	if current_state == default_movement:
@@ -53,7 +53,7 @@ func explode():
 	
 	await get_tree().create_timer(time_to_explode).timeout
 	
-	if frozen:
+	if frozen || is_staggered():
 		can_explode = true
 		return
 	

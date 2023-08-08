@@ -15,10 +15,20 @@ extends Entity
 @onready var hit_effect = preload("res://Scenes/Effects/enemy_hit_effect.tscn")
 
 @onready var collision_shape = $CollisionShape2D
+@onready var hurtbox: Hurtbox = $Hurtbox
 
 var updating_direction: bool = true
 
 var frozen: bool = false
+var stagger_stacks: int = 0 : set = set_stagger_stacks
+
+var staggered: bool = false : get = is_staggered
+
+func set_stagger_stacks(value):
+	stagger_stacks = clamp(value, 0, 1000)
+
+func is_staggered() -> bool:
+	return stagger_stacks > 0
 
 func _ready() -> void:
 	for state in movement_states:

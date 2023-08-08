@@ -40,8 +40,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
+	set_gun_rotation()
+	
 	if active:
-		set_gun_rotation()
 		get_input()
 	
 	if current_ammos < ammo_count:

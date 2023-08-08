@@ -92,7 +92,7 @@ func on_arena_clear() -> void:
 func display_stat_titles():
 	if is_flawless:
 		await get_tree().create_timer(1.0).timeout
-		HUD.play_sliding_text("FLAWLESS\n+1", 0.8, 0.25)
+		HUD.play_sliding_text("FLAWLESS\n+1", 0.8, 0.75)
 
 func _on_player_damaged(current_health: float, max_health: float, value: float):
 	is_flawless = false

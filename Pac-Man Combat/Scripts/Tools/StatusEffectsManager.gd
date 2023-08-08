@@ -8,7 +8,8 @@ signal effect_removed(effect: String)
 
 var status_effects = {
 	"freeze": preload("res://Scenes/Misc/StatusEffects/freeze_status_effect.tscn"),
-	"hack": preload("res://Scenes/Misc/StatusEffects/hack_status_effect.tscn")
+	"hack": preload("res://Scenes/Misc/StatusEffects/hack_status_effect.tscn"),
+	"stagger": preload("res://Scenes/Misc/StatusEffects/stagger_status_effect.tscn")
 }
 
 var current_effects : Array[StatusEffect] = []

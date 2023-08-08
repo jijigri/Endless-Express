@@ -21,9 +21,9 @@ func _process(delta: float) -> void:
 		if get_child_count() >= 2:
 			use_ability(get_child(1))
 	elif Input.is_action_just_pressed("ability_3"):
-			if get_child_count() >= 3:
-				#use_ability(get_child(2))
-				print_debug("I don't have it yet")
+		if get_child_count() >= 3:
+			use_ability(get_child(2))
+			#print_debug("I don't have it yet")
 	
 	if current_cooldown > 0:
 		current_cooldown -= delta

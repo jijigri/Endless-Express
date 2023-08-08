@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cojbk6x81ge2g"]
+[gd_scene load_steps=31 format=3 uid="uid://cojbk6x81ge2g"]
 
 [ext_resource type="Script" path="res://Scripts/Singletons/PlayerHUD.gd" id="1_3hb1h"]
 [ext_resource type="Texture2D" uid="uid://cka7m7pym744y" path="res://Sprites/UI/HUDBars.png" id="2_kyhxa"]
@@ -57,6 +57,9 @@ region = Rect2(0, 130, 132, 12)
 resource_local_to_scene = true
 atlas = ExtResource("2_kyhxa")
 region = Rect2(0, 82, 132, 12)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7gfr"]
+font = ExtResource("9_am7ky")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pi8kp"]
 atlas = ExtResource("5_8o7ba")
@@ -240,10 +243,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -64.0
-offset_bottom = 42.0
+offset_left = -38.0
+offset_right = 10.0
+offset_bottom = 26.0
 grow_horizontal = 0
 text = "144"
+label_settings = SubResource("LabelSettings_v7gfr")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_0xndq")
@@ -313,5 +318,4 @@ texture = SubResource("AtlasTexture_e4qfe")
 position = Vector2(86, 64)
 
 [node name="AbilitySlot3" parent="Abilities" instance=ExtResource("9_nxxq3")]
-visible = false
 position = Vector2(126, 64)

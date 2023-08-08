@@ -29,6 +29,8 @@ func _ready() -> void:
 	animation.visible = false
 
 func _process(_delta: float) -> void:
+	super._process(_delta)
+	
 	if automatic:
 		if rigidbody != null:
 			distance = rigidbody.distance_to_player
@@ -42,7 +44,7 @@ func _process(_delta: float) -> void:
 				start_attack_sequence()
 
 func start_attack_sequence():
-	if !active:
+	if !active || is_locked:
 		return
 	
 	is_in_attack_sequence = true
@@ -52,7 +54,7 @@ func start_attack_sequence():
 	
 	await get_tree().create_timer(warmup_time).timeout
 	
-	if !active:
+	if !active || is_locked:
 		return
 	
 	var direction_to_player: Vector2 = global_position.direction_to(player.global_position).normalized()
@@ -68,7 +70,7 @@ func start_attack_sequence():
 	attack()
 
 func attack():
-	if !active:
+	if !active || is_locked:
 		return
 	
 	check_for_hits = true

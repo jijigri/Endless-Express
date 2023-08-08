@@ -14,7 +14,7 @@ func _initiated():
 	particles.restart()
 	drop_particles.restart()
 	
-	var size := Vector3(entity_owner.collision_shape.shape.size.x,entity_owner.collision_shape.shape.size.y, 0)
+	var size := Vector3(entity_owner.hurtbox.collision_shape.shape.size.x / 2,entity_owner.hurtbox.collision_shape.shape.size.y / 2, 0)
 	particles.process_material.emission_box_extents = size
 	particles.process_material.emission_box_extents = size
 	
@@ -35,6 +35,10 @@ func _initiated():
 	entity_owner.updating_direction = false
 
 func disable_effect(called_from_manager: bool = false):
+	
+	if !active:
+		return
+	
 	
 	particles.emitting = false
 	drop_particles.emitting = false

@@ -15,7 +15,7 @@ particles_anim_loop = false
 offsets = PackedFloat32Array(0, 0.87234, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fkoex"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jbpba"]
 gradient = SubResource("Gradient_qpgyw")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qgbvo"]
@@ -27,7 +27,7 @@ spread = 0.0
 gravity = Vector3(0, 0, 0)
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-color_ramp = SubResource("GradientTexture1D_fkoex")
+color_ramp = SubResource("GradientTexture1D_jbpba")
 anim_offset_max = 1.0
 
 [sub_resource type="Gradient" id="Gradient_ysoie"]
@@ -52,7 +52,6 @@ scale_max = 0.03
 color_ramp = SubResource("GradientTexture1D_1juxf")
 
 [node name="FreezeStatusEffect" instance=ExtResource("1_eftti")]
-z_index = 8
 script = ExtResource("2_84bpx")
 
 [node name="Particles" type="GPUParticles2D" parent="." index="1"]

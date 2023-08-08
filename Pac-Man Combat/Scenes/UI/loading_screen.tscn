@@ -7,6 +7,10 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0o1e"]
 bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_dfjyq"]
 font = ExtResource("1_cja13")
