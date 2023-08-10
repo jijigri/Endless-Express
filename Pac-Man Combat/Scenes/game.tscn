@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/DebugScreen.gd" id="15_g6u1k"]
 [ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="16_1yujc"]
 
-[sub_resource type="Resource" id="Resource_51u3a"]
+[sub_resource type="Resource" id="Resource_wivd7"]
 resource_local_to_scene = true
 script = ExtResource("5_y3ork")
 speed = 240.0
@@ -102,7 +102,7 @@ biome_pool = Array[Resource("res://Scripts/Resources/BiomeData.gd")]([ExtResourc
 
 [node name="Player" parent="." instance=ExtResource("4_hdyj7")]
 position = Vector2(0, 0)
-movement_data = SubResource("Resource_51u3a")
+movement_data = SubResource("Resource_wivd7")
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_cm2bt")

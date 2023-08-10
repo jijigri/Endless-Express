@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BiomeData" load_steps=9 format=3 uid="uid://c5rquu1ljmm3r"]
+[gd_resource type="Resource" script_class="BiomeData" load_steps=10 format=3 uid="uid://c5rquu1ljmm3r"]
 
 [ext_resource type="PackedScene" uid="uid://cgo148uilrd2s" path="res://Scenes/Arenas/arena_test_1.tscn" id="1_1em4f"]
 [ext_resource type="PackedScene" uid="uid://b26pryaeluhog" path="res://Scenes/Arenas/arena_test_2.tscn" id="2_1tjym"]
@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cc4cpootfap80" path="res://Scenes/Arenas/train_arena_5.tscn" id="5_lv5vu"]
 [ext_resource type="PackedScene" uid="uid://bn3sqfmfiewv0" path="res://Scenes/Arenas/train_arena_6.tscn" id="6_aepuu"]
 [ext_resource type="Script" path="res://Scripts/Resources/BiomeData.gd" id="6_w54ud"]
+[ext_resource type="PackedScene" uid="uid://b7ah8p8uaqtfu" path="res://Scenes/Arenas/train_arena_7.tscn" id="7_385bs"]
 
 [resource]
 script = ExtResource("6_w54ud")
 name = "Default"
-arenas = Array[PackedScene]([ExtResource("1_1em4f"), ExtResource("2_1tjym"), ExtResource("3_ldjwg"), ExtResource("4_3csei"), ExtResource("5_lv5vu"), ExtResource("6_aepuu")])
+arenas = Array[PackedScene]([ExtResource("1_1em4f"), ExtResource("2_1tjym"), ExtResource("3_ldjwg"), ExtResource("4_3csei"), ExtResource("5_lv5vu"), ExtResource("6_aepuu"), ExtResource("7_385bs")])
 min_level = 0
 music = ExtResource("5_blp2k")

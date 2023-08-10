@@ -9,7 +9,7 @@ func _ready() -> void:
 	set_message()
 
 func set_message():
-	var result: Dictionary = await LootLocker.get_leaderboard("main", 10).get_leaderboard_complete
+	var result: Dictionary = await LootLocker.get_leaderboard("main", 50).get_leaderboard_complete
 	var limit_index: int = 1
 	if result.items.size() > 0:
 		var score = result.items[0]

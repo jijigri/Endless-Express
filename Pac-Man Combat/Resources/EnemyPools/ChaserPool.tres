@@ -30,7 +30,7 @@ scene = ExtResource("3_rwrqm")
 
 [sub_resource type="Resource" id="Resource_irmkt"]
 script = ExtResource("2_63r82")
-level = 3
+level = 2
 min_weight = 0.25
 max_weight = 0.5
 min_wave_to_spawn_in = 4
@@ -39,7 +39,7 @@ scene = ExtResource("4_ryst8")
 
 [sub_resource type="Resource" id="Resource_p5152"]
 script = ExtResource("2_63r82")
-level = 4
+level = 3
 min_weight = 0.4
 max_weight = 0.7
 min_wave_to_spawn_in = 10
@@ -48,7 +48,7 @@ scene = ExtResource("5_h1v6g")
 
 [sub_resource type="Resource" id="Resource_gpsqh"]
 script = ExtResource("2_63r82")
-level = 2
+level = 3
 min_weight = 0.15
 max_weight = 0.5
 min_wave_to_spawn_in = 8

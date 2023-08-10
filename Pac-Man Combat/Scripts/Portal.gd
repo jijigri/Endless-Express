@@ -99,6 +99,8 @@ func on_player_on():
 			
 			var icon = Global.spawn_object(ScenesPool.cooldown_circle, Vector2.ZERO, 0, self)
 			var icon2 = Global.spawn_object(ScenesPool.cooldown_circle, Vector2.ZERO, 0, linked_portal)
+			icon.z_index = z_index + 1
+			icon2.z_index = z_index + 1
 			icon.set_cooldown(use_cooldown)
 			icon2.set_cooldown(use_cooldown)
 			

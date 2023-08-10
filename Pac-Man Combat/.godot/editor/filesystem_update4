@@ -62,3 +62,10 @@ res://Scripts/UI/DebugScreen.gd
 res://Scenes/Entities/Enemies/Chasers/chaser_ghost.tscn
 res://Scripts/ChaserSpawner.gd
 res://Scenes/Arenas/arena_base.tscn
+res://Scenes/UI/menu_leaderboard.tscn
+res://Scripts/UI/CustomLeaderboard.gd
+res://Scenes/main_menu.tscn
+res://Scripts/UI/MessageFromTheTop.gd
+res://Scenes/Arenas/train_arena_7.tscn
+res://Scenes/ArenaProps/portals.tscn
+res://Scripts/Portal.gd
