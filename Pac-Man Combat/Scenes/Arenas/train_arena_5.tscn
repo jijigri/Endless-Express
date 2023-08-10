@@ -54,7 +54,7 @@ size = Vector2(32, 80)
 resource_local_to_scene = true
 size = Vector2(144, 112)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_pu5p5"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sd1qx"]
 vertices = PackedVector2Array(80, -40, 80, 72, -64, 72, -64, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-64, -40, -64, 72, 80, 72, 80, -40)])
@@ -63,7 +63,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-64, -40, -64, 72, 80, 
 resource_local_to_scene = true
 size = Vector2(144, 112)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_s77ya"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rk2j8"]
 vertices = PackedVector2Array(80, -40, 80, 72, -64, 72, -64, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-64, -40, -64, 72, 80, 72, 80, -40)])
@@ -278,7 +278,7 @@ offset_right = 80.0
 offset_bottom = 72.0
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/Stomper" index="2"]
-navigation_polygon = SubResource("NavigationPolygon_pu5p5")
+navigation_polygon = SubResource("NavigationPolygon_sd1qx")
 
 [node name="CollisionShape2D" parent="Map/Level/Props/Stomper/PlayerCollisionDamage/Area2D" index="0"]
 position = Vector2(8, 16)
@@ -305,7 +305,7 @@ offset_right = 80.0
 offset_bottom = 72.0
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/Stomper2" index="2"]
-navigation_polygon = SubResource("NavigationPolygon_s77ya")
+navigation_polygon = SubResource("NavigationPolygon_rk2j8")
 
 [node name="CollisionShape2D" parent="Map/Level/Props/Stomper2/PlayerCollisionDamage/Area2D" index="0"]
 position = Vector2(8, 16)

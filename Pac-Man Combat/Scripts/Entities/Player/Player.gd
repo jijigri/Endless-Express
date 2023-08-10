@@ -28,7 +28,7 @@ func _on_health_manager_health_updated(current_health, max_health, damage_data) 
 	HUD.player_hud.update_health_bar(current_health, max_health, damage_data)
 	
 	if damage_data.damage > 0:
-		AudioManager.play_sound(
+		AudioManager.play_sound( 
 				AudioData.new(preload(AudioManager.AUDIO_PATH + "Player/PlayerHit.wav"),
 				global_position)
 			)

@@ -170,7 +170,7 @@ shape = SubResource("RectangleShape2D_hrrnk")
 modulate = Color(0.788235, 0.788235, 0.788235, 1)
 material = SubResource("ShaderMaterial_sc03t")
 sprite_frames = SubResource("SpriteFrames_esmvw")
-frame = 2
+frame_progress = 0.0235338
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite" index="0"]
 z_index = -5

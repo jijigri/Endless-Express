@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var number_of_enemies_label = $Control/NumberOfEnemiesLabel
 @onready var enemies_label = $Control/EnemiesLabel
+@onready var number_of_ghosts = $Control/NumberOfGhosts
 
 @onready var arena_manager: ArenaManager = get_tree().get_first_node_in_group("ArenaManager")
 
@@ -33,3 +34,5 @@ func refresh_enemies():
 		enemies_text += str(i) + ": " + enemy.name + "\n"
 	
 	enemies_label.text = enemies_text
+	
+	number_of_ghosts.text = "Number of ghosts: " + str(PlayerDataQueue.current_number_of_ghosts)

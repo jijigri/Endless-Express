@@ -9,7 +9,10 @@ extends Gun
 @export var bullet_lifetime: float = 1.0
 @export var ignore_iframes: bool = true
 
-func shoot(player_gun: Node2D, team_player: bool = true):
+@export_group("Ultracharge Settings")
+@export var ultracharge_projectile: PackedScene
+
+func shoot(player_gun: Node2D, team_player: bool = true, ultracharge: int = 0):
 	
 	var angle_offset: float = 0;
 	var current_spread: float = spread / projectiles_per_shot;
@@ -19,8 +22,10 @@ func shoot(player_gun: Node2D, team_player: bool = true):
 	
 	for i in projectiles_per_shot:
 		var spawn_point = Global.get_point_before_collision(player_gun.global_position, player_gun.spawn_point.global_position)
+		
+		var projectile_to_spawn = projectile if !ultracharge_next_shot || ultracharge_projectile == null else ultracharge_projectile
 		var bullet_instance: Bullet = Global.spawn_object(
-			projectile,
+			projectile_to_spawn,
 			spawn_point,
 			player_gun.rotation + deg_to_rad(angle_offset + 90)
 			)

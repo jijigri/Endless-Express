@@ -2,6 +2,7 @@ class_name Bullet
 extends Area2D
 
 @export var has_piercing: bool = false
+@export var break_armor: float = 0.0
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var particles: GPUParticles2D = $Particles
@@ -19,6 +20,7 @@ var gun_origin
 var player_owned: bool = false
 
 var active: bool = true
+
 
 func _ready() -> void:
 	$Lifetime.wait_time = lifetime
@@ -69,7 +71,7 @@ func _on_area_entered(area: Area2D) -> void:
 					entities_damaged.append(area)
 				
 			
-			var damageData = DamageData.new(damage, global_position, velocity * knockback_force)
+			var damageData = DamageData.new(damage, global_position, velocity * knockback_force, break_armor)
 			damageData.source = self
 			area.receive_hit(damageData)
 			on_entity_damaged(area)

@@ -120,7 +120,7 @@ func get_weighted_enemy():
 	return chasers.enemy_pool[randi_range(0, chasers.enemy_pool.size() - 1)]
 
 func set_retreat_times(intensity: int):
-	retreat_duration = clamp(float(intensity) / 5, 0.1, 6.0)
+	retreat_duration = clamp(float(intensity) / 5, 0.1, 3.5)
 	
 	initial_time_to_reatreat = 40.0
 	time_left_to_retreat = initial_time_to_reatreat + randf_range(0, initial_time_to_reatreat / 2)

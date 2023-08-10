@@ -5,6 +5,7 @@ extends StaticBody2D
 @export var sprite: NinePatchRect
 @export var navigation_region: NavigationRegion2D
 @export var collision_shape: CollisionShape2D
+@export var update_navigation: bool = true
 
 func _ready() -> void:
 	collision_shape = $CollisionShape2D
@@ -28,14 +29,15 @@ func set_editor_size():
 		sprite.position = Vector2(-size.x / 2, -size.y / 2) + center
 		sprite.pivot_offset = size / 2
 	
-	if navigation_region != null:
-		var polygon = NavigationPolygon.new()
-		var outline = PackedVector2Array([
-			center + Vector2(-size.x / 2, -size.y / 2),
-			center + Vector2(-size.x / 2, size.y / 2),
-			center + Vector2(size.x / 2, size.y / 2),
-			center + Vector2(size.x / 2, -size.y / 2)
-			])
-		polygon.add_outline(outline)
-		polygon.make_polygons_from_outlines()
-		navigation_region.navigation_polygon = polygon
+	if update_navigation:
+		if navigation_region != null:
+			var polygon = NavigationPolygon.new()
+			var outline = PackedVector2Array([
+				center + Vector2(-size.x / 2, -size.y / 2),
+				center + Vector2(-size.x / 2, size.y / 2),
+				center + Vector2(size.x / 2, size.y / 2),
+				center + Vector2(size.x / 2, -size.y / 2)
+				])
+			polygon.add_outline(outline)
+			polygon.make_polygons_from_outlines()
+			navigation_region.navigation_polygon = polygon

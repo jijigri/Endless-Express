@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://jd5x765qsoji"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Player/Abilities/ObjectSpawnAbility.gd" id="1_24mx4"]
+[ext_resource type="PackedScene" uid="uid://dj7jky5bywquh" path="res://Scenes/Entities/Misc/homing_missile.tscn" id="2_d3k54"]
+[ext_resource type="Texture2D" uid="uid://danfqg124h0r" path="res://Sprites/Abilities/MissileSpritesheet.png" id="3_m5bw3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h0pi"]
+atlas = ExtResource("3_m5bw3")
+region = Rect2(0, 0, 16, 16)
+
+[node name="MissilesAbility" type="Node2D" node_paths=PackedStringArray("gun")]
+script = ExtResource("1_24mx4")
+scene_to_spawn = ExtResource("2_d3k54")
+gun = NodePath("")
+burst_amount = 3
+time_between_throws = 0.08
+display_icon = SubResource("AtlasTexture_2h0pi")
+energy_cost = 80.0

@@ -12,6 +12,9 @@ signal player_damaged(current_health: float, max_health: float, value: float)
 signal player_healed(current_health: float, max_health: float, value: float)
 signal player_killed()
 
+signal primary_weapon_shot()
+signal secondary_weapon_shot()
+
 signal enemy_spawned()
 signal enemy_damaged(enemy: Enemy)
 signal enemy_killed(enemy: Enemy)

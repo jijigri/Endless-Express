@@ -19,9 +19,6 @@ shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_modifier = 0.0
 
 [node name="ChaserEnemy" groups=["Chasers"] instance=ExtResource("1_u4xmi")]
-collision_mask = 4
-continuous_cd = 1
-can_sleep = false
 script = ExtResource("2_8nnmx")
 death_effect = ExtResource("3_qaudg")
 death_sound = ExtResource("4_icrq8")

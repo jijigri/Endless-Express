@@ -146,12 +146,18 @@ func on_secondary_pressed() -> bool:
 	return false
 
 func shoot_primary() -> void:
+	GameEvents.primary_weapon_shot.emit()
+	
 	primary_gun.shoot(self)
 	
 	last_gun = 0
 	set_sprite(0.0)
 
+	on_shoot()
+
 func shoot_secondary() -> void:
+	GameEvents.secondary_weapon_shot.emit()
+	
 	secondary_gun.shoot(self)
 	
 	current_ammos -= 1
@@ -159,6 +165,11 @@ func shoot_secondary() -> void:
 	
 	last_gun = 1
 	set_sprite(32.0)
+
+	on_shoot()
+
+func on_shoot():
+	pass
 
 func on_primary_hit():
 	update_ammo_value(primary_gun.damage * ammo_replenish_over_damage)
@@ -182,6 +193,13 @@ func on_ammo_lost():
 
 func refill_ammos():
 	current_ammos = ammo_count
+	current_ammo_value = 0.0
+	update_ammo_bar()
+
+func load_ammos(amount: int = 1):
+	current_ammos += amount
+	if current_ammos > ammo_count:
+		current_ammos = ammo_count
 	current_ammo_value = 0.0
 	update_ammo_bar()
 

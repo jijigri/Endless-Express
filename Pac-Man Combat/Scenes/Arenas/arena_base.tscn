@@ -152,7 +152,7 @@ collision_layer = 0
 shape = SubResource("RectangleShape2D_s2uty")
 
 [node name="OffScreenMarker" parent="Map/Exit" instance=ExtResource("7_u3tfq")]
-position = Vector2(104, 0)
+position = Vector2(256, 0)
 can_hide = false
 
 [node name="Sprite" parent="Map/Exit/OffScreenMarker" index="0"]

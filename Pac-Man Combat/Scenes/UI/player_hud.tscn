@@ -318,4 +318,5 @@ texture = SubResource("AtlasTexture_e4qfe")
 position = Vector2(86, 64)
 
 [node name="AbilitySlot3" parent="Abilities" instance=ExtResource("9_nxxq3")]
+visible = false
 position = Vector2(126, 64)

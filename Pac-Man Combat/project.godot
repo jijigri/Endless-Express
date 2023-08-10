@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Endless Express"
 config/description="Navigate your way through an endless train as you try to reach the highest score!"
-run/main_scene="res://Scenes/main_menu.tscn"
+run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 run/max_fps=144
 boot_splash/bg_color=Color(0, 0, 0, 0)
@@ -43,10 +43,10 @@ PlayableCharactersPool="*res://Scenes/Singletons/playable_characters_pool.tscn"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=3
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="viewport"
+window/main_scene="res://Scenes/game.tscn"
 
 [editor]
 

@@ -76,7 +76,7 @@ func change_current_biome():
 	
 	for i in biome_pool:
 		if !used_biomes.has(i):
-			if i.min_level <= current_score:
+			if i.min_level <= clamp(current_score, 0, 99999):
 				current_biome = i
 				used_biomes.append(i)
 				GameEvents.biome_changed.emit(i)

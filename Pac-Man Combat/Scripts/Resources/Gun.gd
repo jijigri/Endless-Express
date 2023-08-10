@@ -26,7 +26,12 @@ var initial_pos: Vector2 = Vector2(9999, 9999)
 
 signal hit
 
-func shoot(player_gun: Node2D, team_player: bool = true) -> void:
+var ultracharge_next_shot: bool = false
+
+func shoot(player_gun: Node2D, team_player: bool = true, ultracharge: int = 0) -> void:
+	
+	if ultracharge_next_shot:
+		ultracharge_next_shot = false
 	
 	if initial_pos == Vector2(9999, 9999):
 		initial_pos = player_gun.sprite.position

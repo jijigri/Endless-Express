@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Scenes/Entities/Misc/Trail.gd" id="4_0iors"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2u5g4"]
-radius = 8.0
 
 [sub_resource type="Curve" id="Curve_7r1md"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.89221, 0.0, 0, 0]
@@ -15,7 +14,7 @@ point_count = 2
 [node name="Bomb" type="RigidBody2D"]
 collision_layer = 0
 collision_mask = 14
-continuous_cd = 1
+continuous_cd = 2
 max_contacts_reported = 5
 contact_monitor = true
 can_sleep = false

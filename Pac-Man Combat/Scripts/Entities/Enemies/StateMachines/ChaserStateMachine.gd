@@ -85,12 +85,25 @@ func play_hit_sound():
 				audio_data
 				, "hit_sound", 3, true
 			)
+	
+	
+	var sides = [-1, 1]
+	var offset = sides[randi_range(0, 1)]
+	var splash_text = Global.spawn_object(ScenesPool.splash_text, global_position + Vector2(offset * 20, randf_range(0, -16)), deg_to_rad(randf_range(-45, 45)))
+	splash_text.initialize("HIT", 0.1, 0.4, randf_range(0.0, 0.1), SplashText.MODE.SLIDE)
+	splash_text.scale = Vector2(0.75, 0.75)
 
 func kill() -> void:
 
 	if spawner != null:
 		spawner.remove_chaser()
-		
+	
+	var sides = [-1, 1]
+	var offset = sides[randi_range(0, 1)]
+	var splash_text = Global.spawn_object(ScenesPool.splash_text, global_position + Vector2(offset * 12, randf_range(0, -16)), deg_to_rad(randf_range(-45, 45)))
+	splash_text.initialize("KILL", 0.2, 0.6, 0.1, SplashText.MODE.DEFAULT, "red")
+	#splash_text.scale = Vector2(1.5, 1.5)
+	
 	super.kill()
 
 func _on_health_manager_armor_broken() -> void:

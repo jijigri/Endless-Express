@@ -11,6 +11,6 @@ func throw(velocity: Vector2):
 	instance.apply_central_impulse(velocity)
 	
 	if instance is Barrel:
-		instance.roll_speed = abs(velocity.x) * 1.75
-		instance.speed_gain_over_time = 115.0
+		instance.roll_speed = abs(velocity.x) * 1.6
+		instance.speed_gain_over_time = 100.0
 		instance.direction = sign(velocity.x)

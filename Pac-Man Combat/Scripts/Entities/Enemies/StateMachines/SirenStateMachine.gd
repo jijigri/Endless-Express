@@ -118,6 +118,10 @@ func on_damaged(damage_data):
 func can_summon() -> bool:
 	return damage_taken_during_summon < damage_to_cancel_summoning
 
+func _exit_tree() -> void:
+	if summon_effects.size() > 0:
+		destroy_summon_effects(true)
+
 func kill():
 	super.kill()
 	
