@@ -86,12 +86,12 @@ func play_hit_sound():
 				, "hit_sound", 3, true
 			)
 	
-	
-	var sides = [-1, 1]
-	var offset = sides[randi_range(0, 1)]
-	var splash_text = Global.spawn_object(ScenesPool.splash_text, global_position + Vector2(offset * 20, randf_range(0, -16)), deg_to_rad(randf_range(-45, 45)))
-	splash_text.initialize("HIT", 0.1, 0.4, randf_range(0.0, 0.1), SplashText.MODE.SLIDE)
-	splash_text.scale = Vector2(0.75, 0.75)
+	if health_manager.is_armored == false:
+		var sides = [-1, 1]
+		var offset = sides[randi_range(0, 1)]
+		var splash_text = Global.spawn_object(ScenesPool.splash_text, global_position + Vector2(offset * 20, randf_range(0, -16)), deg_to_rad(randf_range(-45, 45)))
+		splash_text.initialize("HIT", 0.1, 0.4, randf_range(0.0, 0.1), SplashText.MODE.SLIDE)
+		splash_text.scale = Vector2(0.75, 0.75)
 
 func kill() -> void:
 

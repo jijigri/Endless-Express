@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://chw0ydc058ox0"]
+[gd_scene load_steps=58 format=3 uid="uid://chw0ydc058ox0"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_lg5uc"]
 [ext_resource type="PackedScene" uid="uid://cgo148uilrd2s" path="res://Scenes/Arenas/arena_test_1.tscn" id="2_1lhxp"]
@@ -16,8 +16,32 @@
 [ext_resource type="Texture2D" uid="uid://dvpmw8lvylxt" path="res://Sprites/Background/ParallaxBackground.png" id="13_818sd"]
 [ext_resource type="Script" path="res://Scripts/UI/DebugScreen.gd" id="15_g6u1k"]
 [ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="16_1yujc"]
+[ext_resource type="Script" path="res://Scripts/World/ConductorVoiceLinesManager.gd" id="17_6jh5u"]
+[ext_resource type="AudioStream" uid="uid://cnyht3gledp7t" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-01.ogg" id="18_clujs"]
+[ext_resource type="Script" path="res://Scripts/World/ConductorVoice/VoiceLineData.gd" id="18_jfhny"]
+[ext_resource type="AudioStream" uid="uid://37xhb7502vkk" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-02.ogg" id="19_4bk5d"]
+[ext_resource type="AudioStream" uid="uid://br7mvatnwfnc5" path="res://Audio/SoundEffects/Misc/InterphoneTurnOnSound.wav" id="19_cp1ao"]
+[ext_resource type="AudioStream" uid="uid://ckwap3j2k3il3" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-03.ogg" id="20_mm6hq"]
+[ext_resource type="AudioStream" uid="uid://dp4w68sdvijnp" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-04.ogg" id="21_hvr7d"]
+[ext_resource type="AudioStream" uid="uid://bfhsg4p8nypb8" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-05.ogg" id="22_ov1os"]
+[ext_resource type="AudioStream" uid="uid://b1frqgfywjf2p" path="res://Audio/SoundEffects/Misc/StaticLoopSound.wav" id="23_nx7ls"]
+[ext_resource type="AudioStream" uid="uid://dh0c0nhy202tr" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-06.ogg" id="23_us6oc"]
+[ext_resource type="AudioStream" uid="uid://c2bo1vvk62u50" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-07.ogg" id="24_inqim"]
+[ext_resource type="AudioStream" uid="uid://6ydk1x6j2dcl" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-08.ogg" id="25_i8bqi"]
+[ext_resource type="AudioStream" uid="uid://wcjni6jps206" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-09.ogg" id="26_7qqnp"]
+[ext_resource type="AudioStream" uid="uid://cqm5t1pkvbmf4" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-10.ogg" id="27_b2quh"]
+[ext_resource type="AudioStream" uid="uid://c5ydgvobm4yda" path="res://Audio/VoiceLines/Level0/Generic/conductor_generic-11.ogg" id="28_skfgx"]
+[ext_resource type="AudioStream" uid="uid://bgft1512gl5hi" path="res://Audio/VoiceLines/Level0/Intros/Level0-Intro-01.ogg" id="29_lo8lb"]
+[ext_resource type="AudioStream" uid="uid://juwqrvdiepv0" path="res://Audio/VoiceLines/Level0/Intros/Level0-Intro-02.ogg" id="30_3rvhq"]
+[ext_resource type="AudioStream" uid="uid://bcmnscegficu5" path="res://Audio/VoiceLines/Level0/Intros/Level0-Intro-03.ogg" id="31_0838q"]
+[ext_resource type="AudioStream" uid="uid://bnj3jlbdkxsro" path="res://Audio/VoiceLines/Level0/Intros/Level0-Intro-04.ogg" id="32_ylb68"]
+[ext_resource type="AudioStream" uid="uid://xqes7pqtrbgh" path="res://Audio/VoiceLines/Level0/Intros/Level0-Intro-05.ogg" id="33_7aniw"]
+[ext_resource type="AudioStream" uid="uid://c80ylej0yfwm" path="res://Audio/VoiceLines/Level0/Intros/Level0-Intro-06.ogg" id="34_cfof6"]
+[ext_resource type="Script" path="res://Scripts/UI/PauseMenu.gd" id="38_q5iqa"]
+[ext_resource type="PackedScene" uid="uid://vspn7m7psh1b" path="res://Scenes/UI/tv_screen.tscn" id="39_xmhom"]
+[ext_resource type="Theme" uid="uid://dgi4mcucy7t8i" path="res://Themes/MenuTheme.tres" id="40_fydy1"]
 
-[sub_resource type="Resource" id="Resource_wivd7"]
+[sub_resource type="Resource" id="Resource_45kw2"]
 resource_local_to_scene = true
 script = ExtResource("5_y3ork")
 speed = 240.0
@@ -89,27 +113,62 @@ font = ExtResource("16_1yujc")
 [sub_resource type="LabelSettings" id="LabelSettings_2tdds"]
 font = ExtResource("16_1yujc")
 
+[sub_resource type="Resource" id="Resource_ob66f"]
+script = ExtResource("18_jfhny")
+intros = {
+ExtResource("29_lo8lb"): "Welcome to the Endless Express. Quick reminder that smoking is prohibited. You may now proceed to kill each others.",
+ExtResource("30_3rvhq"): "Welcome to the Endless Express. Please keep the blood out of the seats.",
+ExtResource("31_0838q"): "Welcome to the Endless Express. Please don't stay seated while the train is moving.",
+ExtResource("32_ylb68"): "Welcome to the Endless Express...BOO! Ahah, got ya.",
+ExtResource("33_7aniw"): "Welcome to the Endless Express. Quick reminder that any damage done to the train while you're killing each others will be charged to your family and your pets.",
+ExtResource("34_cfof6"): "Welcome to the train direction infinity. I'm your conductor, and you will be hearing me a lot."
+}
+generic = {
+ExtResource("18_clujs"): "Wooho who invited the psycho, am I right?? ...Nothing personal.",
+ExtResource("19_4bk5d"): "Just wanted to let you know that the floor can feel pain. So try not to stomp on it too hard okay?",
+ExtResource("20_mm6hq"): "Hi this is your conductor talking. Just thought you should know",
+ExtResource("21_hvr7d"): "*Clears throat* If you find a cat wandering around, do NOT look at it, do NOT touch it and DO NOT call it \"kitty\".",
+ExtResource("22_ov1os"): "You know I don't actually have a license, that baby pretty much pilots itself! ...Yeah, it's illegal.",
+ExtResource("23_us6oc"): "If you come across any open window or hole in the train, don't try to exit by jumping out. You're kinda tied to the train now and you would die instantly. Just thought you should know.",
+ExtResource("24_inqim"): "*SNEEZES* ...Sorry",
+ExtResource("25_i8bqi"): "You know.. I wanted to name it the \"Infinity Train\", but they didn't accept it.. Something about copyrights?",
+ExtResource("26_7qqnp"): "Patch note: I increased the size of the train by 5. I know it's infinite, but you can never be too sure.",
+ExtResource("27_b2quh"): "You know these smiling bubbles are sentient, right?",
+ExtResource("28_skfgx"): "Oh ooh man, you just love shooting stuff, don't you?"
+}
+chains = []
+
+[sub_resource type="LabelSettings" id="LabelSettings_o5jk5"]
+font = ExtResource("16_1yujc")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node2D" parent="." groups=["GameManager"]]
+process_mode = 3
 z_index = 50
 script = ExtResource("1_lg5uc")
 
 [node name="ArenaManager" type="Node2D" parent="." groups=["ArenaManager"]]
+process_mode = 3
 script = ExtResource("2_ii7w5")
 arena_pool = Array[PackedScene]([ExtResource("2_1lhxp"), ExtResource("4_4d446"), ExtResource("3_2lpal"), ExtResource("3_ria7w"), ExtResource("3_v7soj")])
 biome_pool = Array[Resource("res://Scripts/Resources/BiomeData.gd")]([ExtResource("9_ywl3c"), ExtResource("10_jvpsu")])
 
 [node name="Player" parent="." instance=ExtResource("4_hdyj7")]
+process_mode = 3
 position = Vector2(0, 0)
-movement_data = SubResource("Resource_wivd7")
+movement_data = SubResource("Resource_45kw2")
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("8_cm2bt")
 autoplay = true
 bus = &"Ambience"
 
 [node name="NOTES" type="Node" parent="."]
+process_mode = 3
 
 [node name="MAYBE ENEMY DON\'T RETREAT WHEN IN DANGER STATE (FEELS A BIT UNFAIR)" type="Node" parent="NOTES"]
 
@@ -120,6 +179,7 @@ bus = &"Ambience"
 [node name="MAYBE ADD SHORT IFRAMES ON DIVE" type="Node" parent="NOTES"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+process_mode = 3
 offset = Vector2(320, 0)
 transform = Transform2D(1, 0, 0, 1, 320, 0)
 scroll_ignore_camera_zoom = true
@@ -183,6 +243,7 @@ motion_mirroring = Vector2(640, 0)
 texture = SubResource("AtlasTexture_26cwd")
 
 [node name="DebugScreen" type="CanvasLayer" parent="."]
+process_mode = 3
 visible = false
 script = ExtResource("15_g6u1k")
 
@@ -234,3 +295,171 @@ grow_horizontal = 0
 text = "Number of ghosts:"
 label_settings = SubResource("LabelSettings_2tdds")
 vertical_alignment = 1
+
+[node name="ConductorVoice" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+bus = &"Ambience"
+script = ExtResource("17_6jh5u")
+test_lines = [SubResource("Resource_ob66f")]
+
+[node name="StartSound" type="AudioStreamPlayer" parent="ConductorVoice"]
+stream = ExtResource("19_cp1ao")
+bus = &"Ambience"
+
+[node name="Static" type="AudioStreamPlayer" parent="ConductorVoice"]
+stream = ExtResource("23_nx7ls")
+pitch_scale = 0.4
+bus = &"Ambience"
+
+[node name="Subtitles" type="CanvasLayer" parent="ConductorVoice"]
+
+[node name="SubtitleText" type="Label" parent="ConductorVoice/Subtitles"]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -55.0
+offset_right = -16.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Subtitle"
+label_settings = SubResource("LabelSettings_o5jk5")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("38_q5iqa")
+
+[node name="TVScreen" parent="PauseMenu" instance=ExtResource("39_xmhom")]
+offset_left = 159.0
+offset_top = 88.0
+offset_right = -160.0
+offset_bottom = -88.0
+
+[node name="Control" type="Control" parent="PauseMenu/TVScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.5
+offset_top = -88.0
+offset_right = 168.5
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/TVScreen/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -40.0
+offset_right = 52.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Settings" type="Button" parent="PauseMenu/TVScreen/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("40_fydy1")
+text = "SETTINGS"
+
+[node name="RestartRun" type="Button" parent="PauseMenu/TVScreen/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("40_fydy1")
+text = "RESTART RUN"
+
+[node name="MainMenu" type="Button" parent="PauseMenu/TVScreen/Control/VBoxContainer"]
+custom_minimum_size = Vector2(105.875, 0)
+layout_mode = 2
+theme = ExtResource("40_fydy1")
+text = "MAIN MENU"
+
+[node name="Back" type="Button" parent="PauseMenu/TVScreen/Control/VBoxContainer"]
+custom_minimum_size = Vector2(105.875, 0)
+layout_mode = 2
+theme = ExtResource("40_fydy1")
+text = "Back"
+
+[node name="ConfirmationScreen" parent="PauseMenu" instance=ExtResource("39_xmhom")]
+visible = false
+offset_left = 127.0
+offset_top = 128.0
+offset_right = -128.0
+offset_bottom = -128.0
+
+[node name="Control" type="Control" parent="PauseMenu/ConfirmationScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.5
+offset_top = -36.0
+offset_right = 184.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu/ConfirmationScreen/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.0
+offset_right = 184.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme = ExtResource("40_fydy1")
+text = "Are you sure? You will loose your progress in this run"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="PauseMenu/ConfirmationScreen/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_top = -24.0
+offset_right = 137.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 60
+
+[node name="Cancel" type="Button" parent="PauseMenu/ConfirmationScreen/Control/VBoxContainer"]
+custom_minimum_size = Vector2(107.12, 0)
+layout_mode = 2
+theme = ExtResource("40_fydy1")
+text = "CANCEL!"
+
+[node name="Confirm" type="Button" parent="PauseMenu/ConfirmationScreen/Control/VBoxContainer"]
+custom_minimum_size = Vector2(107.12, 0)
+layout_mode = 2
+theme = ExtResource("40_fydy1")
+text = "I'M SURE"
+
+[connection signal="finished" from="ConductorVoice" to="ConductorVoice" method="_on_finished"]
+[connection signal="pressed" from="PauseMenu/TVScreen/Control/VBoxContainer/Settings" to="PauseMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="PauseMenu/TVScreen/Control/VBoxContainer/RestartRun" to="PauseMenu" method="_on_restart_run_pressed"]
+[connection signal="pressed" from="PauseMenu/TVScreen/Control/VBoxContainer/MainMenu" to="PauseMenu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/TVScreen/Control/VBoxContainer/Back" to="PauseMenu" method="_on_back_pressed"]
+[connection signal="pressed" from="PauseMenu/ConfirmationScreen/Control/VBoxContainer/Cancel" to="PauseMenu" method="_on_cancel_pressed"]
+[connection signal="pressed" from="PauseMenu/ConfirmationScreen/Control/VBoxContainer/Confirm" to="PauseMenu" method="_on_confirm_pressed"]

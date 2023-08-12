@@ -15,6 +15,7 @@ var indicator_type_manager = SpawnIndicatorType.new()
 var current_id: int = 0
 
 var debug_mode: bool = false
+var pause_menu_enabled: bool = false
 
 func _ready():
 	
@@ -46,8 +47,10 @@ func load_scene(next_scene: String):
 	else:
 		load_path = next_scene
 	
-	var loader_next_scene
+	print_debug("Attempting to load ", load_path)
 	
+	var loader_next_scene
+
 	if ResourceLoader.exists(load_path):
 		loader_next_scene = ResourceLoader.load_threaded_request(load_path)
 	
@@ -55,8 +58,7 @@ func load_scene(next_scene: String):
 		print_debug("Error: Attempting to load a non-existent file!")
 		return
 	
-	#await loading_screen_instance.safe_to_load
-	current_scene.queue_free()
+	current_scene.call_deferred("free")
 	
 	while true:
 		var load_progress = []
@@ -72,6 +74,7 @@ func load_scene(next_scene: String):
 				print_debug("Error: Loading failed.")
 				return
 			3: #LOAD LOADED
+				print_debug("SCENE LOADED SUCCESSFULLY")
 				var next_scene_instance = ResourceLoader.load_threaded_get(load_path).instantiate()
 				get_tree().get_root().call_deferred("add_child", next_scene_instance)
 				
@@ -84,9 +87,10 @@ func spawn_object(object, position: Vector2, rotation: float = 0, parent = null)
 	var instance = object.instantiate()
 	
 	if parent == null:
-		if get_tree().root.has_node("Game"):
-			get_tree().root.get_node("Game").add_child.call_deferred(instance)
+		if current_scene != null:
+			current_scene.add_child.call_deferred(instance)
 		else:
+			print_debug("No active scene found, adding to root")
 			get_tree().root.add_child.call_deferred(instance)
 	else:
 		parent.add_child(instance)

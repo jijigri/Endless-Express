@@ -40,6 +40,8 @@ func record_player_data():
 			var player_data = PlayerData.new(player.global_position, player.sprite.animation, player.sprite.frame)
 			add_data(player_data)
 			await get_tree().create_timer(data_update_time, true, true).timeout
+		else:
+			stop_recording()
 
 func stop_recording():
 	recording = false

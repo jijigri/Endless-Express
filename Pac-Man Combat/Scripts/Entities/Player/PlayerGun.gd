@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 	
 	set_gun_rotation()
 	
-	if active:
+	if active && !Global.pause_menu_enabled:
 		get_input()
 	
 	if current_ammos < ammo_count:

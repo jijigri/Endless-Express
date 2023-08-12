@@ -82,6 +82,9 @@ layout_mode = 2
 [node name="MenuAbilitySlot3" parent="CharacterPanel/VBoxContainer" instance=ExtResource("5_q47bh")]
 layout_mode = 2
 
+[node name="Panel" parent="CharacterPanel/VBoxContainer/MenuAbilitySlot3/Ability1" index="0"]
+visible = false
+
 [node name="PlayButton" type="Button" parent="CharacterPanel/VBoxContainer"]
 custom_minimum_size = Vector2(316.86, 0)
 layout_mode = 2
@@ -89,3 +92,5 @@ theme = ExtResource("2_5vpjp")
 text = "PLAY"
 
 [connection signal="pressed" from="CharacterPanel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+
+[editable path="CharacterPanel/VBoxContainer/MenuAbilitySlot3"]

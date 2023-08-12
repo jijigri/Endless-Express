@@ -69,6 +69,10 @@ func tint_end():
 
 func set_modulate_color(value: Color):
 	if tilemap == null:
+		var arena_manager = get_tree().get_first_node_in_group("ArenaManager")
+		if arena_manager == null:
+			return
+		
 		tilemap = get_tree().get_first_node_in_group("ArenaManager").current_arena.level_map
 		print_debug("Couldn't find the tilemap, searching for it again")
 	

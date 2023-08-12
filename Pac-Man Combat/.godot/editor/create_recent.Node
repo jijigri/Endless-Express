@@ -1,6 +1,13 @@
+Label
+HBoxContainer
+VBoxContainer
+Button
+Control
+CanvasLayer
+AudioStreamPlayer
+AudioStreamPlayer2D
 Node2D
 Timer
-Label
 AnimatedSprite2D
 Sprite2D
 CollisionShape2D
@@ -8,11 +15,7 @@ Area2D
 AnimationPlayer
 NinePatchRect
 ParallaxLayer
-Button
 LineEdit
-Control
-CanvasLayer
-AudioStreamPlayer
 Panel
 LinkButton
 RayCast2D
@@ -26,7 +29,4 @@ NavigationRegion2D
 TextureRect
 TileMap
 Line2D
-AudioStreamPlayer2D
 HSplitContainer
-VBoxContainer
-HBoxContainer

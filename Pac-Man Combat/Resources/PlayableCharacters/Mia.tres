@@ -21,9 +21,8 @@ icon = ExtResource("3_3g26s")
 
 [sub_resource type="Resource" id="Resource_5ahd3"]
 script = ExtResource("1_tbto2")
-display_name = "Something"
-description = "It's not there yet, move along"
-icon = ExtResource("3_3g26s")
+display_name = "Passive"
+description = "Performing triple kills or more charges your sniper with armor-breaking powers."
 
 [resource]
 script = ExtResource("1_mh3tx")

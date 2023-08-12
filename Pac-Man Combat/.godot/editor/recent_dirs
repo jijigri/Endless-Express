@@ -1,5 +1,9 @@
-D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5.1a
+D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5.2a
 res://Scenes
+res://Scripts/UI
+res://Scripts/World/ConductorVoice
+res://Scripts/World
+D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5.1a
 res://Scenes/Arenas
 res://Scenes/Misc
 res://Scripts/Misc
@@ -12,11 +16,7 @@ res://Scripts/Misc/StatusEffects
 res://Scenes/Misc/StatusEffects
 res://Scripts/Entities/Misc
 res://Scenes/Entities/Misc
-res://Scripts/UI
 res://Scenes/UI
 res://Sprites/Effects
 res://Resources/Biomes
 res://
-D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5a
-D:/Godot Games/Builds/EndlessExpress/v0.4a
-res://Scripts/Resources

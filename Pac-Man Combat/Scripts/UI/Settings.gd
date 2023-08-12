@@ -7,6 +7,8 @@ extends Control
 @onready var ambience_volume = %AmbienceVolume
 @onready var back_button = %BackButton
 
+signal closed
+
 func _ready() -> void:
 	load_settings()
 	set_settings()
@@ -78,3 +80,4 @@ func _on_ambience_volume_value_changed(value: float) -> void:
 
 func _on_back_button_pressed() -> void:
 	save_settings()
+	closed.emit()
