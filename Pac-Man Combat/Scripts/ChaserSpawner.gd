@@ -19,6 +19,8 @@ var retreat_duration = 1
 var time_left_to_retreat = 0
 var retreat_time_modifier = 1
 
+signal chaser_removed
+
 func _ready() -> void:
 	GameEvents.player_damaged.connect(on_player_damaged)
 	weights.resize(chasers.enemy_pool.size())
@@ -44,6 +46,9 @@ func reset_spawn_weights() -> void:
 	
 	for i in weights.size():
 		weights[i] = weights[i] / total_weight
+
+func start_escalation(arena: Node2D):
+	$EscalationSpawner.start_escalation_spawn()
 
 func spawn_enemies(arena: Node2D) -> void:
 	if enabled == false:
@@ -133,6 +138,7 @@ func start_retreat():
 
 func remove_chaser():
 	current_number_of_enemies -= 1
+	chaser_removed.emit()
 	if current_number_of_enemies <= 0:
 		arena_manager.current_arena.on_arena_clear()
 

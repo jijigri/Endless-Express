@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://x1o1wk70v2m2"]
+
+[ext_resource type="Texture2D" uid="uid://bj04heno632qt" path="res://Sprites/UI/TrainStation.png" id="1_sqds7"]
+[ext_resource type="Texture2D" uid="uid://bgn334x3mulwc" path="res://Sprites/Misc/16pxSquare.png" id="2_vc16k"]
+[ext_resource type="Script" path="res://Scripts/UI/StationCharacter.gd" id="3_43vew"]
+
+[node name="TrainStation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_sqds7")
+stretch_mode = 2
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="Mia" type="Sprite2D" parent="Characters"]
+position = Vector2(177, 105)
+texture = ExtResource("2_vc16k")
+script = ExtResource("3_43vew")
+
+[node name="Ninja" type="Sprite2D" parent="Characters"]
+position = Vector2(328, 113)
+texture = ExtResource("2_vc16k")

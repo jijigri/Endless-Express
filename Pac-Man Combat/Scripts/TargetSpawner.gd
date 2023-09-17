@@ -2,18 +2,20 @@ class_name TargetSpawner
 extends Node2D
 
 @export var targets: EnemyPool
-@export var number_of_targets_of_each_type: int = 5
+var number_of_targets_of_each_type: int = 5
 @export var enabled: bool = true
 
 @onready var game_manager: GameManager = get_tree().get_first_node_in_group("GameManager")
 @onready var arena_manager = get_tree().get_first_node_in_group("ArenaManager")
+@onready var respawn_timer: Timer = $RespawnTimer
 
 var current_enemies = {
 }
 
 func _ready() -> void:
+	number_of_targets_of_each_type = 5
 	GameEvents.arena_cleared.connect(_on_arena_clear)
-	
+	respawn_timer.stop()
 	initialize_dictionaries()
 
 func initialize_dictionaries() -> void:
@@ -25,6 +27,7 @@ func spawn_enemies(arena: Node2D):
 	if enabled == false:
 		return
 	
+	print_debug(number_of_targets_of_each_type)
 	var spawned_special: bool = false
 	for type in TargetEnemyData.TYPE.size():
 		for i in number_of_targets_of_each_type:
@@ -35,6 +38,8 @@ func spawn_enemies(arena: Node2D):
 				spawned_special = true
 			else:
 				instantiate_enemy(type, false)
+	
+	respawn_timer.start()
 
 func respawn_enemies():
 	if enabled == false:

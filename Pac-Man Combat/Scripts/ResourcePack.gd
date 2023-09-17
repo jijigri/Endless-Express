@@ -26,7 +26,7 @@ func _ready() -> void:
 	apply_impulse(transform.y * (100 * randf_range(0.5, 1.4)))
 	apply_torque(randf_range(1000, 1600))
 	
-	await get_tree().create_timer(8.0).timeout
+	await get_tree().create_timer(10.0).timeout
 	
 	var tween = create_tween()
 	tween.tween_property(sprite, "scale", Vector2(1.1, 1.1), 0.02).set_ease(Tween.EASE_OUT)

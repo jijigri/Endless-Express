@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://byoeo0a6vyikm"]
+
+[ext_resource type="Texture2D" uid="uid://ctxp1uk48wubp" path="res://Sprites/Effects/SMG_MuzzleFlash.png" id="1_embpt"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_bs5b1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8mlb"]
+atlas = ExtResource("1_embpt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcx0f"]
+atlas = ExtResource("1_embpt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3edlv"]
+atlas = ExtResource("1_embpt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0mvm"]
+atlas = ExtResource("1_embpt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qfopv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8mlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcx0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3edlv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0mvm")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="SMGMuzzleFlash" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_qfopv")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+offset = Vector2(16, 0)
+script = ExtResource("2_bs5b1")

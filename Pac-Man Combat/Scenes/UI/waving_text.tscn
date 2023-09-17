@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7dwg8mw6pgqb"]
+
+[ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="1_jtkru"]
+[ext_resource type="Script" path="res://Fonts/RichTextEffects/RichTextEffectWaving.gd" id="2_14jv2"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_27bm4"]
+resource_local_to_scene = true
+script = ExtResource("2_14jv2")
+time = 1.05
+
+[node name="WavingText" type="RichTextLabel"]
+clip_contents = false
+offset_left = -624.0
+offset_top = 16.0
+offset_right = 232.0
+offset_bottom = 48.0
+theme_override_fonts/normal_font = ExtResource("1_jtkru")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][waving amp=16 speed=5]eeeeeeee"
+custom_effects = [SubResource("RichTextEffect_27bm4")]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://36t6vrp1jn2f"]
+
+[ext_resource type="PackedScene" uid="uid://c3rf3vks4k5ji" path="res://Scenes/Misc/StatusEffects/status_effect_base.tscn" id="1_615xr"]
+[ext_resource type="Script" path="res://Scripts/Misc/StatusEffects/ShieldStatusEffect.gd" id="2_01vp8"]
+[ext_resource type="Shader" path="res://Shaders/SuperShieldShader.gdshader" id="3_7lia4"]
+[ext_resource type="Texture2D" uid="uid://dp6xy8ugh7naa" path="res://Sprites/Effects/ShieldEffect.png" id="4_q50cn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qa4g4"]
+shader = ExtResource("3_7lia4")
+
+[node name="ShieldStatusEffect" instance=ExtResource("1_615xr")]
+script = ExtResource("2_01vp8")
+
+[node name="Effect" type="Sprite2D" parent="." index="1"]
+z_index = 1
+material = SubResource("ShaderMaterial_qa4g4")
+texture = ExtResource("4_q50cn")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3yxnc27has5i"]
+
+[ext_resource type="PackedScene" uid="uid://c3rf3vks4k5ji" path="res://Scenes/Misc/StatusEffects/status_effect_base.tscn" id="1_o01of"]
+[ext_resource type="Script" path="res://Scripts/Misc/StatusEffects/SlowStatusEffect.gd" id="2_h15t2"]
+[ext_resource type="Texture2D" uid="uid://dro1qjw5eysmw" path="res://Sprites/Effects/Particles/SlowArrow.png" id="3_d4usf"]
+[ext_resource type="AudioStream" uid="uid://v75pa5uvmkxe" path="res://Audio/SoundEffects/StatusEffects/SlowSound.wav" id="3_dqwj2"]
+
+[sub_resource type="Gradient" id="Gradient_7r85o"]
+offsets = PackedFloat32Array(0, 0.0397351, 0.592715, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_evdb6"]
+gradient = SubResource("Gradient_7r85o")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7i0kj"]
+emission_shape = 3
+emission_box_extents = Vector3(16, 16, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_evdb6")
+
+[node name="SlowStatusEffect" instance=ExtResource("1_o01of")]
+script = ExtResource("2_h15t2")
+sound_effect = ExtResource("3_dqwj2")
+
+[node name="Particles" type="GPUParticles2D" parent="." index="1"]
+process_material = SubResource("ParticleProcessMaterial_7i0kj")
+texture = ExtResource("3_d4usf")
+lifetime = 0.5
+fixed_fps = 64
+local_coords = true

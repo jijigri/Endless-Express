@@ -36,7 +36,7 @@ res://Scenes/Entities/Misc/ice_explosion.tscn::1d65d630a74e3defe04996d1e01ccec0:
 res://Scenes/Entities/Pickups/energy_pickup.tscn::f1ed1d83839892b9c3f33f9850dc7ee0::1688746947::res://.godot/exported/133200997/export-e547beba1858d3a9d36674d9632520ad-energy_pickup.scn
 res://Scenes/Entities/Pickups/health_pickup.tscn::290268b448b745756c219d0aad6180f5::1688744612::res://.godot/exported/133200997/export-9fb66661182b833de7823997f057285c-health_pickup.scn
 res://Scenes/Entities/Pickups/pickup_base.tscn::85aec1d6bf668375692e48f24dd44535::1691410249::res://.godot/exported/133200997/export-8ab1e58768afb06adb3cc1d62cf2870d-pickup_base.scn
-res://Scenes/Entities/Players/default_player.tscn::8cdca9521bf2b15b36306558cbdb0e25::1691798183::res://.godot/exported/133200997/export-d86813aeca04d734433c247bb674f3e5-default_player.scn
+res://Scenes/Entities/Players/default_player.tscn::8cdca9521bf2b15b36306558cbdb0e25::1691839468::res://.godot/exported/133200997/export-d86813aeca04d734433c247bb674f3e5-default_player.scn
 res://Scenes/Entities/ResourcePacks/energy_resource_pack.tscn::4334f626c3bdddd898ef4b9a9b27bc31::1691405122::res://.godot/exported/133200997/export-f77174bb6767bf0551c52b2cb2e90e4d-energy_resource_pack.scn
 res://Scenes/Misc/StatusEffects/freeze_status_effect.tscn::a55285a85c2f6637610de57115d22240::1691459819::res://.godot/exported/133200997/export-e2054ae68c1720eea6fe5292af6bbaa6-freeze_status_effect.scn
 res://Scenes/Misc/StatusEffects/status_effect_base.tscn::a14e4ce14f7a88fbffb51d241719baa3::1691457884::res://.godot/exported/133200997/export-266d028dcaeb8d43126ed53ac67c0a48-status_effect_base.scn
@@ -63,7 +63,7 @@ res://Scenes/Tools/status_effects_manager.tscn::c4bdd6e35c8a83d65cdde114b9620e4c
 res://Scenes/Tools/tiled_bar.tscn::173c1875442fcd1fa6eb819883516096::1688647946::res://.godot/exported/133200997/export-7b41bc55aed47db3156807a4090f01ed-tiled_bar.scn
 res://Scenes/UI/ability_slot.tscn::7545722042a72f3f734088f8e5bb05c7::1689256872::res://.godot/exported/133200997/export-abdbcdd62a4327e2decae8f67d498e74-ability_slot.scn
 res://Scenes/UI/cooldown_circle.tscn::f8b71633dece7373ed8e44a19f6fe35d::1689038834::res://.godot/exported/133200997/export-8f500055b03ef110b61bc183cd8a4f61-cooldown_circle.scn
-res://Scenes/game.tscn::76618527eac5d209c6d9b8d13dc0c15f::1691797751::res://.godot/exported/133200997/export-d45e16ca8d170891778b9dcfa9c69e68-game.scn
+res://Scenes/game.tscn::3a357923d5b4b018ecf655ce6c7d3635::1691839468::res://.godot/exported/133200997/export-d45e16ca8d170891778b9dcfa9c69e68-game.scn
 res://default_bus_layout.tres::7cbe0e724ce7f5ed59f44c1e486b45e1::1691754057::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
 res://addons/silent_wolf/assets/themes/sw_theme.tres::9f490cb41840e93acedce3b12b9fc155::1689361335::res://.godot/exported/133200997/export-bc9dd7aa59b5ffa2b9a55341309da9eb-sw_theme.res
 res://addons/silent_wolf/Auth/ConfirmEmail.tscn::487c786e4c4bd7b28b52d4a26404306b::1687444177::res://.godot/exported/133200997/export-28544a8c03e488ef0d8a7f5c3a91dd6f-ConfirmEmail.scn

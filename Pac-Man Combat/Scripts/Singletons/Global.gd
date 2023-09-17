@@ -2,7 +2,9 @@ extends Node2D
 
 const GAME_SCENES = {
 	"game": "res://Scenes/game.tscn",
-	"main_menu": "res://Scenes/main_menu.tscn"
+	"main_menu": "res://Scenes/main_menu.tscn",
+	"tutorial": "res://Scenes/tutorial.tscn",
+	"train_station": "res://Scenes/UI/train_station.tscn"
 }
 
 var loading_screen = preload("res://Scenes/UI/loading_screen.tscn")
@@ -36,6 +38,10 @@ func _ready():
 			current_scene = get_tree().get_root().get_node("Game")
 		elif get_tree().get_root().has_node("MainMenu"):
 			current_scene = get_tree().get_root().get_node("MainMenu")
+		elif get_tree().get_root().has_node("Tutorial"):
+			current_scene = get_tree().get_root().get_node("Tutorial")
+		elif get_tree().get_root().has_node("TrainStation"):
+			current_scene = get_tree().get_root().get_node("TrainStation")
 
 func load_scene(next_scene: String):
 	var loading_screen_instance = loading_screen.instantiate()
@@ -100,11 +106,18 @@ func spawn_object(object, position: Vector2, rotation: float = 0, parent = null)
 	
 	return instance
 
-func spawn_with_indicator(indicator_type: SpawnIndicatorType.TYPE, object, position: Vector2, rotation: float = 0, parent = null, time: float = 1.0, callable: Callable = Callable()):
+var enemy_spawn_sound = preload("res://Audio/SoundEffects/Effects/EnemySpawnSoundEffect.wav")
+
+func spawn_with_indicator(indicator_type: SpawnIndicatorType.TYPE, object, pos: Vector2, rotation: float = 0, parent = null, time: float = 1.25, callable: Callable = Callable()):
 	var indicator_scene: PackedScene = indicator_type_manager.scene_from_type(indicator_type)
-	spawn_object(indicator_scene, position, rotation, parent)
+	spawn_object(indicator_scene, pos, rotation, parent)
 	await get_tree().create_timer(time).timeout
-	var instance = spawn_object(object, position, rotation, parent)
+	var instance = spawn_object(object, pos, rotation, parent)
+	
+	var audio_data = AudioData.new(enemy_spawn_sound, pos)
+	audio_data.volume = -10.0
+	audio_data.max_distance = 1200.0
+	AudioManager.play_sound(audio_data)
 	
 	GameEvents.enemy_spawned.emit()
 	
@@ -139,6 +152,15 @@ func get_point_before_collision(origin, target) -> Vector2:
 		return result.position
 	else:
 		return target
+
+func is_visible_from(origin, target) -> bool:
+	var space_state = world.direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(origin, target, 4)
+	var result = space_state.intersect_ray(query)
+	if result:
+		return false
+	else:
+		return true
 
 func get_unique_id() -> int:
 	current_id += 1

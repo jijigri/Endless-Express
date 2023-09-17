@@ -19,4 +19,5 @@ extends Resource
 @export var dash_time: float = 0.1
 @export var initial_number_of_dashes: int = 0
 @export var max_wall_slide_gravity: float = 220.0
-@export var wall_jump_force: Vector2 = Vector2(300, 460)
+@export var wall_jump_force: Vector2 = Vector2(300, 465)
+@export var wall_jump_recover_time: float = 0.0

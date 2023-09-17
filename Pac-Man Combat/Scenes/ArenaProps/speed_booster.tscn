@@ -84,6 +84,7 @@ animations = [{
 }]
 
 [node name="SpeedBooster" type="Area2D"]
+visible = false
 z_index = -2
 position = Vector2(128, -8)
 collision_layer = 0

@@ -9,7 +9,11 @@ signal effect_removed(effect: String)
 var status_effects = {
 	"freeze": preload("res://Scenes/Misc/StatusEffects/freeze_status_effect.tscn"),
 	"hack": preload("res://Scenes/Misc/StatusEffects/hack_status_effect.tscn"),
-	"stagger": preload("res://Scenes/Misc/StatusEffects/stagger_status_effect.tscn")
+	"stagger": preload("res://Scenes/Misc/StatusEffects/stagger_status_effect.tscn"),
+	"slow": preload('res://Scenes/Misc/StatusEffects/slow_status_effect.tscn'),
+	"super_shield": preload("res://Scenes/Misc/StatusEffects/super_shield_status_effect.tscn"),
+	"shield": preload("res://Scenes/Misc/StatusEffects/shield_status_effect.tscn"),
+	"poison": preload("res://Scenes/Misc/StatusEffects/poison_status_effect.tscn")
 }
 
 var current_effects : Array[StatusEffect] = []
@@ -21,6 +25,10 @@ func set_status_effect(effect: String, time: float):
 		status.initialize(self, owner, effect, time * time_multiplier)
 		current_effects.append(status)
 		effect_applied.emit(effect, time * time_multiplier)
+		
+		return status
+	
+	return null
 
 func remove_effect(effect_name: String, called_from_effect: bool = false):
 	var success: bool = false
@@ -38,3 +46,13 @@ func has_effect(effect_name: String) -> bool:
 		if status.effect_name == effect_name:
 			return true
 	return false
+
+func number_of_effects(effect_name: String = "") -> int:
+	if effect_name == "":
+		return current_effects.size()
+	else:
+		var amount: int = 0
+		for status in current_effects:
+			if status.effect_name == effect_name:
+				amount += 1
+		return amount

@@ -5,11 +5,26 @@ extends PlayerMovement
 @onready var energy_manager: EnergyManager = $EnergyManager
 @onready var camera: Camera2D = $Camera
 @onready var player_gun = $PlayerGun
+@onready var player_abilities = $Abilities/PlayerAbilities
+@onready var movement_ability = $Abilities/MovementAbility
+@onready var passive_ability = $Abilities/PassiveAbility
+@onready var hurtbox = $Hurtbox
+@onready var collision_shape = $CollisionShape2D
 
 func _ready() -> void:
+	if !health_manager.entity_killed.is_connected(_on_health_manager_entity_killed):
+		health_manager.entity_killed.connect(_on_health_manager_entity_killed)
+	if !health_manager.health_updated.is_connected(_on_health_manager_health_updated):
+		health_manager.health_updated.connect(_on_health_manager_health_updated)
+	if !energy_manager.energy_updated.is_connected(_on_energy_manager_energy_updated):
+		energy_manager.energy_updated.connect(_on_energy_manager_energy_updated)
+	if !sprite.frame_changed.is_connected(_on_sprite_frame_changed):
+		sprite.frame_changed.connect(_on_sprite_frame_changed)
+	
 	HUD.player_hud.update_health_bar(health_manager.current_health, health_manager.max_health, null)
 	HUD.player_hud.update_energy_bar(energy_manager.current_energy, energy_manager.max_energy, true)
 	CameraManager.current_camera = camera
+	camera.initialize(self)
 	
 	sprite.set_player(self)
 
@@ -59,7 +74,7 @@ func _on_health_manager_entity_killed() -> void:
 	set_physics_process(false)
 	
 	player_gun.set_process(false)
-	$PlayerAbilities.set_process(false)
+	player_abilities.set_process(false)
 
 func gain_health(value: float):
 	health_manager.heal(value)
@@ -81,6 +96,12 @@ func _on_sprite_frame_changed() -> void:
 	if sprite.animation == "run":
 		if sprite.frame == 1 || sprite.frame == 5:
 			AudioManager.play_sound(
+				AudioData.new(preload("res://Audio/SoundEffects/Player/PlayerStep.wav"),
+				global_position)
+			)
+
+func play_step_sound() -> void:
+	AudioManager.play_sound(
 				AudioData.new(preload("res://Audio/SoundEffects/Player/PlayerStep.wav"),
 				global_position)
 			)

@@ -4,13 +4,17 @@ extends Enemy
 @export var retreat_movement: EntityMovement
 
 @onready var player = get_tree().get_first_node_in_group("Player")
-@onready var spawner = get_tree().get_first_node_in_group("ArenaManager").current_arena.chaser_spawner
+var spawner
 
 var attacks: Array[EnemyAttack]
 
 var distance_to_player: float
 
 func _ready() -> void:
+	var arena_manager = get_tree().get_first_node_in_group("ArenaManager")
+	if arena_manager != null:
+		spawner = arena_manager.current_arena.chaser_spawner
+	
 	if retreat_movement != null:
 		add_movement_state(retreat_movement)
 	
@@ -115,6 +119,12 @@ func _on_health_manager_armor_broken() -> void:
 	audio_data.volume = 3.0
 	
 	AudioManager.play_in_player(audio_data, "armor_break", 2)
+	
+	var sides = [-1, 1]
+	var offset = sides[randi_range(0, 1)]
+	var splash_text = Global.spawn_object(ScenesPool.splash_text, global_position + Vector2(offset * 12, randf_range(0, -16)), deg_to_rad(randf_range(-45, 45)))
+	splash_text.initialize("ARMOR BREAK", 0.1, 0.4, 0.05, SplashText.MODE.DEFAULT, "blue")
+	splash_text.scale = Vector2(0.9, 0.9)
 	
 	if sprite != null:
 		if sprite.has_method("enable"):

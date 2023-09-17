@@ -7,9 +7,11 @@ extends Node2D
 @onready var current_health: float = max_health
 
 var damage_multiplier = 1.0
+var damage_modifiers = []
 
 signal health_updated(current_health: float, max_health: float, damage_data: DamageData)
 signal entity_killed()
+signal damage_tanked(damage_data)
 
 var can_be_saved: bool = true
 
@@ -22,6 +24,7 @@ func take_damage(damage_data: DamageData) -> void:
 		return
 	
 	if invincible:
+		damage_tanked.emit(damage_data)
 		return
 	
 	calculate_damage(damage_data)
@@ -30,7 +33,10 @@ func take_damage(damage_data: DamageData) -> void:
 	health_updated.emit(current_health, max_health, damage_data)
 
 func calculate_damage(damage_data: DamageData):
-	current_health -= damage_data.damage * damage_multiplier
+	var modifier = 1.0
+	for i in damage_modifiers:
+		modifier *= i
+	current_health -= damage_data.damage * damage_multiplier * modifier
 
 func heal(value: float):
 	if active == false:

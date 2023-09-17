@@ -3,16 +3,18 @@ extends Node2D
 
 const buffer: float = 0.2
 
-@export var ammo_count: int = 8
+@export var ammo_count: int = 4
 @export var ammo_replenish_over_speed = 0.05
 @export var ammo_replenish_over_damage = 1.0
 @export var spawn_point: Node2D
+@export var player_sprite: AnimatedSprite2D
 @export var primary_gun: Gun
 @export var secondary_gun: Gun
 @export var ammo_bar: HBoxContainer
 
-@onready var sprite: Sprite2D = $Sprite
-@onready var outline: Sprite2D = $Sprite/Outline
+@onready var anchor = $Anchor
+@onready var sprite: Sprite2D = $Anchor/Sprite
+@onready var outline: Sprite2D = $Anchor/Sprite/Outline
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var particles: PackedScene = preload("res://Scenes/Effects/drop_particles.tscn")
 @onready var current_ammos: int = ammo_count
@@ -64,13 +66,20 @@ func _process(delta: float) -> void:
 
 func set_gun_rotation() -> void:
 	var mouse_rotation = Helper.angle_between(player.global_position, get_global_mouse_position())
-	rotation_degrees = (mouse_rotation)
-	if mouse_rotation < -90 || mouse_rotation > 90:
+	anchor.rotation_degrees = (mouse_rotation)
+	
+	#if mouse_rotation < -90 || mouse_rotation > 90:
+	if player_sprite.flip_h:
 		sprite.flip_v = true
 		outline.flip_v = true
+		position.x = -anchor.position.x * 2
+
 	else:
 		sprite.flip_v = false
 		outline.flip_v = false
+		position.x = 0
+
+	outline.offset = sprite.offset
 
 func get_input():
 	

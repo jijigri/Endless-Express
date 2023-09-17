@@ -31,12 +31,15 @@ func set_editor_size():
 	
 	if update_navigation:
 		if navigation_region != null:
+			var offset = 8
+			var size_x = (size.x / 2) - offset
+			var size_y = (size.y / 2) - offset
 			var polygon = NavigationPolygon.new()
 			var outline = PackedVector2Array([
-				center + Vector2(-size.x / 2, -size.y / 2),
-				center + Vector2(-size.x / 2, size.y / 2),
-				center + Vector2(size.x / 2, size.y / 2),
-				center + Vector2(size.x / 2, -size.y / 2)
+				center + Vector2(-size_x, -size_y),
+				center + Vector2(-size_x, size_y),
+				center + Vector2(size_x, size_y),
+				center + Vector2(size_x, -size_y)
 				])
 			polygon.add_outline(outline)
 			polygon.make_polygons_from_outlines()

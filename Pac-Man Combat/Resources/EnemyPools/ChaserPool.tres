@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyPool" load_steps=17 format=3 uid="uid://cbuurvbgo67we"]
+[gd_resource type="Resource" script_class="EnemyPool" load_steps=27 format=3 uid="uid://cbuurvbgo67we"]
 
 [ext_resource type="PackedScene" uid="uid://no3ixjdimri5" path="res://Scenes/Entities/Enemies/Chasers/chaser_brute.tscn" id="1_liy22"]
 [ext_resource type="Script" path="res://Scripts/Resources/EnemyPool.gd" id="1_vldob"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://bi4nkvdxlcx3i" path="res://Scenes/Entities/Enemies/Chasers/chaser_barrel_master.tscn" id="6_ldgsq"]
 [ext_resource type="PackedScene" uid="uid://sllx11otflm3" path="res://Scenes/Entities/Enemies/Chasers/chaser_belly_betty.tscn" id="7_pm1ln"]
 [ext_resource type="PackedScene" uid="uid://0naiwidlo7e8" path="res://Scenes/Entities/Enemies/Chasers/enemy_bat.tscn" id="8_3yym0"]
+[ext_resource type="PackedScene" uid="uid://itvkf0cc2geo" path="res://Scenes/Entities/Enemies/Chasers/chaser_speedster.tscn" id="9_0acye"]
+[ext_resource type="PackedScene" uid="uid://jrakklk0fjde" path="res://Scenes/Entities/Enemies/Chasers/chaser_sheet_phantom.tscn" id="10_4wooc"]
+[ext_resource type="PackedScene" uid="uid://c7gyc136f7g7m" path="res://Scenes/Entities/Enemies/Chasers/chaser_swappy_rocket.tscn" id="11_oqxfi"]
+[ext_resource type="PackedScene" uid="uid://qyuj3o4lsl3" path="res://Scenes/Entities/Enemies/Chasers/chaser_small_rocket.tscn" id="12_mq5gh"]
+[ext_resource type="PackedScene" uid="uid://dm5h2rcrpssnu" path="res://Scenes/Entities/Enemies/Chasers/chaser_kettle_tank.tscn" id="13_iaf7b"]
 
 [sub_resource type="Resource" id="Resource_knxrq"]
 script = ExtResource("2_63r82")
@@ -67,12 +72,57 @@ scene = ExtResource("7_pm1ln")
 [sub_resource type="Resource" id="Resource_vi882"]
 script = ExtResource("2_63r82")
 level = 3
-min_weight = 0.15
-max_weight = 0.3
+min_weight = 0.1
+max_weight = 0.25
 min_wave_to_spawn_in = 12
 name = "Bat"
 scene = ExtResource("8_3yym0")
 
+[sub_resource type="Resource" id="Resource_6tva1"]
+script = ExtResource("2_63r82")
+level = 2
+min_weight = 0.3
+max_weight = 0.4
+min_wave_to_spawn_in = 0
+name = "Speedster"
+scene = ExtResource("9_0acye")
+
+[sub_resource type="Resource" id="Resource_3g4hp"]
+script = ExtResource("2_63r82")
+level = 2
+min_weight = 0.3
+max_weight = 0.65
+min_wave_to_spawn_in = 6
+name = "Sheet Phantom"
+scene = ExtResource("10_4wooc")
+
+[sub_resource type="Resource" id="Resource_5ky1x"]
+script = ExtResource("2_63r82")
+level = 4
+min_weight = 0.1
+max_weight = 0.2
+min_wave_to_spawn_in = 16
+name = "Swappy Rocket"
+scene = ExtResource("11_oqxfi")
+
+[sub_resource type="Resource" id="Resource_6cfsu"]
+script = ExtResource("2_63r82")
+level = 1
+min_weight = 0.5
+max_weight = 0.7
+min_wave_to_spawn_in = 4
+name = "Small Rocket"
+scene = ExtResource("12_mq5gh")
+
+[sub_resource type="Resource" id="Resource_uju2a"]
+script = ExtResource("2_63r82")
+level = 8
+min_weight = 0.1
+max_weight = 0.3
+min_wave_to_spawn_in = 16
+name = "Kettle Tank"
+scene = ExtResource("13_iaf7b")
+
 [resource]
 script = ExtResource("1_vldob")
-enemy_pool = Array[Resource("res://Scripts/Resources/EnemyData.gd")]([SubResource("Resource_knxrq"), SubResource("Resource_de3xi"), SubResource("Resource_irmkt"), SubResource("Resource_p5152"), SubResource("Resource_gpsqh"), SubResource("Resource_vgnuo"), SubResource("Resource_vi882")])
+enemy_pool = Array[Resource("res://Scripts/Resources/EnemyData.gd")]([SubResource("Resource_knxrq"), SubResource("Resource_de3xi"), SubResource("Resource_irmkt"), SubResource("Resource_p5152"), SubResource("Resource_gpsqh"), SubResource("Resource_vgnuo"), SubResource("Resource_vi882"), SubResource("Resource_6tva1"), SubResource("Resource_3g4hp"), SubResource("Resource_5ky1x"), SubResource("Resource_6cfsu"), SubResource("Resource_uju2a")])

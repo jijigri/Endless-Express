@@ -22,7 +22,7 @@ move_speed = 100.0
 visible = false
 points = PackedVector2Array(0, 0, 32, 0)
 width = 3.0
-default_color = Color(0.807843, 0.176471, 0.45098, 1)
+default_color = Color(0.882353, 0.168627, 0.168627, 1)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1

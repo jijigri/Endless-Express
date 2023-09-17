@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6l26iv80biyo"]
+[gd_scene load_steps=6 format=3 uid="uid://b6l26iv80biyo"]
 
 [ext_resource type="Script" path="res://Scripts/ChaserSpawner.gd" id="1_jatiq"]
 [ext_resource type="Resource" uid="uid://cbuurvbgo67we" path="res://Resources/EnemyPools/ChaserPool.tres" id="2_cwwnw"]
+[ext_resource type="Script" path="res://Scripts/World/Spawners/EscalationChaserSpawner.gd" id="3_03wah"]
 
 [sub_resource type="Curve" id="Curve_kbrua"]
 max_value = 10.0
@@ -19,3 +20,6 @@ chasers = ExtResource("2_cwwnw")
 intensity_curve_min = SubResource("Curve_kbrua")
 intensity_curve_max = SubResource("Curve_u3dkb")
 curve_sample_size = 10
+
+[node name="EscalationSpawner" type="Node2D" parent="."]
+script = ExtResource("3_03wah")

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var confirm_screen = $ConfirmationScreen
+@onready var game_manager = get_tree().get_first_node_in_group("GameManager")
 
 var settings = preload("res://Scenes/UI/settings.tscn")
 
@@ -9,11 +10,18 @@ var last_tried_to_restart: bool = true
 var settings_instance
 
 func _ready() -> void:
+	GameEvents.player_killed.connect(_on_player_killed)
+	
 	confirm_screen.visible = false
 	visible = false
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
+		if game_manager != null:
+			if game_manager.game_over:
+				if visible:
+					close()
+				return
 		if visible:
 			close()
 		else:
@@ -44,9 +52,11 @@ func _on_cancel_pressed() -> void:
 
 func _on_confirm_pressed() -> void:
 	if last_tried_to_restart:
+		MusicHandler.stop_music()
 		close()
 		Global.load_scene("game")
 	else:
+		MusicHandler.stop_music()
 		close()
 		Global.load_scene("main_menu")
 
@@ -59,3 +69,7 @@ func close():
 	confirm_screen.visible = false
 	visible = false
 	Global.pause_menu_enabled = false
+
+func _on_player_killed():
+	if visible:
+		close()

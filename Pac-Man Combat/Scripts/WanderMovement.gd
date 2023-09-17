@@ -4,7 +4,8 @@ extends PathfindingMovement
 @onready var arena_manager: ArenaManager = get_tree().get_first_node_in_group("ArenaManager")
 
 func update_path() -> void:
-	target_position = arena_manager.get_random_position_on_navmesh()
+	if arena_manager != null:
+		target_position = arena_manager.get_random_position_on_navmesh()
 	super.update_path()
 
 

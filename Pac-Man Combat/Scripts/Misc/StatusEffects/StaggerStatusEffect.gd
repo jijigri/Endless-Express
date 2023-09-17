@@ -18,7 +18,7 @@ func _initiated():
 	particles.process_material.emission_box_extents = size
 	
 	for i in entity_owner.movement_states:
-		i.speed_modifiers.append(0.8)
+		i.speed_modifiers.append(0.5)
 	
 	if entity_owner.is_in_group("Chasers"):
 		for i in entity_owner.attacks:
@@ -39,7 +39,7 @@ func disable_effect(called_from_manager: bool = false):
 			i.locks -= 1
 	
 	for i in entity_owner.movement_states:
-		i.speed_modifiers.erase(0.8)
+		i.speed_modifiers.erase(0.5)
 	
 	entity_owner.stagger_stacks -= 1
 	

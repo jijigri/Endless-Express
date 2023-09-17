@@ -4,6 +4,11 @@ extends Area2D
 @export var has_piercing: bool = false
 @export var break_armor: float = 0.0
 
+@export_group("Status Effect")
+@export var status_effect: String = ""
+@export var status_time: float = 0.0
+@export var status_cap: int = 0
+
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var particles: GPUParticles2D = $Particles
 
@@ -64,11 +69,11 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if area.is_in_group("Hurtbox"):
 		if area.has_method("receive_hit"):
-			if has_piercing:
-				if entities_damaged.has(area):
-					return
-				else:
-					entities_damaged.append(area)
+			#if has_piercing:
+			if entities_damaged.has(area):
+				return
+			else:
+				entities_damaged.append(area)
 				
 			
 			var damageData = DamageData.new(damage, global_position, velocity * knockback_force, break_armor)
@@ -81,11 +86,11 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Hurtbox"):
-		if has_piercing:
-			if entities_damaged.has(body):
-				return
-			else:
-				entities_damaged.append(body)
+		#if has_piercing:
+		if entities_damaged.has(body):
+			return
+		else:
+			entities_damaged.append(body)
 				
 			
 		var damageData = DamageData.new(damage, global_position, velocity * knockback_force)
@@ -107,6 +112,14 @@ func on_entity_damaged(area):
 	if gun_origin != null:
 		if gun_origin.has_method("on_hit"):
 			gun_origin.on_hit()
+	
+	if status_effect != "" && status_time > 0:
+		if area.status_effects_manager != null:
+			if status_cap > 0:
+				if area.status_effects_manager.number_of_effects(status_effect) >= status_cap:
+					return
+			
+			area.status_effects_manager.set_status_effect(status_effect, status_time)
 
 func destroy_bullet():
 	active = false

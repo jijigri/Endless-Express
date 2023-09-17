@@ -1,0 +1,148 @@
+[gd_scene load_steps=19 format=3 uid="uid://cgtadfkcc7r40"]
+
+[ext_resource type="PackedScene" uid="uid://ca6n0kxrbos4v" path="res://Scenes/Entities/Players/player_base.tscn" id="1_jf36b"]
+[ext_resource type="Resource" uid="uid://br3pns4mfbayj" path="res://Resources/Entities/Player/NinjaBoyMovementData.tres" id="2_d7jin"]
+[ext_resource type="Resource" uid="uid://bdr5173wns2s1" path="res://Resources/Guns/Shotgun.tres" id="3_f2c7a"]
+[ext_resource type="Texture2D" uid="uid://ck10encopctg4" path="res://Sprites/Entities/Players/NinjaPlaceholder.png" id="3_yl5jd"]
+[ext_resource type="Resource" uid="uid://cnq5bqpqc0qxg" path="res://Resources/Guns/Shurigun.tres" id="3_yuwj3"]
+[ext_resource type="PackedScene" uid="uid://7ri57fl6mrqt" path="res://Scenes/Abilities/bomb_ability.tscn" id="5_5xujv"]
+[ext_resource type="Script" path="res://Scripts/Entities/Player/Abilities/NinjaDashAbility.gd" id="5_r870c"]
+[ext_resource type="Script" path="res://Scripts/Entities/Player/Abilities/WindPushAbility.gd" id="7_rvnoi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ykmq"]
+resource_local_to_scene = true
+size = Vector2(16, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrit5"]
+atlas = ExtResource("3_yl5jd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyb6v"]
+atlas = ExtResource("3_yl5jd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88wvs"]
+atlas = ExtResource("3_yl5jd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmkaa"]
+atlas = ExtResource("3_yl5jd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk25s"]
+atlas = ExtResource("3_yl5jd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4l1hn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrit5")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyb6v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88wvs")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmkaa")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk25s")
+}],
+"loop": true,
+"name": &"wall_slide",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10hwm"]
+resource_local_to_scene = true
+size = Vector2(14, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cuqx"]
+size = Vector2(128, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmq3s"]
+size = Vector2(32, 32)
+
+[node name="NinjaBoy" instance=ExtResource("1_jf36b")]
+movement_data = ExtResource("2_d7jin")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_6ykmq")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_4l1hn")
+animation = &"fall"
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_10hwm")
+
+[node name="Camera" parent="." index="5"]
+position_smoothing_speed = 50.0
+
+[node name="PlayerGun" parent="." index="6"]
+primary_gun = ExtResource("3_yuwj3")
+secondary_gun = ExtResource("3_f2c7a")
+
+[node name="WindPushAbility" type="Node2D" parent="Abilities/PlayerAbilities" index="0" node_paths=PackedStringArray("gun")]
+script = ExtResource("7_rvnoi")
+gun = NodePath("../../../PlayerGun")
+energy_cost = 0.0
+
+[node name="Area2D" type="Area2D" parent="Abilities/PlayerAbilities/WindPushAbility" index="0"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Abilities/PlayerAbilities/WindPushAbility/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_3cuqx")
+
+[node name="ColorRect" type="ColorRect" parent="Abilities/PlayerAbilities/WindPushAbility/Area2D/CollisionShape2D" index="0"]
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 20.0
+color = Color(1, 0, 0, 0.498039)
+
+[node name="BombAbility" parent="Abilities/PlayerAbilities" index="1" node_paths=PackedStringArray("gun") instance=ExtResource("5_5xujv")]
+gun = NodePath("../../../PlayerGun")
+energy_cost = 0.0
+
+[node name="MovementAbility" parent="Abilities" index="1"]
+script = ExtResource("5_r870c")
+cooldown = 0.6
+
+[node name="Area2D" type="Area2D" parent="Abilities/MovementAbility" index="0"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Abilities/MovementAbility/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_dmq3s")
+
+[editable path="Hurtbox"]
+[editable path="OverheadHealthBar"]
+[editable path="OverheadEnergyBar"]

@@ -1,22 +1,25 @@
-D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5.2a
-res://Scenes
 res://Scripts/UI
-res://Scripts/World/ConductorVoice
-res://Scripts/World
-D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5.1a
-res://Scenes/Arenas
-res://Scenes/Misc
-res://Scripts/Misc
+res://Scenes/UI
 res://Scenes/Abilities
+res://Resources/Guns
+res://Sprites/Effects/Muzzle_Flashes
 res://Scripts/Entities/Player
+res://Sprites/Entities/Players
+res://Scenes/Tools
+res://Scripts/Tools
+res://Shaders
+res://Scripts/Effects
+res://Scenes/Effects
 res://Scripts/Entities/Player/Abilities
-res://Sprites/UI
-res://Sprites/Abilities
 res://Scripts/Misc/StatusEffects
 res://Scenes/Misc/StatusEffects
+res://Sprites/Entities/Bullets
+res://Scenes/Entities/Bullets
+res://Scripts/Entities/Bullets
+res://Sprites/Abilities
 res://Scripts/Entities/Misc
 res://Scenes/Entities/Misc
-res://Scenes/UI
-res://Sprites/Effects
-res://Resources/Biomes
-res://
+res://Themes
+D:/Godot Games/Builds/EndlessExpress/Test
+D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5.2a
+D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.5.1a

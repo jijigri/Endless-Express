@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://idpky6xofmtr"]
+
+[ext_resource type="PackedScene" uid="uid://bcs4wgl2fi7qo" path="res://Scenes/Entities/Bullets/bullet.tscn" id="1_kmydj"]
+[ext_resource type="Texture2D" uid="uid://bokmmj2fkusij" path="res://Sprites/Entities/Bullets/Kunai_Bullet.png" id="2_b0ql4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwgv7"]
+size = Vector2(12, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_610yt"]
+atlas = ExtResource("2_b0ql4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36cs1"]
+atlas = ExtResource("2_b0ql4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udgw1"]
+atlas = ExtResource("2_b0ql4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsjn3"]
+atlas = ExtResource("2_b0ql4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64ts2"]
+atlas = ExtResource("2_b0ql4")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbt5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_610yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36cs1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udgw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsjn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64ts2")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
+}]
+
+[sub_resource type="Curve" id="Curve_hn0eh"]
+_data = [Vector2(0, 0), 0.0, 13.1948, 0, 0, Vector2(0.0905512, 1), 0.0, 0.0, 0, 0, Vector2(0.590551, 1), -0.041234, -0.041234, 0, 0, Vector2(1, 0), -6.15757, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_1rnha"]
+curve = SubResource("Curve_hn0eh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ncmuc"]
+lifetime_randomness = 0.6
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_max = 8.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_1rnha")
+anim_offset_max = 1.0
+
+[node name="Kunai" instance=ExtResource("1_kmydj")]
+has_piercing = true
+status_effect = "poison"
+status_time = 5.0
+status_cap = 1
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_pwgv7")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_mbt5p")
+
+[node name="Particles" parent="." index="3"]
+modulate = Color(0.541176, 0.607843, 0.176471, 1)
+process_material = SubResource("ParticleProcessMaterial_ncmuc")

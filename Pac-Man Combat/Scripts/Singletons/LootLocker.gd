@@ -1,5 +1,7 @@
 extends Node
 
+var online: bool = false
+
 var API_key = "dev_cb375b22f1c244c1ac8909ca6053b633"
 var session_token = ""
 var version = "0.03.0.0"
@@ -126,6 +128,9 @@ func _on_leaderboard_request_completed(result, response_code, headers, body) -> 
 	get_leaderboard_complete.emit(json)
 
 func upload_score(score: int, key: String, metadata: String = "I made it to the top!") -> Node:
+	if online == false:
+		return self
+	
 	var data = {"score": str(score), "metadata": metadata}
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
 	
@@ -206,6 +211,9 @@ func get_player_name() -> Node:
 func _on_get_name_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	print_debug("Get name: ", json)
+	
+	if json == null:
+		print_debug("ERROR: NO NAME")
 	
 	if get_name_http != null:
 		get_name_http.queue_free()

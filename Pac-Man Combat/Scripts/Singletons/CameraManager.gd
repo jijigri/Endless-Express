@@ -36,3 +36,14 @@ func zoom_in(value: float, time: float):
 	var tween = create_tween()
 	tween.tween_property(current_camera, "zoom", Vector2.ONE + Vector2(value, value), time / 2).set_ease(Tween.EASE_IN)
 	tween.tween_property(current_camera, "zoom", Vector2.ONE, time / 2).set_ease(Tween.EASE_OUT)
+
+func slide(direction: Vector2, in_time: float = 0.1, out_time: float = -1.0):
+	if out_time == -1.0:
+		out_time = in_time
+	
+	var tween = create_tween()
+	tween.tween_property(current_camera, "offset", direction, in_time)
+	tween.tween_property(current_camera, "offset", Vector2(), out_time)
+	tween.play()
+	await tween.finished
+	current_camera.offset = Vector2()

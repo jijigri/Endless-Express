@@ -10,11 +10,12 @@ enum TYPE {AUTOMATIC, MANUAL, BURST}
 @export var type: TYPE = TYPE.AUTOMATIC
 @export var knockback_force: float = 20.0
 @export_group("Gun feel settings")
+@export var directional_shake: bool = false
 @export var shake_force: float = 1.0
 @export var shake_time: float = 0.1
 @export var recoil_strength_degrees: float = 30
 @export var recoil_strength_pixels: float = 8
-@export var muzzle_flash: PackedScene = preload("res://Scenes/Effects/shotgun_muzzleflash.tscn")
+@export var muzzle_flash: PackedScene
 @export_group("Push settings")
 @export var player_push_force: float = 0.0
 @export var push_in_all_directions: bool = false
@@ -27,6 +28,8 @@ var initial_pos: Vector2 = Vector2(9999, 9999)
 signal hit
 
 var ultracharge_next_shot: bool = false
+
+var can_shoot: bool = true
 
 func shoot(player_gun: Node2D, team_player: bool = true, ultracharge: int = 0) -> void:
 	
@@ -42,9 +45,10 @@ func shoot(player_gun: Node2D, team_player: bool = true, ultracharge: int = 0) -
 		particles.scale.x = -1
 	particles.restart()
 
-	Global.spawn_object(
-		muzzle_flash, player_gun.spawn_point.global_position, player_gun.global_rotation
-		)
+	if muzzle_flash != null:
+		Global.spawn_object(
+			muzzle_flash, player_gun.spawn_point.global_position, player_gun.anchor.global_rotation
+			)
 	
 	if audio != null:
 		AudioManager.play_sound(
@@ -56,7 +60,10 @@ func shoot(player_gun: Node2D, team_player: bool = true, ultracharge: int = 0) -
 	
 	apply_recoil(player_gun)
 	
-	CameraManager.shake(shake_force, shake_time)
+	if directional_shake:
+		CameraManager.slide(-player_gun.anchor.transform.x * shake_force, shake_time / 2, shake_time / 2)
+	else:
+		CameraManager.shake(shake_force, shake_time)
 
 func apply_recoil(player_gun: Node2D):
 	
@@ -81,7 +88,7 @@ func player_recoil(player_gun: Node2D):
 	
 	var player: PhysicsBody2D = player_gun.player
 	if !Input.is_action_pressed("interact_cancel"):
-		var override_velocity: Vector2 = -player_gun.transform.x * player_push_force
+		var override_velocity: Vector2 = -player_gun.anchor.transform.x * player_push_force
 		if !push_in_all_directions:
 			if !player.is_on_floor():
 				if override_velocity.y < 0:

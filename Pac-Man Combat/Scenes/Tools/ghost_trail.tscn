@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bve1lcsaf3h6q"]
+
+[ext_resource type="Script" path="res://Scripts/Tools/GhostTrail.gd" id="1_136oo"]
+[ext_resource type="Texture2D" uid="uid://d8xf2dbyck6i" path="res://icon.svg" id="2_mxhx6"]
+
+[node name="GhostTrail" type="Node2D"]
+script = ExtResource("1_136oo")
+frames_between_ghosts = 1
+color = Color(0.317647, 0.396078, 0.870588, 1)
+fade_to_color = false
+ghost_lifetime = 0.5
+texture = ExtResource("2_mxhx6")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

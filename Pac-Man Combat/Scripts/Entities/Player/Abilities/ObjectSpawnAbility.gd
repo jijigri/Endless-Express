@@ -11,7 +11,7 @@ var effect: PackedScene = preload("res://Scenes/Effects/throw_ability_effect.tsc
 func use_ability(player_abilities: PlayerAbilities):
 	Global.spawn_object(effect, Vector2(), 0, player_abilities.owner)
 	
-	var _rotation = gun.global_rotation
+	var _rotation = gun.anchor.global_rotation
 	for i in burst_amount:
 		spawn_scene(_rotation)
 		await get_tree().create_timer(time_between_throws).timeout

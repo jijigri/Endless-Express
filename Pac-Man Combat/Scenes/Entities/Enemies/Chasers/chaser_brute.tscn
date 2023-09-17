@@ -85,7 +85,7 @@ particles_anim_loop = false
 _data = [Vector2(0, 0), 0.0, 8.60661, 0, 0, Vector2(0.169291, 1), 0.0, 0.0, 0, 0, Vector2(0.629921, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.50629, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_vq801"]
+[sub_resource type="CurveTexture" id="CurveTexture_erxey"]
 curve = SubResource("Curve_lftvk")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jc230"]
@@ -99,7 +99,7 @@ initial_velocity_min = 10.0
 initial_velocity_max = 30.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-scale_curve = SubResource("CurveTexture_vq801")
+scale_curve = SubResource("CurveTexture_erxey")
 color = Color(0.839216, 0.839216, 0.839216, 1)
 anim_offset_min = 0.3
 anim_offset_max = 0.6
@@ -108,7 +108,7 @@ anim_offset_max = 0.6
 atlas = ExtResource("7_fwone")
 region = Rect2(0, 0, 128, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8l4b7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd25h"]
 atlas = ExtResource("10_v784w")
 region = Rect2(0, 0, 8, 8)
 
@@ -118,11 +118,14 @@ projectile = ExtResource("12_n5yyv")
 projectile_speed = 600.0
 projectiles_per_shot = 4
 spread = 20.0
+burst_count = null
+time_between_bursts = null
+accuracy = null
 bullet_lifetime = 0.15
-ignore_iframes = true
+ignore_iframes = null
 damage = 8.0
 cooldown = 0.5
-on_switch_cooldown = 0.05
+on_switch_cooldown = null
 type = 1
 knockback_force = 0.0
 shake_force = 2.0
@@ -130,9 +133,9 @@ shake_time = 0.05
 recoil_strength_degrees = 70.0
 recoil_strength_pixels = 9.0
 muzzle_flash = ExtResource("11_qustn")
-player_push_force = 0.0
-push_in_all_directions = false
-drop_ammo = SubResource("AtlasTexture_8l4b7")
+player_push_force = null
+push_in_all_directions = null
+drop_ammo = SubResource("AtlasTexture_bd25h")
 audio = ExtResource("9_3m2pn")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1kkd"]
@@ -165,6 +168,10 @@ move_speed = 110.0
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("RectangleShape2D_hrrnk")
+
+[node name="HealthManager" parent="." index="4"]
+armor_recharge_time = null
+max_health = null
 
 [node name="Sprite" parent="." index="5"]
 modulate = Color(0.788235, 0.788235, 0.788235, 1)

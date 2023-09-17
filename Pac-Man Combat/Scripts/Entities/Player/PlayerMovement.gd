@@ -3,14 +3,17 @@ extends CharacterBody2D
 
 @export var movement_data: PlayerMovementData
 
-@onready var sprite: AnimatedSprite2D = $Sprite
+@onready var sprite: AnimatedSprite2D = $Animator
 @onready var gravity: float = movement_data.initial_gravity
+@onready var initial_air_acceleration: float = movement_data.air_acceleration
+@onready var initial_air_deceleration: float = movement_data.air_deceleration
 
 var direction: Vector2 = Vector2.ZERO
 var last_direction: Vector2 = Vector2.ONE
 var last_movement_direction_x: int = 1
 var last_wall_direction: int = -1
 var lastPressedDirection: int = 0
+
 
 var isJumping: bool = false
 var canLand: bool = false
@@ -28,6 +31,8 @@ var justDashed: bool
 
 var speed_modifier: float = 1.0
 
+var speed_modifiers = []
+
 var is_dashing = false
 
 var jumped_this_frame: bool
@@ -38,20 +43,22 @@ var jumped_this_frame: bool
 var currentcoyote_time: float
 var currentbuffered_jump_time: float
 
+var wall_jump_recovery_tween: Tween
+
 signal moved(velocity)
 
 signal jumped
 signal landed
+signal wall_landed
 
 signal on_dash_begin
 signal on_dash_finish
 
 func _process(delta):
 	jumped_this_frame = false
-	if is_dashing == false:
-		process_coyote_and_buffered_time(delta)
-		get_x_input()
-		get_y_input()
+	process_coyote_and_buffered_time(delta)
+	get_x_input()
+	get_y_input()
 		
 	if Input.is_action_just_pressed("dash"):
 		if number_of_dashes_remaining > 0:
@@ -64,16 +71,15 @@ func _process(delta):
 	
 	if abs(velocity.x) > 0.1:
 		last_movement_direction_x = velocity.x
+	else:
+		if direction.x != 0:
+			last_movement_direction_x = direction.x
 	
 func _physics_process(delta):
 	
-	if is_dashing:
-		move_and_slide()
-		moved.emit(velocity)
-		return
-	
 	check_wall_sliding()
-	set_gravity()
+	if !is_dashing:
+		set_gravity()
 
 	if process_movement:
 		
@@ -81,7 +87,10 @@ func _physics_process(delta):
 			air_behavior(delta)
 		
 		var wasInTheAir = not is_on_floor()
-		move_player(delta)
+		if !is_dashing:
+			move_player(delta)
+		else:
+			move_and_slide()
 		var justLanded = is_on_floor() && wasInTheAir
 		var justOffGround = not is_on_floor() && not wasInTheAir
 		
@@ -146,13 +155,13 @@ func get_y_input():
 			wall_jump()
 			return
 		
-		if numberOfJumpsLeft > 0 || is_coyote_jump_possible():
+		if (numberOfJumpsLeft > 0 || is_coyote_jump_possible()) && !is_dashing:
 			jump()
 			currentcoyote_time = 0
 		else:
 			currentbuffered_jump_time = movement_data.buffered_jump_time;
 
-	if numberOfJumpsLeft > 0:
+	if numberOfJumpsLeft > 0 && !is_dashing:
 		if is_jump_bufferd():
 			if Input.is_action_pressed("jump"):
 				jump()
@@ -177,7 +186,7 @@ func get_y_input():
 	pass
 
 func jump():
-	
+
 	velocity.y = -movement_data.jump_force
 	isJumping = true
 	
@@ -204,6 +213,11 @@ func jump():
 func wall_jump():
 	velocity = Vector2(movement_data.wall_jump_force.x * -last_wall_direction, movement_data.wall_jump_force.y * -1)
 	
+	isJumping = true
+	
+	stop_wall_jump_recovery()
+	wall_jump_recovery()
+	
 	AudioManager.play_sound(
 		AudioData.new(preload("res://Audio/SoundEffects/Player/PlayerJump.wav"),
 		global_position)
@@ -212,14 +226,44 @@ func wall_jump():
 	var effect = Global.spawn_object(preload("res://Scenes/Effects/wall_jump_effect.tscn"), global_position)
 	effect.scale.x = sign(velocity.x)
 
-func cut_jump():
-
-	velocity.y = velocity.y / 2
+func wall_jump_recovery():
+	if movement_data.wall_jump_recover_time <= 0:
+		return
 	
-	pass
+	movement_data.air_acceleration = 0.0
+	movement_data.air_deceleration = 0.0
+	wall_jump_recovery_tween = create_tween()
+	"""
+	wall_jump_recovery_tween.tween_property(
+		movement_data,
+		"air_acceleration",
+		initial_air_acceleration,
+		movement_data.wall_jump_recover_time
+		)
+	"""
+	wall_jump_recovery_tween.tween_method(set_air_values, 0.0, 1.0, movement_data.wall_jump_recover_time)
+
+func set_air_values(value):
+	movement_data.air_acceleration = lerpf(0.0, initial_air_acceleration, value)
+	movement_data.air_deceleration = lerpf(0.0, initial_air_deceleration, value)
+
+func stop_wall_jump_recovery():
+	if movement_data.wall_jump_recover_time <= 0:
+		return
+	
+	if wall_jump_recovery_tween == null:
+		return
+	if wall_jump_recovery_tween.is_running():
+		wall_jump_recovery_tween.stop()
+	movement_data.air_acceleration = initial_air_acceleration
+	movement_data.air_deceleration = initial_air_deceleration
+
+func cut_jump():
+	
+	velocity.y = velocity.y / 2
 
 func air_behavior(delta: float):
-	
+
 	if landTween != null:
 			if landTween.is_running():
 				landTween.stop()
@@ -256,7 +300,11 @@ func horizontal_movement():
 	if lock_horizontal_movement:
 		return
 	
-	var targetSpeed: float = direction.x * movement_data.speed * speed_modifier
+	var modif: float = 1.0
+	for i in speed_modifiers:
+		modif *= i
+	
+	var targetSpeed: float = direction.x * movement_data.speed * speed_modifier * modif
 
 	var accelRate: float;
 
@@ -264,12 +312,12 @@ func horizontal_movement():
 		accelRate = movement_data.ground_acceleration if abs(targetSpeed) > 0.01 else movement_data.ground_deceleration
 	else:
 		if abs(targetSpeed) > 0.01:
-			if abs(velocity.x) <= movement_data.speed:
+			if abs(velocity.x) <= (movement_data.speed * speed_modifier * modif) + 5:
 				accelRate = movement_data.air_acceleration
 			else:
 				accelRate = 0.05
 		else:
-			if abs(velocity.x) <= movement_data.speed:
+			if abs(velocity.x) <= (movement_data.speed * speed_modifier * modif) + 5:
 				accelRate = movement_data.air_deceleration
 			else:
 				accelRate = 0
@@ -285,7 +333,7 @@ func on_off_ground():
 		numberOfJumpsLeft -= 1
 
 func on_land():
-	
+
 	numberOfJumpsLeft = movement_data.initial_number_of_jumps
 	
 	var tweenStrength: float = abs(lastVelocity.y) / 1100
@@ -306,8 +354,15 @@ func on_land():
 	
 	refill_dashes()
 	
+	stop_wall_jump_recovery()
+	
 	isJumping = false
 	pass
+
+func on_wall_land():
+	wall_landed.emit()
+	
+	stop_wall_jump_recovery()
 
 func on_step():
 	pass
@@ -333,10 +388,14 @@ func check_wall_sliding() -> void:
 		if result.size() > 0:
 			colliding_with_wall = true
 	
+	var was_wall_sliding: bool = is_wall_sliding
 	is_wall_sliding = colliding_with_wall && !is_on_floor() && !Input.is_action_pressed("move_down")
 	
 	if is_wall_sliding:
 		last_wall_direction = sign(last_movement_direction_x)
+		
+		if was_wall_sliding == false:
+			on_wall_land()
 
 func dash() -> void:
 	is_dashing = true
@@ -408,9 +467,7 @@ func modify_speed_smooth(speed: float, time: float):
 	tween.tween_property(self, "speed_modifier", 1.0, time)
 
 func _on_draw() -> void:
-	
 	return
-	
 	var direction: Vector2 = Vector2(sign(last_direction.x), 0)
 	
 	for i in 4:

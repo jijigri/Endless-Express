@@ -14,6 +14,8 @@ var turn_on_sound = preload("res://Audio/SoundEffects/Misc/InterphoneTurnOnSound
 
 var curr_index: int = 0
 
+var cancelled: bool = false
+
 func set_refresh_lines(value):
 	set_files_from_folder()
 	refresh_lines = false
@@ -92,6 +94,8 @@ func _on_arena_cleared(arena: Arena):
 	if Engine.is_editor_hint():
 		return
 	
+	cancelled = false
+	
 	var play_audio: bool = false
 	
 	var rand_change = randf_range(0.0, 100.0)
@@ -105,6 +109,10 @@ func _on_arena_cleared(arena: Arena):
 		return
 	
 	await get_tree().create_timer(0.8).timeout
+	
+	if cancelled:
+		return
+	
 	start_sound.stream = preload("res://Audio/SoundEffects/Misc/InterphoneTurnOnSound.wav")
 	start_sound.play()
 	
@@ -114,6 +122,10 @@ func _on_arena_cleared(arena: Arena):
 	static_sound.play()
 	
 	await get_tree().create_timer(0.5).timeout
+	
+	if cancelled:
+		return
+	
 	stream = get_line()
 	play()
 	
@@ -155,10 +167,10 @@ func get_line() -> AudioStream:
 
 func set_subtitle(stream, text):
 	var time = stream.get_length() * 0.75
-	subtitle.text = text
+	subtitle.text = "Conductor: " + text
 	subtitle.visible = true
 	
-	subtitle.visible_ratio = 0.0
+	subtitle.visible_characters = 10
 	var tween = create_tween()
 	tween.tween_property(subtitle, "visible_ratio", 1.0, time)
 	tween.play()
@@ -166,6 +178,8 @@ func set_subtitle(stream, text):
 func _on_arena_exited(arena: Arena):
 	if playing:
 		stop()
+		start_sound.stop()
+		cancelled = true
 		_on_finished()
 
 func get_random_dict_key(dict):

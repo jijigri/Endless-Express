@@ -45,8 +45,10 @@ func take_damage(damage_data: DamageData) -> void:
 		if is_rolling:
 			return
 	
-	calculate_damage(damage_data)
-	calculate_health()
+	
+	if !invincible:
+		calculate_damage(damage_data)
+		calculate_health()
 	
 	if current_health > danger_zone_value:
 		can_be_saved = true
@@ -97,8 +99,10 @@ func danger_zone_start():
 	iframe_exclusions.clear()
 	danger_state_started.emit()
 	HUD.player_hud.on_danger_state_start()
+	MusicHandler.on_danger_state_start()
 
 func danger_zone_end():
 	current_iframe_time = -1000
 	danger_state_ended.emit()
 	HUD.player_hud.on_danger_state_end()
+	MusicHandler.on_danger_state_end()

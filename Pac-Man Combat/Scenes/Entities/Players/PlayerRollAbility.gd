@@ -3,7 +3,7 @@ extends PlayerMovementAbility
 @export var roll_speed: float = 5.0
 @export var roll_invulnerability_time: float = 0.5
 @export var air_roll_velocity: Vector2 = Vector2.ZERO
-@export var player_animations: PlayerAnimations
+@export var player_animations: PlayerAnimator
 @export var roll_animation_time: float = 0.5
 @export var player_gun: PlayerGun
 

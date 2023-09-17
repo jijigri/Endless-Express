@@ -214,10 +214,9 @@ shader_parameter/NEW_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
 shader_parameter/NEW_COLOR4 = null
 
 [node name="TargetHacker" node_paths=PackedStringArray("bored_movement", "default_movement") instance=ExtResource("1_3cqgu")]
-collision_mask = 4
 script = ExtResource("2_qo6vn")
 distance_from_target_to_hack = 64.0
-time_to_hack = 2.0
+time_to_hack = 1.5
 bored_movement = NodePath("Movement/WanderMovement")
 drop_pool = SubResource("Resource_ydj4l")
 color_swap = ExtResource("6_hrxxi")
@@ -232,7 +231,7 @@ shape = SubResource("RectangleShape2D_4st5p")
 shape = SubResource("RectangleShape2D_8kpr3")
 
 [node name="HealthManager" parent="." index="3"]
-max_health = 150.0
+max_health = 180.0
 health_to_kill = 10
 
 [node name="Sprite" parent="." index="4"]
@@ -265,7 +264,7 @@ texture = ExtResource("12_usc6r")
 
 [node name="PathfindingMovement" type="Node2D" parent="Movement" index="0"]
 script = ExtResource("12_j4037")
-move_speed = 80.0
+move_speed = 110.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Movement/PathfindingMovement" index="0"]
 path_postprocessing = 1

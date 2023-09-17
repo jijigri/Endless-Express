@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bd1hjr7uv82nn"]
+
+[ext_resource type="PackedScene" uid="uid://bcs4wgl2fi7qo" path="res://Scenes/Entities/Bullets/bullet.tscn" id="1_jiq7i"]
+[ext_resource type="Texture2D" uid="uid://bs12crfs4gj17" path="res://Sprites/Entities/Bullets/SMG_Bullet.png" id="2_li1b0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tl5s"]
+atlas = ExtResource("2_li1b0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuhp7"]
+atlas = ExtResource("2_li1b0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uae8j"]
+atlas = ExtResource("2_li1b0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1j1i"]
+atlas = ExtResource("2_li1b0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4eiw"]
+atlas = ExtResource("2_li1b0")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fwlke"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tl5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuhp7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uae8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1j1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4eiw")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
+}]
+
+[node name="SMGBullet" instance=ExtResource("1_jiq7i")]
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_fwlke")
+animation = &"disappear"

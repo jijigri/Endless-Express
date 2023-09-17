@@ -59,12 +59,23 @@ func _ready() -> void:
 	start_arena()
 
 func start_arena():
-	chaser_spawner.spawn_enemies(self)
+	start_battle()
+	#chaser_spawner.spawn_enemies(self)
+	#chaser_spawner.start_escalation(self)
 	target_spawner.spawn_enemies(self)
 	pickup_spawner.spawn_pickups(self)
 	
 	is_flawless = true
 
+func start_battle():
+	var diff = game_manager.current_score - game_manager.old_score
+	for i in diff:
+		if (((game_manager.current_score + 5) - i) % 10) == 0:
+			chaser_spawner.start_escalation(self)
+			return
+	
+	chaser_spawner.spawn_enemies(self)
+	
 func on_arena_clear() -> void:
 
 	print_debug("ARENA CLEAR " + exit_door.name)

@@ -1,7 +1,15 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://3o1ww1sd2e5r"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://3o1ww1sd2e5r"]
+
+[sub_resource type="AudioEffectFilter" id="AudioEffectFilter_h8ire"]
+resource_name = "Filter"
+
+[sub_resource type="AudioEffectFilter" id="AudioEffectFilter_uu7r3"]
+resource_name = "Filter"
 
 [resource]
-bus/0/volume_db = -18.3091
+bus/0/volume_db = -29.2258
+bus/0/effect/0/effect = SubResource("AudioEffectFilter_h8ire")
+bus/0/effect/0/enabled = false
 bus/1/name = &"Ambience"
 bus/1/solo = false
 bus/1/mute = false
@@ -14,6 +22,8 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0694828
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectFilter_uu7r3")
+bus/2/effect/0/enabled = false
 bus/3/name = &"FX"
 bus/3/solo = false
 bus/3/mute = false

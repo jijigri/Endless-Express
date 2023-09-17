@@ -47,8 +47,10 @@ func debug_effect(time: float = 0.1):
 
 func start_tint(color, time):
 	if tilemap == null:
-		tilemap = get_tree().get_first_node_in_group("ArenaManager").current_arena.level_map
-		print_debug("Couldn't find the tilemap, searching for it again")
+		var arena_manager = get_tree().get_first_node_in_group("ArenaManager")
+		if arena_manager != null:
+			tilemap = arena_manager.current_arena.level_map
+			print_debug("Couldn't find the tilemap, searching for it again")
 	
 	set_modulate_color(color)
 	
@@ -73,7 +75,7 @@ func set_modulate_color(value: Color):
 		if arena_manager == null:
 			return
 		
-		tilemap = get_tree().get_first_node_in_group("ArenaManager").current_arena.level_map
+		tilemap = arena_manager.current_arena.level_map
 		print_debug("Couldn't find the tilemap, searching for it again")
 	
 	tilemap.set_layer_modulate(1, value)

@@ -1,0 +1,251 @@
+[gd_scene load_steps=37 format=3 uid="uid://qyuj3o4lsl3"]
+
+[ext_resource type="PackedScene" uid="uid://byf88knlr3kiy" path="res://Scenes/Entities/Enemies/Chasers/enemy_chaser_base.tscn" id="1_rhtnd"]
+[ext_resource type="PackedScene" uid="uid://brhog7rk3d50y" path="res://Scenes/Tools/EnemyTools/Movement/player_tracking_movement.tscn" id="2_iaufv"]
+[ext_resource type="Shader" path="res://Shaders/Blink.gdshader" id="2_ici40"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/StateMachines/SmallRocketStateMachine.gd" id="2_quhi0"]
+[ext_resource type="PackedScene" uid="uid://dbko7513rc01x" path="res://Scenes/Entities/Misc/explosion.tscn" id="3_6oe8s"]
+[ext_resource type="PackedScene" uid="uid://dwq7gd71x1s8b" path="res://Scenes/Tools/EnemyTools/Movement/wander_movement.tscn" id="3_x05bo"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/Movement/MoveTowardsMovement.gd" id="5_feici"]
+[ext_resource type="Texture2D" uid="uid://bcd8l4ts4w7qt" path="res://Sprites/Entities/Enemies/Chasers/SwappyRocket_SpriteSheet.png" id="5_gpkfd"]
+[ext_resource type="Texture2D" uid="uid://bj8gvkgsbldw" path="res://Sprites/Misc/128pxCircle.png" id="7_7865a"]
+[ext_resource type="PackedScene" uid="uid://460412mt4ky1" path="res://Scenes/Tools/EnemyTools/collision_damage.tscn" id="8_446wb"]
+[ext_resource type="AudioStream" uid="uid://c2p83xxhs2hwb" path="res://Audio/SoundEffects/Enemies/SmallRocket/SmallRocketFly.wav" id="11_2dbcy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbmgn"]
+resource_local_to_scene = true
+size = Vector2(8, 8)
+
+[sub_resource type="Curve" id="Curve_qgjun"]
+min_value = 1.0
+max_value = 2.6
+_data = [Vector2(0, 1), 0.0, 0.149509, 0, 0, Vector2(1, 2.6), 2.64, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ei3d4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht37a"]
+resource_local_to_scene = true
+size = Vector2(28, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h8dy5"]
+resource_local_to_scene = true
+shader = ExtResource("2_ici40")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0mfh"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0756"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xirrx"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiim6"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qde45"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4rh0"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fii2"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikaiv"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfjog"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73dej"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amlvw"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fwv6"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5doi"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueu4e"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmqlw"]
+atlas = ExtResource("5_gpkfd")
+region = Rect2(896, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cesp8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0mfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0756")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xirrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eiim6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qde45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4rh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fii2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikaiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfjog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73dej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amlvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fwv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5doi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueu4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmqlw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Curve" id="Curve_v3bgy"]
+_data = [Vector2(0, 0), 0.0, 14.0211, 0, 0, Vector2(0.0900901, 1), 0.0, 0.0, 0, 0, Vector2(0.723724, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -8.04148, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_hrrx4"]
+curve = SubResource("Curve_v3bgy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hjhxr"]
+lifetime_randomness = 0.7
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+flatness = 1.0
+gravity = Vector3(0, 20, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.06
+scale_max = 0.14
+scale_curve = SubResource("CurveTexture_hrrx4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmh15"]
+size = Vector2(14, 10)
+
+[node name="SmallRocket" node_paths=PackedStringArray("close_movement", "retreat_movement", "default_movement") instance=ExtResource("1_rhtnd")]
+max_contacts_reported = 8
+contact_monitor = true
+linear_damp = 8.0
+script = ExtResource("2_quhi0")
+close_movement = NodePath("Movement/CloseMovement")
+explosion_size = 64.0
+explosion_damage = 80.0
+explosion_scene = ExtResource("3_6oe8s")
+retreat_movement = NodePath("Movement/WanderMovement")
+default_movement = NodePath("Movement/PlayerTrackingMovement")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_kbmgn")
+
+[node name="CollisionAvoidance" parent="." index="1"]
+push_force = 10.0
+
+[node name="PlayerTrackingMovement" parent="Movement" index="0" instance=ExtResource("2_iaufv")]
+move_speed = 100.0
+speed_over_time = SubResource("Curve_qgjun")
+max_time = 10.0
+
+[node name="CloseMovement" type="Node2D" parent="Movement" index="1"]
+script = ExtResource("5_feici")
+speed_increase_over_distance = SubResource("Curve_ei3d4")
+prediction_distance = 0.0
+velocity_damp = 0.1
+move_speed = 100.0
+speed_over_time = SubResource("Curve_qgjun")
+max_time = 10.0
+
+[node name="WanderMovement" parent="Movement" index="2" instance=ExtResource("3_x05bo")]
+move_speed = 110.0
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_ht37a")
+
+[node name="HealthManager" parent="." index="4"]
+max_health = 6.0
+
+[node name="Sprite" parent="." index="5"]
+modulate = Color(1, 1, 1, 1)
+material = SubResource("ShaderMaterial_h8dy5")
+sprite_frames = SubResource("SpriteFrames_cesp8")
+frame = 14
+frame_progress = 0.461487
+
+[node name="NormalParticles" type="GPUParticles2D" parent="Sprite" index="0"]
+z_index = -5
+position = Vector2(-10, -1)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_hjhxr")
+texture = ExtResource("7_7865a")
+lifetime = 0.8
+preprocess = 1.0
+speed_scale = 2.0
+randomness = 0.3
+fixed_fps = 120
+
+[node name="CollisionDamage" parent="ChaserAttacksHolder" index="0" instance=ExtResource("8_446wb")]
+damage = 40.0
+
+[node name="CollisionShape2D" parent="ChaserAttacksHolder/CollisionDamage/Area2D" index="0"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_xmh15")
+
+[node name="FlySound" type="AudioStreamPlayer2D" parent="." index="9"]
+stream = ExtResource("11_2dbcy")
+max_distance = 1600.0
+attenuation = 1.02453
+bus = &"FX"
+
+[connection signal="damage_dealt" from="ChaserAttacksHolder/CollisionDamage" to="." method="_on_collision_damage_damage_dealt"]
+
+[editable path="Hurtbox"]
+[editable path="ChaserAttacksHolder/CollisionDamage"]

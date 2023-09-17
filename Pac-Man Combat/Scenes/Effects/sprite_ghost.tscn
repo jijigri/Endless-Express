@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://0qoq0fb6dn8h"]
+
+[ext_resource type="Texture2D" uid="uid://d8xf2dbyck6i" path="res://icon.svg" id="1_0kr2x"]
+[ext_resource type="Shader" path="res://Shaders/ColorFadeShader.gdshader" id="1_5qfa7"]
+[ext_resource type="Script" path="res://Scripts/Effects/SpriteGhost.gd" id="1_m1bdc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfbei"]
+resource_local_to_scene = true
+shader = ExtResource("1_5qfa7")
+shader_parameter/color = Color(0.156863, 0.156863, 0.27451, 1)
+shader_parameter/strength = 0.0
+
+[node name="SpriteGhost" type="Sprite2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_lfbei")
+texture = ExtResource("1_0kr2x")
+script = ExtResource("1_m1bdc")

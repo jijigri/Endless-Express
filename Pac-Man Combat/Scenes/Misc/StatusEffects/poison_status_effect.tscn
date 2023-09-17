@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dn5mjt2035sc8"]
+
+[ext_resource type="PackedScene" uid="uid://c3rf3vks4k5ji" path="res://Scenes/Misc/StatusEffects/status_effect_base.tscn" id="1_xcvsi"]
+[ext_resource type="Script" path="res://Scripts/Misc/StatusEffects/PoisonStatusEffect.gd" id="2_hdtt3"]
+[ext_resource type="Texture2D" uid="uid://di7suod5v6w8u" path="res://Sprites/Effects/Particles/PoisonStatusEffectParticles.png" id="3_gw1qg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r4x5r"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_v2w2u"]
+offsets = PackedFloat32Array(0, 0.0397351, 0.592715, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jbpba"]
+gradient = SubResource("Gradient_v2w2u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ddrf1"]
+lifetime_randomness = 0.4
+emission_shape = 3
+emission_box_extents = Vector3(16, 16, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_jbpba")
+anim_speed_min = 0.8
+anim_speed_max = 1.5
+
+[node name="PoisonStatusEffect" instance=ExtResource("1_xcvsi")]
+script = ExtResource("2_hdtt3")
+armor_recharge_reduction_value = 0.25
+damage_modifier_value = 1.25
+tick_time = 0.25
+tick_damage = 1.0
+
+[node name="Particles" type="GPUParticles2D" parent="." index="1"]
+material = SubResource("CanvasItemMaterial_r4x5r")
+process_material = SubResource("ParticleProcessMaterial_ddrf1")
+texture = ExtResource("3_gw1qg")
+lifetime = 0.5
+fixed_fps = 60
+local_coords = true

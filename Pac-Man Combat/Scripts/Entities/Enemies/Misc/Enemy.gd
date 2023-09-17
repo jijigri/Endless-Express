@@ -14,7 +14,7 @@ extends Entity
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var hit_effect = preload("res://Scenes/Effects/enemy_hit_effect.tscn")
 
-@onready var collision_shape = $CollisionShape2D
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var hurtbox: Hurtbox = $Hurtbox
 
 var updating_direction: bool = true
@@ -42,6 +42,11 @@ func _ready() -> void:
 		var audio_data: AudioData = AudioData.new(spawn_sound, global_position)
 		audio_data.max_distance = 1000
 		AudioManager.play_sound(audio_data)
+	
+	var game_manager = get_tree().get_first_node_in_group("GameManager")
+	if game_manager != null:
+		if game_manager.game_over:
+			kill()
 
 func add_movement_state(state: EntityMovement):
 	movement_states.append(state)

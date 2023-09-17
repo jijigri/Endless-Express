@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="ProjectileGun" load_steps=7 format=3 uid="uid://c2n87eiyrt4p5"]
+
+[ext_resource type="AudioStream" uid="uid://dsnmnf5a3cvpt" path="res://Audio/SoundEffects/Guns/KunaigunShot.wav" id="1_784k5"]
+[ext_resource type="PackedScene" uid="uid://bmx6sedagpngk" path="res://Scenes/Effects/kunaigun_muzzleflash.tscn" id="2_ghnf7"]
+[ext_resource type="PackedScene" uid="uid://idpky6xofmtr" path="res://Scenes/Entities/Bullets/kunai_bullet.tscn" id="3_sgeem"]
+[ext_resource type="Script" path="res://Scripts/Resources/ProjectileGun.gd" id="4_romjw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4y2u7"]
+load_path = "res://.godot/imported/Ammos.png-b1fb3e201c5da483e954fc79817f5450.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxvtw"]
+atlas = SubResource("CompressedTexture2D_4y2u7")
+region = Rect2(0, 8, 8, 8)
+
+[resource]
+script = ExtResource("4_romjw")
+projectile = ExtResource("3_sgeem")
+projectile_speed = 1300.0
+projectiles_per_shot = 5
+spread = 50.0
+burst_count = 1
+time_between_bursts = 0.1
+accuracy = 0.95
+bullet_lifetime = 0.16
+ignore_iframes = true
+damage = 8.0
+cooldown = 0.5
+on_switch_cooldown = 0.1
+type = 1
+knockback_force = 50.0
+directional_shake = false
+shake_force = 4.2
+shake_time = 0.1
+recoil_strength_degrees = 70.0
+recoil_strength_pixels = 4.0
+muzzle_flash = ExtResource("2_ghnf7")
+player_push_force = 270.0
+push_in_all_directions = false
+drop_ammo = SubResource("AtlasTexture_qxvtw")
+audio = ExtResource("1_784k5")

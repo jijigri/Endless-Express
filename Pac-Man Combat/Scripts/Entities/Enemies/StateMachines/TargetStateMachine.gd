@@ -9,7 +9,7 @@ extends Enemy
 @export var drop_pool: TargetDropPool
 @export var color_swap: ColorSwap
 
-var spawner: TargetSpawner
+var spawner
 
 var type_initialized: bool = false
 
@@ -19,7 +19,7 @@ func _ready() -> void:
 	if type_initialized == false:
 		set_type(type)
 
-func initialize(spawner: TargetSpawner, type: TargetEnemyData.TYPE = 1000):
+func initialize(spawner, type: TargetEnemyData.TYPE = 1000):
 	self.spawner = spawner
 	if type != 1000:
 		set_type(type)
@@ -55,7 +55,9 @@ func drop():
 				Global.spawn_object(scene, global_position)
 
 func play_hit_sound():
+	var audio_data = AudioData.new(preload(AudioManager.AUDIO_PATH + "Enemies/TargetHitSound.wav"),
+				global_position)
+	audio_data.volume = 4.0
 	AudioManager.play_in_player(
-				AudioData.new(preload(AudioManager.AUDIO_PATH + "Enemies/TargetHitSound.wav"),
-				global_position), "hit_sound", 1, true
+				audio_data, "hit_sound", 1, true
 			)

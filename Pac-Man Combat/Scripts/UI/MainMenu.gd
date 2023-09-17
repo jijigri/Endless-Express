@@ -14,6 +14,11 @@ func _ready() -> void:
 	HUD.visible = false
 	set_screen(0)
 	
+	if LootLocker.online:
+		$CanvasLayer/Menu/TestVersionLabel.visible = false
+	else:
+		$CanvasLayer/Menu/TestVersionLabel.visible = true
+	
 	var guest_exists = true
 	if LootLocker.authentificated:
 		guest_exists = LootLocker.guest_exists
@@ -34,7 +39,8 @@ func _process(delta: float) -> void:
 			set_screen(0)
 
 func _on_play_button_pressed() -> void:
-	set_screen(2)
+	Global.load_scene("train_station")
+	#set_screen(2)
 	button_pressed_player.stream = preload("res://Audio/SoundEffects/UI/PlayButtonPressedSound.wav")
 	button_pressed_player.play()
 	set_player_name()
@@ -72,8 +78,11 @@ func set_player_name(name: String = ""):
 	if LootLocker.authentificated == false:
 		await LootLocker.authentification_complete
 	
+	await get_tree().process_frame
+	
 	if name == "":
-		LootLocker.set_player_name(display_name_edit.text)
+		if name != "Player" || name != "player":
+			LootLocker.set_player_name(display_name_edit.text)
 	else:
 		LootLocker.set_player_name(name)
 
@@ -84,3 +93,13 @@ func _on_button_pressed() -> void:
 
 func _on_survey_button_pressed() -> void:
 	OS.shell_open("https://forms.gle/eyxRvw5GmiufLpbK7")
+
+
+func _on_tutorial_button_pressed() -> void:
+	button_pressed_player.stream = preload("res://Audio/SoundEffects/UI/PlayButtonPressedSound.wav")
+	button_pressed_player.play()
+	set_player_name()
+	
+	#await get_tree().process_frame
+	
+	Global.load_scene("tutorial")

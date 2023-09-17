@@ -182,6 +182,9 @@ wait_time = 4.0
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("RectangleShape2D_ulmpc")
 
+[node name="HealthManager" parent="." index="4"]
+max_health = 140.0
+
 [node name="Sprite" parent="." index="5"]
 material = SubResource("ShaderMaterial_y0syh")
 sprite_frames = SubResource("SpriteFrames_mtnpm")

@@ -6,7 +6,7 @@ extends Node2D
 @export var speed_over_time: Curve
 @export var max_time: float = 60.0
 
-@onready var player: CharacterBody2D = get_tree().get_nodes_in_group("Player")[0]
+@onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
 @onready var current_speed: float = move_speed
 
 var speed_modifiers: Array[float] = []

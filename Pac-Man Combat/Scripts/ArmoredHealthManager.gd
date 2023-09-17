@@ -8,6 +8,8 @@ var is_armored: bool = true
 
 var current_armor_recharge: float = 0
 
+var armor_recharge_modifiers = []
+
 signal armor_broken
 signal armor_repaired
 
@@ -16,7 +18,10 @@ func _process(delta: float) -> void:
 		recharge_armor(delta)
 
 func recharge_armor(delta) -> void:
-	current_armor_recharge += delta
+	var modifier = 1.0
+	for i in armor_recharge_modifiers:
+		modifier *= i
+	current_armor_recharge += delta * modifier
 	if current_armor_recharge >= armor_recharge_time:
 		repair_armor()
 
@@ -27,11 +32,15 @@ func calculate_damage(damage_data: DamageData):
 		else:
 			current_armor_recharge = 0
 	
+	var modifier = 1.0
+	for i in damage_modifiers:
+		modifier *= i
+	
 	if is_armored:
 		var armor_value = damage_data.damage * armor_damage_reduction / 100
-		current_health -= (damage_data.damage - armor_value) * damage_multiplier
+		current_health -= (damage_data.damage - armor_value) * damage_multiplier * modifier
 	else:
-		current_health -= damage_data.damage * damage_multiplier
+		current_health -= damage_data.damage * damage_multiplier * modifier
 
 func break_armor(armor_recharge_time: float = 5.0) -> void:
 	is_armored = false

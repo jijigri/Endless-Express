@@ -7,6 +7,8 @@ func _ready() -> void:
 	pass
 
 func _initiated():
+	super._initiated()
+	
 	particles = $Particles
 	drop_particles = $DropParticles
 	
@@ -23,7 +25,7 @@ func _initiated():
 	
 	if entity_owner.is_in_group("Chasers"):
 		for i in entity_owner.attacks:
-			i.active = false
+			i.locks += 1
 	
 	entity_owner.frozen = true
 	
@@ -31,7 +33,7 @@ func _initiated():
 		if entity_owner.sprite is AnimatedSprite2D:
 			entity_owner.sprite.speed_scale = 0.0
 	
-	entity_owner.health_manager.damage_multiplier = 1.5
+	entity_owner.health_manager.damage_modifiers.append(1.5)
 	entity_owner.updating_direction = false
 
 func disable_effect(called_from_manager: bool = false):
@@ -45,7 +47,7 @@ func disable_effect(called_from_manager: bool = false):
 	
 	if entity_owner.is_in_group("Chasers"):
 		for i in entity_owner.attacks:
-			i.active = true
+			i.locks -= 1
 	
 	entity_owner.frozen = false
 	
@@ -53,7 +55,7 @@ func disable_effect(called_from_manager: bool = false):
 		if entity_owner.sprite is AnimatedSprite2D:
 			entity_owner.sprite.speed_scale = 1.0
 	
-	entity_owner.health_manager.damage_multiplier = 1.0
+	entity_owner.health_manager.damage_modifiers.erase(1.5)
 	entity_owner.updating_direction = true
 	
 	super.disable_effect(called_from_manager)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbbqb16ku24x3"]
 
-[ext_resource type="LabelSettings" uid="uid://bk5shiiffogwf" path="res://Fonts/LabelSettings/BigTextSettings.tres" id="1_yisno"]
 [ext_resource type="Script" path="res://Scenes/Singletons/TitleText.gd" id="2_j70gj"]
+[ext_resource type="LabelSettings" uid="uid://cyqvslvjkjojq" path="res://Themes/ModernBigTextLabelSettings.tres" id="2_wqm37"]
 
 [node name="Title" type="Node2D"]
 script = ExtResource("2_j70gj")
@@ -25,7 +25,7 @@ offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "TITLE"
-label_settings = ExtResource("1_yisno")
+label_settings = ExtResource("2_wqm37")
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PlayerMovementData" load_steps=2 format=3 uid="uid://br3pns4mfbayj"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/PlayerMovementData.gd" id="1_ormsj"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_ormsj")
+speed = 235.0
+initial_gravity = 1200.0
+jump_force = 380.0
+ground_acceleration = 0.3
+ground_deceleration = 0.3
+air_acceleration = 0.3
+air_deceleration = 0.25
+jump_apex_treshold = 50.0
+jump_apex_gravity_multiplier = 0.5
+fall_gravity_multiplier = 1.5
+max_gravity = 1600.0
+coyote_time = 0.125
+buffered_jump_time = 0.15
+initial_number_of_jumps = 1
+dash_force = 600.0
+dash_time = 0.1
+initial_number_of_dashes = 0
+max_wall_slide_gravity = 220.0
+wall_jump_force = Vector2(235, 465)
+wall_jump_recover_time = 0.6

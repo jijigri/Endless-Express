@@ -14,8 +14,6 @@ var active: bool = false
 func initialize(manager, entity_owner, effect_name: String, time: float):
 	if entity_owner == null:
 		return
-	if entity_owner is Entity == false:
-		return
 	
 	self.entity_owner = entity_owner
 	self.manager = manager

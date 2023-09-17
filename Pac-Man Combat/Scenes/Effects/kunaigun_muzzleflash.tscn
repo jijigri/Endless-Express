@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmx6sedagpngk"]
+
+[ext_resource type="Texture2D" uid="uid://drjyymuoudkrm" path="res://Sprites/Effects/Muzzle_Flashes/KunaiGun_MuzzleFlash.png" id="1_hx682"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_cd31f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tat2v"]
+atlas = ExtResource("1_hx682")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71vis"]
+atlas = ExtResource("1_hx682")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgtp2"]
+atlas = ExtResource("1_hx682")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71ju4"]
+atlas = ExtResource("1_hx682")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y2bl"]
+atlas = ExtResource("1_hx682")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fxqq"]
+atlas = ExtResource("1_hx682")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqewr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tat2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71vis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgtp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71ju4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y2bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fxqq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 18.0
+}]
+
+[node name="KunaigunMuzzleFlash" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_hqewr")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+offset = Vector2(32, 0)
+script = ExtResource("2_cd31f")

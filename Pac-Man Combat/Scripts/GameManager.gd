@@ -7,6 +7,8 @@ var old_score: int = 0
 
 @onready var player = get_tree().get_first_node_in_group("Player")
 
+var game_over: bool = false
+
 func _ready() -> void:
 	HUD.visible = true
 	PlayerDataQueue.reset()
@@ -31,11 +33,26 @@ func game_end():
 	PlayerDataQueue.stop_recording()
 	CameraManager.freeze(0.2)
 	CameraManager.shake(10, 0.5)
+	
 	var is_top: bool = await ScoreManager.is_top_of_leaderboard(current_score)
 	if is_top:
 		HUD.message_from_top_screen.appear(current_score)
 	else:
 		HUD.game_over_screen.appear(current_score)
+
+	game_over = true
+
+func has_passed_by_score(score: int) -> bool:
+	if score == current_score:
+		return true
+	
+	var test_score = old_score
+	while test_score < current_score:
+		if test_score == score:
+			return true
+		test_score += 1
+	
+	return false
 
 func on_player_entity_killed():
 	game_end()

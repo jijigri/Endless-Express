@@ -1,0 +1,134 @@
+[gd_scene load_steps=19 format=3 uid="uid://dg682rgwevmed"]
+
+[ext_resource type="PackedScene" uid="uid://bcs4wgl2fi7qo" path="res://Scenes/Entities/Bullets/bullet.tscn" id="1_4t3he"]
+[ext_resource type="Texture2D" uid="uid://c1mqrc71ji32m" path="res://Sprites/Entities/Bullets/KettleSMG_Bullet.png" id="2_ti3be"]
+[ext_resource type="Script" path="res://Scenes/Entities/Misc/Trail.gd" id="3_oyst3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdvlm"]
+atlas = ExtResource("2_ti3be")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2jwv"]
+atlas = ExtResource("2_ti3be")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e66kf"]
+atlas = ExtResource("2_ti3be")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvb0e"]
+atlas = ExtResource("2_ti3be")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2ftt"]
+atlas = ExtResource("2_ti3be")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nc6w"]
+atlas = ExtResource("2_ti3be")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqn42"]
+atlas = ExtResource("2_ti3be")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyk8a"]
+atlas = ExtResource("2_ti3be")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trmbx"]
+atlas = ExtResource("2_ti3be")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wour4"]
+atlas = ExtResource("2_ti3be")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_optdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdvlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2jwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e66kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvb0e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2ftt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nc6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqn42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyk8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trmbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wour4")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
+}]
+
+[sub_resource type="Curve" id="Curve_hn0eh"]
+_data = [Vector2(0, 0), 0.0, 13.1948, 0, 0, Vector2(0.0905512, 1), 0.0, 0.0, 0, 0, Vector2(0.590551, 1), -0.041234, -0.041234, 0, 0, Vector2(1, 0), -6.15757, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_1rnha"]
+curve = SubResource("Curve_hn0eh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2duh8"]
+lifetime_randomness = 0.6
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_max = 8.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_1rnha")
+color = Color(0.839216, 0.839216, 0.839216, 1)
+anim_offset_max = 1.0
+
+[sub_resource type="Curve" id="Curve_pek51"]
+_data = [Vector2(0, 1), 0.0, -1.68104e-07, 0, 0, Vector2(1, 0), -0.684, 0.0, 0, 0]
+point_count = 2
+
+[node name="SMGBullet" instance=ExtResource("1_4t3he")]
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_optdq")
+animation = &"disappear"
+
+[node name="Particles" parent="." index="3"]
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_2duh8")
+fixed_fps = 340
+
+[node name="Line2D" type="Line2D" parent="." index="4" node_paths=PackedStringArray("target")]
+width = 4.0
+width_curve = SubResource("Curve_pek51")
+default_color = Color(0.882353, 0.168627, 0.168627, 1)
+script = ExtResource("3_oyst3")
+target = NodePath("..")
+length = 5

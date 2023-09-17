@@ -6,8 +6,8 @@ extends Node2D
 @export var provides_iframes: bool = true
 
 @onready var current_cooldown = 0
-@onready var player_movement: PlayerMovement = get_parent()
-@onready var player_health_manager: PlayerHealthManager = get_parent().get_node("HealthManager")
+@onready var player_movement: PlayerMovement = get_parent().get_parent()
+@onready var player_health_manager: PlayerHealthManager = get_parent().get_parent().get_node("HealthManager")
 
 func _ready() -> void:
 	HUD.player_hud.set_movement_ability_icon(display_icon, InputMap.action_get_events("dash")[0].as_text_physical_keycode())

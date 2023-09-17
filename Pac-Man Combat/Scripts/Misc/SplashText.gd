@@ -22,6 +22,8 @@ func initialize(_text: String, fade_in: float = 0.1, fade_out: float = 0.1, dura
 			modulate = Color("fabf79")
 		"orange":
 			modulate = Color("e37927")
+		"blue":
+			modulate = Color("5165de")
 
 func _ready() -> void:
 	global_position += -size / 2

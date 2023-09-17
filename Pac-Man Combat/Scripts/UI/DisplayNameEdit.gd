@@ -9,3 +9,10 @@ func _ready() -> void:
 func _on_text_changed(new_text: String) -> void:
 	if new_text != "":
 		ScoreManager.display_name = new_text
+
+
+func _on_text_submitted(new_text: String) -> void:
+	if LootLocker.authentificated == false:
+		await LootLocker.authentification_complete
+	
+	LootLocker.set_player_name(new_text)

@@ -1,0 +1,114 @@
+[gd_scene load_steps=16 format=3 uid="uid://cr06w8pl82ai1"]
+
+[ext_resource type="PackedScene" uid="uid://bcs4wgl2fi7qo" path="res://Scenes/Entities/Bullets/bullet.tscn" id="1_5rro8"]
+[ext_resource type="Script" path="res://Scripts/Entities/Bullets/ShurikenBullet.gd" id="2_v08rk"]
+[ext_resource type="Texture2D" uid="uid://dx06or6oqiyfh" path="res://Sprites/Entities/Bullets/Shuriken.png" id="2_vst44"]
+[ext_resource type="Script" path="res://Scenes/Entities/Misc/Trail.gd" id="3_lti4j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmaoo"]
+atlas = ExtResource("2_vst44")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0olx5"]
+atlas = ExtResource("2_vst44")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvrm4"]
+atlas = ExtResource("2_vst44")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrfjs"]
+atlas = ExtResource("2_vst44")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnrle"]
+atlas = ExtResource("2_vst44")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bnnq"]
+atlas = ExtResource("2_vst44")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4hr4"]
+atlas = ExtResource("2_vst44")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5qaj2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmaoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0olx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvrm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrfjs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnrle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bnnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4hr4")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
+}]
+
+[sub_resource type="Curve" id="Curve_58e7t"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.89221, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kr4ic"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.301887)
+colors = PackedColorArray(0.807843, 0.176471, 0.45098, 1, 1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_035eh"]
+radius = 128.0
+
+[node name="Shuriken" instance=ExtResource("1_5rro8")]
+collision_mask = 6
+script = ExtResource("2_v08rk")
+bounce_amount = 4
+has_piercing = true
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -1)
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_5qaj2")
+frame_progress = 0.939304
+
+[node name="Particles" parent="." index="3"]
+z_index = -6
+
+[node name="Trail" type="Line2D" parent="." index="4"]
+z_index = -5
+width = 8.0
+width_curve = SubResource("Curve_58e7t")
+gradient = SubResource("Gradient_kr4ic")
+script = ExtResource("3_lti4j")
+length = 12
+
+[node name="BounceArea" type="Area2D" parent="." index="5"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceArea" index="0"]
+shape = SubResource("CircleShape2D_035eh")

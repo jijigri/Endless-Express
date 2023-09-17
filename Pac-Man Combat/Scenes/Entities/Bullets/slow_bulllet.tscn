@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://crcxho345dbmc"]
+
+[ext_resource type="PackedScene" uid="uid://bcs4wgl2fi7qo" path="res://Scenes/Entities/Bullets/bullet.tscn" id="1_c1ojt"]
+[ext_resource type="Texture2D" uid="uid://fefh7vwwv1jx" path="res://Sprites/Entities/Bullets/Slow_Bullet.png" id="2_jwijr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iahqe"]
+size = Vector2(10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nl5q"]
+atlas = ExtResource("2_jwijr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flk85"]
+atlas = ExtResource("2_jwijr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btxt7"]
+atlas = ExtResource("2_jwijr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiuhx"]
+atlas = ExtResource("2_jwijr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we0p6"]
+atlas = ExtResource("2_jwijr")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6mew"]
+atlas = ExtResource("2_jwijr")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfi8f"]
+atlas = ExtResource("2_jwijr")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3oov"]
+atlas = ExtResource("2_jwijr")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nf3a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nl5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flk85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btxt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiuhx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we0p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6mew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfi8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3oov")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
+}]
+
+[node name="SlowBulllet" instance=ExtResource("1_c1ojt")]
+status_effect = "slow"
+status_time = 1.5
+status_cap = 1
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_iahqe")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_nf3a7")

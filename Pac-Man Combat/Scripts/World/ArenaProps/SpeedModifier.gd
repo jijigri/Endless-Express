@@ -5,7 +5,7 @@ extends Area2D
 
 var player: PlayerMovement
 
-var speed_gain: float = 1.6
+var speed_gain: float = 1.0 #used to be 1.6
 var gain_time: float = 2.5
 
 var is_player_on: bool = false
@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 				sprite.play("use")
 				
 				var audio_data = AudioData.new(preload("res://Audio/SoundEffects/ArenaProps/SpeedBoosterUsed.wav"), global_position)
-				AudioManager.play_sound(audio_data)
+				#AudioManager.play_sound(audio_data)
 	else:
 		current_cooldown -= delta
 		if current_cooldown <= 0:

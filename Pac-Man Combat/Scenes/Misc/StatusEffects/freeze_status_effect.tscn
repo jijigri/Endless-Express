@@ -15,7 +15,7 @@ particles_anim_loop = false
 offsets = PackedFloat32Array(0, 0.87234, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jbpba"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_n1mx5"]
 gradient = SubResource("Gradient_qpgyw")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qgbvo"]
@@ -27,14 +27,14 @@ spread = 0.0
 gravity = Vector3(0, 0, 0)
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-color_ramp = SubResource("GradientTexture1D_jbpba")
+color_ramp = SubResource("GradientTexture1D_n1mx5")
 anim_offset_max = 1.0
 
 [sub_resource type="Gradient" id="Gradient_ysoie"]
 offsets = PackedFloat32Array(0, 0.753191, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_1juxf"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xs3dc"]
 gradient = SubResource("Gradient_ysoie")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a5hbv"]
@@ -49,7 +49,7 @@ orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 scale_min = 0.03
 scale_max = 0.03
-color_ramp = SubResource("GradientTexture1D_1juxf")
+color_ramp = SubResource("GradientTexture1D_xs3dc")
 
 [node name="FreezeStatusEffect" instance=ExtResource("1_eftti")]
 script = ExtResource("2_84bpx")

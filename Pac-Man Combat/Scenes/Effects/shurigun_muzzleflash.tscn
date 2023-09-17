@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1m87kiubgbf2"]
+
+[ext_resource type="Texture2D" uid="uid://dssd3gwgkhtv0" path="res://Sprites/Effects/Muzzle_Flashes/Shurigun_MuzzleFlash.png" id="1_a327n"]
+[ext_resource type="Script" path="res://Scripts/Tools/DestroyAfterAnimation.gd" id="2_fwhhu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su572"]
+atlas = ExtResource("1_a327n")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjjhn"]
+atlas = ExtResource("1_a327n")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6upeq"]
+atlas = ExtResource("1_a327n")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7mdt"]
+atlas = ExtResource("1_a327n")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d2k5"]
+atlas = ExtResource("1_a327n")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yrw3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su572")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjjhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6upeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7mdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d2k5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 18.0
+}]
+
+[node name="ShurigunMuzzleFlash" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_yrw3j")
+autoplay = "default"
+offset = Vector2(32, 0)
+script = ExtResource("2_fwhhu")
