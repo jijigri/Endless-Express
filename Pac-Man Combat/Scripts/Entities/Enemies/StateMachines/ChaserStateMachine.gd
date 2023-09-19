@@ -10,6 +10,8 @@ var attacks: Array[EnemyAttack]
 
 var distance_to_player: float
 
+var level: int = 0
+
 func _ready() -> void:
 	var arena_manager = get_tree().get_first_node_in_group("ArenaManager")
 	if arena_manager != null:
@@ -101,6 +103,8 @@ func kill() -> void:
 
 	if spawner != null:
 		spawner.remove_chaser()
+		if level > 0:
+			spawn_soul()
 	
 	var sides = [-1, 1]
 	var offset = sides[randi_range(0, 1)]
@@ -109,6 +113,12 @@ func kill() -> void:
 	#splash_text.scale = Vector2(1.5, 1.5)
 	
 	super.kill()
+
+func spawn_soul():
+	var soul = preload("res://Scenes/Entities/Pickups/soul_pickup.tscn")
+	var soul_amount = (level * 3)
+	for i in soul_amount:
+		Global.spawn_object(soul, global_position)
 
 func _on_health_manager_armor_broken() -> void:
 	var audio_data: AudioData = AudioData.new(

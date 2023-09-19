@@ -1,8 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://co2387na6vt54"]
+[gd_scene load_steps=4 format=3 uid="uid://co2387na6vt54"]
 
 [ext_resource type="Script" path="res://Scripts/Misc/PlayableCharactersPool.gd" id="1_ommkh"]
 [ext_resource type="Resource" uid="uid://c2yn64210q3id" path="res://Resources/PlayableCharacters/Mia.tres" id="2_7gdvj"]
+[ext_resource type="Resource" uid="uid://w35sgwy3q60b" path="res://Resources/PlayableCharacters/NinjaBoyData.tres" id="3_avotn"]
 
 [node name="PlayableCharactersPool" type="Node2D"]
 script = ExtResource("1_ommkh")
-characters = [ExtResource("2_7gdvj")]
+characters = Array[Resource("res://Scripts/Misc/PlayableCharacterData.gd")]([ExtResource("2_7gdvj"), ExtResource("3_avotn")])

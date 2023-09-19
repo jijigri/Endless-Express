@@ -68,7 +68,7 @@ func summon_enemies():
 	
 	enemy_spawner.reset_spawn_weights()
 	
-	var enemies_to_spawn: Array[PackedScene] = enemy_spawner.get_enemies_to_spawn(current_intensity, current_intensity * 2)
+	var enemies_to_spawn: Array[ChaserEnemyData] = enemy_spawner.get_enemies_to_spawn(current_intensity, current_intensity * 2)
 	var positions: Array[Vector2] = []
 	if summon_effects.size() > 0:
 		destroy_summon_effects(true)
@@ -102,7 +102,7 @@ func destroy_summon_effects(instant: bool = false):
 func spawn_enemies(enemies_to_spawn, positions):
 	for i in enemies_to_spawn.size():
 		var pos: Vector2 = positions[i]
-		Global.spawn_with_indicator(SpawnIndicatorType.TYPE.DANGER, enemies_to_spawn[i], pos, 0, enemy_spawner.get_parent())
+		Global.spawn_with_indicator(SpawnIndicatorType.TYPE.DANGER, enemies_to_spawn[i].scene, pos, 0, enemy_spawner.get_parent())
 	
 	enemy_spawner.current_number_of_enemies += enemies_to_spawn.size()
 	

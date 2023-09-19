@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwcw327qgc4de"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Pickups/SoulPickup.gd" id="1_itwam"]
+[ext_resource type="Shader" path="res://Shaders/Blink.gdshader" id="1_o3tov"]
+[ext_resource type="Texture2D" uid="uid://dk5i0tlhvsf1m" path="res://Sprites/Pickups/SoulPickup.png" id="2_dg11a"]
+[ext_resource type="PackedScene" uid="uid://bve1lcsaf3h6q" path="res://Scenes/Tools/ghost_trail.tscn" id="3_a3c5r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1gdv7"]
+shader = ExtResource("1_o3tov")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6r0g"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lkdvj"]
+radius = 50.0
+
+[node name="SoulPickup" type="RigidBody2D" node_paths=PackedStringArray("ghost_trail")]
+material = SubResource("ShaderMaterial_1gdv7")
+collision_layer = 0
+collision_mask = 4
+gravity_scale = 0.0
+linear_damp = 4.0
+script = ExtResource("1_itwam")
+ghost_trail = NodePath("GhostTrail")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h6r0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
+texture = ExtResource("2_dg11a")
+
+[node name="MagnetRange" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagnetRange"]
+shape = SubResource("CircleShape2D_lkdvj")
+
+[node name="GhostTrail" parent="." instance=ExtResource("3_a3c5r")]
+frames_between_ghosts = 2
+fade_to_color = true
+ghost_lifetime = 0.05
+texture = ExtResource("2_dg11a")

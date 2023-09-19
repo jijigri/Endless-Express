@@ -63,11 +63,11 @@ func spawn_enemies(arena: Node2D) -> void:
 	
 	reset_spawn_weights()
 	
-	var enemies_to_spawn: Array[PackedScene] = get_enemies_to_spawn(intensity, game_manager.current_score)
+	var enemies_to_spawn: Array[ChaserEnemyData] = get_enemies_to_spawn(intensity, game_manager.current_score)
 	
 	for i in enemies_to_spawn:
 		var pos: Vector2 = arena_manager.get_random_position_on_navmesh()
-		Global.spawn_with_indicator(SpawnIndicatorType.TYPE.DANGER, i, pos, 0, get_parent())
+		Global.spawn_chaser(SpawnIndicatorType.TYPE.DANGER, i.scene, pos, 0, get_parent(), i.level)
 	
 	current_number_of_enemies = enemies_to_spawn.size()
 	
@@ -91,9 +91,9 @@ func get_intensity() -> float:
 	return randf_range(intensity_min, intensity_max) + 1 + add_score
 	
 
-func get_enemies_to_spawn(intensity: int, score: int) -> Array[PackedScene]:
+func get_enemies_to_spawn(intensity: int, score: int) -> Array[ChaserEnemyData]:
 	var current_intensity = intensity
-	var enemies_to_spawn: Array[PackedScene]
+	var enemies_to_spawn: Array[ChaserEnemyData]
 	
 	var error: int = 0
 	while current_intensity > 0:
@@ -103,7 +103,7 @@ func get_enemies_to_spawn(intensity: int, score: int) -> Array[PackedScene]:
 		#Check if the enemy can fit based on the intensity level
 		if test_enemy.level <= current_intensity && test_enemy.min_wave_to_spawn_in <= score:
 			current_intensity -= test_enemy.level
-			enemies_to_spawn.append(test_enemy.scene)
+			enemies_to_spawn.append(test_enemy)
 		
 		error += 1
 		if error > 500:

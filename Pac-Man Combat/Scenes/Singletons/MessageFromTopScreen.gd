@@ -5,20 +5,24 @@ extends Control
 
 var score: int
 var highscore: int
+var souls: int
 
 func _ready() -> void:
 	visible = false
 	position.y = -360
 
-func appear(score: int):
+func appear(game_manager: GameManager):
 	visible = true
 	position.y = 0
-	self.score = score
+	self.score = game_manager.current_score
 	self.highscore = highscore
+	self.souls = game_manager.current_soul_amount
 
 
 func _on_submit_button_pressed() -> void:
 	visible = false
 	position.y = -360
 	ScoreManager.custom_message = text_edit.text
-	HUD.game_over_screen.appear(score)
+	var game_manager = get_tree().get_first_node_in_group("GameManager")
+	
+	HUD.game_over_screen.appear(score, souls)

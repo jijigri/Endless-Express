@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cojbk6x81ge2g"]
+[gd_scene load_steps=34 format=3 uid="uid://cojbk6x81ge2g"]
 
 [ext_resource type="Script" path="res://Scripts/Singletons/PlayerHUD.gd" id="1_3hb1h"]
 [ext_resource type="Texture2D" uid="uid://cka7m7pym744y" path="res://Sprites/UI/HUDBars.png" id="2_kyhxa"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bpytacx2vbouq" path="res://Sprites/UI/MovementAbilitySlot.png" id="8_doxvk"]
 [ext_resource type="FontFile" uid="uid://8m065evukno3" path="res://Fonts/NbPixelFontBundle/KarenFat.ttf" id="9_am7ky"]
 [ext_resource type="PackedScene" uid="uid://du4tg656nchrm" path="res://Scenes/UI/ability_slot.tscn" id="9_nxxq3"]
+[ext_resource type="Texture2D" uid="uid://sr4oyeu10ndm" path="res://Sprites/UI/InGameSoulSlot.png" id="11_jc233"]
+[ext_resource type="Texture2D" uid="uid://ciqtl1jqanxv2" path="res://Sprites/UI/SoulIcon.png" id="12_unjoh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gsll"]
 atlas = ExtResource("2_kyhxa")
@@ -160,12 +162,14 @@ animations = [{
 atlas = ExtResource("8_doxvk")
 region = Rect2(0, 0, 48, 48)
 
+[sub_resource type="LabelSettings" id="LabelSettings_o2qb4"]
+font = ExtResource("9_am7ky")
+
 [node name="PlayerHUD" type="Control"]
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 8.0
-offset_right = -8.0
 offset_bottom = 64.0
 grow_horizontal = 2
 script = ExtResource("1_3hb1h")
@@ -243,8 +247,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -38.0
-offset_right = 10.0
+offset_left = -168.0
+offset_right = -120.0
 offset_bottom = 26.0
 grow_horizontal = 0
 text = "144"
@@ -320,3 +324,44 @@ position = Vector2(86, 64)
 [node name="AbilitySlot3" parent="Abilities" instance=ExtResource("9_nxxq3")]
 visible = false
 position = Vector2(126, 64)
+
+[node name="SoulCounter" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture = ExtResource("11_jc233")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SoulCounter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="SoulCounter/HBoxContainer"]
+layout_mode = 2
+text = "+12805"
+label_settings = SubResource("LabelSettings_o2qb4")
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SoulCounter/HBoxContainer"]
+custom_minimum_size = Vector2(11.695, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("12_unjoh")
+expand_mode = 1
+stretch_mode = 3

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://br7813oqatnq1"]
+[gd_scene load_steps=5 format=3 uid="uid://br7813oqatnq1"]
 
 [ext_resource type="AudioStream" uid="uid://beo0o1h8ogfpl" path="res://Audio/Music/Cyberfunk.wav" id="1_sdv1k"]
 [ext_resource type="Script" path="res://Scenes/MusicHandler.gd" id="2_ir766"]
 [ext_resource type="AudioStream" uid="uid://cci5n8kmjjh64" path="res://Audio/Music/Tropical Chase.wav" id="3_ntgvt"]
+[ext_resource type="AudioStream" uid="uid://0gj8j6emslb4" path="res://Audio/Music/ESCALATION BATTLE.wav" id="4_scj58"]
 
 [node name="MusicManager" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_sdv1k")
@@ -11,5 +12,6 @@ panning_strength = 0.0
 bus = &"Music"
 script = ExtResource("2_ir766")
 gameplay_tracks = Array[AudioStream]([ExtResource("3_ntgvt")])
+escalation_battle_track = ExtResource("4_scj58")
 
 [connection signal="finished" from="." to="." method="_on_finished"]

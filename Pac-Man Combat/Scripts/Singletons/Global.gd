@@ -12,6 +12,8 @@ var current_scene
 
 @onready var world = get_world_2d()
 
+var current_player: PlayableCharacterData = preload("res://Resources/PlayableCharacters/Mia.tres")
+
 var indicator_type_manager = SpawnIndicatorType.new()
 
 var current_id: int = 0
@@ -36,6 +38,7 @@ func _ready():
 	if current_scene == null:
 		if get_tree().get_root().has_node("Game"):
 			current_scene = get_tree().get_root().get_node("Game")
+			spawn_object(current_player.scene, Vector2(), 0, current_scene)
 		elif get_tree().get_root().has_node("MainMenu"):
 			current_scene = get_tree().get_root().get_node("MainMenu")
 		elif get_tree().get_root().has_node("Tutorial"):
@@ -86,6 +89,10 @@ func load_scene(next_scene: String):
 				
 				loading_screen_instance.queue_free()
 				current_scene = next_scene_instance
+				
+				if current_scene.name == "Game" && current_player != null:
+					spawn_object(current_player.scene, Vector2(), 0, current_scene)
+				
 				return
 		await get_tree().process_frame
 
@@ -123,6 +130,21 @@ func spawn_with_indicator(indicator_type: SpawnIndicatorType.TYPE, object, pos: 
 	
 	if callable != Callable():
 		callable.call(instance)
+
+func spawn_chaser(indicator_type: SpawnIndicatorType.TYPE, object, pos: Vector2, rotation: float = 0, parent = null, level: int = 0):
+	var indicator_scene: PackedScene = indicator_type_manager.scene_from_type(indicator_type)
+	spawn_object(indicator_scene, pos, rotation, parent)
+	await get_tree().create_timer(1.25).timeout
+	var instance = spawn_object(object, pos, rotation, parent)
+	if instance.is_in_group("Chasers"):
+		instance.level = level
+	
+	var audio_data = AudioData.new(enemy_spawn_sound, pos)
+	audio_data.volume = -10.0
+	audio_data.max_distance = 1200.0
+	AudioManager.play_sound(audio_data)
+	
+	GameEvents.enemy_spawned.emit()
 
 func swap_color(old_colors: Array, new_colors: Array, mat: Material):
 	
@@ -173,3 +195,22 @@ func wobble(object, from: Vector2, value: float, strength: float = 4.0):
 
 func wobble_offset(object, value: float, strength: float = 4.0):
 	object.offset = Vector2.ZERO + (Vector2.ONE * (value * strength))
+
+func play_popup_effect(target, center_pivot: bool = false, time = 0.2) -> Tween:
+	if center_pivot:
+		target.pivot_offset = target.size / 2
+	target.scale = Vector2()
+	var tween = create_tween()
+	tween.tween_property(target, "scale", Vector2.ONE, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	tween.play()
+	return tween
+
+const player_data_path: String = "user://playerdata.tres"
+func load_player_data():
+	if ResourceLoader.exists(player_data_path):
+		return load(player_data_path)
+	else:
+		return PlayerSaveData.new()
+
+func save_player_data(data):
+	ResourceSaver.save(data, player_data_path)

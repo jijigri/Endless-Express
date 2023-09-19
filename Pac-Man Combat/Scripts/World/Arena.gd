@@ -54,7 +54,6 @@ func _ready() -> void:
 	await get_tree().create_timer(0.3).timeout
 	var whistle = AudioData.new(preload("res://Audio/SoundEffects/Misc/WhistleBlow.mp3"), global_position)
 	AudioManager.play_sound(whistle)
-	MusicHandler.start_gameplay_music()
 	
 	start_arena()
 
@@ -72,9 +71,11 @@ func start_battle():
 	for i in diff:
 		if (((game_manager.current_score + 5) - i) % 10) == 0:
 			chaser_spawner.start_escalation(self)
+			MusicHandler.start_escalation_music()
 			return
 	
 	chaser_spawner.spawn_enemies(self)
+	MusicHandler.start_gameplay_music()
 	
 func on_arena_clear() -> void:
 

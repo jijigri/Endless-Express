@@ -47,7 +47,7 @@ func set_enemies_to_spawn_per_wave(amount_of_waves):
 		var intensity: float = get_intensity(score, 0.75 - (damper / (amount_of_waves * 10)))
 		print_debug("INTENSITY: ", intensity)
 		sample_intensity = intensity
-		var enemies_to_spawn: Array[PackedScene] = chaser_spawner.get_enemies_to_spawn(intensity, score)
+		var enemies_to_spawn: Array[ChaserEnemyData] = chaser_spawner.get_enemies_to_spawn(intensity, score)
 		enemies_to_spawn_per_wave[i] = enemies_to_spawn
 		amount_of_enemies += enemies_to_spawn.size()
 	
@@ -61,7 +61,7 @@ func escalation_waves():
 		spawn_wave(current_wave_index)
 		current_wave_index += 1
 		var wait_time = clamp(sample_intensity * 0.5, 4.0, 10.0)
-		print_debug("Wait time: ", wait_time)
+		#print_debug("Wait time: ", wait_time)
 		#make timer into a real timer so it can reset when respawning
 		await get_tree().create_timer(wait_time).timeout
 
@@ -73,7 +73,7 @@ func spawn_wave(index: int = 0):
 	
 	for i in enemies_to_spawn:
 		var pos: Vector2 = chaser_spawner.arena_manager.get_random_position_on_navmesh()
-		Global.spawn_with_indicator(SpawnIndicatorType.TYPE.DANGER, i, pos, 0, chaser_spawner.get_parent())
+		Global.spawn_chaser(SpawnIndicatorType.TYPE.DANGER, i.scene, pos, 0, chaser_spawner.get_parent(), i.level)
 	
 	last_amount_of_enemies_spawned = enemies_to_spawn.size()
 	current_number_of_enemies_in_world += last_amount_of_enemies_spawned

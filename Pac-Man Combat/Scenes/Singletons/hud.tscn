@@ -255,8 +255,8 @@ script = ExtResource("12_s46kg")
 
 [node name="TVScreen" parent="GameOverScreen" instance=ExtResource("13_aei8d")]
 layout_mode = 1
-grow_horizontal = 1
-grow_vertical = 1
+offset_top = 104.0
+offset_bottom = -104.0
 
 [node name="Panel2" type="Panel" parent="GameOverScreen/TVScreen"]
 layout_mode = 1
@@ -300,6 +300,15 @@ text = "HIGHSCORE: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="SoulsLabel" type="Label" parent="GameOverScreen/TVScreen/Panel2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("17_71xji")
+text = "SOULS: 1480 (+260)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameOverScreen/TVScreen/Panel2/VBoxContainer"]
 layout_mode = 2

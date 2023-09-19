@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="PlayableCharacterData" load_steps=13 format=3 uid="uid://w35sgwy3q60b"]
+
+[ext_resource type="Texture2D" uid="uid://dbnex4j7hfiod" path="res://Sprites/Abilities/WindPushIcon.png" id="1_2r6f0"]
+[ext_resource type="Script" path="res://Scripts/Misc/AbilityData.gd" id="1_ygoyp"]
+[ext_resource type="PackedScene" uid="uid://cgtadfkcc7r40" path="res://Scenes/Entities/Players/ninja_boy.tscn" id="2_p73qw"]
+[ext_resource type="Script" path="res://Scripts/Misc/PlayableCharacterData.gd" id="3_2i3bx"]
+[ext_resource type="Texture2D" uid="uid://bmfl6kk830tid" path="res://Sprites/Abilities/SwapBladeIcon.png" id="3_83phc"]
+[ext_resource type="Texture2D" uid="uid://cy0qrledjml6" path="res://Sprites/Abilities/NinjaDashIcon.png" id="4_tvkpk"]
+
+[sub_resource type="Resource" id="Resource_6q845"]
+script = ExtResource("1_ygoyp")
+display_name = "Wind Slash"
+description = "The ninja performs a wind slash forward, pushing enemies away, and in the air, pushing himself in the other direction"
+icon = ExtResource("1_2r6f0")
+
+[sub_resource type="Resource" id="Resource_onmal"]
+script = ExtResource("1_ygoyp")
+display_name = "Quantic Blade"
+description = "The ninja throws a spinning blade, damaging enemies on the way and teleporting to its position when it breaks."
+icon = ExtResource("3_83phc")
+
+[sub_resource type="Resource" id="Resource_d538u"]
+script = ExtResource("1_ygoyp")
+display_name = "Dash"
+description = "Performs a dash in 8 possible directions.
+If overcharged, the dash will be longer, deal damage and break enemy armor"
+icon = ExtResource("4_tvkpk")
+
+[sub_resource type="Resource" id="Resource_np6g8"]
+script = ExtResource("1_ygoyp")
+display_name = "Overcharge"
+description = "For each enemy killed, the ninja gains a charge. Upon reaching 3 charges, the next [dash] will gain armor breaking powers."
+
+[sub_resource type="Resource" id="Resource_l8l5y"]
+script = ExtResource("1_ygoyp")
+display_name = "Shuriken"
+description = "Throws a shuriken forward, the shuriken bounces between targets based on the amount of [overcharge] charges"
+
+[sub_resource type="Resource" id="Resource_jrk0m"]
+script = ExtResource("1_ygoyp")
+display_name = "Shotkunai"
+description = "A shotgun shooting deadly kunais which will poison enemies, dealing damage over time, increasing their damage taken and reducing their armor regeneration rate"
+
+[resource]
+script = ExtResource("3_2i3bx")
+scene = ExtResource("2_p73qw")
+display_name = "Boy dressed as a ninja"
+description = "Agile passenger who attacks enemies through bursts and combos."
+abilities = Array[ExtResource("1_ygoyp")]([SubResource("Resource_6q845"), SubResource("Resource_onmal"), SubResource("Resource_d538u"), SubResource("Resource_np6g8"), SubResource("Resource_l8l5y"), SubResource("Resource_jrk0m")])
+unlock_cost = 2000

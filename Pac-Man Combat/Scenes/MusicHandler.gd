@@ -1,6 +1,9 @@
 extends AudioStreamPlayer2D
 
 @export var gameplay_tracks: Array[AudioStream]
+@export var escalation_battle_track: AudioStream
+
+var current_gameplay_music: AudioStream
 
 func _ready() -> void:
 	GameEvents.biome_changed.connect(_on_biome_changed)
@@ -9,12 +12,18 @@ func _ready() -> void:
 func _on_biome_changed(biome: BiomeData) -> void:
 	pitch_scale = 1.0
 	AudioServer.set_bus_effect_enabled(2, 0, false)
-	change_music(biome.music)
+	current_gameplay_music = biome.music
+	#change_music(biome.music)
 
 func change_music(music: AudioStream) -> void:
 	stream = music
 
 func start_gameplay_music():
+	change_music(current_gameplay_music)
+	play()
+
+func start_escalation_music():
+	change_music(escalation_battle_track)
 	play()
 
 func stop_music():

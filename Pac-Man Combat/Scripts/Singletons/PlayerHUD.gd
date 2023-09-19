@@ -9,6 +9,8 @@ extends Control
 
 @onready var movement_ability = $MovementAbility
 
+@onready var soul_counter_label = $SoulCounter/HBoxContainer/Label
+
 var abilities: Array[Sprite2D]
 
 var health_tween
@@ -49,6 +51,8 @@ func update_energy_bar(current_energy: float, max_energy: float, gain: bool):
 	else:
 		decrease_value(energy_bar, back_energy, current_energy, false)
 
+func update_soul_count(amount):
+	soul_counter_label.text = "+" + str(amount)
 
 func decrease_value(bar: TextureProgressBar, back_bar: TextureProgressBar, value: float, health := true) -> void:
 	

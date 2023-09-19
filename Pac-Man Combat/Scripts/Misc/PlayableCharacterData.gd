@@ -8,3 +8,6 @@ extends Resource
 @export_multiline var description: String = "Description"
 @export var abilities: Array[AbilityData]
 @export var portrait: Texture2D
+@export var unlock_cost: int = 0
+
+var is_unlocked: bool = false

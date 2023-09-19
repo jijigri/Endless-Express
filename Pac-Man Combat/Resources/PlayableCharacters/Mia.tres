@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="PlayableCharacterData" load_steps=10 format=3 uid="uid://c2yn64210q3id"]
+[gd_resource type="Resource" script_class="PlayableCharacterData" load_steps=14 format=3 uid="uid://c2yn64210q3id"]
 
 [ext_resource type="Script" path="res://Scripts/Misc/PlayableCharacterData.gd" id="1_mh3tx"]
 [ext_resource type="Script" path="res://Scripts/Misc/AbilityData.gd" id="1_tbto2"]
 [ext_resource type="Texture2D" uid="uid://de08g8usoxyty" path="res://Sprites/Abilities/DefaultPlayerIceGrenadeSprite.png" id="1_x7b51"]
 [ext_resource type="Texture2D" uid="uid://c378q8gnl3k4a" path="res://Sprites/Abilities/DefaultPlayerBombSprite.png" id="3_3g26s"]
+[ext_resource type="Texture2D" uid="uid://cdg5pjvsn3wxb" path="res://Sprites/UI/DefaultPlayerRollIcon.png" id="4_ykees"]
 [ext_resource type="Texture2D" uid="uid://dec7dvpyc7hr7" path="res://Sprites/UI/CharacterPortraits/MiaPortrait.png" id="4_yoarx"]
 [ext_resource type="PackedScene" uid="uid://dv5gegjgkxtb6" path="res://Scenes/Entities/Players/default_player.tscn" id="5_5rrtn"]
 
@@ -19,15 +20,33 @@ display_name = "Bomb"
 description = "Throws a damaging bomb that repels and break the armor of enemies hit."
 icon = ExtResource("3_3g26s")
 
+[sub_resource type="Resource" id="Resource_ggljb"]
+script = ExtResource("1_tbto2")
+display_name = "Roll"
+description = "Perform a roll on the ground, making Mia invulnerable.
+When performed in the air, perform a dive, which doesn't offer invulnerability but isn't affected by the cooldown."
+icon = ExtResource("4_ykees")
+
 [sub_resource type="Resource" id="Resource_5ahd3"]
 script = ExtResource("1_tbto2")
 display_name = "Passive"
 description = "Performing triple kills or more charges your sniper with armor-breaking powers."
+
+[sub_resource type="Resource" id="Resource_y11gy"]
+script = ExtResource("1_tbto2")
+display_name = "Shotgun"
+description = "Fire a powerful shotgun blast"
+
+[sub_resource type="Resource" id="Resource_i5q4t"]
+script = ExtResource("1_tbto2")
+display_name = "Piercing Sniper"
+description = "Fire a piercing sniper shot. Will break armor if charged with Passive"
 
 [resource]
 script = ExtResource("1_mh3tx")
 scene = ExtResource("5_5rrtn")
 display_name = "Mia"
 description = "Aggressive passenger who uses bombs to control the field."
-abilities = Array[ExtResource("1_tbto2")]([SubResource("Resource_j6sld"), SubResource("Resource_cstr3"), SubResource("Resource_5ahd3")])
+abilities = Array[ExtResource("1_tbto2")]([SubResource("Resource_j6sld"), SubResource("Resource_cstr3"), SubResource("Resource_ggljb"), SubResource("Resource_5ahd3"), SubResource("Resource_y11gy"), SubResource("Resource_i5q4t")])
 portrait = ExtResource("4_yoarx")
+unlock_cost = 0
