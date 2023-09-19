@@ -12,6 +12,9 @@ extends Control
 func _ready() -> void:
 	settings_screen.back_button.pressed.connect(_on_back_pressed)
 	HUD.visible = false
+	
+	$CanvasLayer/Menu/Version.text = "v" + Global.version
+	
 	set_screen(0)
 	
 	if LootLocker.online:

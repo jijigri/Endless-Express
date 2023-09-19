@@ -32,7 +32,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	distance_to_player = global_position.distance_to(player.global_position)
+	if player != null:
+		distance_to_player = global_position.distance_to(player.global_position)
 	
 	set_sprite_direction()
 

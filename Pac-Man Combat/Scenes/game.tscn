@@ -120,7 +120,7 @@ outline_color = Color(0, 0, 0, 1)
 process_mode = 3
 z_index = 50
 script = ExtResource("1_lg5uc")
-current_score = 4
+current_score = 5
 
 [node name="ArenaManager" type="Node2D" parent="." groups=["ArenaManager"]]
 process_mode = 3

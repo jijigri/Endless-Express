@@ -1,6 +1,6 @@
 extends Node
 
-var online: bool = false
+var online: bool = true
 
 var API_key = "dev_cb375b22f1c244c1ac8909ca6053b633"
 var session_token = ""
@@ -30,6 +30,7 @@ signal set_name_complete
 signal get_name_complete
 
 func _ready() -> void:
+	version = Global.version + ".0"
 	authentification_request()
 	await authentification_complete
 	var name = await get_player_name().get_name_complete

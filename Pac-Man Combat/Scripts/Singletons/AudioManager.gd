@@ -1,8 +1,10 @@
 extends Node2D
 
 @export var stream_players_amount: int = 128
+@export var global_stream_players_amount: int = 20
 
 var players_parent: Node2D
+var global_players_parent: Node2D
 
 const AUDIO_PATH: String = "res://Audio/SoundEffects/"
 
@@ -22,7 +24,18 @@ func _ready() -> void:
 		audio_stream_player.name = "audio_stream_player" + str(i)
 		audio_stream_player.bus = "FX"
 		players_parent.add_child(audio_stream_player)
-		
+	
+	var global_instance = Node2D.new()
+	global_instance.position = global_position
+	global_instance.name = "global parent"
+	add_child(global_instance)
+	global_players_parent = global_instance
+	
+	for i in global_stream_players_amount:
+		var audio_stream_player = AudioStreamPlayer.new()
+		audio_stream_player.name = "global_stream_player" + str(i)
+		audio_stream_player.bus = "FX"
+		global_players_parent.add_child(audio_stream_player)
 
 func play_sound(streamData: AudioData):
 	for audio_stream_player in players_parent.get_children():
@@ -56,6 +69,15 @@ func play_in_player(stream_data: AudioData, name: String, limit: int, override: 
 	if override:
 		start_on_stream(limited_players[name][0], stream_data)
 
+func play_global(stream_data):
+	for audio_stream_player in global_players_parent.get_children():
+		if audio_stream_player.playing == false:
+			start_on_global_steam(audio_stream_player, stream_data)
+			return
+	
+	print("AudioManager: Not enough audio source to play sound, overriding! ")
+	start_on_global_steam(global_players_parent.get_child(0), stream_data)
+
 func add_player(parent = self, name = self.name) -> AudioStreamPlayer2D:
 	var audio_stream_player = AudioStreamPlayer2D.new()
 	audio_stream_player.position = global_position
@@ -72,4 +94,10 @@ func start_on_stream(stream_player: AudioStreamPlayer2D, stream_data: AudioData)
 	stream_player.max_distance = stream_data.max_distance
 	stream_player.attenuation = stream_data.attenuation
 	stream_player.panning_strength = stream_data.panning_strength
+	stream_player.play()
+
+func start_on_global_steam(stream_player: AudioStreamPlayer, stream_data: AudioData):
+	stream_player.stream = stream_data.stream
+	stream_player.volume_db = stream_data.volume
+	stream_player.pitch_scale = stream_data.pitch
 	stream_player.play()

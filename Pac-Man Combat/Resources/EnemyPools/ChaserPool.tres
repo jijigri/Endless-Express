@@ -74,7 +74,7 @@ script = ExtResource("2_63r82")
 level = 3
 min_weight = 0.1
 max_weight = 0.25
-min_wave_to_spawn_in = 12
+min_wave_to_spawn_in = 13
 name = "Bat"
 scene = ExtResource("8_3yym0")
 
@@ -91,8 +91,8 @@ scene = ExtResource("9_0acye")
 script = ExtResource("2_63r82")
 level = 2
 min_weight = 0.3
-max_weight = 0.65
-min_wave_to_spawn_in = 6
+max_weight = 0.6
+min_wave_to_spawn_in = 9
 name = "Sheet Phantom"
 scene = ExtResource("10_4wooc")
 
@@ -108,9 +108,9 @@ scene = ExtResource("11_oqxfi")
 [sub_resource type="Resource" id="Resource_6cfsu"]
 script = ExtResource("2_63r82")
 level = 1
-min_weight = 0.5
-max_weight = 0.7
-min_wave_to_spawn_in = 4
+min_weight = 0.45
+max_weight = 0.6
+min_wave_to_spawn_in = 6
 name = "Small Rocket"
 scene = ExtResource("12_mq5gh")
 

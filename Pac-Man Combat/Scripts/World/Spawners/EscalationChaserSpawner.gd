@@ -5,6 +5,8 @@ extends Node2D
 var current_wave_index: int = 0
 var amount_of_waves: int = 0
 
+var start_sound = preload("res://Audio/SoundEffects/Misc/EscalationBattleStartSound.wav")
+
 var enemies_to_spawn_per_wave = {
 	
 }
@@ -22,6 +24,8 @@ func start_escalation_spawn():
 	
 	var string = "ESCALATION BATTLE - " + str(amount_of_waves) + " WAVES"
 	HUD.play_sliding_text(string, 0.8, 0.8)
+	
+	AudioManager.play_global(AudioData.new(start_sound))
 	
 	chaser_spawner.reset_spawn_weights()
 
