@@ -1,7 +1,8 @@
 class_name StatusEffectsManager
 extends Node2D
 
-@export var time_multiplier: float = 1.0
+@export var buff_multiplier: float = 1.0
+@export var nerf_multiplier: float = 1.0
 
 signal effect_applied(effect: String, duration: float)
 signal effect_removed(effect: String)
@@ -13,7 +14,8 @@ var status_effects = {
 	"slow": preload('res://Scenes/Misc/StatusEffects/slow_status_effect.tscn'),
 	"super_shield": preload("res://Scenes/Misc/StatusEffects/super_shield_status_effect.tscn"),
 	"shield": preload("res://Scenes/Misc/StatusEffects/shield_status_effect.tscn"),
-	"poison": preload("res://Scenes/Misc/StatusEffects/poison_status_effect.tscn")
+	"poison": preload("res://Scenes/Misc/StatusEffects/poison_status_effect.tscn"),
+	"spirit_possess": preload("res://Scenes/Misc/StatusEffects/spirit_possess_status_effect.tscn")
 }
 
 var current_effects : Array[StatusEffect] = []
@@ -22,9 +24,12 @@ func set_status_effect(effect: String, time: float):
 	if status_effects.has(effect):
 		var scene = status_effects[effect]
 		var status = Global.spawn_object(scene, position, 0, self)
-		status.initialize(self, owner, effect, time * time_multiplier)
+		
+		var modifier = buff_multiplier if status.type == StatusEffect.TYPE.BUFF else nerf_multiplier
+
+		status.initialize(self, owner, effect, time * modifier)
 		current_effects.append(status)
-		effect_applied.emit(effect, time * time_multiplier)
+		effect_applied.emit(effect, time * modifier)
 		
 		return status
 	

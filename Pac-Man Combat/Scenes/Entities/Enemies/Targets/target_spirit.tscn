@@ -1,0 +1,353 @@
+[gd_scene load_steps=55 format=3 uid="uid://c7ds8f2c3uamd"]
+
+[ext_resource type="PackedScene" uid="uid://xvuee84dulmc" path="res://Scenes/Entities/Enemies/Targets/enemy_target_base.tscn" id="1_wgihi"]
+[ext_resource type="PackedScene" uid="uid://dikaag12v0yrj" path="res://Scenes/Entities/ResourcePacks/health_resource_pack.tscn" id="2_rkr82"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/StateMachines/SpiritStateMachine.gd" id="2_tjr3e"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropData.gd" id="3_qjl67"]
+[ext_resource type="Script" path="res://Scripts/Resources/DropPool.gd" id="4_qr8b8"]
+[ext_resource type="PackedScene" uid="uid://timcni11hara" path="res://Scenes/Entities/ResourcePacks/energy_resource_pack.tscn" id="5_0y16i"]
+[ext_resource type="PackedScene" uid="uid://bve1lcsaf3h6q" path="res://Scenes/Tools/ghost_trail.tscn" id="5_651u0"]
+[ext_resource type="Script" path="res://Scripts/Resources/TargetDropPool.gd" id="6_sn2yf"]
+[ext_resource type="Script" path="res://Scripts/Resources/ColorSwap.gd" id="7_dh3ul"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/Movement/PathfindingMovement.gd" id="7_x6jce"]
+[ext_resource type="PackedScene" uid="uid://b1w8emwm3yqyo" path="res://Scenes/Effects/bubble_death_effect.tscn" id="8_jwjj2"]
+[ext_resource type="Shader" path="res://Shaders/bubble_target.gdshader" id="9_5fe3w"]
+[ext_resource type="AudioStream" uid="uid://dw3uen0ha26yq" path="res://Audio/SoundEffects/Enemies/TargetSpirit/SpiritSpawnSound.wav" id="10_ddghi"]
+[ext_resource type="Texture2D" uid="uid://cgqyu4mjx3kl" path="res://Sprites/Entities/Enemies/Targets/SpiritSprite.png" id="10_rtvvv"]
+[ext_resource type="PackedScene" uid="uid://dwq7gd71x1s8b" path="res://Scenes/Tools/EnemyTools/Movement/wander_movement.tscn" id="11_sepy8"]
+[ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="14_8scky"]
+[ext_resource type="Texture2D" uid="uid://dre3k1gylamun" path="res://Sprites/Misc/SpiritMarker.png" id="15_dxlpw"]
+[ext_resource type="Script" path="res://Scenes/Entities/Misc/Trail.gd" id="16_p8s0s"]
+[ext_resource type="AudioStream" uid="uid://bfjmc6v68akgu" path="res://Audio/SoundEffects/Enemies/TargetSpirit/SpiritStunSound.wav" id="17_mkpn7"]
+
+[sub_resource type="Resource" id="Resource_1dfsd"]
+script = ExtResource("3_qjl67")
+scene = ExtResource("2_rkr82")
+amount = 12
+
+[sub_resource type="Resource" id="Resource_npf14"]
+script = ExtResource("4_qr8b8")
+pool = Array[ExtResource("3_qjl67")]([SubResource("Resource_1dfsd")])
+
+[sub_resource type="Resource" id="Resource_dbffh"]
+script = ExtResource("3_qjl67")
+scene = ExtResource("5_0y16i")
+amount = 16
+
+[sub_resource type="Resource" id="Resource_lmimc"]
+script = ExtResource("4_qr8b8")
+pool = Array[ExtResource("3_qjl67")]([SubResource("Resource_dbffh")])
+
+[sub_resource type="Resource" id="Resource_6mld3"]
+script = ExtResource("6_sn2yf")
+drops_in_enum_order = Array[ExtResource("4_qr8b8")]([SubResource("Resource_npf14"), SubResource("Resource_lmimc")])
+
+[sub_resource type="Resource" id="Resource_6k06o"]
+script = ExtResource("7_dh3ul")
+default_colors = Array[Color]([Color(0.807843, 0.176471, 0.45098, 1), Color(0.980392, 0.74902, 0.47451, 1), Color(0.968627, 0.917647, 0.745098, 1)])
+replace_colors = {
+0: [Color(0.317647, 0.396078, 0.870588, 1), Color(0.301961, 0.945098, 0.352941, 1), Color(0.960784, 0.964706, 0.811765, 1)],
+1: [Color(0.807843, 0.176471, 0.45098, 1), Color(0.980392, 0.74902, 0.47451, 1), Color(0.968627, 0.917647, 0.745098, 1)]
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ligdh"]
+resource_local_to_scene = true
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qq7py"]
+resource_local_to_scene = true
+size = Vector2(28, 34)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cyqmn"]
+resource_local_to_scene = true
+shader = ExtResource("9_5fe3w")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+shader_parameter/OLD_COLOR1 = null
+shader_parameter/OLD_COLOR2 = null
+shader_parameter/OLD_COLOR3 = null
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = null
+shader_parameter/NEW_COLOR2 = null
+shader_parameter/NEW_COLOR3 = null
+shader_parameter/NEW_COLOR4 = null
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rpgm"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwul1"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2f31"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcn1s"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnxun"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmawq"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns0jj"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(896, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctyoe"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(960, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o2c2"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(1024, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvno6"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(1088, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbnkf"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(1152, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omoin"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(1216, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn6d5"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(1280, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tfmk"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqgg6"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd3jn"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khto7"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8nic"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0386"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kihs7"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4p3c"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1cbw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rpgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwul1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2f31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcn1s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnxun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmawq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns0jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctyoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o2c2")
+}],
+"loop": false,
+"name": &"possess_begin",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvno6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbnkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omoin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn6d5")
+}],
+"loop": false,
+"name": &"possess_end",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tfmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqgg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd3jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khto7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8nic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0386")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kihs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4p3c")
+}],
+"loop": true,
+"name": &"stunned",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saj80"]
+atlas = ExtResource("10_rtvvv")
+region = Rect2(1024, 0, 64, 64)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kryhm"]
+resource_local_to_scene = true
+shader = ExtResource("14_8scky")
+shader_parameter/STRENGTH = 1.0
+shader_parameter/OLD_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/OLD_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/OLD_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/OLD_COLOR4 = null
+shader_parameter/NEW_COLOR1 = Color(0.317647, 0.396078, 0.870588, 1)
+shader_parameter/NEW_COLOR2 = Color(0.301961, 0.945098, 0.352941, 1)
+shader_parameter/NEW_COLOR3 = Color(0.960784, 0.964706, 0.811765, 1)
+shader_parameter/NEW_COLOR4 = null
+
+[sub_resource type="Curve" id="Curve_gn56t"]
+min_value = 1.0
+max_value = 8.0
+_data = [Vector2(0, 1), 0.0, 0.235291, 0, 0, Vector2(1, 8), 8.46512, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_m317t"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="TargetSpirit" node_paths=PackedStringArray("possess_movement", "escape_movement", "default_movement") instance=ExtResource("1_wgihi")]
+script = ExtResource("2_tjr3e")
+possess_movement = NodePath("Movement/PathfindingMovement")
+possess_time = 14.0
+stun_time = 4.0
+escape_movement = NodePath("Movement/WanderMovement")
+drop_pool = SubResource("Resource_6mld3")
+color_swap = SubResource("Resource_6k06o")
+default_movement = NodePath("Movement/WanderMovement")
+death_effect = ExtResource("8_jwjj2")
+spawn_sound = ExtResource("10_ddghi")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_ligdh")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_qq7py")
+
+[node name="HealthManager" parent="." index="3"]
+max_health = 300.0
+
+[node name="Sprite" parent="." index="4"]
+material = SubResource("ShaderMaterial_cyqmn")
+sprite_frames = SubResource("SpriteFrames_y1cbw")
+animation = &"stunned"
+
+[node name="GhostTrail" parent="Sprite" index="0" instance=ExtResource("5_651u0")]
+frames_between_ghosts = 2
+color = Color(0.317647, 0.396078, 0.870588, 0)
+ghost_lifetime = 0.25
+texture = SubResource("AtlasTexture_saj80")
+enabled = false
+
+[node name="Sprite" parent="OffScreenMarker" index="0"]
+material = SubResource("ShaderMaterial_kryhm")
+texture = ExtResource("15_dxlpw")
+
+[node name="StatusEffectsManager" parent="." index="7"]
+nerf_multiplier = 0.5
+
+[node name="Movement" type="Node2D" parent="." index="8"]
+
+[node name="WanderMovement" parent="Movement" index="0" instance=ExtResource("11_sepy8")]
+move_speed = 0.0
+
+[node name="PathfindingMovement" type="Node2D" parent="Movement" index="1"]
+script = ExtResource("7_x6jce")
+move_speed = 300.0
+speed_over_time = SubResource("Curve_gn56t")
+max_time = 4.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Movement/PathfindingMovement" index="0"]
+path_postprocessing = 1
+
+[node name="Timer" type="Timer" parent="Movement/PathfindingMovement/NavigationAgent2D" index="0"]
+wait_time = 0.1
+autostart = true
+
+[node name="PossessTimer" type="Timer" parent="." index="9"]
+wait_time = 2.0
+autostart = true
+
+[node name="Trail" type="Line2D" parent="." index="10" node_paths=PackedStringArray("target")]
+width = 8.0
+width_curve = SubResource("Curve_m317t")
+script = ExtResource("16_p8s0s")
+target = NodePath("..")
+length = 14
+
+[node name="StunPlayer" type="AudioStreamPlayer2D" parent="." index="11"]
+stream = ExtResource("17_mkpn7")
+max_distance = 3000.0
+bus = &"FX"
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="effect_applied" from="StatusEffectsManager" to="." method="_on_status_effects_manager_effect_applied"]
+[connection signal="timeout" from="PossessTimer" to="." method="_on_possess_timer_timeout"]
+
+[editable path="Hurtbox"]
+[editable path="OverheadHealthBar"]
+[editable path="OffScreenMarker"]
+[editable path="Movement/WanderMovement"]

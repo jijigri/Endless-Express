@@ -28,7 +28,7 @@ func set_type(type: TargetEnemyData.TYPE) -> void:
 	self.type = type
 	var default_colors = color_swap.default_colors
 	var replace_color = color_swap.replace_colors[self.type]
-	Global.swap_color(default_colors, replace_color, $Sprite.material)
+	Global.swap_color(default_colors, replace_color, sprite.material)
 	var off_screen_marker = $OffScreenMarker
 	off_screen_marker.sprite.material.set_shader_parameter("NEW_COLOR1", replace_color[0])
 	off_screen_marker.sprite.material.set_shader_parameter("NEW_COLOR2", replace_color[1])

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Endless Express"
 config/description="Navigate your way through an endless train as you try to reach the highest score!"
-run/main_scene="res://Scenes/main_menu.tscn"
+run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 run/max_fps=144
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -40,6 +40,7 @@ PlayerDataQueue="*res://Scripts/Singletons/PlayerDataQueue.gd"
 ScoreManager="*res://Scripts/Singletons/ScoreManager.gd"
 DrawUtils="*res://Scripts/Singletons/DrawUtils.gd"
 PlayableCharactersPool="*res://Scenes/Singletons/playable_characters_pool.tscn"
+ChallengeManager="*res://Scenes/Singletons/challenge_manager.tscn"
 
 [debug]
 

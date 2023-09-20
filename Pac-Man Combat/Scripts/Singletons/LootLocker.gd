@@ -13,6 +13,7 @@ var submit_score_http = HTTPRequest.new()
 var get_rank_http = HTTPRequest.new()
 var set_name_http = HTTPRequest.new()
 var get_name_http = HTTPRequest.new()
+var get_server_version_http = HTTPRequest.new()
 
 var player_name: String
 var player_id
@@ -28,6 +29,7 @@ signal submit_score_complete
 signal get_rank_complete
 signal set_name_complete
 signal get_name_complete
+signal get_server_version_complete
 
 func _ready() -> void:
 	version = Global.version + ".0"
@@ -220,3 +222,29 @@ func _on_get_name_completed(result, response_code, headers, body):
 		get_name_http.queue_free()
 	
 	get_name_complete.emit(json.name)
+
+func get_server_version() -> Node:
+	var uid = "DEKE9CEE"
+	
+	var url = "https://api.lootlocker.io/game/v1/player/"+uid+"/storage"
+	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
+	
+	get_server_version_http = HTTPRequest.new()
+	add_child(get_server_version_http)
+	get_server_version_http.request_completed.connect(_on_get_server_version_completed)
+	get_server_version_http.request(url, headers, HTTPClient.METHOD_GET)
+	
+	return self
+
+func _on_get_server_version_completed(result, response_code, headers, body) -> void:
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	
+	if json == null:
+		print_debug("ERROR: NO VERSION FOUND")
+	
+	if get_server_version_http != null:
+		get_server_version_http.queue_free()
+	
+	print_debug("SERVER VERSION: ", json)
+	
+	get_server_version_complete.emit(json.payload[0].value)

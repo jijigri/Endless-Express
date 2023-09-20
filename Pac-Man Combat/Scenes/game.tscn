@@ -92,7 +92,7 @@ intros = {
 ExtResource("30_3rvhq"): "Welcome to the Endless Express. Please keep the blood out of the seats.",
 ExtResource("31_0838q"): "Welcome to the Endless Express. Please don't stay seated while the train is moving.",
 ExtResource("32_ylb68"): "Welcome to the Endless Express...BOO! Ahah, got ya.",
-ExtResource("33_7aniw"): "Welcome to the Endless Express. Quick reminder that any damage done to the train while you're killing each others will be charged to your family and your pets.",
+ExtResource("33_7aniw"): "Welcome to the Endless Express. Quick reminder that any damage done to the train while you're killing each other will be charged to your family and your pets.",
 ExtResource("34_cfof6"): "Welcome to the train direction infinity. I'm your conductor, and you will be hearing me a lot."
 }
 generic = {
@@ -120,7 +120,6 @@ outline_color = Color(0, 0, 0, 1)
 process_mode = 3
 z_index = 50
 script = ExtResource("1_lg5uc")
-current_score = 5
 
 [node name="ArenaManager" type="Node2D" parent="." groups=["ArenaManager"]]
 process_mode = 3

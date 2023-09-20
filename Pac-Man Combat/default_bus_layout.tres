@@ -7,7 +7,7 @@ resource_name = "Filter"
 resource_name = "Filter"
 
 [resource]
-bus/0/volume_db = -29.2258
+bus/0/volume_db = -17.0211
 bus/0/effect/0/effect = SubResource("AudioEffectFilter_h8ire")
 bus/0/effect/0/enabled = false
 bus/1/name = &"Ambience"

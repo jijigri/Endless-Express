@@ -1,7 +1,10 @@
 class_name StatusEffect
 extends Node2D
 
+enum TYPE {BUFF, NERF}
+
 @export var sound_effect: AudioStream
+@export var type: TYPE
 
 var timer: Timer
 var entity_owner

@@ -1,0 +1,165 @@
+[gd_scene load_steps=24 format=3 uid="uid://b42uuq13mkl4u"]
+
+[ext_resource type="PackedScene" uid="uid://c3rf3vks4k5ji" path="res://Scenes/Misc/StatusEffects/status_effect_base.tscn" id="1_rq1dn"]
+[ext_resource type="Script" path="res://Scripts/Misc/StatusEffects/SpiritPossessStatusEffect.gd" id="2_8pu73"]
+[ext_resource type="Texture2D" uid="uid://e3ok5wu7jx30" path="res://Sprites/Effects/SpiritPossessEffect.png" id="3_kbiyc"]
+[ext_resource type="Texture2D" uid="uid://dro1qjw5eysmw" path="res://Sprites/Effects/Particles/SlowArrow.png" id="4_bceq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj68v"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l2nh"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grx3f"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mtvg"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cthso"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r7h8"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3a7q"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14wqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj68v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l2nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grx3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mtvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cthso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r7h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3a7q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o43p"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62ne4"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie5dv"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swij7"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk5lv"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l043"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dykhl"]
+atlas = ExtResource("3_kbiyc")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rg6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o43p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62ne4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie5dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swij7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk5lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1l043")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dykhl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_goyay"]
+offsets = PackedFloat32Array(0, 0.0397351, 0.592715, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c2xpa"]
+gradient = SubResource("Gradient_goyay")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_16sm6"]
+lifetime_randomness = 0.6
+emission_shape = 3
+emission_box_extents = Vector3(16, 16, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 120.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = 180.0
+angle_max = 180.0
+color_ramp = SubResource("GradientTexture1D_c2xpa")
+
+[node name="SpiritPossessStatusEffect" instance=ExtResource("1_rq1dn")]
+script = ExtResource("2_8pu73")
+
+[node name="Effect" type="AnimatedSprite2D" parent="." index="0"]
+z_index = 8
+sprite_frames = SubResource("SpriteFrames_14wqx")
+autoplay = "default"
+
+[node name="EffectBack" type="AnimatedSprite2D" parent="Effect" index="0"]
+z_index = -5
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_0rg6q")
+autoplay = "default"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="1"]
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_16sm6")
+texture = ExtResource("4_bceq7")
+lifetime = 0.5
+fixed_fps = 120
+local_coords = true

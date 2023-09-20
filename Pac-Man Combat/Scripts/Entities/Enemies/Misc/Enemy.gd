@@ -24,6 +24,8 @@ var stagger_stacks: int = 0 : set = set_stagger_stacks
 
 var staggered: bool = false : get = is_staggered
 
+signal killed(global_pos)
+
 func set_stagger_stacks(value):
 	stagger_stacks = clamp(value, 0, 1000)
 
@@ -97,6 +99,7 @@ func _on_player_killed() -> void:
 
 func kill() -> void:
 	GameEvents.enemy_killed.emit(self)
+	killed.emit(global_position)
 	
 	if death_effect != null:
 		Global.spawn_object(death_effect, global_position)

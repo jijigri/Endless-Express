@@ -24,6 +24,7 @@ scale_curve = SubResource("CurveTexture_8fncu")
 
 [node name="StaggerStatusEffect" instance=ExtResource("1_rtxn5")]
 script = ExtResource("2_ncex6")
+type = 1
 
 [node name="Particles" type="GPUParticles2D" parent="." index="0"]
 amount = 2

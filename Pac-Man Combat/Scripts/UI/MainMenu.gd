@@ -5,11 +5,15 @@ extends Control
 @onready var settings_screen = $CanvasLayer/Settings
 @onready var character_screen = $CanvasLayer/CharacterSelectionScreen
 
+@onready var update_warning = $CanvasLayer/Menu/UpdateWarning
+
 @onready var display_name_edit = %DisplayNameEdit
 
 @onready var button_pressed_player: AudioStreamPlayer2D = $ButtonPressedPlayer
 
 func _ready() -> void:
+	update_warning.visible = false
+	
 	settings_screen.back_button.pressed.connect(_on_back_pressed)
 	HUD.visible = false
 	
@@ -33,8 +37,18 @@ func _ready() -> void:
 		var box = $CanvasLayer/NameSelectionBox
 		box.visible = true
 		box.main_menu = self
+		#LootLocker.guest_exists = true
 	else:
 		$CanvasLayer/NameSelectionBox.queue_free()
+	
+	get_server_version()
+
+func get_server_version():
+	var server_version = await LootLocker.get_server_version().get_server_version_complete
+	print_debug("From menu, got version ", server_version)
+	
+	if Global.version != server_version:
+		update_warning.visible = true
 
 func _process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):
@@ -106,3 +120,7 @@ func _on_tutorial_button_pressed() -> void:
 	#await get_tree().process_frame
 	
 	Global.load_scene("tutorial")
+
+
+func _on_update_warning_pressed() -> void:
+	OS.shell_open("https://jijigri.itch.io/endless-express")

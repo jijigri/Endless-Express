@@ -28,6 +28,7 @@ color_ramp = SubResource("GradientTexture1D_evdb6")
 [node name="SlowStatusEffect" instance=ExtResource("1_o01of")]
 script = ExtResource("2_h15t2")
 sound_effect = ExtResource("3_dqwj2")
+type = 1
 
 [node name="Particles" type="GPUParticles2D" parent="." index="1"]
 process_material = SubResource("ParticleProcessMaterial_7i0kj")

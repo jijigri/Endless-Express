@@ -37,6 +37,7 @@ armor_recharge_reduction_value = 0.25
 damage_modifier_value = 1.25
 tick_time = 0.25
 tick_damage = 1.0
+type = 1
 
 [node name="Particles" type="GPUParticles2D" parent="." index="1"]
 material = SubResource("CanvasItemMaterial_r4x5r")

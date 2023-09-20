@@ -14,3 +14,4 @@ func throw(velocity: Vector2):
 		instance.roll_speed = abs(velocity.x) * 1.6
 		instance.speed_gain_over_time = 100.0
 		instance.direction = sign(velocity.x)
+		instance.get_node("CollisionDamage").damage_multiplier = damage_multiplier

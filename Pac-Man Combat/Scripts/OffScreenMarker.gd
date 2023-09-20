@@ -48,8 +48,10 @@ func set_marker_position(bounds: Rect2):
 			show()
 
 func set_marker_rotation():
-	look_at(get_tree().get_first_node_in_group("Player").global_position)
-	rotation_degrees += 90
+	var player = get_tree().get_first_node_in_group("Player")
+	if player != null:
+		look_at(player.global_position)
+		rotation_degrees += 90
 
 func set_size():
 	var scale: float = clamp(1 / (global_position.distance_squared_to(sprite.global_position)) * 2000, 0.75, 1)

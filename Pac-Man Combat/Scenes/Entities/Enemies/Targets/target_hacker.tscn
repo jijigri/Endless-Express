@@ -231,7 +231,7 @@ shape = SubResource("RectangleShape2D_4st5p")
 shape = SubResource("RectangleShape2D_8kpr3")
 
 [node name="HealthManager" parent="." index="3"]
-max_health = 180.0
+max_health = 280.0
 health_to_kill = 10
 
 [node name="Sprite" parent="." index="4"]

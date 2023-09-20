@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx13nwexmdev5"]
+
+[ext_resource type="Script" path="res://Scripts/UI/ChallengeContainer.gd" id="1_y13wk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oa2ra"]
+
+[node name="ChallengeContainer" type="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_right = 150.0
+offset_bottom = 38.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+alignment = 1
+script = ExtResource("1_y13wk")
+
+[node name="Control" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Condition" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_oa2ra")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Progress" type="ProgressBar" parent="Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 8)
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="Control2" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Reward" type="Button" parent="Control2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Reward"
+
+[connection signal="pressed" from="Control2/Reward" to="." method="_on_reward_pressed"]

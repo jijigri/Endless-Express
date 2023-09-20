@@ -15,10 +15,15 @@ var current_soul_amount: int = 0
 
 func _ready() -> void:
 	HUD.visible = true
+	
 	PlayerDataQueue.reset()
 	PlayerDataQueue.record_player_data()
+	
+	old_score = current_score
 	GameEvents.score_updated.emit(current_score)
+	
 	ScoreManager.set_highscore()
+	
 	HUD.player_hud.update_soul_count(current_soul_amount)
 	
 	await get_tree().process_frame
@@ -61,8 +66,9 @@ func submit_data():
 	
 	var save_data = Global.load_player_data()
 	save_data.souls += current_soul_amount
-	
+	save_data.challenges = ChallengeManager.current_challenge_progress
 	Global.save_player_data(save_data)
+	ChallengeManager.initialize_challenges()
 
 func has_passed_by_score(score: int) -> bool:
 	if score == current_score:

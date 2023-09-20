@@ -128,6 +128,7 @@ cooldown = 0.5
 on_switch_cooldown = null
 type = 1
 knockback_force = 0.0
+directional_shake = false
 shake_force = 2.0
 shake_time = 0.05
 recoil_strength_degrees = 70.0

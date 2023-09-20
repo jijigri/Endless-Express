@@ -401,6 +401,9 @@ armor_recharge_time = null
 material = SubResource("ShaderMaterial_lhr4q")
 sprite_frames = SubResource("SpriteFrames_lacak")
 
+[node name="StatusEffectsManager" parent="." index="7"]
+nerf_multiplier = 1.5
+
 [node name="CloseRangeAttack" parent="ChaserAttacksHolder" index="0" instance=ExtResource("7_cabw7")]
 damage = 60.0
 range = 70.0

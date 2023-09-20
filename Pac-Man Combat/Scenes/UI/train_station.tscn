@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://x1o1wk70v2m2"]
+[gd_scene load_steps=76 format=3 uid="uid://x1o1wk70v2m2"]
 
 [ext_resource type="Script" path="res://Scripts/UI/TrainStation.gd" id="1_0bs67"]
 [ext_resource type="Texture2D" uid="uid://bj04heno632qt" path="res://Sprites/UI/TrainStation.png" id="1_sqds7"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://brf5x7nv0jsif" path="res://Audio/SoundEffects/UI/ButtonPressedSound.wav" id="12_6nr1m"]
 [ext_resource type="Texture2D" uid="uid://sr4oyeu10ndm" path="res://Sprites/UI/InGameSoulSlot.png" id="14_vltxm"]
 [ext_resource type="Texture2D" uid="uid://ciqtl1jqanxv2" path="res://Sprites/UI/SoulIcon.png" id="15_uv58j"]
+[ext_resource type="Script" path="res://Scripts/UI/ChallengePanel.gd" id="16_po2kg"]
 [ext_resource type="Texture2D" uid="uid://ce2pje7vjrxwr" path="res://Sprites/UI/StationPointerArrow.png" id="17_rpduu"]
 [ext_resource type="AudioStream" uid="uid://cf6njxnljlfbr" path="res://Audio/Ambience/TrainStationAmbience.wav" id="18_aqf43"]
 [ext_resource type="AudioStream" uid="uid://b7x2d6jukxjhm" path="res://Audio/SoundEffects/UI/CharacterUnlockedSound.wav" id="20_iclmu"]
@@ -331,7 +332,48 @@ shadow_offset = Vector2(0, 2)
 [sub_resource type="LabelSettings" id="LabelSettings_u8yt5"]
 font = ExtResource("7_8yrdk")
 
-[node name="TrainStation" type="Control"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_optds"]
+
+[sub_resource type="Gradient" id="Gradient_mjc8m"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.174757, 0.343042, 0.530744, 0.708738, 0.857605)
+colors = PackedColorArray(0.882353, 0.168627, 0.168627, 1, 0.317647, 0.396078, 0.870588, 1, 0.301961, 0.945098, 0.352941, 1, 0.807843, 0.176471, 0.45098, 1, 0.890196, 0.47451, 0.152941, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o3wf6"]
+gradient = SubResource("Gradient_mjc8m")
+
+[sub_resource type="Gradient" id="Gradient_ta5q3"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4dgmc"]
+gradient = SubResource("Gradient_ta5q3")
+
+[sub_resource type="Curve" id="Curve_k816u"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.894737, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5rdja"]
+curve = SubResource("Curve_k816u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bb4fu"]
+lifetime_randomness = 0.6
+emission_shape = 3
+emission_box_extents = Vector3(360, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 5.0
+gravity = Vector3(0, 150, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 300.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 1.5
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_5rdja")
+color_ramp = SubResource("GradientTexture1D_4dgmc")
+color_initial_ramp = SubResource("GradientTexture1D_o3wf6")
+
+[node name="TrainStation" type="Control" groups=["TrainStation"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -371,7 +413,6 @@ frame_progress = 0.251664
 script = ExtResource("3_43vew")
 
 [node name="CharacterScreen" parent="." instance=ExtResource("5_trwgm")]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -796,6 +837,19 @@ grow_vertical = 0
 theme = ExtResource("6_p5b7c")
 text = "CONFIRM"
 
+[node name="Challenges" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.0
+offset_top = 21.0
+offset_right = 166.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme = ExtResource("6_p5b7c")
+script = ExtResource("16_po2kg")
+
 [node name="SoulCounter" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 1
@@ -857,6 +911,23 @@ bus = &"Ambience"
 [node name="CharacterUnlockedSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_iclmu")
 bus = &"FX"
+
+[node name="Confettis" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_optds")
+position = Vector2(335, 376)
+emitting = false
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_bb4fu")
+lifetime = 3.0
+one_shot = true
+speed_scale = 3.5
+explosiveness = 1.0
+fixed_fps = 200
+visibility_rect = Rect2(-200, -100, 400, 200)
+trail_enabled = true
+trail_lifetime = 0.1
+trail_sections = 2
+trail_section_subdivisions = 1
 
 [connection signal="pressed" from="CharacterScreen/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CharacterScreen/UnlockButton" to="." method="_on_unlock_button_pressed"]

@@ -30,6 +30,7 @@ shader_parameter/NEW_COLOR4 = null
 [node name="HackStatusEffect" instance=ExtResource("1_cf4ea")]
 script = ExtResource("2_s8ir3")
 sound_effect = ExtResource("3_tpmxc")
+type = 1
 
 [node name="Effect" type="Sprite2D" parent="." index="1"]
 z_index = 1

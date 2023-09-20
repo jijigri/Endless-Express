@@ -12,6 +12,7 @@ extends Control
 @onready var ability_display = $DetailsScreen/AbilityDisplay
 @onready var confirm_popup = $UnlockConfirm
 @onready var congratulations_popup = $CongratulationsScreen
+@onready var confettis = $Confettis
 
 var current_selected_character: int = 0
 
@@ -112,6 +113,8 @@ func purchase_character():
 	
 	$CharacterUnlockedSound.play()
 	
+	play_confettis()
+	
 	congratulations_popup.get_node("Label").text = "Congratulations! You have successfully unlocked [" + character.display_name + "]"
 	set_screen(3)
 
@@ -200,3 +203,6 @@ func update_arrow(id):
 	if parent.get_child_count() >= id - 1:
 		var sprite = parent.get_child(id)
 		$PointerArrow.global_position = sprite.global_position + (Vector2.UP * 40)
+
+func play_confettis():
+	confettis.restart()

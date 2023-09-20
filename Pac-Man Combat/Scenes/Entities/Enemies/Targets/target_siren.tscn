@@ -295,7 +295,7 @@ material = SubResource("ShaderMaterial_hxmon")
 texture = ExtResource("12_slh5p")
 
 [node name="StatusEffectsManager" parent="." index="7"]
-time_multiplier = 0.5
+nerf_multiplier = 0.5
 
 [node name="TeleportMovement" type="Node2D" parent="." index="8"]
 script = ExtResource("9_okh1b")

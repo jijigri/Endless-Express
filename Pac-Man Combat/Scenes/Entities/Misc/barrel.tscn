@@ -56,7 +56,7 @@ shape = SubResource("CircleShape2D_on4h7")
 position = Vector2(0, 8)
 collision_layer = 0
 collision_mask = 12
-priority = 1.0
+priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetection"]
 shape = SubResource("RectangleShape2D_ghkqk")
