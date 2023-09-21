@@ -12,9 +12,12 @@ extends Control
 @onready var ability_display = $DetailsScreen/AbilityDisplay
 @onready var confirm_popup = $UnlockConfirm
 @onready var congratulations_popup = $CongratulationsScreen
+@onready var challenges_panel = $Challenges
+@onready var settings = $Settings
 @onready var confettis = $Confettis
 
 var current_selected_character: int = 0
+var current_screen = 0
 
 signal character_unlocked
 
@@ -23,6 +26,8 @@ func _ready() -> void:
 	set_soul_counter()
 	set_screen(0)
 	swap_selected_character(0)
+	
+	settings.closed.connect(set_screen.bind(0))
 	
 	var ambience = $Ambience
 	ambience.volume_db = -20.0
@@ -33,7 +38,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
-		Global.load_scene("main_menu")
+		_on_back_pressed()
 
 func set_soul_counter():
 	var soul_amount = Global.load_player_data().souls
@@ -166,6 +171,35 @@ func _on_close_details_button_pressed() -> void:
 	set_screen(0)
 	on_button_pressed()
 
+func _on_back_pressed() -> void:
+	if current_screen == 0:
+		Global.load_scene("main_menu")
+	else:
+		set_screen(0)
+	on_button_pressed()
+
+
+func _on_tutorial_button_pressed() -> void:
+	Global.load_scene("tutorial")
+	on_button_pressed()
+
+
+func _on_challenges_button_pressed() -> void:
+	if current_screen != 4:
+		set_screen(4)
+	else:
+		set_screen(0)
+	on_button_pressed()
+
+
+func _on_settings_button_pressed() -> void:
+	if current_screen != 5:
+		set_screen(5)
+	else:
+		set_screen(0)
+	on_button_pressed()
+
+
 func set_screen(index):
 	match index:
 		0:
@@ -173,30 +207,52 @@ func set_screen(index):
 			details_screen.visible = false
 			confirm_popup.visible = false
 			congratulations_popup.visible = false
+			challenges_panel.visible = false
+			settings.visible = false
 		1:
-			character_screen.visible = false
 			details_screen.visible = true
+			character_screen.visible = false
 			confirm_popup.visible = false
 			congratulations_popup.visible = false
+			challenges_panel.visible = false
+			settings.visible = false
 		2:
-			character_screen.visible = false
-			details_screen.visible = false
 			confirm_popup.visible = true
 			Global.play_popup_effect(confirm_popup, true)
+			character_screen.visible = false
+			details_screen.visible = false
 			congratulations_popup.visible = false
+			challenges_panel.visible = false
+			settings.visible = false
 		3:
+			congratulations_popup.visible = true
+			Global.play_popup_effect(congratulations_popup, true)
 			character_screen.visible = false
 			details_screen.visible = false
 			confirm_popup.visible = false
-			congratulations_popup.visible = true
-			Global.play_popup_effect(congratulations_popup, true)
-		
+			challenges_panel.visible = false
+			settings.visible = false
+		4:
+			challenges_panel.visible = true
+			character_screen.visible = true
+			details_screen.visible = false
+			confirm_popup.visible = false
+			congratulations_popup.visible = false
+			settings.visible = false
+		5:
+			settings.visible = true
+			character_screen.visible = false
+			details_screen.visible = false
+			confirm_popup.visible = false
+			congratulations_popup.visible = false
+			challenges_panel.visible = false
+			
+	current_screen = index
+	
+
+
 func on_button_pressed():
 	$ButtonPressedPlayer.play()
-
-
-func _on_back_pressed() -> void:
-	Global.load_scene("main_menu")
 
 func update_arrow(id):
 	var parent = $Characters

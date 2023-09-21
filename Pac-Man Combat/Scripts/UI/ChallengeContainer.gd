@@ -5,6 +5,7 @@ var claimed_sound = preload("res://Audio/SoundEffects/UI/ChallengeClaimedSound.w
 
 func initialize(challenge: Challenge):
 	self.challenge = challenge
+	%Name.text = challenge.display_name
 	%Condition.text = challenge.description
 	%Progress.max_value = challenge.goal
 	%Progress.value = challenge.progress if !challenge.claimed && !challenge.achieved else challenge.goal

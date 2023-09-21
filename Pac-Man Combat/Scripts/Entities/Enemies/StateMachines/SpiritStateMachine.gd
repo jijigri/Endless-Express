@@ -89,9 +89,10 @@ func enter_target_body():
 	var manager = target.status_effects_manager
 	if manager != null:
 		manager.set_status_effect("spirit_possess", possess_time)
-		target.killed.connect(_on_target_killed)
-		manager.effect_removed.connect(_on_target_status_effect_removed)
-		#marker.visible = false
+		if !target.killed.is_connected(_on_target_killed):
+			target.killed.connect(_on_target_killed)
+		if !manager.effect_removed.is_connected(_on_target_status_effect_removed):
+			manager.effect_removed.connect(_on_target_status_effect_removed)
 		visible = false
 		hurtbox.set_deferred("monitorable", false)
 	else:

@@ -14,7 +14,7 @@ func _ready() -> void:
 	for item in challenges:
 		if item.character_name != null:
 			var char_name = item.character_name
-			if !categories.has(char_name):
+			if !categories.has(char_name.to_upper()):
 				if char_name == "":
 					char_name = "GENERAL"
 				categories.append(char_name.to_upper())
@@ -32,5 +32,5 @@ func _ready() -> void:
 		var category_challenges = challenge_by_category[c]
 		for challenge in category_challenges:
 			var container = challenge_container.instantiate()
-			node.call_deferred("add_child", container)
+			node.get_node("ScrollContainer/List").call_deferred("add_child", container)
 			container.initialize(challenge)

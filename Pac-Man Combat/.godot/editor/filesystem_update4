@@ -30,3 +30,9 @@ res://Scenes/UI/settings.tscn
 res://Scenes/UI/challenge_container.tscn
 res://Scripts/UI/ChallengeContainer.gd
 res://Scripts/UI/TrainStation.gd
+res://Scenes/Singletons/playable_characters_pool.tscn
+res://Scenes/UI/challenge_panel.tscn
+res://Scripts/UI/ChallengePanel.gd
+res://Scripts/Entities/Enemies/StateMachines/SpiritStateMachine.gd
+res://Scenes/main_menu.tscn
+res://Scripts/UI/PauseMenu.gd

@@ -1,16 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx13nwexmdev5"]
+[gd_scene load_steps=7 format=3 uid="uid://bx13nwexmdev5"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ChallengeContainer.gd" id="1_y13wk"]
+[ext_resource type="Theme" uid="uid://dgi4mcucy7t8i" path="res://Themes/MenuTheme.tres" id="2_pm3rm"]
+[ext_resource type="FontFile" uid="uid://dgt6a3k16a4a0" path="res://Fonts/NbPixelFontBundle/Habbo.ttf" id="3_5kkw2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oa2ra"]
+line_spacing = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apr2t"]
+content_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8g0w"]
+line_spacing = 0.0
+font = ExtResource("3_5kkw2")
 
 [node name="ChallengeContainer" type="HBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(400, 0)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -150.0
-offset_right = 150.0
+offset_left = -170.0
+offset_right = 170.0
 offset_bottom = 38.0
 grow_horizontal = 2
 size_flags_horizontal = 4
@@ -18,17 +28,30 @@ alignment = 1
 script = ExtResource("1_y13wk")
 
 [node name="Control" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(200, 30)
+custom_minimum_size = Vector2(280, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = -3
+
+[node name="Name" type="Label" parent="Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+theme = ExtResource("2_pm3rm")
+text = "Name"
+label_settings = SubResource("LabelSettings_oa2ra")
+vertical_alignment = 2
+autowrap_mode = 2
+uppercase = true
 
 [node name="Condition" type="Label" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_pm3rm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_apr2t")
 text = "Name"
-label_settings = SubResource("LabelSettings_oa2ra")
-vertical_alignment = 1
+label_settings = SubResource("LabelSettings_k8g0w")
 autowrap_mode = 3
 
 [node name="Progress" type="ProgressBar" parent="Control"]

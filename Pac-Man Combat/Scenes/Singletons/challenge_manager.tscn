@@ -6,25 +6,41 @@
 
 [sub_resource type="Resource" id="Resource_dx3yh"]
 script = ExtResource("3_s7dt2")
-value = 500
+value = 250
 
 [sub_resource type="Resource" id="Resource_o00yf"]
 script = ExtResource("3_s7dt2")
-value = 800
+value = 1200
 
 [node name="ChallengeManager" type="Node2D"]
 script = ExtResource("1_gmsl2")
 
 [node name="score_challenge_all" type="Node2D" parent="."]
 script = ExtResource("2_d8tnm")
-display_name = "Score challenge"
-description = "Get to wave 10 on any character"
+display_name = "Getting the hang of it"
+description = "Get to wave 10 with any character"
 reward = SubResource("Resource_dx3yh")
 
 [node name="score_challenge_mia" type="Node2D" parent="."]
 script = ExtResource("2_d8tnm")
 character_name = "Mia"
-display_name = "Score challenge"
-description = "Get to wave 15 on Mia"
-goal = 15
+display_name = "Mia connnoisseur"
+description = "Get to wave 20 with Mia"
+goal = 20
+reward = SubResource("Resource_o00yf")
+
+[node name="score_challenge_mia_2" type="Node2D" parent="."]
+script = ExtResource("2_d8tnm")
+character_name = "Mia"
+display_name = "Mia pro"
+description = "Get to wave 30 with Mia"
+goal = 30
+reward = SubResource("Resource_o00yf")
+
+[node name="score_challenge_ninja" type="Node2D" parent="."]
+script = ExtResource("2_d8tnm")
+character_name = "Boy dressed as a ninja"
+display_name = "Grown up dressed as a ninja"
+description = "Get to wave 20 with the Boy dressed as a ninja"
+goal = 20
 reward = SubResource("Resource_o00yf")

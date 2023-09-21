@@ -52,12 +52,14 @@ func _on_cancel_pressed() -> void:
 
 func _on_confirm_pressed() -> void:
 	if last_tried_to_restart:
-		game_manager.submit_data()
+		if game_manager != null:
+			game_manager.submit_data()
 		MusicHandler.stop_music()
 		close()
 		Global.load_scene("game")
 	else:
-		game_manager.submit_data()
+		if game_manager != null:
+			game_manager.submit_data()
 		MusicHandler.stop_music()
 		close()
 		Global.load_scene("main_menu")
