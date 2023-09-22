@@ -34,5 +34,7 @@ func use_ability(ability: AbilityBase):
 			ability.use_ability(self)
 			energy_manager.remove_energy(ability.energy_cost)
 			current_cooldown = global_cooldown_time
+			
+			GameEvents.ability_used.emit(self)
 		else:
 			CustomCursor.display_ability_cost(energy_manager.current_energy, ability.energy_cost)

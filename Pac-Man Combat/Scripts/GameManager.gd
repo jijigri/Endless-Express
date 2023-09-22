@@ -62,6 +62,7 @@ func game_end():
 	game_over = true
 
 func submit_data():
+	PlayerDataQueue.stop_recording()
 	ScoreManager.submit_score(current_score)
 	
 	var save_data = Global.load_player_data()
@@ -69,6 +70,9 @@ func submit_data():
 	save_data.challenges = ChallengeManager.current_challenge_progress
 	Global.save_player_data(save_data)
 	ChallengeManager.initialize_challenges()
+
+func _exit_tree() -> void:
+	GameEvents.score_updated.emit(0)
 
 func has_passed_by_score(score: int) -> bool:
 	if score == current_score:

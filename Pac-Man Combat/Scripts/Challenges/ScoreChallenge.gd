@@ -1,8 +1,8 @@
 extends Challenge
 
-@export var character_name: String = ""
-
 func start_recording_challenge():
+	super.start_recording_event()
+	
 	if !GameEvents.score_updated.is_connected(_on_score_updated):
 		GameEvents.score_updated.connect(_on_score_updated)
 

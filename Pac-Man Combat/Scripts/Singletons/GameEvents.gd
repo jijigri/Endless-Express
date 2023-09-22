@@ -12,6 +12,9 @@ signal player_damaged(current_health: float, max_health: float, value: float)
 signal player_healed(current_health: float, max_health: float, value: float)
 signal player_killed()
 
+signal ability_used(ability: AbilityBase)
+signal movement_ability_used(ability: PlayerMovementAbility)
+
 signal primary_weapon_shot()
 signal secondary_weapon_shot()
 

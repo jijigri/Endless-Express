@@ -126,6 +126,9 @@ func use_ability():
 	dash()
 
 func dash():
+	
+	GameEvents.movement_ability_used.emit(self)
+	
 	var charged = is_charged()
 	dash_dir = direction
 	

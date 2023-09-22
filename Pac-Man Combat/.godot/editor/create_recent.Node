@@ -1,3 +1,6 @@
+TextureRect
+Node2D
+Node
 Control
 HBoxContainer
 GridContainer
@@ -13,7 +16,6 @@ Label
 HFlowContainer
 ScrollContainer
 ConfirmationDialog
-Node2D
 PopupPanel
 MenuBar
 AudioStreamPlayer2D
@@ -21,7 +23,6 @@ Line2D
 Timer
 AnimatedSprite2D
 AudioStreamPlayer
-TextureRect
 CPUParticles2D
 RigidBody2D
 Sprite2D
@@ -29,4 +30,3 @@ CollisionShape2D
 Area2D
 TextureButton
 ShapeCast2D
-NinePatchRect

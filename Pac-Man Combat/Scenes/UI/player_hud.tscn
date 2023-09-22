@@ -353,7 +353,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="SoulCounter/HBoxContainer"]
 layout_mode = 2
-text = "+12805"
+text = "+0"
 label_settings = SubResource("LabelSettings_o2qb4")
 vertical_alignment = 1
 

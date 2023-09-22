@@ -21,7 +21,7 @@ var current_id: int = 0
 var debug_mode: bool = false
 var pause_menu_enabled: bool = false
 
-var version = "0.6.0"
+var version = "0.6.1"
 
 func _ready():
 	

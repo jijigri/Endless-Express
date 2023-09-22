@@ -12,16 +12,19 @@ func _ready() -> void:
 	var challenge_by_category = {}
 	
 	for item in challenges:
-		if item.character_name != null:
-			var char_name = item.character_name
-			if !categories.has(char_name.to_upper()):
-				if char_name == "":
-					char_name = "GENERAL"
+		var char_name = item.character_name
+		if !categories.has(char_name.to_upper()):
+			if char_name == "":
+				char_name = "GENERAL"
+				if  !categories.has("GENERAL"):
+					categories.append(char_name.to_upper())
+			else:
 				categories.append(char_name.to_upper())
-				if challenge_by_category.has(char_name.to_upper()):
-					challenge_by_category[char_name.to_upper()].append(item)
-				else:
-					challenge_by_category[char_name.to_upper()] = [item]
+			
+		if challenge_by_category.has(char_name.to_upper()):
+			challenge_by_category[char_name.to_upper()].append(item)
+		else:
+			challenge_by_category[char_name.to_upper()] = [item]
 	
 	print_debug(categories)
 	for c in categories:

@@ -45,7 +45,6 @@ func _ready() -> void:
 
 func get_server_version():
 	var server_version = await LootLocker.get_server_version().get_server_version_complete
-	print_debug("From menu, got version ", server_version)
 	
 	if Global.version != server_version:
 		update_warning.visible = true

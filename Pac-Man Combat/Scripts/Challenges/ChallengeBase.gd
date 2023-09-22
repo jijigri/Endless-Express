@@ -1,6 +1,7 @@
 class_name Challenge
 extends Node2D
 
+@export var character_name: String = ""
 @export var display_name: String
 @export_multiline var description: String
 @export var goal: int = 10
@@ -16,7 +17,8 @@ func initialize(manager):
 	self.manager = manager
 
 func start_recording_event():
-	pass
+	if character_name != "" && character_name != Global.current_player.display_name:
+		return
 
 func progress_challenge():
 	if manager != null:

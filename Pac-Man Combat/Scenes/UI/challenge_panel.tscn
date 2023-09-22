@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bwkfdwqj4l80w"]
+[gd_scene load_steps=2 format=3 uid="uid://bwkfdwqj4l80w"]
+
+[ext_resource type="Theme" uid="uid://dgi4mcucy7t8i" path="res://Themes/MenuTheme.tres" id="1_48i2x"]
 
 [node name="ChallengePanel" type="Control"]
 layout_mode = 3
@@ -15,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_48i2x")
 horizontal_scroll_mode = 0
 
 [node name="List" type="VBoxContainer" parent="ScrollContainer"]

@@ -64,6 +64,8 @@ func dive():
 		player_animations.dive(input_direction)
 		
 		disable_gun()
+		
+		GameEvents.movement_ability_used.emit(self)
 
 func roll():
 	#roll
@@ -89,6 +91,8 @@ func roll():
 	disable_gun()
 	
 	set_on_cooldown()
+	
+	GameEvents.movement_ability_used.emit(self)
 
 func roll_timer():
 	await get_tree().create_timer(roll_animation_time).timeout
