@@ -1,0 +1,120 @@
+[gd_scene load_steps=16 format=3 uid="uid://bio37iqsdeurb"]
+
+[ext_resource type="Script" path="res://Scripts/World/ArenaProps/PoppinBalloon.gd" id="1_qwi6t"]
+[ext_resource type="Texture2D" uid="uid://bkys8jqhk08td" path="res://Sprites/ArenaProps/PoppinBalloon.png" id="2_ljb72"]
+[ext_resource type="Script" path="res://Scripts/Tools/SimpleObjectMovement.gd" id="3_mrhp5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gl2qr"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jvjo"]
+atlas = ExtResource("2_ljb72")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1nnu"]
+atlas = ExtResource("2_ljb72")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou18a"]
+atlas = ExtResource("2_ljb72")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw6an"]
+atlas = ExtResource("2_ljb72")
+region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vda87"]
+atlas = ExtResource("2_ljb72")
+region = Rect2(256, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5aknh"]
+atlas = ExtResource("2_ljb72")
+region = Rect2(320, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1684s"]
+atlas = ExtResource("2_ljb72")
+region = Rect2(384, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu710"]
+atlas = ExtResource("2_ljb72")
+region = Rect2(448, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r45vw"]
+atlas = ExtResource("2_ljb72")
+region = Rect2(512, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmlcb"]
+atlas = ExtResource("2_ljb72")
+region = Rect2(576, 0, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_norhe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jvjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1nnu")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou18a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw6an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vda87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5aknh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1684s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu710")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r45vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmlcb")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 12.0
+}]
+
+[node name="PoppinBalloon" type="Area2D"]
+position = Vector2(-8, -32)
+collision_layer = 0
+script = ExtResource("1_qwi6t")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gl2qr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_norhe")
+autoplay = "default"
+
+[node name="SimpleObjectMovement" type="Node2D" parent="."]
+script = ExtResource("3_mrhp5")
+amplitude = 8.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -31,6 +31,11 @@ func freeze(time: float, time_scale = 0.1):
 	await get_tree().create_timer(time * time_scale).timeout
 	Engine.time_scale = 1
 
+func hit_stop(time: float = 0.15):
+	Engine.time_scale = 0
+	await get_tree().create_timer(time, true, false, true).timeout
+	Engine.time_scale = 1
+
 func zoom_in(value: float, time: float):
 	
 	var tween = create_tween()

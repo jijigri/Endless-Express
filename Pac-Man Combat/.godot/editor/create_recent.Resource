@@ -1,3 +1,4 @@
+BiomeData
 PlayableCharacterData
 ColorSwap
 ProjectileGun

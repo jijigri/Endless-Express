@@ -571,6 +571,7 @@ position = Vector2(-251, 102)
 collision_mask = 13
 collision_priority = 5.0
 floor_block_on_wall = false
+platform_on_leave = 2
 script = ExtResource("1_i5iyk")
 movement_data = ExtResource("2_u2t6b")
 

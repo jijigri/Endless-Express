@@ -12,5 +12,5 @@
 script = ExtResource("3_afe6o")
 name = "Jungle"
 arenas = Array[PackedScene]([ExtResource("1_1ong6"), ExtResource("2_een61"), ExtResource("3_kc840"), ExtResource("4_xj7om"), ExtResource("5_fmjsb")])
-min_level = 5
+min_level = 10
 music = ExtResource("2_s4v01")
