@@ -1,9 +1,15 @@
-Sprite2D
+CheckBox
 Node2D
+CollisionShape2D
+StaticBody2D
+AnimationPlayer
+NinePatchRect
+Area2D
+AudioStreamPlayer2D
+RayCast2D
+Sprite2D
 AudioStreamPlayer
 AnimatedSprite2D
-CollisionShape2D
-Area2D
 ColorRect
 RigidBody2D
 TextureRect
@@ -25,8 +31,3 @@ ScrollContainer
 ConfirmationDialog
 PopupPanel
 MenuBar
-AudioStreamPlayer2D
-Line2D
-Timer
-CPUParticles2D
-TextureButton

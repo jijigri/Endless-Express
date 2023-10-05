@@ -33,7 +33,7 @@ func _ready() -> void:
 		await LootLocker.authentification_complete
 		guest_exists = LootLocker.guest_exists
 	
-	if guest_exists == false:
+	if guest_exists == false && display_name_edit.text == "Player":
 		var box = $CanvasLayer/NameSelectionBox
 		box.visible = true
 		box.main_menu = self

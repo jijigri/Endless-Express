@@ -18,6 +18,8 @@ var indicator_type_manager = SpawnIndicatorType.new()
 
 var current_id: int = 0
 
+var current_settings: SettingsData = SettingsData.new()
+
 var debug_mode: bool = false
 var pause_menu_enabled: bool = false
 

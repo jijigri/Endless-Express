@@ -8,11 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://bn3sqfmfiewv0" path="res://Scenes/Arenas/train_arena_6.tscn" id="6_aepuu"]
 [ext_resource type="Script" path="res://Scripts/Resources/BiomeData.gd" id="6_w54ud"]
 [ext_resource type="PackedScene" uid="uid://b7ah8p8uaqtfu" path="res://Scenes/Arenas/train_arena_7.tscn" id="7_385bs"]
-[ext_resource type="AudioStream" uid="uid://ft88xutwo3ds" path="res://Audio/Music/On the way to heaven.wav" id="8_vphj3"]
+[ext_resource type="AudioStream" uid="uid://beo0o1h8ogfpl" path="res://Audio/Music/Cyberfunk.wav" id="8_xd3pu"]
 
 [resource]
 script = ExtResource("6_w54ud")
 name = "Default"
 arenas = Array[PackedScene]([ExtResource("1_1em4f"), ExtResource("2_1tjym"), ExtResource("3_ldjwg"), ExtResource("4_3csei"), ExtResource("5_lv5vu"), ExtResource("6_aepuu"), ExtResource("7_385bs")])
 min_level = 0
-music = ExtResource("8_vphj3")
+music = ExtResource("8_xd3pu")

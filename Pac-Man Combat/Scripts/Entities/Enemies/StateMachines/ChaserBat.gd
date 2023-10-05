@@ -194,7 +194,8 @@ func set_sprite_direction():
 func on_damaged(damage_data):
 		
 	if current_state == default_movement:
-		trigger()
+		health_manager.break_armor()
+		#trigger()
 	else:
 		if attacks[0].is_in_attack_sequence:
 			health_manager.break_armor()

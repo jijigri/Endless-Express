@@ -6,12 +6,14 @@ extends Control
 @onready var music_volume = %MusicVolume
 @onready var ambience_volume = %AmbienceVolume
 @onready var back_button = %BackButton
+@onready var outline_checkbox = %OutlineCheckbox
 
 signal closed
 
 func _ready() -> void:
 	load_settings()
 	set_settings()
+	pass
 
 func load_settings() -> void:
 	var config = ConfigFile.new()
@@ -28,6 +30,7 @@ func load_settings() -> void:
 	fx_volume.value = config.get_value("audio", "fx_volume", 0)
 	music_volume.value = config.get_value("audio", "music_volume", 0)
 	ambience_volume.value = config.get_value("audio", "ambience_volume", 0)
+	outline_checkbox.button_pressed = config.get_value("gameplay", "player_outline", false)
 	
 func save_settings() -> void:
 	var config = ConfigFile.new()
@@ -37,6 +40,8 @@ func save_settings() -> void:
 	config.set_value("audio", "fx_volume", fx_volume.value)
 	config.set_value("audio", "music_volume", music_volume.value)
 	config.set_value("audio", "ambience_volume", ambience_volume.value)
+	config.set_value("gameplay", "player_outline", outline_checkbox.button_pressed)
+	print_debug("IS OUTLINE? ", outline_checkbox.button_pressed)
 	
 	config.save("user://settings.cfg")
 
@@ -46,6 +51,7 @@ func set_default_values() -> void:
 	fx_volume.value = 0
 	music_volume.value = 0
 	ambience_volume.value = 0
+	outline_checkbox.button_pressed = false
 
 func set_settings() -> void:
 	_on_display_type_item_selected(display_type.get_selected_id())
@@ -53,6 +59,7 @@ func set_settings() -> void:
 	_on_fx_volume_value_changed(fx_volume.value)
 	_on_music_volume_value_changed(music_volume.value)
 	_on_ambience_volume_value_changed(ambience_volume.value)
+	_on_outline_checkbox_toggled(outline_checkbox.button_pressed)
 
 func _on_display_type_item_selected(index: int) -> void:
 	if index == 0:
@@ -81,3 +88,8 @@ func _on_ambience_volume_value_changed(value: float) -> void:
 func _on_back_button_pressed() -> void:
 	save_settings()
 	closed.emit()
+	GameEvents.settings_updated.emit()
+
+
+func _on_outline_checkbox_toggled(button_pressed: bool) -> void:
+	Global.current_settings.player_outline = button_pressed

@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="BiomeData" load_steps=4 format=3 uid="uid://dbvqn1ps7r8k5"]
+[gd_resource type="Resource" script_class="BiomeData" load_steps=5 format=3 uid="uid://dbvqn1ps7r8k5"]
 
 [ext_resource type="PackedScene" uid="uid://mbdh6txtyw2b" path="res://Scenes/Arenas/heaven_arena_1.tscn" id="1_hlh40"]
 [ext_resource type="Script" path="res://Scripts/Resources/BiomeData.gd" id="1_si8qc"]
 [ext_resource type="AudioStream" uid="uid://ft88xutwo3ds" path="res://Audio/Music/On the way to heaven.wav" id="2_505aq"]
+[ext_resource type="PackedScene" uid="uid://b5a8ah4ce5d27" path="res://Scenes/Arenas/heaven_arena_2.tscn" id="2_r0ovi"]
 
 [resource]
 script = ExtResource("1_si8qc")
 name = "Heaven"
-arenas = Array[PackedScene]([ExtResource("1_hlh40")])
+arenas = Array[PackedScene]([ExtResource("1_hlh40"), ExtResource("2_r0ovi")])
 min_level = 10
 music = ExtResource("2_505aq")

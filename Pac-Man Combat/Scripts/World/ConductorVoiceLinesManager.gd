@@ -1,6 +1,7 @@
 @tool
 extends AudioStreamPlayer
 
+@export var enabled: bool = true
 @export var refresh_lines: bool = false : set = set_refresh_lines
 @export var test_lines: Array
 
@@ -92,6 +93,9 @@ func add_files_to_data(voice_line_data, path, type: int = 0):
 
 func _on_arena_cleared(arena: Arena):
 	if Engine.is_editor_hint():
+		return
+	
+	if !enabled:
 		return
 	
 	cancelled = false

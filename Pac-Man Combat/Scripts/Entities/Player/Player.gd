@@ -21,6 +21,10 @@ func _ready() -> void:
 	if !sprite.frame_changed.is_connected(_on_sprite_frame_changed):
 		sprite.frame_changed.connect(_on_sprite_frame_changed)
 	
+	if !GameEvents.settings_updated.is_connected(_on_settings_updated):
+		GameEvents.settings_updated.connect(_on_settings_updated)
+	_on_settings_updated()
+	
 	HUD.player_hud.update_health_bar(health_manager.current_health, health_manager.max_health, null)
 	HUD.player_hud.update_energy_bar(energy_manager.current_energy, energy_manager.max_energy, true)
 	CameraManager.current_camera = camera
@@ -105,3 +109,6 @@ func play_step_sound() -> void:
 				AudioData.new(preload("res://Audio/SoundEffects/Player/PlayerStep.wav"),
 				global_position)
 			)
+
+func _on_settings_updated():
+	sprite.material.set_shader_parameter("width_multiplier", 0.0 if Global.current_settings.player_outline == false else 1.0)

@@ -21,3 +21,5 @@ signal secondary_weapon_shot()
 signal enemy_spawned()
 signal enemy_damaged(enemy: Enemy)
 signal enemy_killed(enemy: Enemy)
+
+signal settings_updated()

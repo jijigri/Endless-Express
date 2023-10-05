@@ -69,6 +69,8 @@ func _on_back_pressed() -> void:
 	close()
 
 func close():
+	if settings_instance != null:
+		settings_instance._on_back_button_pressed()
 	_on_settings_closed()
 	confirm_screen.visible = false
 	visible = false

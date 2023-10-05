@@ -114,7 +114,7 @@ func on_entity_damaged(area):
 			gun_origin.on_hit()
 	
 	if status_effect != "" && status_time > 0:
-		if area.status_effects_manager != null:
+		if area.get("status_effects_manager"):
 			if status_cap > 0:
 				if area.status_effects_manager.number_of_effects(status_effect) >= status_cap:
 					return

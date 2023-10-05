@@ -17,6 +17,7 @@ var current_arena: Arena
 
 func _ready() -> void:
 	
+	biome_pool.shuffle()
 	change_current_biome()
 	
 	spawn_arena()

@@ -36,8 +36,10 @@ func test_for_player():
 	
 	if player.velocity.y > 0.0:
 		sprite.play("disappear")
-		player.velocity = Vector2(player.velocity.x, -530)
-		player.isJumping = false
+		
+		if !Input.is_action_pressed("move_down") && !Input.is_action_pressed("interact_cancel"):
+			player.velocity = Vector2(player.velocity.x, -530)
+			player.isJumping = false
 		
 		var audio_data = AudioData.new(pop_sound, global_position)
 		AudioManager.play_sound(audio_data)

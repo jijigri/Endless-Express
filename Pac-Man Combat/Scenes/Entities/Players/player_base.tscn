@@ -48,7 +48,7 @@ size = Vector2(16, 31)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_abq6a"]
 shader = ExtResource("3_0ljuv")
-shader_parameter/outline_color = null
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/width_multiplier = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ii0sm"]
@@ -184,7 +184,7 @@ radius = 64.0
 
 [node name="PlayerBase" type="CharacterBody2D" groups=["Player"]]
 z_index = 6
-collision_mask = 13
+collision_mask = 65549
 collision_priority = 5.0
 floor_block_on_wall = false
 platform_on_leave = 2

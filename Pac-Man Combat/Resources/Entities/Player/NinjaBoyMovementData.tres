@@ -24,4 +24,4 @@ dash_time = 0.1
 initial_number_of_dashes = 0
 max_wall_slide_gravity = 220.0
 wall_jump_force = Vector2(235, 465)
-wall_jump_recover_time = 0.6
+wall_jump_recover_time = 0.4

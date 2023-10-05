@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Endless Express"
 config/description="Navigate your way through an endless train as you try to reach the highest score!"
-run/main_scene="res://Scenes/game.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 run/max_fps=144
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -20,6 +20,7 @@ boot_splash/image="res://Sprites/UI/jijigriBannerTransparent.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon_big.svg"
+run/size/mode=3
 
 [autoload]
 
@@ -56,6 +57,7 @@ gdscript/warnings/unused_signal=0
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/mode=3
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="viewport"
@@ -161,6 +163,7 @@ toggle_debug_mode={
 2d_physics/layer_3="Solid"
 2d_physics/layer_4="Platform"
 2d_physics/layer_9="Pickups"
+2d_physics/layer_17="Invisible Wall"
 
 [navigation]
 
@@ -172,4 +175,5 @@ toggle_debug_mode={
 textures/canvas_textures/default_texture_filter=0
 textures/decals/filter=0
 textures/light_projectors/filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 2d/snap/snap_2d_vertices_to_pixel=true

@@ -51,20 +51,22 @@ func game_end():
 	CameraManager.freeze(0.2)
 	CameraManager.shake(10, 0.5)
 	
-	submit_data()
-	
 	var is_top: bool = await ScoreManager.is_top_of_leaderboard(current_score)
 	if is_top:
 		HUD.message_from_top_screen.appear(self)
 	else:
 		HUD.game_over_screen.appear(current_score, current_soul_amount)
-
+	
+	PlayerDataQueue.stop_recording()
+	save_data()
+	
 	game_over = true
 
 func submit_data():
-	PlayerDataQueue.stop_recording()
 	ScoreManager.submit_score(current_score)
-	
+	save_data()
+
+func save_data():
 	var save_data = Global.load_player_data()
 	save_data.souls += current_soul_amount
 	save_data.challenges = ChallengeManager.current_challenge_progress

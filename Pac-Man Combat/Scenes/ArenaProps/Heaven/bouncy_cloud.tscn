@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmxgufm8bgtc4"]
+
+[ext_resource type="Script" path="res://Scripts/World/ArenaProps/BouncyCloud.gd" id="1_lsrnc"]
+[ext_resource type="Texture2D" uid="uid://bnjwaytlvlpo8" path="res://Sprites/ArenaProps/HeavenCloud.png" id="2_q5pgc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfopa"]
+size = Vector2(64, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwp7n"]
+size = Vector2(64, 8)
+
+[node name="BouncyCloud" type="RigidBody2D"]
+position = Vector2(-8, 240)
+collision_layer = 4
+collision_mask = 0
+gravity_scale = 0.0
+max_contacts_reported = 8
+contact_monitor = true
+can_sleep = false
+lock_rotation = true
+linear_damp = 10.0
+angular_damp_mode = 1
+angular_damp = 100.0
+script = ExtResource("1_lsrnc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_nfopa")
+one_way_collision = true
+one_way_collision_margin = 8.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q5pgc")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+position = Vector2(0, -18)
+collision_layer = 0
+priority = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_kwp7n")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

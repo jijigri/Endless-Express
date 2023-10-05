@@ -1,11 +1,15 @@
+res://Scripts/Misc
+res://Sprites/Entities/Players
+D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.6.2a_Test
+res://Scenes
+res://Scenes/Misc
 res://Scenes/ArenaProps/Heaven
+res://Scripts/World/ArenaProps
+res://Scenes/Arenas
 res://Scripts/Tools
 res://Sprites/ArenaProps
-res://Scripts/World/ArenaProps
 res://Shaders
 res://Resources/Biomes
-res://Scenes
-res://Scenes/Arenas
 D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.6.1a
 D:/Godot Games/Builds/EndlessExpress
 res://Scripts/Challenges
@@ -16,7 +20,3 @@ res://Sprites/Effects
 res://Scripts/Misc/StatusEffects
 res://Scenes/Misc/StatusEffects
 res://Sprites/Entities/Enemies/Targets
-res://Scripts/Entities/Enemies/StateMachines
-res://Scenes/Entities/Enemies/Targets
-res://Sprites/UI/TrainStationCharacters
-res://Sprites/UI

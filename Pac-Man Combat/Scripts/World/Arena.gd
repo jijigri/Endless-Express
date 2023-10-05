@@ -55,6 +55,11 @@ func _ready() -> void:
 	var whistle = AudioData.new(preload("res://Audio/SoundEffects/Misc/WhistleBlow.mp3"), global_position)
 	AudioManager.play_sound(whistle)
 	
+	"""
+	HUD.visible = false
+	player.health_manager.take_damage(DamageData.new(40, Vector2()))
+	return
+	"""
 	start_arena()
 
 func start_arena():

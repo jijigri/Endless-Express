@@ -31,9 +31,10 @@ func set_editor_size():
 	
 	if update_navigation:
 		if navigation_region != null:
-			var offset = 8
-			var size_x = (size.x / 2) - offset
-			var size_y = (size.y / 2) - offset
+			var offset_x = 8 if size.x > 17.0 else 4
+			var offset_y = 8 if size.y > 17.0 else 4
+			var size_x = clamp((size.x / 2) - offset_x, 4, 999999)
+			var size_y = clamp((size.y / 2) - offset_y, 4, 999999)
 			var polygon = NavigationPolygon.new()
 			var outline = PackedVector2Array([
 				center + Vector2(-size_x, -size_y),
