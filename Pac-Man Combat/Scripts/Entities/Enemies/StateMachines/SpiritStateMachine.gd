@@ -164,5 +164,4 @@ func _on_status_effects_manager_effect_applied(effect, duration) -> void:
 
 func _on_possess_timer_timeout() -> void:
 	if target == null && current_state != possess_movement && !stunned:
-		#print_debug("NO PROBLEM, TARGET IS NULL")
 		possess()

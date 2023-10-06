@@ -13,7 +13,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	#MAKE IT ON HOLD BUT NEED TO RELEASE BEFORE THROWING ANOTHER ONE
 	if Input.is_action_just_pressed("ability_1"):
 		if get_child_count() >= 1:
 			use_ability(get_child(0))

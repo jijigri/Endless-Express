@@ -175,5 +175,5 @@ toggle_debug_mode={
 textures/canvas_textures/default_texture_filter=0
 textures/decals/filter=0
 textures/light_projectors/filter=0
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.0352941, 0.0392157, 0.0509804, 1)
 2d/snap/snap_2d_vertices_to_pixel=true

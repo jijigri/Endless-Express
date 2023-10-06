@@ -172,6 +172,7 @@ script = ExtResource("10_3r113")
 position = Vector2(0, -128)
 
 [node name="Name" type="Label" parent="."]
+visible = false
 z_index = -8
 anchors_preset = 8
 anchor_left = 0.5

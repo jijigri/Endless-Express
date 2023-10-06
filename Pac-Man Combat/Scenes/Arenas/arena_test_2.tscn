@@ -7,55 +7,55 @@
 [ext_resource type="PackedScene" uid="uid://c0uw81i2nyde4" path="res://Scenes/ArenaProps/speed_booster.tscn" id="5_6mdd0"]
 [ext_resource type="Shader" path="res://Shaders/color_replace.gdshader" id="6_3nftg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocfvc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80cpx"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ne6ck"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h73ic"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdmlb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7j2e"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fu08m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eh554"]
 resource_local_to_scene = true
 size = Vector2(96, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nvpk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5g5t"]
 resource_local_to_scene = true
 size = Vector2(96, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhiiy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qgxi"]
 resource_local_to_scene = true
 size = Vector2(96, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_btgum"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7em6o"]
 resource_local_to_scene = true
 size = Vector2(96, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlwv5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcsuh"]
 resource_local_to_scene = true
 size = Vector2(176, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bbg8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcfve"]
 resource_local_to_scene = true
 size = Vector2(176, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hapgt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8rd2"]
 resource_local_to_scene = true
 size = Vector2(416, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkneu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rkgy"]
 resource_local_to_scene = true
 size = Vector2(416, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkhtn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqxx8"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_te5eh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sdqv"]
 resource_local_to_scene = true
 size = Vector2(80, 4)
 
@@ -164,7 +164,7 @@ position = Vector2(472, -264)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform6" index="0"]
-shape = SubResource("RectangleShape2D_ocfvc")
+shape = SubResource("RectangleShape2D_80cpx")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform6" index="1"]
 region_rect = Rect2(0, 0, 80, 16)
@@ -174,7 +174,7 @@ position = Vector2(-472, -264)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform7" index="0"]
-shape = SubResource("RectangleShape2D_ne6ck")
+shape = SubResource("RectangleShape2D_h73ic")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform7" index="1"]
 region_rect = Rect2(0, 0, 80, 16)
@@ -184,7 +184,7 @@ position = Vector2(-472, -24)
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform8" index="0"]
-shape = SubResource("RectangleShape2D_cdmlb")
+shape = SubResource("RectangleShape2D_w7j2e")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform8" index="1"]
 region_rect = Rect2(0, 0, 80, 16)
@@ -194,7 +194,7 @@ position = Vector2(176, -56)
 size = 96.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform9" index="0"]
-shape = SubResource("RectangleShape2D_fu08m")
+shape = SubResource("RectangleShape2D_eh554")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform9" index="1"]
 region_rect = Rect2(0, 0, 96, 16)
@@ -204,7 +204,7 @@ position = Vector2(-176, -56)
 size = 96.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform10" index="0"]
-shape = SubResource("RectangleShape2D_0nvpk")
+shape = SubResource("RectangleShape2D_f5g5t")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform10" index="1"]
 region_rect = Rect2(0, 0, 96, 16)
@@ -214,7 +214,7 @@ position = Vector2(-96, -264)
 size = 96.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform11" index="0"]
-shape = SubResource("RectangleShape2D_dhiiy")
+shape = SubResource("RectangleShape2D_4qgxi")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform11" index="1"]
 region_rect = Rect2(0, 0, 96, 16)
@@ -224,7 +224,7 @@ position = Vector2(96, -264)
 size = 96.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform14" index="0"]
-shape = SubResource("RectangleShape2D_btgum")
+shape = SubResource("RectangleShape2D_7em6o")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform14" index="1"]
 region_rect = Rect2(0, 0, 96, 16)
@@ -234,7 +234,7 @@ position = Vector2(-136, -152)
 size = 176.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform12" index="0"]
-shape = SubResource("RectangleShape2D_hlwv5")
+shape = SubResource("RectangleShape2D_jcsuh")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform12" index="1"]
 region_rect = Rect2(0, 0, 176, 16)
@@ -244,7 +244,7 @@ position = Vector2(136, -152)
 size = 176.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform13" index="0"]
-shape = SubResource("RectangleShape2D_8bbg8")
+shape = SubResource("RectangleShape2D_jcfve")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform13" index="1"]
 region_rect = Rect2(0, 0, 176, 16)
@@ -254,7 +254,7 @@ position = Vector2(-352, -408)
 size = 416.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform15" index="0"]
-shape = SubResource("RectangleShape2D_hapgt")
+shape = SubResource("RectangleShape2D_i8rd2")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform15" index="1"]
 region_rect = Rect2(0, 0, 416, 16)
@@ -264,7 +264,7 @@ position = Vector2(352, -408)
 size = 416.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform16" index="0"]
-shape = SubResource("RectangleShape2D_bkneu")
+shape = SubResource("RectangleShape2D_0rkgy")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform16" index="1"]
 region_rect = Rect2(0, 0, 416, 16)
@@ -275,7 +275,7 @@ rotation = 1.5708
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform17" index="0"]
-shape = SubResource("RectangleShape2D_dkhtn")
+shape = SubResource("RectangleShape2D_nqxx8")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform17" index="1"]
 region_rect = Rect2(0, 0, 80, 16)
@@ -286,7 +286,7 @@ rotation = 4.71239
 size = 80.0
 
 [node name="CollisionShape2D" parent="Map/Level/Platforms/OneWayPlatform18" index="0"]
-shape = SubResource("RectangleShape2D_te5eh")
+shape = SubResource("RectangleShape2D_7sdqv")
 
 [node name="Sprite" parent="Map/Level/Platforms/OneWayPlatform18" index="1"]
 region_rect = Rect2(0, 0, 80, 16)
@@ -446,6 +446,7 @@ pickups_placed = 106
 position = Vector2(0, 32)
 
 [node name="Name" parent="." index="4"]
+visible = false
 offset_left = -140.5
 offset_top = 8.0
 offset_right = 140.5

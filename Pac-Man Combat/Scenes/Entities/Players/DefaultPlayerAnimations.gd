@@ -16,7 +16,6 @@ func roll(input_direction, roll_invulnerability_time):
 	flip_h = input_direction == -1
 	
 	speed_scale = 1
-	print_debug("UH OHHHHHHH")
 	play("roll")
 	
 	await get_tree().create_timer(roll_invulnerability_time).timeout

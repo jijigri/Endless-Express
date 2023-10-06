@@ -1,4 +1,4 @@
-res://Scenes/UI/settings.tscn
+res://Scenes/game.tscn
 res://Shaders/ColorFadeShader.gdshader
 res://Shaders/Blink.gdshader
 res://Shaders/color_replace.gdshader
@@ -24,14 +24,5 @@ res://Resources/Biomes/HeavenBiome.tres
 res://Shaders/SmearShader.gdshader
 res://Shaders/freeze_shader.gdshader
 res://Shaders/grayscale.gdshader
-res://Scenes/game.tscn
-res://Scenes/Entities/Players/player_base.tscn
 res://Scenes/Arenas/arena_test_1.tscn
 res://Scenes/Entities/Players/default_player.tscn
-res://Scripts/UI/Settings.gd
-res://Scripts/Singletons/Global.gd
-res://Scripts/Misc/SettingsData.gd
-res://Scripts/Singletons/GameEvents.gd
-res://Scripts/Entities/Player/Player.gd
-res://Scripts/UI/PauseMenu.gd
-res://Scenes/Entities/Players/ninja_boy.tscn

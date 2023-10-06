@@ -23,21 +23,9 @@ var current_settings: SettingsData = SettingsData.new()
 var debug_mode: bool = false
 var pause_menu_enabled: bool = false
 
-var version = "0.6.1"
+var version = "0.6.2"
 
 func _ready():
-	
-	SilentWolf.configure({
-		"api_key": "LeiUamxSvV9viEP21PsfC26VxN73ynsl2FtkO7nM",
-		"game_id": "EndlessExpress",
-		"log_level": 0
-	})
-	
-	"""
-	SilentWolf.configure_scores({
-		"open_scene_on_close": "res://scenes/MainPage.tscn"
-	})
-	"""
 	
 	if current_scene == null:
 		if get_tree().get_root().has_node("Game"):

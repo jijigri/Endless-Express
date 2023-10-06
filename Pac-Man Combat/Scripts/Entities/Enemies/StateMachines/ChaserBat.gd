@@ -28,15 +28,6 @@ var trigger_timer = 0.0
 
 var is_on_cooldown: bool = false
 
-#SLEEPS OR WANDERS AROUND WITH A ZONE AROUND
-#WHEN PLAYER ENTERS ZONE OR WHEN SHOT, TELEPORT IN FRONT OF PLAYER
-#BLASTS SHOTGUN TO PLAYER FACE
-#TELEPORTS AWAY
-#STARTS SLEEPING AGAIN
-#WHEN ENEMY COUNT IS LOW, STARTS MOVING TOWARDS PLAYER
-#MAYBE TELEPORTS AWAY WHEN TOO LOW ON HEALTH
-#TRIES TO HEAL WHILE AWAY
-
 func _ready() -> void:
 	add_movement_state(teleport_movement)
 	add_movement_state(chase_movement)
@@ -109,7 +100,6 @@ func start_chasing():
 	set_state(chase_movement)
 	
 	chase_timer.start()
-	#ATTACK IS GOOD BUT VERY STRONG, MAYBE MAKE IT LESS ACCURATE THE FASTER THE PLAYER MOVES
 	attacks[0].automatic = true
 
 

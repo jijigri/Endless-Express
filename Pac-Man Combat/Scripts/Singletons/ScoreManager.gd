@@ -23,6 +23,8 @@ func set_highscore():
 	print_debug("Player highscore: " + str(score))
 
 func submit_score(score: int) -> int:
+	print_debug("Just letting you know that cheating is going to get you banned, just play the game")
+	
 	print_debug("Hihgscore: ", highscore)
 	if score > highscore:
 		var metadata = custom_message

@@ -11,8 +11,6 @@ func _ready() -> void:
 
 func appear(score: int, souls_gained_this_run: int):
 	
-	print_debug("SENDING SCORE")
-	
 	ScoreManager.submit_score(score)
 	var highscore: int = ScoreManager.retrieve_highscore()
 	score_label.text = "SCORE: " + str(score)

@@ -71,7 +71,7 @@ size = Vector2(32, 80)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1id88"]
 size = Vector2(96, 80)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_oxnul"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yp77u"]
 vertices = PackedVector2Array(48, -40, 48, 40, -48, 40, -48, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -40, -48, 40, 48, 40, 48, -40)])
@@ -241,7 +241,7 @@ offset_left = -48.0
 offset_right = 48.0
 
 [node name="NavigationRegion2D" parent="Map/Level/Props/Stomper" index="2"]
-navigation_polygon = SubResource("NavigationPolygon_oxnul")
+navigation_polygon = SubResource("NavigationPolygon_yp77u")
 
 [node name="Button1" parent="Map/Level/Props/Stomper/Buttons" index="0"]
 position = Vector2(-64, 152)
@@ -302,6 +302,7 @@ pickups_placed = 128
 position = Vector2(0, -208)
 
 [node name="Name" parent="." index="4"]
+visible = false
 z_index = -5
 offset_left = -114.0
 offset_top = -88.0
