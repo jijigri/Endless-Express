@@ -1,3 +1,6 @@
+D:/Godot Games/Builds/EndlessExpress/Mac
+res://
+D:/Godot Games/Builds/EndlessExpress/Linux
 D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.6.3_public
 D:/Godot Games/Builds/EndlessExpress/EndlessExpressV0.6.2_public
 res://Scripts/Misc
@@ -18,7 +21,3 @@ res://Scripts/Challenges
 res://Scripts/UI
 res://Scenes/UI
 res://Scenes/Singletons
-res://Sprites/Effects
-res://Scripts/Misc/StatusEffects
-res://Scenes/Misc/StatusEffects
-res://Sprites/Entities/Enemies/Targets
