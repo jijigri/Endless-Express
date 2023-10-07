@@ -23,7 +23,7 @@ var current_settings: SettingsData = SettingsData.new()
 var debug_mode: bool = false
 var pause_menu_enabled: bool = false
 
-var version = "0.6.2"
+var version = "0.6.3"
 
 func _ready():
 	

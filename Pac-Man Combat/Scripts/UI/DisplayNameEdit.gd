@@ -1,7 +1,7 @@
 extends LineEdit
 
 func _ready() -> void:
-	text = "player"
+	text = ""
 	if LootLocker.authentificated == false:
 		await LootLocker.authentification_complete
 	text = await LootLocker.get_player_name().get_name_complete

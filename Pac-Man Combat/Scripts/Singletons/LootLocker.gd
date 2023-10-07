@@ -14,6 +14,7 @@ var get_rank_http = HTTPRequest.new()
 var set_name_http = HTTPRequest.new()
 var get_name_http = HTTPRequest.new()
 var get_server_version_http = HTTPRequest.new()
+var get_dev_message_http = HTTPRequest.new()
 
 var player_name: String
 var player_id
@@ -30,6 +31,7 @@ signal get_rank_complete
 signal set_name_complete
 signal get_name_complete
 signal get_server_version_complete
+signal get_dev_message_complete
 
 func _ready() -> void:
 	version = Global.version + ".0"
@@ -37,8 +39,8 @@ func _ready() -> void:
 	await authentification_complete
 	var name = await get_player_name().get_name_complete
 	print_debug("Name obtained in ready: ", name)
-	if name == "":
-		name = await set_player_name("Player" + OS.get_unique_id()).set_name_complete
+	#if name == "":
+		#name = await set_player_name("Player" + OS.get_unique_id()).set_name_complete
 	
 	player_name = name
 
@@ -247,4 +249,32 @@ func _on_get_server_version_completed(result, response_code, headers, body) -> v
 	
 	print_debug("SERVER VERSION: ", json)
 	
+	get_server_version_complete.emit(json.payload)
+
+"""
+func get_dev_message() -> Node:
+	var uid = "DEKE9CEE"
+	
+	var url = "https://api.lootlocker.io/game/v1/player/"+uid+"/storage"
+	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
+	
+	get_dev_message_http = HTTPRequest.new()
+	add_child(get_dev_message_http)
+	get_dev_message_http.request_completed.connect(_on_get_dev_message_completed)
+	get_dev_message_http.request(url, headers, HTTPClient.METHOD_GET)
+	
+	return self
+
+func _on_get_dev_message_completed(result, response_code, headers, body) -> void:
+	var json = JSON.parse_string(body.get_string_from_utf8())
+	
+	if json == null:
+		print_debug("ERROR: NO VERSION FOUND")
+	
+	if get_server_version_http != null:
+		get_server_version_http.queue_free()
+	
+	print_debug("SERVER VERSION: ", json)
+	
 	get_server_version_complete.emit(json.payload[0].value)
+"""

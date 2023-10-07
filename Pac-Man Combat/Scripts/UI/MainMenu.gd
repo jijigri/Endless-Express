@@ -21,11 +21,6 @@ func _ready() -> void:
 	
 	set_screen(0)
 	
-	if LootLocker.online:
-		$CanvasLayer/Menu/TestVersionLabel.visible = false
-	else:
-		$CanvasLayer/Menu/TestVersionLabel.visible = true
-	
 	var guest_exists = true
 	if LootLocker.authentificated:
 		guest_exists = LootLocker.guest_exists
@@ -33,21 +28,35 @@ func _ready() -> void:
 		await LootLocker.authentification_complete
 		guest_exists = LootLocker.guest_exists
 	
-	if guest_exists == false && display_name_edit.text == "Player":
+	#await get_tree().process_frame
+	
+	if guest_exists == false && display_name_edit.text == "":
 		var box = $CanvasLayer/NameSelectionBox
 		box.visible = true
 		box.main_menu = self
-		#LootLocker.guest_exists = true
+		LootLocker.guest_exists = true
+		guest_exists = true
 	else:
 		$CanvasLayer/NameSelectionBox.queue_free()
 	
 	get_server_version()
 
 func get_server_version():
-	var server_version = await LootLocker.get_server_version().get_server_version_complete
+	var payload = await LootLocker.get_server_version().get_server_version_complete
 	
-	if Global.version != server_version:
+	if Global.version != payload[1].value:
 		update_warning.visible = true
+	
+	if LootLocker.online:
+		#$CanvasLayer/Menu/TestVersionLabel.visible = false
+		
+		var dev_message = payload[0].value
+		if dev_message != "null" && dev_message != "":
+			$CanvasLayer/Menu/TestVersionLabel.text = dev_message
+		else:
+			$CanvasLayer/Menu/TestVersionLabel.visible = false
+	else:
+		$CanvasLayer/Menu/TestVersionLabel.text = "This is a test version, scores won't be saved!"
 
 func _process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):

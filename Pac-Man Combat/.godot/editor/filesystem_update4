@@ -26,3 +26,9 @@ res://Shaders/freeze_shader.gdshader
 res://Shaders/grayscale.gdshader
 res://Scenes/Arenas/arena_test_1.tscn
 res://Scenes/Entities/Players/default_player.tscn
+res://Scenes/main_menu.tscn
+res://Scripts/Singletons/LootLocker.gd
+res://Scripts/UI/MainMenu.gd
+res://Scripts/UI/name_selection_box.gd
+res://Scripts/UI/DisplayNameEdit.gd
+res://Scripts/Singletons/Global.gd
