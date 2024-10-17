@@ -2,7 +2,7 @@ extends Node
 
 var online: bool = true
 
-var API_key = "dev_cb375b22f1c244c1ac8909ca6053b633"
+var API_key = ""
 var session_token = ""
 var version = "0.03.0.0"
 
